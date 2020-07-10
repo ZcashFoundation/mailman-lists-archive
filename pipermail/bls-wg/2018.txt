@@ -26,9 +26,6 @@ more things I don't remember off the top of my head. Eventually we plan to
 swap out Relic for something constant time.
 
 -Bram
--------------- next part --------------
-An HTML attachment was scrubbed...
-URL: </pipermail/bls-wg/attachments/20180316/432d107b/attachment.html>
 
 From sean at z.cash  Fri Mar 16 19:22:31 2018
 From: sean at z.cash (Sean Bowe)
@@ -129,9 +126,6 @@ aggregated signatures of a single value, which we'll be implementing for
 performance. It isn't standardized because it's new but we plan to have
 everything we're working on be published and reviewed and ideally
 standardized.
--------------- next part --------------
-An HTML attachment was scrubbed...
-URL: </pipermail/bls-wg/attachments/20180316/16ba1fbe/attachment.html>
 
 From sean at z.cash  Fri Mar 16 21:25:46 2018
 From: sean at z.cash (Sean Bowe)
@@ -224,9 +218,6 @@ In any case, I called it 'reverse' because at least one thing I looked at
 said that if you use BLS12-381 then the sizes of keys will be 96 bytes,
 hence the interpretation of that as the 'normal' thing to do and what we're
 doing as 'reverse'.
--------------- next part --------------
-An HTML attachment was scrubbed...
-URL: </pipermail/bls-wg/attachments/20180316/abf6da0c/attachment.html>
 
 From bram at chia.net  Sat Mar 24 23:40:44 2018
 From: bram at chia.net (Bram Cohen)
@@ -239,9 +230,6 @@ allows keys to be aggregated as well as signatures. We're going to be
 implementing this:
 
 https://crypto.stanford.edu/~dabo/pubs/papers/BLSmultisig.html
--------------- next part --------------
-An HTML attachment was scrubbed...
-URL: </pipermail/bls-wg/attachments/20180324/d07e62a9/attachment.html>
 
 From sean at z.cash  Mon Mar 26 02:05:33 2018
 From: sean at z.cash (Sean Bowe)
@@ -320,7 +308,4 @@ On Sun, Mar 25, 2018 at 11:05 PM, Sean Bowe <sean at z.cash> wrote:
 > >
 > > https://crypto.stanford.edu/~dabo/pubs/papers/BLSmultisig.html
 >
--------------- next part --------------
-An HTML attachment was scrubbed...
-URL: </pipermail/bls-wg/attachments/20180326/df8c8485/attachment.html>
 
