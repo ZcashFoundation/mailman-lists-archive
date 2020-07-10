@@ -1,0 +1,3109 @@
+From mikael at johansson.lc  Thu Jan  3 16:33:25 2019
+From: mikael at johansson.lc (Mikael Johansson)
+Date: Thu, 3 Jan 2019 22:33:25 +0100
+Subject: [ZcF-general] Electrum for Zcash December Update
+Message-ID: <CAPHiqsO5R1Ntr_gfcWSP3SEhwGB3gfbqABk6ihp8nbs4+rYwsA@mail.gmail.com>
+
+Dear All,
+
+To start with, the scope of this project is to release an electrum
+client for transparent zcash addresses.
+
+I put in some work to the project early 2018 where I - besides
+software development - registered a domain along with setting up an
+Electrum X server. Then the project halted until about now. I have
+just moved to a house in a new city and during the holiday I have been
+working with putting my local infrastructure up to date.
+
+Currently I estimate there are about two personweeks of work left
+until a release candidate. I aim to complete this work now in January
+and February. If you have any questions, let me know.
+
+Kind regards,
+
+Mikael Johansson
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190103/7af93375/attachment.html>
+
+From james at prestwi.ch  Thu Jan  3 19:08:15 2019
+From: james at prestwi.ch (James Prestwich)
+Date: Thu, 3 Jan 2019 16:08:15 -0800
+Subject: [ZcF-general] Grant project progress report: Riemann
+Message-ID: <CAOP2CbwPj_rHy68ovKHY2TBaxbGa8_sBe9qeokD3qr+D=6vMEA@mail.gmail.com>
+
+Dear all,
+
+We expected grants to be awarded sooner, so by the time the grants were
+announced, we had largely achieved our original goals
+<https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/19>.
+Riemann <https://github.com/summa-tx/riemann> supports Sapling and
+Overwinter. Recent work includes the release of riemann-tx==1.1.6, which
+includes a sapling transaction construction example
+<https://github.com/summa-tx/riemann/blob/d4b251e3972ff8614082de90f65ffa890b7b1e74/riemann/examples/sapling_example.py>
+and
+a number of sapling-related bugfixes
+<https://github.com/summa-tx/riemann/pull/91>. The transaction construction
+example was used this afternoon to build c895...5b6d
+<https://explorer.zcha.in/transactions/c8951c6c488a13b9bad1b7a76af70d30a4d7b80abd503143b0824dc98bc95b6d>
+to
+sweep one of my old wallets.
+
+With respect to proof verification, we are currently blocked, and have been
+from some months. We need access to the Sapling and Sprout proving and
+verifying keys in an easily consumable fashion. If anyone familiar with the
+file formats involved can grab and document those group elements, please
+reach out directly.
+
+Going forward, we'll update with at least one significant usage example
+each month.
+
+Best,
+James
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190103/715eec15/attachment.html>
+
+From ericvaughn at pm.me  Fri Jan  4 22:46:00 2019
+From: ericvaughn at pm.me (ericvaughn at pm.me)
+Date: Sat, 05 Jan 2019 03:46:00 +0000
+Subject: [ZcF-general] Grant Progress - paywithz.cash
+Message-ID: <CCixgGlTL9LlYyk21aGVIpHufxGMbH_eTBPndJDA_iEQojlEFHNhLRDCr9qHLgw4tR3gy27hNaXrTIwUVEMWGpVcwV3EOtThamDnXhm3ikQ=@pm.me>
+
+paywithz.cash
+Progress and Success as of January 4, 2019
+
+Hosting services and domain registration still secured through 2023
+Merchants and non-profits who accept Zcash increased from 98 last month to 115 currently
+
+Recent additions include Airdrop Venezuela, hotel booking site Travala, and the SENS Foundation
+
+-Eric
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190105/0d998492/attachment.html>
+
+From solar at openwall.com  Sun Jan  6 09:13:32 2019
+From: solar at openwall.com (Solar Designer)
+Date: Sun, 6 Jan 2019 15:13:32 +0100
+Subject: [ZcF-general] Grant project update - new PoW scheme
+Message-ID: <20190106141332.GA4658@openwall.com>
+
+Hi,
+
+This is the first status report on GrantProposals-2018Q2 #25 "review,
+tweaks, and maybe design of a new PoW scheme for Zcash."
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25
+
+The tentative schedule starts with (quoting from the proposal):
+
+- Getting up to speed and research on original Dagger Hashimoto and the
+  codebase the current implementation of ProgPoW has been forked from
+
+This is actually what I've been working on - reading up on Dagger
+Hashimoto and on Ethash on Ethereum wiki and on related topics elsewhere
+(e.g., papers, Sergio Demian Lerner's blog, discussions on reddit) -
+learned a few things I had missed, found similarities and differences
+between my own independent thinking (as I was into CPU-focused
+algorithms lately, searching for the holy grail of sequential
+memory-hardness combined with DoS resistance and/or fast(er)
+verification) and Sergio's memohash paper's "Gradual verification" and
+what the Ethereum project arrived at with their Ethash.
+
+The next item in the tentative schedule is:
+
+- If no show-stoppers are identified up to that point, then further review of
+  ProgPoW and proposal/testing/tuning of its modifications (in particular, its
+  "instruction set" will almost certainly be revised, and probably more)
+
+I haven't approached this directly yet as I wanted to improve my own
+knowledge first and I intend to approach this in a systematic manner.
+However, I noticed others already bring up related issues and make
+related suggestions - in particular, on GitHub and on ProgPoW Discord
+(where I was invited to, and joined [my first Discord ever]) by
+@SChernykh and @chfast, whose work I appreciate:
+
+https://github.com/ifdefelse/ProgPOW/issues/16
+https://github.com/ifdefelse/ProgPOW/issues/19
+https://github.com/ifdefelse/ProgPOW/issues/20
+https://github.com/ifdefelse/ProgPOW/issues/21
+
+Another item in the tentative schedule is:
+
+- CPU-only implementation of the chosen PoW scheme (we're currently unaware of
+  one for ProgPoW) for research and testing (e.g., for randomness tests on its
+  memory dumps, and for tweaks to improve such randomness)
+
+I asked on the ProgPoW Discord and learned that there's already a
+CPU-only implementation in Go embedded in this tree:
+
+https://github.com/ifdefelse/go-ethereum
+
+Later in the project, I'll need to decide on whether to extract and use
+the Go implementation from there or maybe make a new one in C, or maybe
+there will already be more options.
+
+Finally, the tentative project plan includes:
+
+- Optionally, purchase and installation of new GPUs and required software
+
+Since Zcash Foundation chose to fund this proposed upgrade of Openwall's
+HPC Village ("a project of Openwall where we provide Open Source
+developers with remote access to a system with NVIDIA and AMD GPUs, and
+Intel Xeon Phi") - thanks! - we looked into the currently available and
+reasonable upgrade options and ended up ordering a GTX 1080 (a short
+enough card to use a slot that we didn't have other good use for, so we
+can leave more other GPUs in the machine) and a Vega 64 to be installed
+later in January.  Initially, I wanted to get the new RTX 2080 Ti, but
+was advised against that for now (so maybe later) in this tweet thread:
+
+https://twitter.com/solardiz/status/1077577386617700353
+
+(I omitted from this update parts of the proposal for which there's
+nothing to report yet.)
+
+Unexpectedly, I also ended up looking into Equihash parameters and
+making suggestions again, as it appears Zcash's temporary second PoW for
+Blossom will be merely another Equihash instantiation, and this needs to
+be decided on ASAP:
+
+[Blossom NU] Write spec for Harmony Mining
+https://github.com/zcash/zcash/issues/3672
+
+whereas the work more obviously falling under this grant will probably
+fit under:
+
+choose new PoW for Zcash 4.0 (NU3)
+https://github.com/zcash/zcash/issues/3761
+
+I am watching both of these issues.  In the current discussion on
+Equihash parameters, I especially appreciated comments by @tromp on
+BEAM's use of modified 150,5 and by @mineZcash on teardown of Z9's
+BM1740 chip - it's two important developments I had missed.
+
+We also spent (wasted?) _plenty_ of time on KYC procedures for
+"institutional" accounts with two reputable cryptocurrency/fiat
+exchanges, so that we could cash this grant money out to a business bank
+account.  As the cryptocurrency prices were rapidly declining, this felt
+like a priority, but in the end the KYC procedures took so much time
+(and there's still no decision on setup of the accounts - still waiting)
+that this didn't really matter (or maybe we should have given up and
+used a personal account, or some other option) - the market appears to
+have reached and bounced from a strong(er) support level in December.
+As a result, we still have no fiat from this grant (yet have already
+started spending fiat on the GPUs above), and its current dollar value
+is a lot less than what was awarded.  Anyway, that's our problem, and
+we're grateful to Zcash Foundation for running the program and awarding
+the grant.
+
+A silver lining of having the grant awarded in ZEC is that I ended up
+playing with real funds on Sapling addresses, and reported this bug:
+
+Partial balance temporarily shown after transaction on a fully synced node
+https://github.com/zcash/zcash/issues/3746
+
+So I certainly can see how awarding grants in ZEC helps improve and
+promote Zcash.
+
+Thanks,
+
+Alexander
+
+
+From mikael at johansson.lc  Sun Jan  6 10:49:03 2019
+From: mikael at johansson.lc (Mikael Johansson)
+Date: Sun, 6 Jan 2019 16:49:03 +0100
+Subject: [ZcF-general] Electrum for Zcash December Update
+In-Reply-To: <CAPHiqsO5R1Ntr_gfcWSP3SEhwGB3gfbqABk6ihp8nbs4+rYwsA@mail.gmail.com>
+References: <CAPHiqsO5R1Ntr_gfcWSP3SEhwGB3gfbqABk6ihp8nbs4+rYwsA@mail.gmail.com>
+Message-ID: <CAPHiqsPk5GJYdHqbeceuY3Lkkdq2y_BLPQhDzizKkoMe=GvqQw@mail.gmail.com>
+
+> Dear All,
+>
+> To start with, the scope of this project is to release an electrum client for transparent zcash addresses.
+>
+> I put in some work to the project early 2018 where I - besides software development - registered a domain along with setting up an Electrum X server. Then the project halted until about now. I have just moved to a house in a new city and during the holiday I have been working with putting my local infrastructure up to date.
+>
+> Currently I estimate there are about two personweeks of work left until a release candidate. I aim to complete this work now in January and February. If you have any questions, let me know.
+>
+> Kind regards,
+>
+> Mikael Johansson
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190106/fc4cf723/attachment.html>
+
+From derrick at anypay.global  Sun Jan  6 12:38:45 2019
+From: derrick at anypay.global (=?UTF-8?Q?Derrick_Freeman?=)
+Date: Sun, 6 Jan 2019 17:38:45 +0000
+Subject: [ZcF-general] ANYPAY - Shielded ZCash at Retail - December Update
+References: <mail.5c323d25.4ae1.208ad21029686fae@storage.wm.amazon.com>
+Message-ID: <01000168243edb76-f9481ba9-85b9-4103-bf6b-6ed83408a864-000000@email.amazonses.com>
+
+Hello all,
+
+?
+We at AnyPay are making it possible to pay with shielded ZCash at stores.
+
+?
+In December we focussed on improving reliability. The time it takes to generate an invoice is now about 10 times faster than it was last month, making the payment experience at checkout faster than using paper cash or a credit card. Users can also reliably create crypto invoices priced in all of 161 different international currencies. Support for ZCash was temporarily disabled while a potential vulnerability in our payment relay service is being investigated and remedied. We will return ZCash as a payment option as soon as possible.
+
+?
+In January we are building several rigorous automated tests that we are implementing to ensure total measurable and provable reliability. While we do this, it puts the development of shielded ZCash transactions on hold. What good is a payment system that fails even 0.1% of the time? You deserve a dependable service. You should be confident it will work every time. So January is totally focussed on that. Reliability.
+
+?
+We look forward to making shielded ZCash payments in stores soon.
+
+?
+Best,
+
+?
+Derrick
+
+ANYPAY
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190106/b32c5341/attachment.html>
+
+From buenz at stanford.edu  Sun Jan  6 00:34:54 2019
+From: buenz at stanford.edu (Benedikt Bunz)
+Date: Sun, 6 Jan 2019 05:34:54 +0000
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_Benedikt_B=C3=BC?=
+ =?utf-8?q?nz_--_Scholarship_Grant?=
+Message-ID: <6E5DE052-2A14-4C42-B55A-E4816CFE05CB@stanford.edu>
+
+Dear all,
+
+I want to use my first update to mostly talk about a recent paper that we recently published on eprint: https://eprint.iacr.org/2018/1188 
+The paper presents new batching techniques for RSA accumulators and vector commitments. An accumulator is a short commitment to a set that supports efficient inclusion and optionally also exclusion proofs. The perhaps simplest accumulator is a Merkle Tree which is widely used in ZCash for example as a commitment to all of the coins. RSA accumulators have the advantage that their inclusion proofs are only a single element. In our work we show how many inclusion proofs can be non-interactively aggregated. Additionally we leverage some recent work on verifiable delay functions (https://eprint.iacr.org/2018/623) to make checking inclusion proofs much more efficient. 
+We also leverage the new batching techniques to build an efficient vector commitment scheme. Vector commitments are positional commitments that allow you to efficiently prove that the element at the ith index has a certain value. Again Merkle Trees can be used as vector commitments. Our new commitment, however, is much more efficient in terms of proof size and we propose using it to create significantly shorter STARKs. To maintain the setup-freeness of STARKs one would have to use so called class groups to instantiate the accumulator (which is entirely possible and feasible). 
+There are more tricks in the paper and you can watch this talk if you want to get a better overview (https://www.youtube.com/watch?v=IMzLa9B1_3E&feature=youtu.be&t=3515). 
+Accumulators for ZCash:
+There are several places where accumulators could be useful for ZCash. One interesting application is to make mining/full nodes stateless. Consider the t-address/Bitcoin like part of ZCash. An accumulator can be used to commit to the entire UTXO set. Each transaction now creates a short proof that her coins are indeed unspent. With our new techniques these proofs can be aggregated and are efficient to check. The miner only needs the short accumulator value (~256 bytes) in order to verify transactions! It might be unrealistic that users store their own inclusion proofs and update them regularly but so called bridge nodes could provide them for users. In general this design achieves a separation of consensus and state. The miners don?t need to store the entire state to reach consensus on it. A small commitment to the consensus suffices! Additionally it reduces the cost of ?UTXO dust? as it does not need to be stored in memory anymore. 
+Interestingly this design idea isn?t new and ZCash?s z-address system already uses such a design (using Merkle Trees + SNARKs instead of accumulators). Also ZeroCoin, ZeroCash?s predecessor, heavily relies on accumulators. An obvious question that we are investigating is whether and how efficient accumulators can be combined with SNARKs or other proof systems like Bulletproofs. 
+Best,
+Benedikt
+
+From josh at zfnd.org  Fri Jan 18 16:29:48 2019
+From: josh at zfnd.org (Josh Cincinnati)
+Date: Fri, 18 Jan 2019 16:29:48 -0500
+Subject: [ZcF-general] Address change: general@lists.zfnd.org
+Message-ID: <CA+-Lzu_bedWHLOwtqKALVPJCO-q934CPW0OxABMDAO4DUBst5A@mail.gmail.com>
+
+Hi all,
+
+In line with our domain switchover from z.cash.foundation to zfnd.org (more
+info here: https://www.zfnd.org/blog/website-refresh/ ) the mailing lists
+have been renamed. Our mailing lists are now served and archived via:
+
+/
+
+And you can email to the General list via:
+
+general at lists.zfnd.org
+
+We set up a 301 Redirect to old archives so old links should work; if you
+find a case that doesn't, please email me directly to let me know.
+
+Thanks,
+Josh
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190118/40aa40af/attachment.html>
+
+From adityapk at protonmail.com  Sat Jan 19 11:19:50 2019
+From: adityapk at protonmail.com (adityapk)
+Date: Sat, 19 Jan 2019 16:19:50 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <CdPqFJCUd2tFmTehMxFH7JD8r_MZ-Edd91DkJ03Sasx68Zlq8b8xASq6PoJTSahzyfx6r2WzMJYcEZm7qTwuAj3ANASXdGu7_ePTMvlIjNs=@protonmail.com>
+
+I've begun work on the Android companion app for zec-qt-wallet. Repo is here: https://github.com/adityapk00/zqwandroid
+
+Last Week
+
+- Create outline of android app, wire up basic RPC/websockets with desktop
+- Send, Recieve, Transactions list + details activities
+- Add websockets support for zec-qt-wallet, add mobile app RPC
+- Add libsodium to build + cross platform build
+
+Next week
+ - Add end-to-end encryption for android <-> desktop communication
+ - Support for direct connections via scanning Qr Code on desktop
+ - Beta release of android app for feedback from community
+
+Thanks,
+Aditya
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190119/01f78b0d/attachment.html>
+
+From radoslaw.michalski at pwr.edu.pl  Mon Jan 21 12:21:14 2019
+From: radoslaw.michalski at pwr.edu.pl (=?UTF-8?Q?Rados=c5=82aw_Michalski?=)
+Date: Mon, 21 Jan 2019 18:21:14 +0100
+Subject: [ZcF-general] Grant project progress report: platform for zcash
+ blockchain analysis
+Message-ID: <8ac8e7d2-57b0-b82e-32e5-85434772c55c@pwr.edu.pl>
+
+Dear All,
+
+In this e-mail we would like to update you on the progress of the tool
+for zcash blockchain analysis platform (GrantProposals-2018Q2, grant
+proposal #39).
+
+Since last report (sent on 2018-12-24):
+- we added a messaging system for accepting and routing API calls
+- we did configure the SMTP infrastructure for (optional) emails about
+finished computation tasks
+- we did work with the code in order to make it easier to run the
+environment without manual configuration
+
+The backend code is fully operational now, i.e., you can import the
+whole zcash blockchain into the database and API interface is ready to
+accept the calls. Yet the actual work on the API endpoints for
+researchers is about to start.
+
+Just a reminder where to look for the project code:
+https://github.com/bergplace/Dru
+
+Greetings,
+Radoslaw Michalski & team
+
+
+
+From mikael at johansson.lc  Sat Jan 26 02:59:44 2019
+From: mikael at johansson.lc (Mikael Johansson)
+Date: Sat, 26 Jan 2019 08:59:44 +0100
+Subject: [ZcF-general] Update: Electrum for Zcash
+Message-ID: <CAPHiqsN_aDfK47+pc9vHAqUaO1c_cFQ0yH8CoWgmtK8dzR1q+A@mail.gmail.com>
+
+Hi,
+
+I have made some progress the last weeks. No important milestone to share
+unfortunately. Time is a constraint, but I hope to have a first release
+before end of february.
+
+Have a nice weekend, folks.
+
+Regards,
+
+Mikael
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190126/4783b63e/attachment.html>
+
+From derrick at anypay.global  Wed Jan 30 14:59:32 2019
+From: derrick at anypay.global (=?UTF-8?Q?Derrick_Freeman?=)
+Date: Wed, 30 Jan 2019 19:59:32 +0000
+Subject: [ZcF-general] Anypay - Shielded Zcash at Retail - January Update
+References: <mail.5c520223.3bdb.4bc644192647262d@storage.wm.amazon.com>
+Message-ID: <01000168a0585de7-f6c9374b-8e2d-426d-93c9-586046702afa-000000@email.amazonses.com>
+
+Hello all,
+
+?
+We at Anypay are making it possible to pay with shielded Zcash at stores.
+
+?
+In January we focussed on reliability. We built several rigorous automated tests that measure speed and success rates. Using these tools we brought the speed of generating a Zcash invoice down from 3 seconds to 1 second. We brought the speed of recognizing an invoice has been paid from 10 seconds to 3 second. These are under ideal scenarios of solid internet connection. The time each takes to register on your screen depends on your connection and device, but generally these speed of generating and paying a Zcash invoice on Anypay takes the same amount of time as using a credit card (and uses a cool digital signature rather than an easily forgeable written one).
+
+?
+In February, we are continuing development. January?s tests revealed that we needed to change the way we monitored and relayed payments to improve speed and most importantly reliability. Since Anypay supports payments in a handful of cryptocurrencies, that means adjusting the code for each one. Zcash is among them. This will be February?s goal: making sure Zcash payments (transparent style) happen as quickly and reliably as all the other coins on our platform.
+
+?
+Once that important goal is achieved, we can add to the complexity with shielded transactions. For now, we are taking small, manageable chunks and making progress little by little to ensure everything keeps working without interruption to our many active users.
+
+?
+Best,
+
+?
+Derrick J Freeman
+https://Anypay.Global
+@derrickjme
+@Anypay_
+
+?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190130/bada8a3b/attachment.html>
+
+From hloo007 at gmail.com  Thu Jan 31 23:58:45 2019
+From: hloo007 at gmail.com (Howard Loo)
+Date: Thu, 31 Jan 2019 20:58:45 -0800
+Subject: [ZcF-general] Grant Progress Report (January 2018): Zcash Posters
+Message-ID: <CAE178mVBhLV62Sv2pKkXq-YZZNEvWT=dt=vUTVPFFKa8pwqO1Q@mail.gmail.com>
+
+The goal of this Zcash Posters project is to create a series of posters
+that educate the public about the importance of financial privacy and
+promote Zcash as an important tool for achieving financial privacy in the
+future. 100% of the $2,500 grant will go to commissioning artists to design
+the posters, and all the posters will be available to download for free.
+
+An inspiration for this project are all the great World War II home front
+posters developed in many different countries during that war.
+
+Work on this project started this week. I have contacted three artists, and
+I plan on contacting several more within the next few days.
+
+The target audience of these posters is not cybercoin aficionados. Rather,
+I am trying to target the general public. Someone seeing one of these
+posters hanging in a restaurant, dorm room, or bus stop should be motivated
+to learn more about Zcash; that is the goal.
+
+To conclude this update, below is an excerpt of an email that I sent to one
+of the artists. The excerpt will give you a better sense of what I'm trying
+to accomplish with this project.
+
+*I've been thinking about those great WWII posters that encourage citizens
+to keep quiet:*
+
+*Seymour R. Goff, "Loose LIPS might Sink Ships" (1941)*
+<http://digital.hagley.org/posterexhibit_054?solr_nav%5Bid%5D=b900b71bfd3ad802b209&solr_nav%5Bpage%5D=0&solr_nav%5Boffset%5D=4>
+
+
+*Glenn Grohe, "HE'S WATCHING YOU" (1942)
+<https://www.nh.gov/nhsl/ww2/ww57.html>*
+
+*Frederick Siebel, "SOMEONE TALKED!" (1942)*
+<https://collection.cooperhewitt.org/objects/18612741/>
+
+*Credit cards don't respect our financial privacy. Our credit card
+purchases are used by marketers to target us. The original cryptocurrency,
+Bitcoin, respects financial privacy more than credit cards, but because all
+Bitcoin transactions are publicly available for anyone to see, Bitcoin
+still puts our financial privacy at risk. Payment systems like credit cards
+and Bitcoin are "talkative" about our finances.*
+
+*Zcash, on the other hand, is more like paper cash: it is "quiet".*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190131/c9843a72/attachment.html>
+
+From ericvaughn at pm.me  Fri Feb  1 14:55:28 2019
+From: ericvaughn at pm.me (ericvaughn at pm.me)
+Date: Fri, 01 Feb 2019 19:55:28 +0000
+Subject: [ZcF-general] Pay With Zcash
+Message-ID: <ERkL36eLOgjbTl0nfpsmet5LXhJT1Ujgjs8UxgioxNUuC-kObANw6Yd6aZlhzu1b0Y4IFgd7tDYV-FXcH-ICuw1WLoAymxhY5U74aien4so=@pm.me>
+
+Pay With Zcash
+Progress as of February 1, 2019
+
+- Redesigned https://paywithz.cash to Wordpress theme: Blog New by Candid Themes.
+- Enabled upvoting.   Please vote for your favorites and help them move up within their category!
+- Hosting and domain registration still secured through 2023.
+- Merchants and non-profits that accept Zcash increased from 115 last month to 180 currently.
+- Some recent additions include NautilusBlue marketing and design, Yonat Vaks commissioning artwork for $ZEC, and OpenBazaar enabling all its sellers the option to accept payments in Zcash.
+- Mentioned at the end of a Forbes article highlighting current use cases for Zcash - https://www.forbes.com/sites/darrynpollock/2019/01/31/zcash-out-to-prove-privacy-is-key-to-crypto-adoption-with-gdpr-avoiding-use-cases/#34af1fd82dff.
+
+Thanks,
+Eric Vaughn
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190201/512628e8/attachment.html>
+
+From adityapk at protonmail.com  Fri Feb  1 15:24:48 2019
+From: adityapk at protonmail.com (adityapk)
+Date: Fri, 01 Feb 2019 20:24:48 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <MTXrVGXUwMnh9niVxClEZTkNUXFFEPbBv8nw7NEvVv8Rvi2tqjReOjxiMa1ZebN_L2M3eff1f58Q-opV6tGj_x2r71oyxYAGyBXm7juvfbQ=@protonmail.com>
+
+Last Week
+--------------
+ * Android beta app released!
+   * If you want to help test it out, https://github.com/adityapk00/zqwandroid/blob/master/README.md
+
+  * Lots of bug fixes on the android app, in prep to release for beta
+  * Lots of (small) bug fixes on the zec-qt-wallet on the desktop, will do an updated release today
+  * Create build scripts, install signatures, etc.. for APK distribution
+
+Next Week
+-------------
+ * Build the wormhole service to allow android app to connect over the internet
+ * Continue to build android app, fix bugs based on community feedback
+ * Reach out to auditors to see if we can do a security audit for zec-qt-wallet/android
+
+Thanks,
+Aditya
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190201/a5b88dc7/attachment.html>
+
+From buenz at stanford.edu  Fri Feb  1 15:50:06 2019
+From: buenz at stanford.edu (Benedikt Bunz)
+Date: Fri, 1 Feb 2019 20:50:06 +0000
+Subject: [ZcF-general] =?iso-8859-1?q?Update_Benedikt_B=FCnz_Scholarship_?=
+ =?iso-8859-1?q?Grant?=
+Message-ID: <3EB895B2-70CC-460D-914E-A3C8818DC339@stanford.edu>
+
+Dear ZCash community,
+
+I spent the last month mostly presenting at conferences and presenting our own Stanford Blockchain Conference https://cyber.stanford.edu/sbc19 conference.  The conference was a huge success and we have had many amazing talks, many of which are relevant to ZCash. We will upload all of the talk and I encourage to check them out. I talked about our new accumulator and vector commitment construction. 
+I also communicated with Nathan about how accumulators could be used to reduce the burden of storing the entire nullifier set. The accumulator can store all of the nullifiers and new nullifiers can be added to it. The nice property of accumulators is that the miners and fully verifying nodes will only be required to store the short ~250 byte accumulator value and can even update it without knowing the contents. In every transaction users would supply an exclusion proof that their nullifier is not part of the accumulator. Additionally multiple users could create a joint exclusion proof for all of their nullifiers which is still constant in size.
+The one significant downside of this design is that creating this exclusion proof is somewhat expensive and still requires knowledge of the entire set. Perhaps there could be service providers who can create these proofs. Note that these service providers would not be trusted for security or privacy but only availability.
+
+
+Benedikt
+
+From ayo at boltlabs.io  Fri Feb  1 17:21:52 2019
+From: ayo at boltlabs.io (J. Ayo Akinyele)
+Date: Fri, 1 Feb 2019 14:21:52 -0800
+Subject: [ZcF-general] Dec/Jan update on implementing anonymous payment
+ channels
+Message-ID: <CAJVTvHuSEvkOteSk5VoNoWDRkV6mJBAbzm2M-bPKWdR5u1dc5A@mail.gmail.com>
+
+J. Ayo Akinyele
+
+Progress as of January 31, 2019
+
+
+Dear All,
+
+
+Over the last few months, we?ve been working on understanding the different
+approaches for implementing Bolt payment channels on top of Zcash and the
+changes necessary in Zcash to support the privacy goals in Bolt. This has
+been joint work with Colleen Swanson, Ian Miers, and Matthew Green.
+
+
+We have been working on an initial specification on the different
+approaches to implementing Bolt on top of Zcash and setting up the private
+testnet infrastructure for node development on AWS:
+
+
+*Summary of the initial specification.* It defines three general approaches
+which can be categorized as follows:
+
+
+(1) *T-addr and Bitcoin-style scripts.* This approach follows the baseline
+solution described in the original Bolt paper. This approach exposes the
+initial and final balances but potentially interoperates with LN. Requires
+a few opcodes to be added to Zcash: OP_CSV (for relative locktime),
+OP_BOLT* (for opening and closing channels) and a way to ensure transaction
+non-malleability for the funding transaction on the channel opening.
+
+
+(2) *Z-addr & T-addr with Bitcoin-style scripts.* This approach allows us
+to hide the initial/final balance of each party in the channel. Relies on
+multi-sig address with T-addrs, and requires OP_CSV/OP_BOLT* opcodes for
+channel ops. Also may require a way to ensure transaction non-malleability.
+
+
+(3) *Z-addr and scriptless scripts.* Simplifies the implementation and
+provides maximal privacy. Bolt channel operations will be hidden from the
+network and would not require any special opcodes. That is, the Bolt
+conditions will be encoded in the signatures attached to the funding
+transaction and closing transaction. This approach is currently under
+specified and remains a work-in-progress.
+
+
+For private multi-hop payments, we are evaluating multiple approaches: (1)
+HTLCs via LN with Bolt used at the first and last hop of the path, (2)
+Increased privacy for hops in the middle using multi-hop locks as described
+here, and (3) Interledger approach via packetized payments. Each approach
+has its pros and cons in terms of possible attacks and risks to end users.
+
+
+*Private Testnet for Bolt development.* Setting up a public/private testnet
+on AWS for Bolt development. And forked current version of Zcash to
+prototype the necessary changes for Zcash.
+
+
+Now currently working on the initial proof of concept Bolt node
+implementation (approach #2 in spec) using libbolt that provides direct
+channels on a private testnet. This version will initially implement
+unilateral closing by the customer and provide mutual closing via specified
+channel durations.
+
+Best,
+Ayo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190201/b765ea5f/attachment-0001.html>
+
+From james at prestwi.ch  Sat Feb  2 16:30:02 2019
+From: james at prestwi.ch (James Prestwich)
+Date: Sat, 2 Feb 2019 16:30:02 -0500
+Subject: [ZcF-general] Riemann status update
+Message-ID: <CAOP2Cbz_8VVx2SBqw+OfVsJ9HnE3C2tkjceFGzFHY7GXrzBztA@mail.gmail.com>
+
+Hi All,
+
+We wrote a brief transaction parsing and manipulation example
+<https://github.com/prestwich/riemann/blob/master/riemann/examples/sapling_tx_parsing.py>.
+Riemann tx objects parse ever documented Sapling tx datastructure. Each
+element of each input, output, joinsplit, and shielded spend/output is
+available for inspection and manipulation.
+
+We recently wrote a Bitcoin light client called zeta
+<https://github.com/summa-tx/riemann-zeta> using Electrum servers. If Zcash
+Electrum makes good progress, it can be easily extended to support Zcash
+main and testnets as well.
+
+We are continuing to look for support on proof validation tools.
+
+Best,
+James
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190202/98c59636/attachment.html>
+
+From sonya at zfnd.org  Tue Feb  5 03:00:14 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Tue, 5 Feb 2019 00:00:14 -0800
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_Decemb?=
+	=?utf-8?q?er=2C_2018_and_January=2C_2019?=
+Message-ID: <CAOztXWgS5uk2gC-4bWHFRBY0o94EZSvA1Z1+XRcJYSQRP47apw@mail.gmail.com>
+
+Hello everyone! We didn't send one of these emails at the end of December,
+due to the holiday. December was effectively a half-month, because so many
+people take vacation time at the end of the year (including Zcash
+Foundation staff).
+
+Without any further ado, the list of announcement-worthy Zcash Foundation
+activities from the past two months!
+
+The Foundation co-hosted and co-sponsored an event called Blockchain
+Against Evil, which you can read about here:
+https://www.eventbrite.com/e/blockchain-against-evil-tickets-52069749021
+(click "View Details" for more information about the content)
+
+Proceeds from the event were donated to Open Privacy, a fellow nonprofit
+that focuses on securing people's privacy through technology:
+https://twitter.com/ZcashFoundation/status/1082407682663866369
+
+We reorganized our website and GitHub repos to make information about the
+Foundation and its doings more accessible:
+https://www.zfnd.org/blog/website-refresh/
+
+We worked with Ian Miers, who is a member of our Board (among numerous
+other qualifications), to turn a talk about blockchain privacy theater into
+a long-form article:
+https://www.tokendaily.co/blog/blockchain-privacy-equal-parts-theory-and-theater
+
+The article will be posted on our website as well.
+
+The Foundation is sponsoring an upcoming zk-SNARKs meetup in Tel Aviv:
+https://www.meetup.com/Zero-Knowledge-TLV/events/258165596/
+
+We announced the details of Zcon1 (June 22 ? 24 in Split, Croatia) and
+asked people to start applying for invitations:
+https://www.zfnd.org/blog/zcon1-announcement/
+
+And finally, Executive Director Josh Cincinnatti wrote "The State of the
+Zcash Foundation in 2019," reviewing our performance in 2018 and setting
+the course for the rest of the year:
+https://www.zfnd.org/blog/foundation-in-2019/
+
+Hopefully 2019 is treating you well so far! As always, if you have any
+questions or feedback, don't hesitate to reply to this email.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190205/fb42b171/attachment.html>
+
+From solar at openwall.com  Wed Feb  6 16:57:04 2019
+From: solar at openwall.com (Solar Designer)
+Date: Wed, 6 Feb 2019 22:57:04 +0100
+Subject: [ZcF-general] Grant project update - new PoW scheme
+In-Reply-To: <20190106141332.GA4658@openwall.com>
+References: <20190106141332.GA4658@openwall.com>
+Message-ID: <20190206215704.GA14775@openwall.com>
+
+Hi,
+
+This is my second status report on GrantProposals-2018Q2 #25 "review,
+tweaks, and maybe design of a new PoW scheme for Zcash."
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25
+
+Unfortunately, I didn't put as much time into this project as I would
+have liked to.  That said, a few things did advance since last update:
+
+On Sun, Jan 06, 2019 at 03:13:32PM +0100, Solar Designer wrote:
+> - Optionally, purchase and installation of new GPUs and required software
+> 
+> Since Zcash Foundation chose to fund this proposed upgrade of Openwall's
+> HPC Village ("a project of Openwall where we provide Open Source
+> developers with remote access to a system with NVIDIA and AMD GPUs, and
+> Intel Xeon Phi") - thanks! - we looked into the currently available and
+> reasonable upgrade options and ended up ordering a GTX 1080 (a short
+> enough card to use a slot that we didn't have other good use for, so we
+> can leave more other GPUs in the machine) and a Vega 64 to be installed
+> later in January.
+
+These two new GPUs have been installed and are now available to
+ourselves and the larger Open Source community in our HPC Village:
+
+https://openwall.info/wiki/HPC/Village
+
+We've also updated to CUDA 10.0 and AMDGPU-PRO 18.50.  We first tested
+the updated setup with John the Ripper and Hashcat, and then I proceeded
+to use this setup to test ProgPOW vs. Ethash (because that's where
+ProgPOW was forked from) taking notes in the process.
+
+I've just posted some results of this testing as two issues on ProgPOW
+GitHub, suggesting that they add this or/and other related information
+to the documentation:
+
+Build instructions
+https://github.com/ifdefelse/ProgPOW/issues/27
+
+Benchmark results
+https://github.com/ifdefelse/ProgPOW/issues/26
+
+The benchmark results show that the two new GPUs were actually required.
+The older GPUs also still present in the machine (Titan Kepler and Titan
+X Maxwell) achieve good speeds at 1 GB DAG size, but no longer achieve
+sane speeds at the 3 GB DAG size currently used by Ethereum (and
+presumably Zcash would use no smaller than that if it switches to
+ProgPOW).  Those older GPUs do have more than enough memory (6 GB and
+12 GB, respectively), but somehow are several times slower than current
+ones at this test.  We might investigate this later.  Maybe some tuning
+will help.
+
+> Unexpectedly, I also ended up looking into Equihash parameters and
+> making suggestions again, as it appears Zcash's temporary second PoW for
+> Blossom will be merely another Equihash instantiation, and this needs to
+> be decided on ASAP:
+> 
+> [Blossom NU] Write spec for Harmony Mining
+> https://github.com/zcash/zcash/issues/3672
+
+Zcash no longer plans on having a temporary second PoW in Blossom, so
+the discussion on that issue ceased.
+
+> whereas the work more obviously falling under this grant will probably
+> fit under:
+> 
+> choose new PoW for Zcash 4.0 (NU3)
+> https://github.com/zcash/zcash/issues/3761
+
+Alexander
+
+From zcash at adityapk.com  Fri Feb  8 15:49:26 2019
+From: zcash at adityapk.com (adityapk)
+Date: Fri, 08 Feb 2019 20:49:26 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <8j3W4SzhrAbC3D4PEj6VjXBtORUjTQRj_uG2U7YI9ou4olQrbESq-U1KUYP-BWlPSc3Xv6E70KVt2Q0jS07HMuiO19aoSV1-78vLVPGGCCI=@adityapk.com>
+
+Last Week
+=========
+* Had 3 beta releases of the android app, uncovered some issues, and now have fixed them all
+* AFAIK, all beta testers have now successfully run the android app and have tested it successfully. (Thanks a ton to all my beta testers, for providing diligent and thoughtful feedback!)
+* Added signatures to the build process on both desktop / Android, so releases will be signed from now on
+* Built the wormhole service to allow Desktop UI and Android App to communicate even if they are behind firewalls & direct connection is not possible.
+
+Plan for Next week
+=========
+
+* beta4 of the android app that will allow connections over the internet
+* Security audit
+* We are on track for full public release in 2 weeks
+
+Thanks,
+Aditya
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190208/89e96251/attachment.html>
+
+From gordon.dov at gmail.com  Thu Feb 14 11:20:13 2019
+From: gordon.dov at gmail.com (Dov Gordon)
+Date: Thu, 14 Feb 2019 11:20:13 -0500
+Subject: [ZcF-general] January udpate
+Message-ID: <fe0ce35d-c049-807b-4cee-0707f116afd7@gmail.com>
+
+
+**Project update for project #36: An alternative approach to analyzing 
+anonymity in cryptocurrencies January Update: *
+
+Tasks completed
+
+-- We constructed a base 2-round protocol that supports n payments from 
+n payors to n distinct recipients.
+
+-- We found an appropriate noise distribution and sketched a proof that 
+our protocol preserves differential privacy: neighboring transaction 
+permutations look statistically similar under the noise generated in our 
+protocol.
+
+
+Issues to address
+
+-- We haven?t considered malicious payors, or even payors that may abort.
+
+-- We plan to explore methods to improve the performance of our base 
+protocol at the expense of introducing additional rounds of 
+communication. (With the base protocol, the ring signatures involve more 
+mix-ins than desired.)
+
+*
+Foteini, Dov and Mayank.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190214/e258a31b/attachment.html>
+
+From sonya at zfnd.org  Tue Feb 19 00:46:07 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Mon, 18 Feb 2019 21:46:07 -0800
+Subject: [ZcF-general] Proposal for updated ZIP process
+Message-ID: <CAOztXWhirp8LwUgvp2G7obP7HFnnfp8kpDvmVMR2t5bCEFFGZw@mail.gmail.com>
+
+Your feedback is requested! https://github.com/zcash/zips/pull/206
+
+> Submitting a PR for an updated ZIP process guideline. A final number
+would be assigned if this is approved by the current Editor and reaches
+consensus.
+
+> As part of this proposal, I'd also support the zips repo being
+transferred to the Zcash Foundation GitHub org, with all the links being
+appropriately updated.
+
+> Feedback very much welcome!
+
+Click into the commits to see further details. Thank you!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190218/93dd0565/attachment.html>
+
+From zcash at adityapk.com  Fri Feb 22 14:47:27 2019
+From: zcash at adityapk.com (adityapk)
+Date: Fri, 22 Feb 2019 19:47:27 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <vTRoIpbdIe7KdVL7MrM2iNMmdNU7VOm5zhS_HqR-dZRtxdD9GUeDDtsKwhYZn6oBBESj4wO7TVjAGKljb_WedXodosHfJaUZlUdMn_JCP4s=@adityapk.com>
+
+- Released our v0.1 of the Android app publicly today on the play store: https://play.google.com/store/apps/details?id=com.adityapk.zcash.zqwandroid
+- Released v1.0 of the wormhole service, which makes one-step connections across desktop and mobile app, without any firewall, port forwarding, username/password or any other configuration needed.
+- Released v0.6.0 of the zec-qt-wallet desktop node, which has:
+  * Native support for connecting to the mobile wallet, no need to run special versions anymore
+  * Updated embedded zcashd to v2.0.3
+  * Several bug fixes and readability improvements
+- Signing of binaries, and android bundles is now a part of the build script. All releases going forward will be automatically signed
+- Working with Gareth and Dimitris on support. They've both made incredible progress on the support documentation and video tutorials respectively, which is just awesome!
+  * Check out the first pass of the docs site: https://docs.zecqtwallet.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190222/6b39d577/attachment.html>
+
+From hloo007 at gmail.com  Thu Feb 28 15:14:04 2019
+From: hloo007 at gmail.com (Howard Loo)
+Date: Thu, 28 Feb 2019 12:14:04 -0800
+Subject: [ZcF-general] Grant Progress Report (Feb 2019): Zcash Posters
+In-Reply-To: <CAE178mVBhLV62Sv2pKkXq-YZZNEvWT=dt=vUTVPFFKa8pwqO1Q@mail.gmail.com>
+References: <CAE178mVBhLV62Sv2pKkXq-YZZNEvWT=dt=vUTVPFFKa8pwqO1Q@mail.gmail.com>
+Message-ID: <CAE178mXS39T6gPcuyetg-FfvPDmFQsvD8+Z4bFD35GDCoyUk7g@mail.gmail.com>
+
+After evaluating and contacting more artists this month, I believe that the
+best fit (in terms both of commission price and artistic skill) for
+creating the first two posters is an American artist based out of
+Minnesota. (I'll share the artist's name once I finalize the commission
+contract.) Unfortunately, the artist is in high demand and can only start
+working on the Zcash posters on March 27. But we've been discussing ideas
+over email in the meantime, so that the artist can jump right in on March
+27.
+
+In parallel, I'm contacting several more artists, including some from
+outside of the United States.
+
+I'm hoping that the first poster will be ready in April.
+
+---------- Forwarded message ---------
+Date: Thu, Jan 31, 2019 at 8:58 PM
+Subject: Grant Progress Report (January 2019): Zcash Posters
+To: <general at lists.zfnd.org>
+
+
+The goal of this Zcash Posters project is to create a series of posters
+that educate the public about the importance of financial privacy and
+promote Zcash as an important tool for achieving financial privacy in the
+future. 100% of the $2,500 grant will go to commissioning artists to design
+the posters, and all the posters will be available to download for free.
+
+An inspiration for this project are all the great World War II home front
+posters developed in many different countries during that war.
+
+Work on this project started this week. I have contacted three artists, and
+I plan on contacting several more within the next few days.
+
+The target audience of these posters is not cybercoin aficionados. Rather,
+I am trying to target the general public. Someone seeing one of these
+posters hanging in a restaurant, dorm room, or bus stop should be motivated
+to learn more about Zcash; that is the goal.
+
+To conclude this update, below is an excerpt of an email that I sent to one
+of the artists. The excerpt will give you a better sense of what I'm trying
+to accomplish with this project.
+
+*I've been thinking about those great WWII posters that encourage citizens
+to keep quiet:*
+
+*Seymour R. Goff, "Loose LIPS might Sink Ships" (1941)*
+<http://digital.hagley.org/posterexhibit_054?solr_nav%5Bid%5D=b900b71bfd3ad802b209&solr_nav%5Bpage%5D=0&solr_nav%5Boffset%5D=4>
+
+
+*Glenn Grohe, "HE'S WATCHING YOU" (1942)
+<https://www.nh.gov/nhsl/ww2/ww57.html>*
+
+*Frederick Siebel, "SOMEONE TALKED!" (1942)*
+<https://collection.cooperhewitt.org/objects/18612741/>
+
+*Credit cards don't respect our financial privacy. Our credit card
+purchases are used by marketers to target us. The original cryptocurrency,
+Bitcoin, respects financial privacy more than credit cards, but because all
+Bitcoin transactions are publicly available for anyone to see, Bitcoin
+still puts our financial privacy at risk. Payment systems like credit cards
+and Bitcoin are "talkative" about our finances.*
+
+*Zcash, on the other hand, is more like paper cash: it is "quiet".*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190228/75857bba/attachment.html>
+
+From radoslaw.michalski at pwr.edu.pl  Thu Feb 28 15:23:58 2019
+From: radoslaw.michalski at pwr.edu.pl (=?UTF-8?Q?Rados=c5=82aw_Michalski?=)
+Date: Thu, 28 Feb 2019 21:23:58 +0100
+Subject: [ZcF-general] Grant project progress report: platform for zcash
+ blockchain analysis
+Message-ID: <a5604efb-c2b6-91a2-7325-6c4bc4c74f2c@pwr.edu.pl>
+
+Dear All,
+
+In this e-mail we would like to update you on the progress of the tool
+for zcash blockchain analysis platform (GrantProposals-2018Q2, grant
+proposal #39).
+
+Since last report (sent on 2019-01-21):
+- we finalized the e-mail registration & confirmation module
+- we started to implement endpoints providing the core functionalities
+of the platform
+
+However, due to an accident I had at the beginning of February, some
+works progressed slower than I anticipated, since I was unable to work
+for around three weeks on the endpoints (other areas of development were
+not affected).
+
+In about a month we believe to offer most important endpoints for
+performing complex network analysis based on zcash blockchain data.
+
+Just a reminder where to look for the project code:
+https://github.com/bergplace/Dru
+
+Greetings,
+Radoslaw Michalski & team
+
+
+
+From derrick at anypay.global  Thu Feb 28 16:25:27 2019
+From: derrick at anypay.global (=?UTF-8?Q?Derrick_Freeman?=)
+Date: Thu, 28 Feb 2019 21:25:27 +0000
+Subject: [ZcF-general] Shielded ZCash at Retail Getting Close! | Feb Grant
+ Progress
+References: <mail.5c7851c7.20e0.4fca445c5c07eaac@storage.wm.amazon.com>
+Message-ID: <0100016935ff752a-b34490c2-085b-453c-b415-d94e57f3e375-000000@email.amazonses.com>
+
+Hey all,
+
+?
+Our Zcash mission:
+
+?
+Enable you to pay for goods and services at brick-and-mortar stores using shielded Zcash! More importantly, to give business owners and cashiers instant peace-of-mind that they were paid the correct amount by a customer. They will feel secure and confident even if the customer paid with super secret zcash and even if?the merchant does not have their wallet handy.
+
+In February, we?progressed toward this goal. We are closing in, and the end is in sight.?Our engineers?successfully paid test invoices using shielded Zcash.
+
+?
+In test one,?Zcash was successfully sent from a shielded address to a shielded address and was detected by our system, resulting in a delightful "PAID" message. This means you can pay for goods?using shielded Zcash and have it end up in the merchant's wallet still in its shielded form. Pretty cool.
+
+?
+In test two,?Zcash was successfully?sent from a transparent address to a?shielded address, and bang -- same thing. The monitor correctly recognized payment to the Z-address.?This means that a merchant can set a shielded address for their business, and their customers can pay them with transparent or shielded Zcash, and it will not matter which they send -- it will all end up as shielded Zcash in their wallet.?
+
+?
+There is a little?configuring we have to do with our API?to make sure the PAID screen appears with?payments to z-addresses.
+
+?
+Best,
+?
+Derrick J. Freeman
+
+Team Anypay
+
+?
+?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190228/be1a1efe/attachment.html>
+
+From mikael at johansson.lc  Thu Feb 28 18:04:32 2019
+From: mikael at johansson.lc (Mikael Johansson)
+Date: Fri, 1 Mar 2019 00:04:32 +0100
+Subject: [ZcF-general] February Update: Electrum for Zcash
+Message-ID: <CAPHiqsMhJvgXpXvrm1TK07Br3aQok4wYtge28qo4FAcUofP6jg@mail.gmail.com>
+
+Hi folks,
+
+Not much progress this month unfortunately for two reasons; limited time
+and unforeseen difficulties.
+
+I will try to discuss my issues with the electrum developers the coming
+week or two and then deliver first release by end of march.
+
+Regards,
+
+Mikael Johansson
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190301/c15d72ac/attachment-0001.html>
+
+From sonya at zfnd.org  Thu Feb 28 19:41:46 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Thu, 28 Feb 2019 16:41:46 -0800
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_Februa?=
+ =?utf-8?q?ry=2C_2019?=
+Message-ID: <CAOztXWhJtv2XS0yS9t=uOf77T=w-zpAG8zGcqZLfWzqenr_rGw@mail.gmail.com>
+
+Hello everyone! Here's what the Zcash Foundation has been up to this month.
+As usual, it's in roughly chronological order; this time I included dates
+to make that more clear.
+
+2/5
+The Foundation's statement on the counterfeiting vulnerability found in
+Zcash, which we published after the Electric Coin Company's disclosure:
+https://www.zfnd.org/blog/sprout-disclosure/
+
+2/7
+Henry de Valence joined the Foundation as Principal Cryptographic
+Researcher: https://www.zfnd.org/blog/henry-de-valence/
+
+2/11
+We announced a partnership with KZen Networks to bring n-of-n multisig to
+Zcash: https://www.zfnd.org/blog/kzen-multisig/
+
+2/11
+Executive Director Josh Cincinnati wrote a script for auditing Zcash
+supply: https://github.com/acityinohio/auditthezed
+
+2/12
+Ian Miers' article on the weaknesses of decoy-based privacy schemes was
+posted on the Foundation's website, after its initial publication by Token
+Daily: https://www.zfnd.org/blog/blockchain-privacy/
+
+2/12
+We confirmed that our contribution to the Monero Konferenco was received:
+https://twitter.com/ZcashFoundation/status/1095502755588755458
+
+2/15
+Josh proposed changes to the Zcash Improvement Proposal process:
+https://github.com/zcash/zips/pull/206
+
+Feedback is more than welcome! We are writing a blog post, to be published
+soon, explaining why ZIPs matter and their role in Zcash governance. ZIPs
+will be key to protocol development going forward.
+
+2/19
+Henry published "Flexible precomputation for verification checks":
+https://medium.com/@hdevalence/flexible-precomputation-for-verification-checks-1eadb9505a17
+
+2/22
+The Android version of zec-qt-wallet is available!
+https://twitter.com/zecqtwallet/status/1099025819802918912
+(Not a direct effort by Foundation staff, but we financially support the
+project.)
+
+2/26
+Josh talked about the Foundation on an episode of the Decentralize This!
+podcast:
+https://blog.enigma.co/decentralize-this-episode-21-josh-cincinnati-c191523363c7
+
+2/28
+We stated our support for the ZKProof Standards project, and encouraged
+people to participate in their second event:
+https://www.zfnd.org/blog/zkproof-standards-workshop/
+
+2/28
+One of the Foundation's most recent grant recipients dropped out, and we
+updated our announcement to reflect that:
+https://www.zfnd.org/blog/q2-grant-winners/
+
+That's all. Let us know if you have any questions or comments by replying
+to this email (or the subsequent thread in the Zcash Community Forum).
+Lastly, if you haven't done so already, consider attending or speaking at
+Zcon1! https://www.zfnd.org/blog/zcon1-announcement/
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190228/1f03d34f/attachment.html>
+
+From james at summa.one  Thu Feb 28 17:31:35 2019
+From: james at summa.one (James Prestwich)
+Date: Thu, 28 Feb 2019 14:31:35 -0800
+Subject: [ZcF-general] Riemann
+Message-ID: <CAJ=0iaDDuU5ddXJJ1ofr78+gN+-DNnWrB5DG+hrS3+7G36uZPQ@mail.gmail.com>
+
+This month I wrote a quick example of creating and spending an HTLC on
+sapling using Riemann:
+
+https://gist.github.com/prestwich/7474d0a01da904e668bbfb2b30593ad3
+
+For those interested, we recently released riemann-keys, a simple
+bip32/39/44-compatible library. It'll help you create keys, and produce
+signatures. Combined with riemann, it can easily be used for dev on the
+zcash mainnet.
+
+https://github.com/summa-tx/riemann-keys
+
+Best,
+James
+-- 
+
+
+James Prestwich
+
+Summa - Founder
+
+[image: phone-16.png]
+
++1-470-263-6930
+
+[image: location-16.png]
+
+San Francisco, CA
+
+[image: linkedin.png] <https://www.linkedin.com/in/prestwich/>  [image:
+twitter.png] <https://twitter.com/_prestwich>  [image: github_alt.png]
+<https://github.com/prestwich>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190228/2d93e2e9/attachment.html>
+
+From ayo at boltlabs.io  Fri Mar  1 02:45:01 2019
+From: ayo at boltlabs.io (J. Ayo Akinyele)
+Date: Fri, 1 Mar 2019 02:45:01 -0500
+Subject: [ZcF-general] February Update: implementing anonymous payment
+ channels
+Message-ID: <CAJVTvHuSVKUh0cfDXuQacFpQvisoUqJezzx0JMZS55TDwu5Edg@mail.gmail.com>
+
+Progress as of February 28, 2019
+
+
+Dear All,
+
+
+In February, I continued working on a PoC for Bolt implementation on top of
+a fork of Zcash running in a private testnet. The initial implementation to
+figure out the on-chain txs and channel operations aspects is based on
+rust-lightning with libbolt integrated and rust-bitcoin forked to support
+Zcash network. Also, getting help on a basic implementation using Python
+with the same features for the purposes of testing. Both will be completed
+in March and tests/user guides will follow to get community feedback.
+
+
+Please let me know if there are any questions.
+
+
+Thanks,
+
+Ayo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190301/6ce7ac10/attachment.html>
+
+From ericvaughn at pm.me  Fri Mar  1 14:42:28 2019
+From: ericvaughn at pm.me (ericvaughn at pm.me)
+Date: Fri, 01 Mar 2019 19:42:28 +0000
+Subject: [ZcF-general] Pay With Zcash
+Message-ID: <GZWzPJQ1SToclXL-zRqEljtcfe2hyXjsTuY7QbzBwFz7Bdjq8UX4lcaerPXxlrrBLWwZ7L1NyGfrq2XrC_hQM38fK_QfcWOPx33khDY0kug=@pm.me>
+
+Pay With Zcash
+
+Progress as of March 1, 2019
+
+- Merchants and non-profits that accept Zcash increased from 180 last month to 227 currently.
+
+- Enabled upvoting.  Please help other Zcash users know which listings are reputable by upvoting where you?ve had a good experience.
+
+- Hosting and domain registration still secured through 2023.
+
+- Helped Martin Hill Inn, a B&B in Portsmouth, NH, set up a Zcash wallet so they can accept Zcash through Anypay.   Other new listings include Immodestea (teas), Greitai.lt (flights), Financially Clean (financial education), Pepper Works (vinyl records+), and What Bitcoin Did (podcast).
+
+Thanks,
+
+Eric Vaughn
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190301/fa4dcfa1/attachment.html>
+
+From sonya at zfnd.org  Tue Mar  5 05:48:15 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Tue, 5 Mar 2019 02:48:15 -0800
+Subject: [ZcF-general] The "why" of the ZIP process changes
+Message-ID: <CAOztXWiUDo+vVDEnDHLVZeKJL7JbpuzTh3yu64CR4xEb-NfStw@mail.gmail.com>
+
+An important Zcash Foundation blog post on future protocol development and
+governance: https://www.zfnd.org/blog/new-zip-process/
+
+> Ideally, all future consensus and upgrade changes will go through the ZIP
+process. It will constitute an open, standardized path for evaluating and
+deciding what goes into Zcash.
+
+Chime in here: https://github.com/zcash/zips/pull/206
+
+Or here:
+https://forum.zcashcommunity.com/t/updated-zip-process-proposal/32750
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190305/1df0de36/attachment.html>
+
+From solar at openwall.com  Wed Mar  6 15:15:11 2019
+From: solar at openwall.com (Solar Designer)
+Date: Wed, 6 Mar 2019 21:15:11 +0100
+Subject: [ZcF-general] Grant project update - new PoW scheme
+In-Reply-To: <20190206215704.GA14775@openwall.com>
+References: <20190106141332.GA4658@openwall.com>
+ <20190206215704.GA14775@openwall.com>
+Message-ID: <20190306201511.GA17369@openwall.com>
+
+Hi,
+
+This is my third status report on GrantProposals-2018Q2 #25 "review,
+tweaks, and maybe design of a new PoW scheme for Zcash."
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25
+
+New this time is the plain C implementation of ProgPoW that I put
+together based on upstream's README.md and more, and just pushed here:
+
+https://github.com/solardiz/c-progpow
+
+This includes a test program I wrote for Ethash DAG initialization and
+ProgPoW, which currently produces a test vector matching upstream
+ProgPoW's test-vectors.md.  I intend to do more testing and tweaking,
+and then use this tree for my experiments, such as on potential tweaks
+to ProgPoW itself.  This source tree is much smaller and much more
+focused on ProgPoW itself than the 3 other trees/implementation I listed
+under "Related work", so it is a better fit for my further work.
+
+This also served as validation of correctness of the partial spec found
+in ProgPoW's README.md, where I found and fixed (via a PR) only 5 really
+minor issues.  I am impressed.
+
+On Wed, Feb 06, 2019 at 10:57:04PM +0100, Solar Designer wrote:
+> Benchmark results
+> https://github.com/ifdefelse/ProgPOW/issues/26
+> 
+> The benchmark results show that the two new GPUs were actually required.
+> The older GPUs also still present in the machine (Titan Kepler and Titan
+> X Maxwell) achieve good speeds at 1 GB DAG size, but no longer achieve
+> sane speeds at the 3 GB DAG size currently used by Ethereum (and
+> presumably Zcash would use no smaller than that if it switches to
+> ProgPOW).  Those older GPUs do have more than enough memory (6 GB and
+> 12 GB, respectively), but somehow are several times slower than current
+> ones at this test.  We might investigate this later.  Maybe some tuning
+> will help.
+
+The slowdown on older GPUs with larger DAG size turned out to be a
+well-known issue for both Ethash and ProgPoW, related to too small page
+or fragment size on those older GPUs/drivers (I guess a page table no
+longer fits in a cache).
+
+I suggested a potential way to workaround the issue at high level on the
+GitHub issue above, but haven't yet heard back on that idea.  I briefly
+tried to experiment with it myself, with no luck yet.
+
+Meanwhile, I successfully got roughly the same speeds as upstream was
+getting out of the Vega 64 card now in the HPC Village machine, by
+tweaking its performance settings via the sysfs interface.  This makes
+me more comfortable with trying out ProgPoW tweaks, having roughly the
+same baseline performance that upstream has.  This is also described on
+the GitHub issue referenced above.
+
+It's a pity that ProgPoW upstream dropped out of the grants program.
+They're responding to issues/PRs on their own GitHub, so I am puzzled as
+to why they'd keep "radio silence" with Zcash.  What worries me is that
+this probably taints ProgPoW for Zcash's consideration, and thus might
+make my own work useless as it relates to its possible use by Zcash
+itself.  However, I'll continue with the project, especially considering
+that in my understanding these grants are supposed to benefit an
+ecosystem larger than Zcash's alone.
+
+Alexander
+
+From gordon.dov at gmail.com  Fri Mar  8 23:59:08 2019
+From: gordon.dov at gmail.com (Dov Gordon)
+Date: Fri, 8 Mar 2019 23:59:08 -0500
+Subject: [ZcF-general] January udpate
+Message-ID: <7d787c5c-a9bd-f9c6-6b92-311e872b1b84@gmail.com>
+
+
+**Project update for project #36: An alternative approach to analyzing 
+anonymity in cryptocurrencies February Update: * **
+
+Tasks completed:
+
+-- We have identified an extension of the base protocol that will allow 
+the desired trade-off between round complexity and the number of mix-ins 
+in the ring signature.
+
+-- We have begun proving the security of this extended protocol.
+
+
+Issues to address
+
+-- We need to address how increased communication rounds can be 
+incorporated into the blockchain without requiring as many blocks as we 
+have communication. ?(I.e. we would like to keep some of this 
+communication ?off chain.?)
+
+-- We need to consider the implications of our security definition. 
+ ?What are the weaknesses and strengths?
+
+-- We will begin writing up our results for publication.
+
+*
+
+Foteini, Dov and Mayank.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190308/da6a64ba/attachment.html>
+
+From sonya at zfnd.org  Thu Mar 28 14:40:09 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Thu, 28 Mar 2019 11:40:09 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_March?=
+ =?utf-8?q?=2C_2019?=
+Message-ID: <CAOztXWgcPivZ6O1vw3p47Rub+Z5xiucUQELanFO+PDJYaNDZ2g@mail.gmail.com>
+
+Hello everyone! Here's what the Zcash Foundation has been up to this month.
+
+3/5
+We explained how ZIPs (Zcash Improvement Proposals) are important to Zcash
+governance: https://www.zfnd.org/blog/new-zip-process/
+
+If you want a say in future Zcash changes, definitely read it.
+
+3/7
+Anna Kaplan joined us as a technical intern! She'll be working on the
+Parity Zcash implementation for the time being:
+https://www.zfnd.org/blog/anna-kaplan-welcome/
+
+3/11
+The Foundation is sponsoring a cryptocurrency research series undertaken by
+the Human Rights Foundation:
+https://www.zfnd.org/blog/human-rights-foundation-privacy-research/
+
+3/15
+We debuted ZF Grants, our new platform for grants and community funding!
+Here's how it works: https://www.zfnd.org/blog/zf-grants-open-beta/
+
+A list of promising grant ideas that we'd love to see fleshed out into
+proposals: https://www.zfnd.org/grants/
+
+3/18
+Video of Executive Director Josh Cincinnati talking about Zcash governance,
+at the MIT Bitcoin Expo: https://www.youtube.com/watch?v=ZRqrRU4iHs8 (the
+talk itself was earlier in March)
+
+3/19
+zec-qt-wallet rebranded to ZecWallet. The Foundation sponsored the creation
+of new how-to videos. And we took a moment to celebrate ZecWallet's rapid
+progress: https://www.zfnd.org/blog/zec-wallet-progress/
+
+3/22
+Anna Kaplan (mentioned above) and Marek Kotewicz from Parity gave a joint
+talk at Zero Knowledge Summit, discussing the new Zcash node
+implementation: https://youtu.be/4UUsCklWR5Y?t=2285
+
+3/26
+Two of us attended a Zcash meetup organized by the Bay Area Zcash Users
+group: https://twitter.com/ZcashFoundation/status/1110719493406220289
+
+That's all for now! As always, questions and comments are welcome.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190328/e17b7903/attachment.html>
+
+From james at summa.one  Thu Mar 28 19:18:38 2019
+From: james at summa.one (James Prestwich)
+Date: Thu, 28 Mar 2019 16:18:38 -0700
+Subject: [ZcF-general] March Update -- Riemann
+Message-ID: <CAJ=0iaDV5WM0zfMpU0QUm3xiYMPbifX94zHMJqHy=etKZQ_NKw@mail.gmail.com>
+
+By way of educational material this month, I wrote a quick primer on script
+sigs in Bitcoin and Zcash. I know that Zcash eventually intends to
+deprecate t-addrs, but z-addrs can't yet enforce all the functionality of
+Script.
+
+What is a ScriptSig anyway?
+<https://gist.github.com/prestwich/009986c2c5321434758fc17c37861f58>
+
+James
+-- 
+
+
+James Prestwich
+
+Summa - Founder
+
+[image: phone-16.png]
+
++1-470-263-6930
+
+[image: location-16.png]
+
+San Francisco, CA
+
+[image: linkedin.png] <https://www.linkedin.com/in/prestwich/>  [image:
+twitter.png] <https://twitter.com/_prestwich>  [image: github_alt.png]
+<https://github.com/prestwich>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190328/18614e5b/attachment.html>
+
+From zcash at adityapk.com  Fri Mar 29 18:35:27 2019
+From: zcash at adityapk.com (adityapk)
+Date: Fri, 29 Mar 2019 22:35:27 +0000
+Subject: [ZcF-general] ZecWallet March update
+Message-ID: <8mnR7UL_lMsF5fVMv0Wk_xz4nRX98KAt6fZ-6F3gEzHbnW0aylNT7825USH9m2zIvxhV8miww916pLe4KqlD4slHDlLThU5K-dsbCtWxDZE=@adityapk.com>
+
+Lots of improvements for ZecWallet this month
+
+ZecWallet:
+- Rename to ZecWallet, with a new logo!
+- Launch the ZecWallet doc site (https://docs.zecwallet.co) (Gareth) and the usage videos (Dimitris)
+ - Experimental headless mode with ZecWallet to allow nodes that can run in the background and connect to your phone
+- Add rescan / reindex options in the UI for troubleshooting
+- Automatic URI handling for the zcash: protocol in Win, Linux, Mac, Android
+- Support for requesting money (and paying requests), Venmo style!
+- Update zcashd to 2.0.4
+- Remove Sprout receiving support
+
+ZecWallet Android:
+ - Allow replying to and composing messages on Android
+ - Payment URIs support
+ - Improve wormhole performance and connection longetivity
+
+Others:
+- A new repo (https://github.com/adityapk00/codesign) to allow easy codesigning using gpg for binary releases
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190329/58cc4be1/attachment.html>
+
+From radoslaw.michalski at pwr.edu.pl  Sun Mar 31 04:41:24 2019
+From: radoslaw.michalski at pwr.edu.pl (=?UTF-8?Q?Rados=c5=82aw_Michalski?=)
+Date: Sun, 31 Mar 2019 10:41:24 +0200
+Subject: [ZcF-general] Grant project progress report: platform for zcash
+ blockchain analysis - march
+Message-ID: <48acccd6-83c1-6635-b959-1fe840776c91@pwr.edu.pl>
+
+Dear All,
+
+In this e-mail we would like to update you on the progress of the tool
+for zcash blockchain analysis platform (GrantProposals-2018Q2, grant
+proposal #39).
+
+Since last report (sent on 2019-02-28):
+- we worked on the endpoints
+- we tuned the task processing system
+
+Apart from the above, we are waiting for the security recommendations - an analysis is being performed at the moment and we hope to receive the recommendations soon.
+
+As we are now mostly focused on the endpoints, they should be ready in about 2-3 weeks. However, in order to provide the full functionality, we still need some time and believe that we'll be able to share the platform as a service in May.
+
+Just a reminder where to look for the project code:
+https://github.com/bergplace/Dru
+
+Greetings,
+Radoslaw Michalski & team
+
+
+
+From mikael at johansson.lc  Sun Mar 31 18:28:58 2019
+From: mikael at johansson.lc (Mikael Johansson)
+Date: Mon, 1 Apr 2019 00:28:58 +0200
+Subject: [ZcF-general] #21 Electrum for Zcash - Grant Progress Report
+Message-ID: <CAPHiqsOizv=UHp=xD2xgk3scY-JACrLizPKV7tkrDHY6cR1WKA@mail.gmail.com>
+
+Dear All,
+
+In this e-mail I update you on the initiative to fork the light client
+Electrum for Zcash (
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/21 )
+
+Since the last report I have started discussing my issues with people
+possessing expertise in Electrum. The character of the work has been more
+human networking than any other networking. I will refrain from doing any
+calendar estimation this time.
+
+Stick around for coming updates.
+
+Kind regards,
+
+Mikael
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190401/73629c77/attachment.html>
+
+From hloo007 at gmail.com  Mon Apr  1 01:00:42 2019
+From: hloo007 at gmail.com (Howard Loo)
+Date: Sun, 31 Mar 2019 22:00:42 -0700
+Subject: [ZcF-general] Grant Progress Report (March 2019): Zcash Posters
+Message-ID: <CAE178mW1_w1gf3mvxjTXHyXMH1JJUju4aphD9+15=LwEef_wjg@mail.gmail.com>
+
+The artist has begun working on the Zcash posters. The goal is to have the
+first three finished by the end of April, well ahead of Zcon1, so they can
+be printed and displayed at the conference. Next month, I hope to show you
+the first three posters.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190331/708344cc/attachment.html>
+
+From derrick at anypay.global  Mon Apr  1 11:21:47 2019
+From: derrick at anypay.global (=?UTF-8?Q?Derrick_Freeman?=)
+Date: Mon, 1 Apr 2019 15:21:47 +0000
+Subject: [ZcF-general] Paying with Shielded Zcash at Brick and Mortar Stores
+ (Anypay March Update)
+References: <mail.5ca22c8a.3925.30de73d417a95b93@storage.wm.amazon.com>
+Message-ID: <01000169d97e0016-584ab96d-bdca-4cc2-881d-d533d6d3e503-000000@email.amazonses.com>
+
+Hey all,
+
+?
+Our Zcash mission:
+
+?
+Enable you to pay for goods and services at brick-and-mortar stores using shielded Zcash! More importantly, to give business owners and cashiers instant peace-of-mind that they were paid the correct amount by a customer. They will feel secure and confident even if the customer paid with super secret zcash and even if?the merchant does not have their wallet handy.
+
+?
+In March, the dream became a lot closer to reality. Now that the ZecWallet is available, users can actually pay from a mobile device instead of lugging around their laptops to pay with shielded Zcash ? not very practical! Our engineers?successfully paid test invoices using shielded Zcash using the ZecWallet! This is exactly the way it would work in stores.
+
+?
+Thanks to the work completed this month, our developers can now send successful test payments to a merchant who has a Z-address set or a T-address set. 
+
+?
+But what if the merchant wants to present the customer with a t-address? After all, if the customer is using Coinomi or some other wallet, they probably can?t pay a Z-address, even if they wanted to. 
+
+?
+That is the challenge for April: Allow a merchant to set which type of address to display to the customer so that everyone who wants to can pay with Zcash, not just the super cool people like you who have the ZecWallet.
+
+?
+Best,
+
+?
+Derrick J. Freeman
+
+?
+Team Anypay
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190401/14b5b790/attachment.html>
+
+From ericvaughn at pm.me  Mon Apr  1 12:57:56 2019
+From: ericvaughn at pm.me (ericvaughn at pm.me)
+Date: Mon, 01 Apr 2019 16:57:56 +0000
+Subject: [ZcF-general] Pay With Zcash
+Message-ID: <Om27399fHNX_TYRW5cY2wbCwJEkEfEzub1fUcrbVni38XEhLYMRgDymfWk_CPpdGlShNW2LxpNT2sX61obAtyN0GFN9RqCggRs1DyP34_cg=@pm.me>
+
+Pay With Zcash
+
+[https://paywithz.cash](https://paywithz.cash/)
+
+Progress as of April 1, 2019
+
+- Added a live search box.  Quickly find what you're looking for by typing a store name, descriptor, category, or even partial word.
+- Item descriptions.   Hover the cursor over any item and a short description will appear.
+- Tagged "new" listings.   New listings this month include The Tor Project, HODL Fuel coffee, 35?North olive oil, apartments in Hurghada, Egypt, and the Methuselah Foundation.
+- Merchants and non-profits that accept Zcash increased from 227 last month to 242 currently.
+
+Thanks,
+
+Eric Vaughn
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190401/6f706ef7/attachment.html>
+
+From diegooalmada at gmail.com  Tue Apr  2 19:01:55 2019
+From: diegooalmada at gmail.com (Diego Almada)
+Date: Tue, 2 Apr 2019 16:01:55 -0700
+Subject: [ZcF-general] Pay With Zcash
+In-Reply-To: <Om27399fHNX_TYRW5cY2wbCwJEkEfEzub1fUcrbVni38XEhLYMRgDymfWk_CPpdGlShNW2LxpNT2sX61obAtyN0GFN9RqCggRs1DyP34_cg=@pm.me>
+References: <Om27399fHNX_TYRW5cY2wbCwJEkEfEzub1fUcrbVni38XEhLYMRgDymfWk_CPpdGlShNW2LxpNT2sX61obAtyN0GFN9RqCggRs1DyP34_cg=@pm.me>
+Message-ID: <CAM6nfuwkrt_UeZQGF6Lz0MiAQ_CC94ypOJ02bpFxjHkjbdTruw@mail.gmail.com>
+
+How do I unsubscribe?
+On Mon, Apr 1, 2019 at 09:59 eric via general <general at lists.zfnd.org>
+wrote:
+
+> Pay With Zcash
+> https://paywithz.cash
+>
+> Progress as of April 1, 2019
+>
+>    - Added a live search box.  Quickly find what you're looking for by
+>    typing a store name, descriptor, category, or even partial word.
+>    - Item descriptions.   Hover the cursor over any item and a short
+>    description will appear.
+>    - Tagged "new" listings.   New listings this month include The Tor
+>    Project, HODL Fuel coffee, 35?North olive oil, apartments in Hurghada,
+>    Egypt, and the Methuselah Foundation.
+>    - Merchants and non-profits that accept Zcash increased from 227 last
+>    month to 242 currently.
+>
+> Thanks,
+>
+> Eric Vaughn
+>
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190402/e9c682b7/attachment.html>
+
+From sonya at zfnd.org  Wed Apr  3 01:21:26 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Tue, 2 Apr 2019 22:21:26 -0700
+Subject: [ZcF-general] Pay With Zcash
+In-Reply-To: <CAM6nfuwkrt_UeZQGF6Lz0MiAQ_CC94ypOJ02bpFxjHkjbdTruw@mail.gmail.com>
+References: <Om27399fHNX_TYRW5cY2wbCwJEkEfEzub1fUcrbVni38XEhLYMRgDymfWk_CPpdGlShNW2LxpNT2sX61obAtyN0GFN9RqCggRs1DyP34_cg=@pm.me>
+ <CAM6nfuwkrt_UeZQGF6Lz0MiAQ_CC94ypOJ02bpFxjHkjbdTruw@mail.gmail.com>
+Message-ID: <CAOztXWjTgk9HEfRyc3qZ+hPrZqZ1NuY-oug7GhN1suW6rmMpMg@mail.gmail.com>
+
+Hi Diego,
+
+You can unsubscribe from this page ? the last section:
+/mailman/listinfo/general
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+
+
+On Tue, Apr 2, 2019 at 4:02 PM Diego Almada via general <
+general at lists.zfnd.org> wrote:
+
+> How do I unsubscribe?
+> On Mon, Apr 1, 2019 at 09:59 eric via general <general at lists.zfnd.org>
+> wrote:
+>
+>> Pay With Zcash
+>> https://paywithz.cash
+>>
+>> Progress as of April 1, 2019
+>>
+>>    - Added a live search box.  Quickly find what you're looking for by
+>>    typing a store name, descriptor, category, or even partial word.
+>>    - Item descriptions.   Hover the cursor over any item and a short
+>>    description will appear.
+>>    - Tagged "new" listings.   New listings this month include The Tor
+>>    Project, HODL Fuel coffee, 35?North olive oil, apartments in Hurghada,
+>>    Egypt, and the Methuselah Foundation.
+>>    - Merchants and non-profits that accept Zcash increased from 227 last
+>>    month to 242 currently.
+>>
+>> Thanks,
+>>
+>> Eric Vaughn
+>>
+>>
+>>
+>>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190402/5f409877/attachment.html>
+
+From solar at openwall.com  Sat Apr  6 10:12:20 2019
+From: solar at openwall.com (Solar Designer)
+Date: Sat, 6 Apr 2019 16:12:20 +0200
+Subject: [ZcF-general] Grant project update - new PoW scheme
+In-Reply-To: <20190306201511.GA17369@openwall.com>
+References: <20190106141332.GA4658@openwall.com>
+ <20190206215704.GA14775@openwall.com> <20190306201511.GA17369@openwall.com>
+Message-ID: <20190406141220.GA12875@openwall.com>
+
+Hi,
+
+This is another update on GrantProposals-2018Q2 #25 "review, tweaks, and
+maybe design of a new PoW scheme for Zcash."
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25
+
+On ProgPoW's (under-)use of GPUs' compute power:
+
+On Wed, Mar 06, 2019 at 09:15:11PM +0100, Solar Designer wrote:
+> New this time is the plain C implementation of ProgPoW that I put
+> together based on upstream's README.md and more, and just pushed here:
+> 
+> https://github.com/solardiz/c-progpow
+
+I improved, cleaned up, and ran more tests of c-progpow, and used hacks
+of it to run some simulations on ProgPoW as-is and on some potential
+tweaks to it.  c-progpow now collects and prints some statistics on math
+operations and memory accesses.
+
+Using the statistics from c-progpow and a hashrate seen on Vega 64, I
+calculated exactly how little use of the integer multipliers ProgPoW
+makes.  If we set maximizing use of the multipliers on a given GPU as
+our goal (which there are good reasons for), then the theoretical
+potential for improvement on the Vega 64 may be up to 68x in terms of
+arbitrary multiplies, which is a lot:
+
+"Make greater use of MADs"
+https://github.com/ifdefelse/ProgPOW/issues/34
+
+(On other GPUs it'd be similar.  I just needed to pick an example.)
+
+However, there are plenty of issues and constraints that will likely
+limit the improvement to a much lower figure.  On that GitHub issue, I
+also brought up potential use of floating-point once again, and got
+helpful responses from @ifdefelse.  I think we're on the same page
+regarding the set of issues and constraints now.  Switching to use of
+FP32 multiplies (or multiply-adds) might be the way to go for using the
+multipliers optimally across a variety of GPUs, but it is really tricky
+to do right.  For more detail, see comments on that issue.
+
+On (repairing) Ethash's and ProgPoW's performance drop on older GPUs:
+
+> On Wed, Feb 06, 2019 at 10:57:04PM +0100, Solar Designer wrote:
+> > Benchmark results
+> > https://github.com/ifdefelse/ProgPOW/issues/26
+> > 
+> > The benchmark results show that the two new GPUs were actually required.
+> > The older GPUs also still present in the machine (Titan Kepler and Titan
+> > X Maxwell) achieve good speeds at 1 GB DAG size, but no longer achieve
+> > sane speeds at the 3 GB DAG size currently used by Ethereum (and
+> > presumably Zcash would use no smaller than that if it switches to
+> > ProgPOW).  Those older GPUs do have more than enough memory (6 GB and
+> > 12 GB, respectively), but somehow are several times slower than current
+> > ones at this test.  We might investigate this later.  Maybe some tuning
+> > will help.
+> 
+> The slowdown on older GPUs with larger DAG size turned out to be a
+> well-known issue for both Ethash and ProgPoW, related to too small page
+> or fragment size on those older GPUs/drivers (I guess a page table no
+> longer fits in a cache).
+> 
+> I suggested a potential way to workaround the issue at high level on the
+> GitHub issue above, but haven't yet heard back on that idea.  I briefly
+> tried to experiment with it myself, with no luck yet.
+
+I experimented with it some more, and got success at recovering the
+speed on NVIDIA Maxwell (aka GTX 9xx series GPUs, or two generations
+behind from latest RTX 2xxx):
+
+https://github.com/ifdefelse/ProgPOW/issues/26#issuecomment-480382319
+
+Specifically, combining a minor cleanup to untie the different
+parameters, a parameters tweak, and a code hack (not yet final, but
+works for proof-of-concept), I got a 3x+ speedup on Titan X Maxwell (up
+from 4.0M to 12.3M or even to 12.5M) at a cost of maybe a 3.5% slowdown
+on GTX 1080 (down from 15.15M to 14.6M).  This is at block number 7M.
+I ask: "Is this possibly adequate enough speed for some miners to
+reconsider using Maxwell again?"  I don't know the answer.  When I got
+"only" a 65% speedup before, a miner quickly pointed out that they've
+fully moved from Maxwell to Pascal by now, and performance increase on
+Maxwell is irrelevant and isn't worth any (not even tiny) slowdown on
+Pascal.  I don't know if other miners share this sentiment as well or
+not.  Also, this sentiment might be specific to Ethereum miners, who had
+to switch to newer GPUs by now, whereas miners of other altcoins might
+not have had to, yet those altcoins might consider ProgPoW as well.
+
+The maybe-slowdown of a few percent on some newer GPUs won't necessarily
+persist along with this major speedup on Maxwell.  To me, ProgPoW isn't
+otherwise final yet - I am considering many other tweaks - so performance
+differences of a few percent might be premature to take seriously.
+
+Disclaimer: in absence of test vectors for this revised code that we'd
+compare against a pure host-side implementation, it's always possible
+that I made some error and the code doesn't actually behave as I assume
+it does, which would invalidate the benchmark results.  These results
+are consistent with my expectations, and make sense to me, but they'd
+need to be verified.
+
+On Linzhi's Ethash ASICs and their (flawed) evaluation of ProgPoW:
+
+A week ago, @Sonia-Chen from Linzhi made a lengthy Medium post and a
+GitHub thread comment here:
+
+https://github.com/ifdefelse/ProgPOW/issues/24#issuecomment-477998643
+
+The analysis sort of claims that ProgPoW adds only on the order of 1%
+of cost (die area, power) to ASICs, as compared to Ethash.  Further
+comments in that thread (by others and by me) point out many flaws in
+the analysis (some costs not considered, some numbers off by a factor of
+4), so its result is indeed bogus.  However, the approach looks correct
+to me, and with the flaws corrected it could show ProgPoW adding little -
+just not that little - except for one major difference between Ethash
+and ProgPoW that wasn't considered (more on it a few paragraphs below).
+
+Linzhi also announced Ethash ASICs with truly impressive performance:
+
+"Ethash Miner Announcement, ETC Summit Seoul, September 2018
+Specs: Ethash, 1400 MH/s, 1000 Watts, price commitment 4-6 months ROI.
+Schedule: 12/2018 TapeOut, 04/2019 Samples, 06/2019 Mass Production."
+
+This translates to a 10x'ish improvement in energy-efficiency over
+current most suitable GPUs.  (BTW, this greatly exceeds ProgPoW
+designers' expectation that only a ~2x improvement over GPUs would be
+possible for Ethash.)
+
+As I understand, and totally non-surprisingly, Linzhi haven't (yet?)
+disclosed how they achieved that result.  Most notably, how they tackled
+the memory bandwidth requirement of Ethash.  I posted several guesses to
+that GitHub thread (maybe helping them or some other ASIC manufacturer,
+even though I'm no ASIC expert) on how they might have achieved the
+required external memory bandwidth or avoided the need.
+
+I ended up with what I think is the most likely guess: they exploited
+the optimization pointed out on Nov 15, 2018 by none other than Marc
+Bevand (who wrote the SILENTARMY Zcash miner, the winning GPU entry to
+Zcash's mining competition):
+
+https://github.com/ifdefelse/ProgPOW/pull/13
+
+With this, an Ethash ASIC unit can split the memory across multiple ASIC
+dies without requiring the full bandwidth between the dies.
+
+ProgPoW 0.9.1+ includes a fix preventing this optimization.
+
+I now think this tiny fix might very well be the biggest advantage
+ProgPoW actually has over Ethash.  Everything else (including ProgPoW's
+use of compute resources and its programmability) pales in comparison.
+
+Alexander
+
+From sonya at zfnd.org  Wed Apr 17 19:17:47 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Wed, 17 Apr 2019 16:17:47 -0700
+Subject: [ZcF-general] =?utf-8?q?Open_Invitation_=E2=80=94_Zcash_Protocol?=
+ =?utf-8?q?_Discussion?=
+Message-ID: <CAOztXWgQLhJN7jKWzTjMFzsKP5SWBNo4gBTLcgCX6u+N0kw7Wg@mail.gmail.com>
+
+Hello friends! The Zcash Foundation is hosting an open discussion of the
+Zcash protocol, particularly with respect to upcoming changes and decisions.
+
+DATE: Tuesday, May 21
+
+TIME:
+? 10am ? 11:30am PT
+? 11am ? 12:30pm MT
+? 1pm ? 2:30pm ET
+? 6pm ? 7:30pm GMT
+
+DEADLINE: Tuesday, April 30
+
+Fill out this form to join: https://forms.gle/D963vJzCA4wCadcs8 (calendar
+invite forthcoming after you fill out the form ? I know, forms are
+annoying, but it's a quick one)
+
+Thanks all! I hope that you can make it!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190417/d77d62d9/attachment.html>
+
+From gordon at gmu.edu  Fri Apr 19 02:13:03 2019
+From: gordon at gmu.edu (Samuel D Gordon)
+Date: Fri, 19 Apr 2019 06:13:03 +0000
+Subject: [ZcF-general] March Update
+Message-ID: <a8f4cee2-4481-186d-1310-e950b69c7f61@gmu.edu>
+
+March Update:
+
+We thought about the meaning of our security definition, based in part upon this comment by Ian Miers<https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/36#issuecomment-393334620>.   Our thinking is that the strength of our system depends almost entirely on the size of the mix-in that we can support.  Of course, if my mix-in is small enough that, later, nobody else in my mix-in spends in the same shops that I spend in, the security is greatly reduced.  Similarly, if only a few thousand zcash keys are shielding, then even if you use a ZKP to ?mix-in? the entire set, your anonymity is only as good as the size of your mix-in.  And, to take the opposite extreme, if our protocol is efficient enough to support mixing a very large fraction of the entire network, this would be similar to using a ZKP to prove that a large fraction of the network could have made some payment.  Our hope is that we can support a large enough mix-in to claim something comparable to other systems.
+
+
+Unfortunately, though, our initial findings indicate that the amount of noise required might be a deal killer when building a system that simultaneously achieves strong anonymity and cheap payments.   We plan to try a few things to move forward:
+
+  *   We are going to see what we can do to lower the noise, either by changing the protocol, or by changing the noise distribution.
+
+  *   We?re going to see whether our \sqrt(n) variant gives something useful.  (So far, we don?t think so though.)
+
+  *   We?re going to see if our construction at least allows us to claim some asymptotic improvement over naive mixing alternatives.
+
+  *   We will estimate the exact noise requirements for small sizes of mix-ins, i.e., n=50, as traditionally estimated in some related work (e.g. Dicemix)
+
+Dov, Foteini, Mayank
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190419/e37341eb/attachment.html>
+
+From ayo at boltlabs.io  Fri Apr 26 16:24:02 2019
+From: ayo at boltlabs.io (J. Ayo Akinyele)
+Date: Fri, 26 Apr 2019 16:24:02 -0400
+Subject: [ZcF-general] March & April Update: implementing anonymous payment
+ channels
+Message-ID: <CAJVTvHuSLn-XH5Qd5crhn+kZ00gmqYY65U9CXrdcEYstYy1ZeQ@mail.gmail.com>
+
+Progress as of April 26, 2019
+
+We submitted an initial zip proposal for adding BOLT support
+<https://github.com/boltlabs-inc/zips/blob/master/zip-bolt-support.rst> to
+Zcash ZIP process at the end of March. The proposal describes the features
+we need for building channels using shielded addresses (and transparent for
+backward compatibility with Bitcoin). Our goal within the next few weeks is
+to complete the initial proposal with more details regarding the use of
+shielded addresses only as we work towards NU3 deployment.
+
+Therefore, the current reference implementation for testnet uses shielded
+inputs with multi-sig T-addr for funding the channel. Adding an OP_BOLT
+opcode to our Zcash fork for checking the correctness of channel opening
+and closing (but evaluating how much we can do off-chain and if we can rely
+only on standard signatures for on-chain transactions). We are also
+revising the abstract protocol and how its instantiated on a currency to
+simplify potential deployment.
+
+Lastly, still working on a bare-bones reference implementation in Python
+for creating and managing payment channels on top of Zcash. It is currently
+in a private repo that will be made public once v1 is complete (hopefully,
+soon) and it builds on a Python/C FFI libolt
+<https://github.com/boltlabs-inc/libbolt> interface and riemann
+<https://github.com/summa-tx/riemann> package (many thanks to James
+Prestwich). Rust or Go Bolt implementation will follow.
+
+Please reach out at info at boltlabs.io if there are any questions.
+
+Thanks,
+Ayo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190426/21ba7332/attachment.html>
+
+From derrick at anypay.global  Tue Apr 30 13:48:12 2019
+From: derrick at anypay.global (=?UTF-8?Q?Derrick_Freeman?=)
+Date: Tue, 30 Apr 2019 17:48:12 +0000
+Subject: [ZcF-general] Shielded Zcash at Retail - April Update [Zcash
+ Foundation Grant]
+References: <mail.5cc88a5b.7264.2c99c9e27160a842@storage.wm.amazon.com>
+Message-ID: <0100016a6f5c791d-787f8809-41fd-4f9f-8f20-f6beec2ed46b-000000@email.amazonses.com>
+
+Happy news! Are you sitting down? Good.
+
+?
+Imagine: You walk into your favorite store, pick out some cool sunglasses, walk up to the register, and pay with shielded Zcash before walking out the door to greet the world with your cool new shades on.
+
+?
+This is not a dream. This is real. And it is active right now!
+
+?
+Shielded Zcash is now available to any retail store or business! No ID required, no bank account, not even an email address! Totally private digital cash.
+
+?
+Tell your favorite cafe, bar, or restaurant. Tell your favorite thrift shop, upscale boutique, or salon. Tell your friends, tell your enemies, tell the world!
+
+?
+Zcash, the way you always wanted, is now yours.
+
+?
+How it works:
+
+?
+1) A business downloads the Anypay app from the app store (iOS, Android, or web).
+
+2) Owner scans or pastes their Zcash address. (t- or z- style)
+
+?
+That?s it! The whole setup process from start to finish takes about 30 seconds.
+
+?
+Take unlimited payments!
+
+?
+Empower customer privacy!
+
+?
+Be super cool!
+
+?
+Payments end up right in the merchant?s wallet, even if the merchant doesn?t know how to use Z-addresses. Your payments get to be shielded, and they get to stack up the Zcash in transparent form in their Coinomi wallet (if they want to).
+
+?
+Don?t believe me. Try it for yourself. You will not believe how stupidly simple it is, and how fast!
+
+?
+This not only *can* work for retail businesses, it already *does*!
+
+?
+Two places currently openly advertise that they accept shielded Zcash using Anypay (our free Point of Sale app):
+
+?
+One is a French Restaurant and Cafe, La Maison Navarre in Portsmouth, New Hampshire
+
+?
+The other is a, um, Tobacconist. Portsmouth Smoke and Vape in Portsmouth, New Hampshire
+
+?
+Not surprisingly, these stores are both located in Anypay?s home town. We work closely with these merchants to test in real life whether or not our POS is good enough for prime time. Well guess what. It is.
+
+?
+So by next month, we hope to see more than just these two. But we will need your help. Our app is free. We do not charge a fee for use to either the merchant or the customer. That means we rely on people like you to tell your favorite businesses about us. To help you, we made a handy website you can send them to that will tell them everything they need to start taking Zcash at their business.
+
+?
+https://HelpMeTakeZcash.com
+
+?
+Okay, that?s it. I hope you enjoyed the news. Please hit me back with any feedback you may have after trying out Anypay. I think you?re going to love it.
+
+Oh, one more thing! This would not be possible without ZecWallet, and the man behind it. ZecWallet is an app that enables anyone to easily use shielded zcash. Download it for your Mac, Windows, or Linux machine, sync with the Zcash blockchain, and then pair with the Android app available in the Google Play store. Then you are ready to use shielded Zcash on your mobile! Without it, Anypay's merchant POS would not be very exciting for Zcash users, as users would only be able to pay with transparent addresses. Not as cool as shielded, right? So thank you, ZecWallet, for making life more fun.
+
+?
+All my love,
+
+?
+Derrick J. Freeman
+
+Product Manager, Anypay Inc.
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190430/de7a3d6b/attachment.html>
+
+From sonya at zfnd.org  Tue Apr 30 22:00:03 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Tue, 30 Apr 2019 19:00:03 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_April?=
+ =?utf-8?q?=2C_2019?=
+Message-ID: <CAOztXWi5bTiEt7As7nF1QhBE-SfGs--hmWzR08YLVH1OBaRDgA@mail.gmail.com>
+
+Hello friends! As usual, here's the rundown of public-facing Zcash
+Foundation activities. Getting ready for Zcon1 has been a big internal
+focus, and preparations will continue until the event in late June.
+
+4/9
+Speaking of Zcon1, we published the speaker list and agenda, which is being
+updated in real time:
+https://docs.google.com/document/d/1Hcsi2Bd0CNuUuPiCKMavHOByFMnTsKkM6_Rw165_oe8/
+
+Apply for an invitation now, if you haven't already!
+https://www.zfnd.org/zcon/
+
+4/10
+Blockgeeks published an interview with Zcash Foundation Executive Director
+Josh Cincinnati: https://www.youtube.com/watch?v=5jdfDMRfQQY
+
+> Ameer Rosic sits down with Josh Cincinnati of the Zcash Foundation to
+talk privacy, censorship, and new payment technologies. Josh discusses the
+importance of digital cash and anonymity in an increasingly digital world.
+Other topics include threats to blockchain, stablecoins, and D.C. traffic.
+
+4/10 ? 4/12
+The second ZKProof Standards workshop, sponsored by the Foundation (among
+others), took place in early April. Foundation employees Josh Cincinnati,
+Henry de Valence, Anna Kaplan, and Sonya Mann attended. We even had a
+snazzy banner:
+https://twitter.com/ZcashFoundation/status/1116010459411304448
+
+Henry gave a talk called "Tooling Infrastructure for Zero-Knowledge
+Proofs":
+https://www.youtube.com/watch?v=WismT94w3Ho&list=PLOEty2U8Y69VKX0THZvO_liqwV3Ngf1wt&index=6&t=0s
+
+The rest of the videos are in that playlist, and you can find speaker
+slides here: https://community.zkproof.org/t/zkproof-2019-speaker-slides/167
+
+The event was extremely high-quality, and it was wonderful to see the
+growth of the zero-knowledge ecosystem.
+
+4/16
+We ran a meme contest to test out ZF Grants, and announced the winner:
+https://twitter.com/ZcashFoundation/status/1118258690841141248
+
+If you're not familiar with ZF Grants, start here:
+https://www.zfnd.org/blog/zf-grants-open-beta/
+
+Side note ? we haven't created formal, fleshed-out RFPs yet, but we
+published a list of promising ideas: https://www.zfnd.org/grants/ (scroll
+to "Grant Ideas")
+
+4/17
+The Foundation will host an open discussion of the Zcash protocol on May
+21:
+https://docs.google.com/forms/d/e/1FAIpQLScPXkdcfhMX7dmbNZxsHWM1-mDJu1HJMimKvq-AHRR6RKXDlA/viewform
+
+The deadline is today, so the form will be closed sometime tomorrow morning
+(Wednesday). If you want to participate, apply now.
+
+4/22
+Henry created a website for Merlin: https://merlin.cool/
+
+> Merlin is a STROBE-based transcript construction for zero-knowledge
+proofs. It automates the Fiat-Shamir transform, so that by using Merlin,
+non-interactive protocols can be implemented as if they were interactive.
+
+4/23
+Another interview with Josh, this time by Underscore VC:
+https://youtu.be/b2HL_K3-rwI
+
+> Underscore VC Co-Founder and Partner, Richard Dulude, sits down with Josh
+Cincinnati, Executive Director at Zcash Foundation, to talk about the
+future of blockchain and the role the Zcash Foundation will play in it.
+
+4/29
+We're sponsoring a zero-knowledge meetup in London, which will take place
+on May 1: https://www.meetup.com/Zero-Knowledge-London/events/260669657/
+
+Dated 4/29 somewhat arbitrarily, because that's when organizer Louis
+Guthmann tweeted about it:
+https://twitter.com/GuthL/status/1122826159589339137
+
+4/30
+We announced that Zcon1 tickets will increase from $500 to $600 on May 22,
+which is also the deadline for financial aid applications. Tweeted here:
+https://twitter.com/ZcashFoundation/status/1123389670212038656
+
+That's it! Thank you for your time, as always. Also as always, questions
+and comments are welcome!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190430/853ce983/attachment.html>
+
+From hloo007 at gmail.com  Wed May  1 12:06:19 2019
+From: hloo007 at gmail.com (Howard Loo)
+Date: Wed, 1 May 2019 09:06:19 -0700
+Subject: [ZcF-general] Grant Progress Report (April 2019): Zcash Posters
+Message-ID: <CAE178mUjhT=7J6n1f1U2Bwibhopx1r=KW-1eeU=GDhwFTOtEWw@mail.gmail.com>
+
+In the month of April, the artist completed the first six posters. Once
+some legal issues are finalized (the trademark license from the ECC and the
+copyright license that the artist will release the posters under), I will
+publish the posters. You'll be free to download them and print them out
+yourselves and no charge, or you can purchase prints from the artist's
+website.  Expect the posters to be released by the end of May.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190501/8a72614e/attachment.html>
+
+From ericvaughn at pm.me  Wed May  1 13:10:02 2019
+From: ericvaughn at pm.me (ericvaughn at pm.me)
+Date: Wed, 01 May 2019 17:10:02 +0000
+Subject: [ZcF-general] Pay With Zcash May 1 Update
+Message-ID: <ZycVPpGMpbXKg9h6Vq5Y-3wLKKtvdp1FYOBV-G-Th59HykIBWRqp7WORtH77DtiPzgo6AjBqwz33sQHTKMNFacDxMJvW5Up4Qu0WQ9j9XiQ=@pm.me>
+
+Pay With Zcash
+https://paywithz.cash
+Progress as of May 1, 2019
+
+- Merchants and non-profits that accept Zcash increased from 242 last month to 255 currently.   In one year, the number has grown 10x.  We're starting to see quality merchants that offer practical every-day items like coffee, food, and music in exchange for $ZEC.
+- New listings this month:  Crypto Jobs List, Chabad of Humbolt, Liberty Lobby, Jay?s Jerky, Zero Knowledge Podcast, Zeroconfs Clothing, CryptoLife, Cryptocurrency Posters, We Shop With Crypto, White Mountains Helicopter Tours, Manyverse, Steve Dressler Music, and NJ Swingsets.
+- Followed up with many merchants to see if they can still accept Zcash.   Some, like the Seasteading Insitute, have changed management and no longer accept Zcash, therefore they have been removed from the directory.   There's nothing more frustrating than a directory that is outdated or leads users astray.
+- Worked on SEO.   The site is the #1 or #2 result in search engines Google, Bing, and DuckDuckGo for ?pay with Zcash? and also near the top for "spend Zcash" and "where to spend Zcash."
+- Pay With Zcash was linked to on the [Electric Coin Company's Spend Zcash](https://z.cash/spend-zcash/) page and mentioned in Elise's excellent ECC article [Zcash Enables Charitable Giving](https://z.cash/blog/zcash-empowers-charitable-giving/).
+
+Worked on SEO.   The site is at the top or #2 when you search Google, Bing, or DuckDuckGo for ?pay with zcash?.
+Thanks,
+Eric Vaughn
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190501/ca1f032e/attachment.html>
+
+From adityapk at protonmail.com  Fri May  3 19:20:57 2019
+From: adityapk at protonmail.com (adityapk)
+Date: Fri, 03 May 2019 23:20:57 +0000
+Subject: [ZcF-general] ZecWallet April Update
+Message-ID: <JeXaScrc4VMd-M1bpPurmbJWH2mhp0AxjLLMK_mVNSC7FZFsf_iEzeAsNrQ0luXe-uZtkvUvh1ZTqsxeSX3q7TWSBYiZsOgKUM9-4UZq294=@protonmail.com>
+
+There were 4 releases of ZecWallet last month, mostly small bugfixes. Here's the consolidated release notes:
+
+- Fix an issue where the direct connection from Android to desktop wouldn't work
+- Fix the autoupdate notification
+- Fix signature verification instructions (Thanks [@rex4539](https://github.com/rex4539))
+- Fix an issue where sometimes Android would fail to connect to the desktop
+- Fix the name "ZecWallet" in the mobile UI
+- Force light mode on Mac since the dark mode still seems to be having problems
+- Fix an issue with URI parsing on the desktop that was preventing some merchant URIs from being accepted
+- Fix an access violation caused by incorrect socket closure
+- Improve random password generation
+- Show a warning on the balances page if node is still syncing
+- Add a --conf command line argument to override which zcash.conf to load
+- Fix some memory access violations
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190503/c4e3d470/attachment.html>
+
+From solar at openwall.com  Mon May  6 16:15:21 2019
+From: solar at openwall.com (Solar Designer)
+Date: Mon, 6 May 2019 22:15:21 +0200
+Subject: [ZcF-general] Grant project update - new PoW scheme
+In-Reply-To: <20190406141220.GA12875@openwall.com>
+References: <20190106141332.GA4658@openwall.com>
+ <20190206215704.GA14775@openwall.com> <20190306201511.GA17369@openwall.com>
+ <20190406141220.GA12875@openwall.com>
+Message-ID: <20190506201521.GA16401@openwall.com>
+
+Hi,
+
+This is another update on GrantProposals-2018Q2 #25 "review, tweaks, and
+maybe design of a new PoW scheme for Zcash."
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25
+
+This time, I thought of and experimented with a floating-point hack of
+ProgPoW.  As expected, it's complicated to get it right.  I arrived at
+some conclusions I recently posted as comments to:
+
+On Sat, Apr 06, 2019 at 04:12:20PM +0200, Solar Designer wrote:
+> "Make greater use of MADs"
+> https://github.com/ifdefelse/ProgPOW/issues/34
+
+Specifically, to reasonably switch to using FP it appears that ProgPoW
+needs to be redesigned to no longer have its one and the same inner
+loop, but to have a larger "unrolled" function generated by its
+"compiler", where floating-point constraints could be enforced at
+irregular intervals just as needed to meet the constraints on never
+potentially getting unsafe values (uncertainty or fatal entropy loss).
+Also, to continue indexing the ProgPoW cache - which is an important
+component of ProgPoW's computational cost - a few (perhaps very few)
+registers would need to remain with integers.  I included more detail,
+along with pros and cons of this approach, in a comment to the issue.
+
+As I shared in another comment, while staying with integers only I'm
+only able to get to a (geometric) middle point between official
+ProgPoW's MUL/s rate and theoretical maximum FP32 MUL/s rate: ~7x
+higher than original, but still ~9x lower than theoretical maximum.
+(Of course, that theoretical maximum is for FP32 and not INT32, and it
+assumes not doing any other work, whereas we need to do lots of that.)
+
+> On (repairing) Ethash's and ProgPoW's performance drop on older GPUs:
+[...]
+> I experimented with it some more, and got success at recovering the
+> speed on NVIDIA Maxwell (aka GTX 9xx series GPUs, or two generations
+> behind from latest RTX 2xxx):
+> 
+> https://github.com/ifdefelse/ProgPOW/issues/26#issuecomment-480382319
+> 
+> Specifically, combining a minor cleanup to untie the different
+> parameters, a parameters tweak, and a code hack (not yet final, but
+> works for proof-of-concept), I got a 3x+ speedup on Titan X Maxwell
+
+I've started to maintain an unofficial fork of ProgPoW with a more
+elaborate revision of this change and more in the "maxwell" branch here:
+
+https://github.com/solardiz/ProgPOW
+
+Another change I included is "Index cache with byte offsets", which also
+breaks compatibility with official ProgPoW, but I hope will be accepted
+upstream (for a new spec revision) as it provides a 1% speedup on new
+GPUs (and further 2% speedup on Maxwell) with no ill effects, as far as
+I can tell.  I propose it upstream here:
+
+https://github.com/ifdefelse/ProgPOW/issues/40
+
+Yet another topic I arrived at an opinion on and brought up for
+discussion with upstream is "Make cache content vary per-hash":
+
+https://github.com/ifdefelse/ProgPOW/issues/41
+
+Both of these are described in detail on the issues above, with
+rationale and pros and cons (well, there are no cons for #40).
+
+In related news, I heard of a planned ProgPoW audit by Least Authority:
+
+https://github.com/ethereum-cat-herders/progpow-audit
+https://medium.com/ethereum-cat-herders/progpow-audit-goals-expectations-75bb902a1f01
+
+I'm in contact with Least Authority via e-mail, but as of this writing I
+don't know what that project's status is - including not whether it got
+funded to a sufficient extent or not.
+
+Regardless, as I tweeted last month, this is similar to yet different
+from my work.  As I understand, theirs will focus on ProgPoW as-is,
+whereas I focus on tweaking ProgPoW.  I think the projects can co-exist.
+
+Alexander
+
+From james at summa.one  Tue May  7 12:52:30 2019
+From: james at summa.one (James Prestwich)
+Date: Tue, 7 May 2019 09:52:30 -0700
+Subject: [ZcF-general] Riemann April update
+Message-ID: <CAJ=0iaDLsPo6+f3BLE=4buTa_CWKPvirwecyxRirnctmagNb5A@mail.gmail.com>
+
+Main updatfor riemann this month:
+
+We have a WIP PR to add type-hints to the codebase, and are adding mypy to
+the pre-commit checks.
+
+We also wrote a guide to standardness in Bitcoin. The concept still applies
+in Zcash, although the rules are slightly different.
+https://medium.com/summa-technology/the-bitcoin-non-standard-6103330af98c
+
+Best,
+James
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190507/0bcecdca/attachment.html>
+
+From radoslaw.michalski at pwr.edu.pl  Sun May 12 05:03:52 2019
+From: radoslaw.michalski at pwr.edu.pl (=?UTF-8?Q?Rados=c5=82aw_Michalski?=)
+Date: Sun, 12 May 2019 11:03:52 +0200
+Subject: [ZcF-general] Grant project progress report: platform for zcash
+ blockchain analysis - April
+Message-ID: <f548e9ad-3090-c890-e971-f268f1ea56a7@pwr.edu.pl>
+
+Dear All,
+
+In this e-mail we would like to update you on the progress of the tool
+for zcash blockchain analysis platform (GrantProposals-2018Q2, grant
+proposal #39).
+
+Since last report (sent on 2019-03-31):
+- we still work on the endpoints
+- we are also wait for the security recommendations
+- we plan to make the platform available for everyone by the end of May
+
+Apart from that, on May 10th we presented research topics for
+prospective master students at our university and we expect to extend
+the group by new students which will be performing variety analyses of
+Zcash during their research. The beta version of the Dru platform was
+also presented and described and it will be also used by them in their work.
+
+Just a reminder where to look for the project code:
+https://github.com/bergplace/Dru
+
+Greetings,
+Radoslaw Michalski & team
+
+
+
+From dagarne.osvik at uni.lu  Tue May 21 18:48:13 2019
+From: dagarne.osvik at uni.lu (Dag Arne Osvik)
+Date: Wed, 22 May 2019 00:48:13 +0200
+Subject: [ZcF-general] Status update - Update of the Equihash Algorithm (#38)
+Message-ID: <e7f4f164-7ba5-9ae2-6651-062b3b6ef8d4@uni.lu>
+
+Dear all,
+
+Here is the current status for project #38:
+
+- My focus so far is to make a really good GPU implementation of 
+Equihash 144,5.
+
+- Right now the speed of hashing and writing to main memory corresponds 
+to 118 sol/s for Equihash 144,5 on a 1080 Ti. This is the only 
+processing-intensive part of the solver, leaving most of the bandwidth 
+for the matching stages. The resulting data structure passes 
+verification performed on the CPU side.
+
+- The hashing code is in inline PTX (assembler portable between GPU 
+generations), and further speedup is possible by going down to SASS 
+(generation-specific assembler), but this is already fast enough that it 
+makes more sense to complete the solution finding first.
+
+- I have been refining the algorithm for the matching stages over and 
+over innumerable times to find an approach that matches the rather 
+complex (and under-documented) high-latency memory hierarchy of GPUs. 
+The result is an algorithm that parallelises almost all reading and 
+writing for all memories. There is very little computation, so hopefully 
+there will not be much slowdown due to contention between hashing and 
+matching.
+
+- Expected main memory bandwidth requirement is below 5 GiB per 2 solutions.
+
+- I suspect the overall structure of a future FPGA implementation will 
+be similar to my current design for GPU.
+
+- I have now started implementing a simplified version of the matching 
+algorithm, aiming to have it working as soon as possible so I can move 
+on to the final stage of rebuilding solutions.
+
+Best regards,
+Dag Arne
+
+From sonya at zfnd.org  Sat Jun  1 01:21:37 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Fri, 31 May 2019 22:21:37 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Monthly_Update_?=
+ =?utf-8?b?4oCUIE1heSwgMjAxOQ==?=
+Message-ID: <CAOztXWhez9QZJjUygP+tfPqkt8iZNDAaeki_u9GZHgxs0MQC0A@mail.gmail.com>
+
+Hello friends! Another month, another rundown of Zcash Foundation
+activities. Spoiler: The most exciting announcements are at the end.
+
+5/9
+
+Coda and Dekrypt Capital announced the SNARK Challenge, sponsored by the
+Zcash Foundation and a few other organizations:
+https://coinlist.co/build/coda
+
+"A global competition to speed up the SNARK prover," with more than $100k
+in the prize pool.
+
+Coda CTO Izaak Meckler made a video about the SNARK Challenge:
+https://www.youtube.com/watch?v=81uR9W5PZ5M
+
+5/9
+
+The second installment of the Human Rights Foundation's series on privacy
+and cryptocurrency was published:
+https://medium.com/human-rights-foundation-hrf/privacy-and-cryptocurrency-part-ii-bitcoin-wallets-2f68099b055f
+
+We funded this initiative, which is being written by HRF Privacy Technology
+Fellow Eric Wall. Background info:
+https://www.zfnd.org/blog/human-rights-foundation-privacy-research/
+
+The next installment is going to be about privacy-preserving
+cryptocurrencies like Zcash and Monero!
+
+5/10
+
+The Open Money Initiative, sponsored by the Zcash Foundation among other
+organizations, debuted the results of their research on cryptocurrency
+usage in Venezuela. OMI's blog post:
+https://medium.com/@openmoneyinitiative/announcing-the-open-money-initiative-61422b58ad06
+
+CoinDesk article:
+https://www.coindesk.com/whats-holding-back-bitcoin-in-venezuela-this-group-is-investigating
+
+5/14
+
+Alongside Paige Peterson from the Electric Coin Company, Josh Cincinnati
+(the Foundation's Executive Director) spoke at Consensus 2019. You can see
+the video here: https://www.coindesk.com/events/consensus-2019/videos (scroll
+down to the video labeled "Electric Coin Company and Zcash Foundation" in
+the "Construct" section)
+
+5/14
+
+Also on the Construct stage at Consensus, Zcash Foundation board member
+Peter Van Valkenburgh said, "As a director of the Zcash Foundation I don't
+want Zcash developers to build a system that maximizes the value of Zcash.
+I want them to build the best damn privacy coin they can. That's the
+problem with a fiduciary duty of loyalty."
+
+Quote via Lane Rettig on Twitter:
+https://twitter.com/lrettig/status/1128691797495025664
+
+5/21
+
+"We are delighted to announce that Deirdre Connolly has joined the Zcash
+Foundation as a Core Engineer. [...] At the Zcash Foundation, Deirdre will
+be taking ownership of the all-Rust implementation of Zcash and turning it
+into a production-quality project."
+
+More details: https://www.zfnd.org/blog/welcome-deirdre/
+
+5/21
+
+The second Zcash Protocol Hangout happened, and the video has been
+published: https://www.youtube.com/watch?v=3FnwW6VvSho
+
+The group primarily discussed Blossom and NU3 ZIPs. Paige from the ECC
+(mentioned earlier) took notes:
+https://docs.google.com/document/d/1qik04RpQr_rmPuEOo9FejIlCFK1Pv0LSTjA4qGao-EI/edit
+
+The next one is likely to be planned for August.
+
+5/23
+
+We joined the social network Cent, and got a great response from the
+community: https://beta.cent.co/+tesygi
+
+5/25
+
+Bola-Ige Alabi-Efeshodiamhe repped Zcash at the Blockchain, AI & Digital
+Assets Summit in Nigeria:
+https://twitter.com/bolaigeaefe/status/1132307394254528512
+
+5/29
+
+New wallet! ?
+
+"The Zcash Foundation is delighted to announce Zepio Wallet, a
+shielded-first, cross-platform Zcash wallet that includes a full `zcashd`
+node. [...] Zepio is currently available for macOS, Windows, and Linux."
+https://www.zfnd.org/blog/zepio-wallet/
+
+Technical choices and development process:
+https://medium.com/@andreneves/announcing-zepio-zcash-wallet-bfd836f6609c
+
+5/30
+
+"ZF Grants now supports the Zcash mainnet! [...] You can transact with real
+$ZEC on the platform." https://www.zfnd.org/blog/zf-grants-is-ready/
+
+People have already submitted proposals: https://grants.zfnd.org/proposals
+
+On the Zcash Community Forum, a discussion of grant ideas:
+https://forum.zcashcommunity.com/t/faq-around-grant-ideas/33648
+
+That's all for now!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190531/1e248089/attachment.html>
+
+From hloo007 at gmail.com  Sat Jun  1 02:44:30 2019
+From: hloo007 at gmail.com (Howard Loo)
+Date: Fri, 31 May 2019 23:44:30 -0700
+Subject: [ZcF-general] Grant Progress Report (May 2019): Zcash Posters
+Message-ID: <CAE178mXMEGCM2GV7aH-LH_tHWbX50pjRFdnuA06bPKXweVThfg@mail.gmail.com>
+
+In May, I worked with the artist to finalize the first seven Zcash posters.
+I am aiming to publish those seven posters next week.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190531/b1d10c3f/attachment.html>
+
+From gordon at gmu.edu  Fri Jun 21 10:38:15 2019
+From: gordon at gmu.edu (Samuel D Gordon)
+Date: Fri, 21 Jun 2019 14:38:15 +0000
+Subject: [ZcF-general] May update
+Message-ID: <7079607f-1cc8-6c45-6a7a-c61fa8cd9b1d@gmu.edu>
+
+We have continued working on our paper.  While thinking about how to analyze our scheme, we realized that our framework doesn?t have to be applied on top of ring signatures / monero per se.  Any method for fully anonymous mixing among a small set can be composed to provide mixing for a much larger set, with differential privacy. The trade-off is security for efficiency: for n parties to fully mix their coins using ZKP (whether with SNARKS or ring signatures) require O(n) expensive operations per party.  Using our approach, we require polylog n operations per party, but leak some information.
+
+
+We have also improved on our construction, further reducing the computational cost by about a factor of 10 (depending on the choice of epsilon).  Currently, we believe we can claim improved computation cost for any n > 1600 participants in the mixing.
+
+
+Issues to address:
+
+  *   We are still looking at ways to reduce the needed noise.
+
+  *   With the recent introduction of short ring signatures (log size), our construction will have worse communication complexity than existing schemes.  We don?t really see a way to address this, and will instead analyze the savings in computational cost, and the relative importance of this savings.
+
+  *   We still need to think about how much of our communication needs to be put on the blockchain, vs. what can be done off chain.  This was less of a concern prior to the introduction of log-sized ring signatures.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190621/9c81c5c8/attachment.html>
+
+From solar at openwall.com  Thu Jun 27 12:14:46 2019
+From: solar at openwall.com (Solar Designer)
+Date: Thu, 27 Jun 2019 18:14:46 +0200
+Subject: [ZcF-general] Grant project update - new PoW scheme
+In-Reply-To: <20190506201521.GA16401@openwall.com>
+References: <20190106141332.GA4658@openwall.com>
+ <20190206215704.GA14775@openwall.com> <20190306201511.GA17369@openwall.com>
+ <20190406141220.GA12875@openwall.com> <20190506201521.GA16401@openwall.com>
+Message-ID: <20190627161446.GA30976@openwall.com>
+
+Hi,
+
+This is another update on GrantProposals-2018Q2 #25 "review, tweaks, and
+maybe design of a new PoW scheme for Zcash."
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25
+
+Upstream/reference ProgPoW implementation does not include a mode where
+it'd output the computed hashes.  Rather, it is a hack of an Ethereum
+miner, so it tries to mine, and expects to never find a hash below the
+target (if it does, it fails, because its verification on CPU hasn't
+been updated from Ethash's).  With this, there was no way of knowing
+whether it actually computes the hashes correctly.  Further, I had no
+means to test my tweaks for correct computation either.
+
+To get around this, I wrote my own debugging code as a hack to upstream
+ProgPoW, now proposed here:
+
+Add progpow-debug.diff, which outputs digest for a fixed header and nonce
+https://github.com/ifdefelse/ProgPOW/pull/46
+
+Then I proceeded with additional correctness testing of ProgPoW upstream
+implementation against c-progpow and of upstream's CUDA against OpenCL.
+
+This uncovered issues with the OpenCL implementation: the kernel was
+being built for a wrong ProgPoW period most of the time (a bug in
+ProgPoW), and further it was often miscompiled when targeting AMD GPUs
+(a bug in AMD's "driver").  The issues turned out to be semi-known, yet
+unfixed and undocumented.  This partially invalidates some earlier
+OpenCL benchmarks.
+
+Since last update, I got 5 PRs merged into upstream ProgPoW, including 2
+fixing the issues mentioned above:
+
+Compile OpenCL kernels for correct ProgPoW period seed
+https://github.com/ifdefelse/ProgPOW/pull/44
+
+Workaround miscompiles with AMD OpenCL
+https://github.com/ifdefelse/ProgPOW/pull/45
+
+and 3 more with cleanups that do not affect computation:
+
+Don't redefine and misuse ETHASH_MIX_BYTES
+https://github.com/ifdefelse/ProgPOW/pull/35
+
+Have progPowHash() (pseudo-)code return "result", not "digest"
+https://github.com/ifdefelse/ProgPOW/pull/39
+
+Add "Build and Test Instructions"
+https://github.com/ifdefelse/ProgPOW/pull/47
+
+I also rebased my tweaked ProgPoW on top of the revised upstream code.
+
+I intend to wrap up this project soon, but I'm not done yet.
+
+Alexander
+
+From hloo007 at gmail.com  Wed Jul  3 02:03:38 2019
+From: hloo007 at gmail.com (Howard Loo)
+Date: Tue, 2 Jul 2019 23:03:38 -0700
+Subject: [ZcF-general] Grant Progress Report (June 2019): Zcash Posters
+Message-ID: <CAE178mXkb-N0qWE7Qm4nvF49vxCmT1dw-+boqoiN5OsUJukeig@mail.gmail.com>
+
+A total of seven Zcash posters were published on June 6! You can view and
+download them all here:
+
+https://www.zcashposters.com
+
+This will be my last monthly update, but there will likely be new posters
+added to the collection in the coming months. When a new poster become
+available, I will notify this list.
+
+I would like to thank the Zcash Foundation for funding this project!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190702/3344e88f/attachment.html>
+
+From sonya at zfnd.org  Thu Jul  4 01:28:26 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Wed, 3 Jul 2019 22:28:26 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Monthly_Update_?=
+ =?utf-8?b?4oCUIEp1bmUsIDIwMTk=?=
+Message-ID: <CAOztXWhdV+ufeMhECcdJq5aV5-Jxjb2TrVsbJGQTVxwE2Vq6Xw@mail.gmail.com>
+
+Hello friends! Apologies for this monthly update being late. We wanted to
+include a blog post recapping Zcon1, since the event was a big part of the
+Zcash Foundation's June. But that will have to wait until next week, since
+the photos aren't ready to publish. There will be a Zcon1 section in this
+email, but bare-bones compared to the recap.
+
+By the way, if you're interested in Zcash governance and development
+funding, you should join the discussion of options for the future:
+https://forum.zcashcommunity.com/c/community-collaboration/protocol
+
+And please check out the proposals on ZF Grants:
+https://grants.zfnd.org/proposals
+
+Feedback and questions are encouraged! If you like a proposal, consider
+pledging some ZEC. The Foundation's hope is that Zcash community members
+and ecosystem participants will use ZF Grants to "vote" (so to speak, not
+literally) on which grant proposals are the most promising.
+
+And now, the actual monthly update:
+
+6/4
+"Zcash Governance: A Step Toward Decentralization"
+https://www.zfnd.org/blog/multisig-governance/
+
+The "2-of-2 multisig" metaphor for cryptocurrency governance, and what that
+means in practice.
+
+6/8
+"Two Bounties Awarded and a ZF Grants Update"
+https://www.zfnd.org/blog/grant-platform-update/
+
+> Paper wallet generator for Zcash ? 299.49 ZEC contributed by the
+Foundation (in USD, a little over $25,000 at the time of writing)
+
+?
+https://grants.zfnd.org/proposals/575713843-zcash-sapling-offline-paperwallet-generatator
+? https://github.com/adityapk00/zecpaperwallet
+
+> Point-of-sale application for Zcash ? 13.35 ZEC contributed by the
+Foundation (a little over $1,000 at the time of writing)
+
+? https://grants.zfnd.org/proposals/651588973-zcash-point-of-sale
+? https://github.com/ChileBob/Zatsuma
+?
+https://forum.zcashcommunity.com/t/zcash-point-of-sale-prototype-funded/33019
+
+6/17
+"Zebra, the New Consensus-Compatible Zcash Node Client"
+https://www.zfnd.org/blog/zebra-zcash-node-client/
+
+> The Zcash Foundation and Parity Technologies are proud to present Zebra,
+a consensus-compatible Zcash node client written in Rust, released under
+the GPL 3.0 license. The Electric Coin Company's implementation is no
+longer the only full-fledged Zcash node software available.
+
+GitHub repo: https://github.com/ZcashFoundation/zebra
+
+Parity's blog post:
+https://www.parity.io/parity-releases-zebra-in-collaboration-with-zcash-foundation/
+
+6/18
+"Z Wallet iOS Effort Discontinued"
+https://www.zfnd.org/blog/zwallet-ios-update/
+
+6/22
+Zcon1 begins!
+
+YouTube playlist of talks:
+https://www.youtube.com/watch?v=Ob0ajGPMLuE&list=PL40dyJ0UYTLLjPZaKjdhMoCNanb77_Ztj
+
+General chatter about the event: https://twitter.com/hashtag/zcon1
+
+6/22
+"Monero Konferenco and Zcon1 Joint Panel"
+https://www.zfnd.org/blog/joint-panel-monero-konferenco/
+
+Video: https://www.youtube.com/watch?v=DWPELgmS2uA (6/23)
+
+That's all for now! Talk soon.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190703/ac8205fd/attachment.html>
+
+From zcash at adityapk.com  Thu Jul  4 01:34:42 2019
+From: zcash at adityapk.com (adityapk)
+Date: Thu, 04 Jul 2019 05:34:42 +0000
+Subject: [ZcF-general] ZecWallet June update
+Message-ID: <tbrmCtbV9PCy6RLEJvAZ48heqqk-7IHbU4p3Y1w9kGovg-uOz5J_ovxiCKdRhDuqy7uFtLPxUWir3aQWUJgV0Nb2f2wFjJgVRAhOSm5UI7U=@adityapk.com>
+
+This month, ZecWallet made notable progress in two areas:
+
+- Fast Sync
+  - ZecWallet now has "fast sync" support for new wallets that syncs the Zcash blockchain ~33% faster. It does so by doing PoW and other checks for blocks behind a checkpoint, skipping the most expensive Tx checks (Since the user doesn't have a wallet yet)
+ - Fast sync is available in the embedded zcashd in ZecWallet
+
+- ZecPaperWallet
+ - Thanks to a generous grant from the Zcash Foundation, we shipped a offline paper wallet for Shielded (and transparent) addresses.
+  - Support for several platforms, including ARMv7, ARMv8, MacOS, Windows, Linux, TailsOS and more.
+  - A user friendly UI frontend to generate and save the paper wallets
+  - Save to PDFs or Text files
+
+- A vanity address generator for sapling addresses that can generate a sapling address with a chosen prefix.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190704/0b2d7c82/attachment.html>
+
+From solar at openwall.com  Mon Jul 22 13:58:23 2019
+From: solar at openwall.com (Solar Designer)
+Date: Mon, 22 Jul 2019 19:58:23 +0200
+Subject: [ZcF-general] Grant project update - new PoW scheme
+In-Reply-To: <20190627161446.GA30976@openwall.com>
+References: <20190106141332.GA4658@openwall.com>
+ <20190206215704.GA14775@openwall.com> <20190306201511.GA17369@openwall.com>
+ <20190406141220.GA12875@openwall.com> <20190506201521.GA16401@openwall.com>
+ <20190627161446.GA30976@openwall.com>
+Message-ID: <20190722175823.GA6446@openwall.com>
+
+Hi,
+
+The grant recipients are expected to deliver and post in here "a more
+comprehensive report 6 months after receiving funding", so here's one
+for this project summarizing the 6 monthly reports.  It's also posted
+on GitHub with more hyperlinks:
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25#issuecomment-513876705
+
+Executive summary and personal impression:
+
+The project validated ProgPoW, improved understanding of its strengths
+and weaknesses, provided a plain C implementation of it, slightly
+cleaned up the upstream GPU implementation, and identified areas for
+further tweaks.  Overall, ProgPoW is viable, but its use of GPU compute
+resources is far from optimal and its biggest advantage over Ethash
+isn't its "programmability" but rather its different than Ethash's reads
+from the DAG.  The design and implementation of ProgPoW could both still
+use some invasive tweaks and enhancements for much better results, but
+the community's motivation to work on those (or even to accept them)
+appears to have waned.  It's hard to stay motivated not knowing whether
+one's work would actually be made use of (by a major project like
+Ethereum) or not, and it's hard not to declare development done and not
+to move on since ProgPoW was introduced (with much enthusiasm) over a
+year ago.  People appear to have mostly moved on.
+
+Monthly technical reports and their summaries:
+
+1. /pipermail/general/2019/000031.html
+
+- Getting up to speed with ProgPoW and its heritage
+
+- Purchase of new GPUs (GTX 1080 and Vega 64)
+
+- Looking into Equihash parameters and making suggestions on them (as
+  Zcash's temporary second PoW for Blossom could be merely another
+  Equihash instantiation, and this needed to be decided on ASAP)
+
+2. /pipermail/general/2019/000047.html
+
+- Installation and testing of the new GPUs and required software (added
+  the GPUs to Openwall's HPC Village available to Open Source developers
+  worldwide)
+
+- Experiments with ProgPoW vs. Ethash on the new and older GPUs
+  resulting in "Build instructions" and "Benchmark results"
+
+3. /pipermail/general/2019/000061.html
+
+- Put together c-progpow, a plain C implementation of ProgPoW, based
+  on upstream's README.md and more
+
+- More experiments with ProgPoW on the GPUs with some tweaking,
+  getting it to match performance figures that others reported to have a
+  proper baseline for further work
+
+4. /pipermail/general/2019/000073.html
+
+- Analysis of how little use of the multipliers ProgPoW makes
+  (estimated as 68x lower than the theoretical peak throughput of FP32
+  multiplies would be on the Vega 64)
+
+- Getting on the same page with @ifdefelse on the set of issues and
+  constraints for starting to use floating-point
+
+- With incompatible ProgPoW tweaks, got a 3x+ speedup on Titan X
+  Maxwell (up from 4.0M to 12.3M or even to 12.5M) at a cost of maybe a
+  3.5% slowdown on GTX 1080 (down from 15.15M to 14.6M)
+
+- Looked into and commented on Linzhi's planned Ethash ASICs and their
+  (flawed) evaluation of ProgPoW
+
+- Realized that the biggest advantage ProgPoW has over Ethash has
+  nothing to do with its "programmability", but is probably @mbevand's
+  finding and fix that got into ProgPoW 0.9.1+ to prevent splitting the
+  memory across multiple ASIC dies without requiring the full bandwidth
+  between the dies
+
+5. /pipermail/general/2019/000082.html
+
+- Thought of and experimented with a floating-point hack of ProgPoW,
+  and arrived at some conclusions
+
+- While staying with integers only, managed to get to a (geometric)
+  middle point between official
+
+- ProgPoW's MUL/s rate and theoretical maximum FP32 MUL/s rate: ~7x
+  higher than original, but still ~9x lower than theoretical maximum
+
+- Started to maintain an unofficial fork of ProgPoW with a more
+  elaborate revision of the NVIDIA Maxwell speedup tweak in the
+  "maxwell" branch
+
+- Also added to the branch and proposed for inclusion upstream "Index
+  cache with byte offsets", which provides a 1% speedup on new GPUs (and
+  2% speedup on Maxwell) with no ill effects
+
+- Arrived at an opinion on and brought up for discussion with upstream
+  Make cache content vary per-hash
+
+6. /pipermail/general/2019/000089.html
+
+- Wrote debugging code as a hack to upstream ProgPoW
+
+- Proceeded with additional correctness testing of ProgPoW upstream
+  implementation against c-progpow and of upstream's CUDA against OpenCL
+
+- Uncovered issues with the OpenCL implementation: the kernel was
+  being built for a wrong ProgPoW period most of the time (a bug in
+  ProgPoW), and further it was often miscompiled when targeting AMD GPUs
+  (a bug in AMD's "driver")
+
+- Got 5 PRs merged into upstream ProgPoW, including 2 fixing the
+  issues mentioned above
+
+Alexander
+
+From daniel.feher at uni.lu  Mon Jul 29 05:07:34 2019
+From: daniel.feher at uni.lu (Daniel Feher)
+Date: Mon, 29 Jul 2019 11:07:34 +0200
+Subject: [ZcF-general] Cryptolux Project Report
+Message-ID: <CAOdzgny_LFR8Ucbg9fXc51Y6hFCs8tEC-x08ED3rftdMuwcxhQ@mail.gmail.com>
+
+In our project we have continued our earlier works on empirical analysis in
+Zcash. This work partly consisted of improving and refining our previous
+work. We have tweaked our heuristics to create an even more precise and
+verifiable mining transaction linkage, which resulted in slightly worse
+results than in our original report, but currently every linkage is done
+with a very high confidence level (while previously this confidence was
+lower). This work (titled 'Privacy and Linkability of Mining in Zcash') was
+accepted and presented at IEEE CNS 2019. The paper can be found at the
+following link: https://orbilu.uni.lu/handle/10993/39996
+
+
+Our second main area of research was mainly considering mining hardware. In
+detail, what is the mining hardware landscape, how the different GPUs and
+mining rigs are distributed. Furthermore, we have investigated the privacy
+of a single miner based on the miner's activity in the live blockchain,
+what information can be learned from it. Finally, we have investigated the
+effect of ASIC miners on the mining landscape in terms of decentralization.
+This work (titled 'Portrait of a Miner in a Landscape') was accepted and
+presented at the CryBlock 2019 workshop. The paper can be found at the
+following link: https://orbilu.uni.lu/handle/10993/39995
+
+
+These two topics were also presented at the Zcon1 conference, the talk is
+available at the following link: https://www.youtube.com/watch?v=8bydpHmP-7k
+
+Our last main topic of research consisted of active attacks on the Zcash
+blockchain. The first attack we have investigated is our previously
+presented Danaan-gift attack, which we describe with much more scrutiny
+than before. The second attack is the Dust attack, which exploits the
+publicly available number of inputs and outputs of a shielded sapling
+transaction. This work (titled 'Privacy Aspects and Subliminal Channels in
+Zcash') is part of a larger paper that is accepted and going to be
+presented at CCS 19.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190729/0b03df19/attachment.html>
+
+From radoslaw.michalski at pwr.edu.pl  Sat Aug  3 22:03:26 2019
+From: radoslaw.michalski at pwr.edu.pl (=?UTF-8?Q?Rados=c5=82aw_Michalski?=)
+Date: Sun, 04 Aug 2019 04:03:26 +0200
+Subject: [ZcF-general] Grant project report: platform for Zcash blockchain
+ analysis
+Message-ID: <c09c6edd-e235-025a-1fec-4466b462b40e@pwr.edu.pl>
+
+Dear All,
+
+This e-mail contains the final report on the Zcash blockchain analysis
+platform (GrantProposals-2018Q2, grant proposal #39).
+
+Throughout the project we created a platform (called Dru*) that
+facilitates the process of analysing blockchain data for network
+scientists and other researchers in a number of aspects:
+- centralized and always up-to-date blocks repository (delivered by the
+block engine component) provides the possibility to access the
+blockchain data without the necessity to have a local cryptocurrency
+client up and running,
+- the API endpoints let to run a number of network science queries that
+can be helpful in looking at the variety of aspects of blokchain data,
+- by the NoSQL storage of blockchain data researchers can easily perform
+their own queries if they cannot find suitable ones in the endpoints
+repository,
+- it is also possible to export the edges and import them to local
+programs created by researchers.
+
+The Dru platform consists of two main components: the block engine (MIT
+license) and the analytical platform itself (GNU GPL v3 license). It is
+contained in a Docker image, so it is portable among variety of
+platforms. Dru provides a queuing engine, so each query is being
+executed in the backend. After submitting it, the researcher gets a link
+with the details on the status of the query and can be also notified by
+e-mail about the status of it.
+
+The platform is compatible with any RPC-based altcoin client, yet the
+development and testing was made with Zcash.
+
+The code of the platform is located here:
+https://github.com/bergplace/Dru and the documentation is here:
+https://dru.readthedocs.io. Within the Zcash grant we host also an
+instance of Dru running on our server:
+https://dru.readthedocs.io/en/docs/docs/server.html
+
+The core developers of the platform are the following: Rados?aw
+Michalski (PI & developer) Marcin Pieczka (lead developer), Wojciech
+Puchta (developer) and Weronika Mruga?a (developer).
+
+Now, the Dru platform will be the main way of performing the blockchain
+analyses by BERG (https://www.bergplace.org/) and further development of
+endpoins is expected in upcoming months to make them adjusted to current
+research directions of the group. However, all the blockchain
+researchers are invited for cooperation and further development of Dru,
+as well as to suggest any new endpoints we could implement. Any feedback
+from the community is highly anticipated. We will be also promoting the
+Dru platform at upcoming scientific events/conferences.
+
+* - the name of the platform comes from the peak Aiguille du Dru in the
+French Alps
+
+Greetings,
+Radoslaw Michalski & Team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190804/60f4d5da/attachment.html>
+
+From sonya at zfnd.org  Tue Aug  6 02:02:26 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Mon, 5 Aug 2019 23:02:26 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Monthly_Update_?=
+ =?utf-8?b?4oCUIEp1bHkgKHNvcnQgb2Yp?=
+Message-ID: <CAOztXWj6fij_3AaBKKvkhgvx_ddMnws6G6+Ab8PE59OZdMHSOQ@mail.gmail.com>
+
+Hello friends! I'm a little late with this monthly update, but not
+egregiously late. Nonetheless, sorry about that.
+
+In July, based on feedback at Zcon1, I started sending weekly updates to
+the Zcash Foundation's newsletter, then cross-posting them on the Zcash
+Community Forum.
+
+I don't think it makes sense to continue compiling monthly updates for this
+mailing list, since the information will be publicly available and easily
+accessible elsewhere.
+
+If you don't want to subscribe to our newsletter, you can still view the
+weekly updates in the archive:
+https://buttondown.email/zcashfoundation/archive
+
+Or on the forum:
+https://forum.zcashcommunity.com/search?q=%22Zcash%20Foundation%20Weekly%20Update%22%20category%3A21%20order%3Alatest
+
+Just check in regularly, and you'll stay informed.
+
+Here are the Zcash Foundation's July updates:
+
+1)
+https://buttondown.email/zcashfoundation/archive/4e183d0e-82e7-4fd0-8603-07dd21d26ef4
+
+2)
+https://buttondown.email/zcashfoundation/archive/75383cd7-d3ac-4ea2-8119-11a1ae5e7180
+
+3)
+https://buttondown.email/zcashfoundation/archive/c2cf2e08-9d67-45b6-bc70-1942fe643b99
+
+If you object to the change, let me know! Otherwise, see you on the
+newsletter ?
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20190805/f4cd119f/attachment.html>
+

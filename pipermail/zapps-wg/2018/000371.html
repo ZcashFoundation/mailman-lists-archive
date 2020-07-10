@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Zkproofs.org standards workshop
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Zkproofs.org%20standards%20workshop&In-Reply-To=%3CCAKHVHUNVKw%3DDq8hzxx%2BKnCknNqsk5907rLVkW4VGURcTia1tgA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000369.html">
+   <LINK REL="Next"  HREF="000345.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Zkproofs.org standards workshop</H1>
+    <B>Cody Burns</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Zkproofs.org%20standards%20workshop&In-Reply-To=%3CCAKHVHUNVKw%3DDq8hzxx%2BKnCknNqsk5907rLVkW4VGURcTia1tgA%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Zkproofs.org standards workshop">cody.w.burns at gmail.com
+       </A><BR>
+    <I>Wed Apr 25 11:51:34 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000369.html">[zapps-wg] Zkproofs.org standards workshop
+</A></li>
+        <LI>Next message (by thread): <A HREF="000345.html">[zapps-wg] I would like to participate in the Powers of Tau ceremony
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#371">[ date ]</a>
+              <a href="thread.html#371">[ thread ]</a>
+              <a href="subject.html#371">[ subject ]</a>
+              <a href="author.html#371">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone,
+
+I'm currently working on a software entitlement project based around the
+zsl implementation in quorum. A zsl token based software license for
+product management. I'll share more when possible, but currently it has a
+tight nda. But you can add it to the use case list at least.
+
+
+
+Cody
+
+On Sun, Apr 22, 2018, 10:32 AM Andrew Miller via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> Hey Lucas, thanks for pointing this out, I've also found this to be a
+</I>&gt;<i> missing part of C-S notation. Here's one more subtle reason to be explicit
+</I>&gt;<i> about what are the public inputs. When you generate public parameters for a
+</I>&gt;<i> snark scheme, some public values may be hardcoded in the circuit, while
+</I>&gt;<i> others can be modified without changing the public parameters. Formally
+</I>&gt;<i> speaking, the hardcoded parts define the &quot;NP language&quot;, while the public
+</I>&gt;<i> inputs define the &quot;statement&quot;.
+</I>&gt;<i>
+</I>&gt;<i> I like your suggestion. For signatures I mentioned earlier using the
+</I>&gt;<i> bracket notation [m]. In LaTeX I have tried before using subscripts for
+</I>&gt;<i> public inputs. So for example:
+</I>&gt;<i>  SoK[m]_H{ (x): H = hash(x) }
+</I>&gt;<i> But this looks pretty bad in ascii compared to your suggestion. Really
+</I>&gt;<i> curious if others have preferences, I don't have a strong opinion here.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Sun, Apr 22, 2018 at 10:21 AM, Lucas Vogelsang via zapps-wg &lt;
+</I>&gt;<i> <A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Andrew, I wanted to follow up on your proposal of formulating ZkPoKs.
+</I>&gt;&gt;<i>
+</I>&gt;<i>  One thing that was a bit counter intuitive to your notation is the fact
+</I>&gt;&gt;<i> that while it's very clear what private inputs a snark has, the public
+</I>&gt;&gt;<i> inputs are not clearly designated. E.g.:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ZkPoK{ (R1, R2): H1 = sha256(R1) and H2 = sha256(R2) and R1 = R2 ^ X }
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This example is simple enough that a) X is easy to spot and given it's
+</I>&gt;&gt;<i> name it's easy to deduct that this is probably not a constant but a public
+</I>&gt;&gt;<i> input. However if the snark gets longer, intermediary variables (just local
+</I>&gt;&gt;<i> to the snark) and public inputs are hard to discern. Perhaps it would be
+</I>&gt;&gt;<i> convenient to write it with the following syntax:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ZkPoK{ W = {R1, R2}, I = {X}: H1 = sha256(R1) and H2 = sha256(R2) and R1
+</I>&gt;&gt;<i> = R2 ^ X }
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Have you put any thought into this already? Comparing your notation to
+</I>&gt;&gt;<i> Izaak's pseudocode, I think there is a right time and place for both.
+</I>&gt;&gt;<i> Although perhaps by the time you're using your proposed syntax, Izaak, it
+</I>&gt;&gt;<i> might be easier to just write it in snarky, don't you agree?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Lucas
+</I>&gt;&gt;<i>
+</I>&gt;<i> On Mon, Mar 26, 2018 at 6:10 PM, Izaak Meckler via zapps-wg &lt;
+</I>&gt;&gt;<i> <A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;<i> One application that I like: sending ads with a proof proving they were
+</I>&gt;&gt;&gt;<i> generated by some algorithm that is known not to have access to personal
+</I>&gt;&gt;&gt;<i> data.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> And I like that notation Andrew -- there is a sort of extension to it
+</I>&gt;&gt;&gt;<i> (which is basically the idea of snarky) which involves not having to
+</I>&gt;&gt;&gt;<i> declare all your witnesses up front. The main advantage over
+</I>&gt;&gt;&gt;<i> the Camenisch-Stadler notation to my mind is modularity/abstraction. (For
+</I>&gt;&gt;&gt;<i> example, you can factor out the idea of opening a commitment).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> This is a bit of a contrived example but to get the idea across,
+</I>&gt;&gt;&gt;<i> &quot;sumCommitmentsIsZero&quot; proves that you know openings to a bunch of
+</I>&gt;&gt;&gt;<i> commitments such that the openings sum to 0, say.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> def openCommitment(c):
+</I>&gt;&gt;&gt;<i>   (value, nonce) = *exists* OpenCommitment(c);
+</I>&gt;&gt;&gt;<i>   *assert* SHA256(value, nonce) = c;
+</I>&gt;&gt;&gt;<i>   return value
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> def sumCommitmentsIsZero(cs):
+</I>&gt;&gt;&gt;<i>   *assert* sum(map cs (fun c -&gt; openCommitment(c))) = 0
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> (sometimes I call exists &quot;request&quot; instead.)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If this sort of notation was widely used, people would probably know
+</I>&gt;&gt;&gt;<i> what you meant when you wrote openCommitment as a function, and so you
+</I>&gt;&gt;&gt;<i> could just write the second definition in communicating. There are a bunch
+</I>&gt;&gt;&gt;<i> of other reusable abstractions that arise in zk-proof programming that we
+</I>&gt;&gt;&gt;<i> could build up a shared vocabulary for as well to make communicating this
+</I>&gt;&gt;&gt;<i> stuff easier.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Sat, Mar 24, 2018 at 4:05 PM, Andrew Miller via zapps-wg &lt;
+</I>&gt;&gt;&gt;<i> <A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Lucas's post reminded me of something I wanted to post about:
+</I>&gt;&gt;&gt;&gt;<i> If there's one thing I'd like to take up the torch for and advocate as a
+</I>&gt;&gt;&gt;&gt;<i> standard, it's to use a conventional pseudocode for describing snark
+</I>&gt;&gt;&gt;&gt;<i> application ideas. What I have in mind is Camenisch-Stadler proof
+</I>&gt;&gt;&gt;&gt;<i> notation. It looks like this:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>  ZkPoK{ (witness):  Predicate(statement, witness) }
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> The idea is that &quot;witness&quot; is the private witness, &quot;statement&quot; is
+</I>&gt;&gt;&gt;&gt;<i> public information that the verifier provides, and you replace
+</I>&gt;&gt;&gt;&gt;<i> &quot;Predicate&quot; with whatever pseudocode you want to check.
+</I>&gt;&gt;&gt;&gt;<i> Here are some examples:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> 1. Pay-to-Sudoku:
+</I>&gt;&gt;&gt;&gt;<i>  ZkPoK{ (solution, nonce):
+</I>&gt;&gt;&gt;&gt;<i>      SHA2(nonce || solution) == H,
+</I>&gt;&gt;&gt;&gt;<i>      CheckSudokuSolution(puzzleBoard, solution) == 1 }
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> 2. Show two hashes have related preimages:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> ZkPoK{ (R1, R2): H1 = sha256(R1) and H2 = sha256(R2) and R1 = R2 ^ X }
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   <A HREF="https://github.com/ebfull/lightning_circuit/blob/master/README.md">https://github.com/ebfull/lightning_circuit/blob/master/README.md</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> This notation is a starting point, it can be extended to say a
+</I>&gt;&gt;&gt;&gt;<i> Signature-of-Knowledge, like in BabyZoe (a simplified form of ZSL,
+</I>&gt;&gt;&gt;&gt;<i> where the only shielded operation is to withdraw 1.0 coin from the
+</I>&gt;&gt;&gt;&gt;<i> shielded pool):
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> 3. SoK[tx]{ (secretkey, Com, merkleProof):
+</I>&gt;&gt;&gt;&gt;<i>    // Com is included in the commitment tree
+</I>&gt;&gt;&gt;&gt;<i>    MerkleVerify(coinTree, merkleProof, Com),
+</I>&gt;&gt;&gt;&gt;<i>    Com is a commitment to (secretkey, Nullifier)
+</I>&gt;&gt;&gt;&gt;<i> }
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Notes on BabyZoe:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://github.com/zcash-hackworks/babyzoe/blob/master/talks/2016-07-27-IC3---SNARKs-for-Ethereum.pdf">https://github.com/zcash-hackworks/babyzoe/blob/master/talks/2016-07-27-IC3---SNARKs-for-Ethereum.pdf</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> To take a stab at translating the snark-based password authentication
+</I>&gt;&gt;&gt;&gt;<i> idea into this pseudocode, I think it could look like this:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> 4. SoK[signedMessage]{ (derivedkey):
+</I>&gt;&gt;&gt;&gt;<i>     username = SHA256(addrContract, derivedkey)
+</I>&gt;&gt;&gt;&gt;<i> }
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> The user would then use standard PBKDF2  from something like:
+</I>&gt;&gt;&gt;&gt;<i>    derivedKey := Argon2(addrContract, password)
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> so the snark circuit itself doesn't even have to have the expensive
+</I>&gt;&gt;&gt;&gt;<i> hash. The smart contract would use the final password hash as the
+</I>&gt;&gt;&gt;&gt;<i> username.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> On Sat, Mar 24, 2018 at 4:47 PM, Andrew Miller &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> wrote:
+</I>&gt;&gt;&gt;&gt;<i> &gt; That's awesome Lucas, thanks for this input, these are pretty cool
+</I>&gt;&gt;&gt;&gt;<i> &gt; application scenarios. They're all quite relevant to a standards
+</I>&gt;&gt;&gt;&gt;<i> effort
+</I>&gt;&gt;&gt;&gt;<i> &gt; because they seem to involve interfacing between zkSNARKs and other
+</I>&gt;&gt;&gt;&gt;<i> &gt; standardized primitives (password hash functions, anonymous
+</I>&gt;&gt;&gt;&gt;<i> credentials,
+</I>&gt;&gt;&gt;&gt;<i> &gt; extensions to ZSL).
+</I>&gt;&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt; On Sat, Mar 24, 2018 at 4:42 PM, Lucas Vogelsang via zapps-wg
+</I>&gt;&gt;&gt;&gt;<i> &gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; I've put some thoughts into possible use cases, here are some that
+</I>&gt;&gt;&gt;&gt;<i> we have
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; been thinking about in the context of decentralized business
+</I>&gt;&gt;&gt;&gt;<i> applications.
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; Some of these concepts are things we are actually working on, others
+</I>&gt;&gt;&gt;&gt;<i> just
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; ideas
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; - blind auctions (including double dutch auctions)
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; - page-rank style algorithms on top of anonymous credentials or
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; reputations
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; - build a password-based authentication out of any password hash
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; - give out &quot;referral capabilities&quot; that automatically assign a
+</I>&gt;&gt;&gt;&gt;<i> commission
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; to whoever introduced a subscriber who signs up (this would be part
+</I>&gt;&gt;&gt;&gt;<i> of a
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; privacy-preserving subscription service, that could be built on top
+</I>&gt;&gt;&gt;&gt;<i> of a
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; zcash-like (ZSL protocol) cryptocurrency)
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; - consumer credit scores: create a registry of &quot;bad debtors&quot;. use
+</I>&gt;&gt;&gt;&gt;<i> zkproofs
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; both to &quot;register&quot; a bad debt/bad action and allow individuals to
+</I>&gt;&gt;&gt;&gt;<i> provide a
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; proof revealing your score without actual transaction details (not
+</I>&gt;&gt;&gt;&gt;<i> sure how
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; exactly this could work)
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; Curious to hear what other people have thought of!
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; On Fri, Mar 23, 2018 at 11:11 AM, Andrew Miller via zapps-wg
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; Dear Zapps, I just wanted to let you know that there will be a
+</I>&gt;&gt;&gt;&gt;<i> standards
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; workshop organized by several academics / industry participants in
+</I>&gt;&gt;&gt;&gt;<i> May.
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; <A HREF="https://zkproof.org">https://zkproof.org</A>
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt;  I want to make sure that the workshop includes input from all the
+</I>&gt;&gt;&gt;&gt;<i> groups
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; involved in this open source community that are developing tools and
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; applications and even making initial standardization efforts around
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; portability between different libraries.
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt;  I'm especially interested in collecting application ideas to
+</I>&gt;&gt;&gt;&gt;<i> include as
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; case studies to help make the conversation more concrete. So far I
+</I>&gt;&gt;&gt;&gt;<i> don't
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; have many ideas. So far I have:
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - anonymous credentials
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - zcash
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - voting
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - sudoku solutions / contingent payments
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - compressing blockchain verification
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - a log of photo edits
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; - checking that a cloud compute task was done correctly (this is
+</I>&gt;&gt;&gt;&gt;<i> arguably
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; not specific enough).
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;&gt; Suggestions of what I'm missing?
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;&gt;<i> &gt; --
+</I>&gt;&gt;&gt;&gt;<i> &gt; Andrew Miller
+</I>&gt;&gt;&gt;&gt;<i> &gt; University of Illinois at Urbana-Champaign
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> --
+</I>&gt;&gt;&gt;&gt;<i> Andrew Miller
+</I>&gt;&gt;&gt;&gt;<i> University of Illinois at Urbana-Champaign
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Andrew Miller
+</I>&gt;<i> University of Illinois at Urbana-Champaign
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180425/a2587e12/attachment.html">/pipermail/zapps-wg/attachments/20180425/a2587e12/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000369.html">[zapps-wg] Zkproofs.org standards workshop
+</A></li>
+	<LI>Next message (by thread): <A HREF="000345.html">[zapps-wg] I would like to participate in the Powers of Tau ceremony
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#371">[ date ]</a>
+              <a href="thread.html#371">[ thread ]</a>
+              <a href="subject.html#371">[ subject ]</a>
+              <a href="author.html#371">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

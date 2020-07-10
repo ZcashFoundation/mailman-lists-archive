@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Who's next? (Powers of Tau)
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Who%27s%20next%3F%20%28Powers%20of%20Tau%29&In-Reply-To=%3CCAKHVHUMKdtYkoHQ6f%3DWe2QCDbKPBHHzpS%3DHJow_rRc86ChUZgQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000042.html">
+   <LINK REL="Next"  HREF="000046.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Who's next? (Powers of Tau)</H1>
+    <B>cody burns</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Who%27s%20next%3F%20%28Powers%20of%20Tau%29&In-Reply-To=%3CCAKHVHUMKdtYkoHQ6f%3DWe2QCDbKPBHHzpS%3DHJow_rRc86ChUZgQ%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Who's next? (Powers of Tau)">cody.w.burns at gmail.com
+       </A><BR>
+    <I>Fri Nov 17 07:35:41 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000042.html">[zapps-wg] Who's next? (Powers of Tau)
+</A></li>
+        <LI>Next message (by thread): <A HREF="000046.html">[zapps-wg] Who's next? (Powers of Tau)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Powers of Tau Operational Writeup
+=================================
+
+Date: 2017-11-17
+Name: Cody Burns
+Location: MTR train &gt;&gt; Hong Kong China
+
+Challenge:
+4f86db7dd1edf502d28d3febe59018e865c9227e2ab33eeee0fb33c91d761c11891bc076bbf80b7fbea911f354eec509b5dadd8ba678c6b53dbc6e5479d3117a
+Response:
+3002034f75e83f530d9a949071e6fb28a9f1e39c563bced27d91bf5cc45f0c16e866ffb30c912cf7648bde08f0709f1846d758ecfcec62dcdc2eb16c685e60d1
+
+Preparation Steps
+=================
+
+Git repository: <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+Commit hash: 9e1553c437183540392a7231d0788318a19b18a3
+Compiler: rustc 1.21.0 (3b72af97e 2017-11-09)
+  cargo 0.22.0 (3423351a5 2017-10-06)
+Build: cargo build --release --features=u128-support
+
+vm: VirtualBox-5.1.28-117968-Win;  b2sum:
+f59139212d894bee17ecce234ad57bae188348856b5d85ca4cea46247d9b87e453c807e002b3277cf348df61502a6caaf549a154af0a8b8648b87ddf2d627326
+Level 1: ubuntu-16.04.3-desktop-amd64.iso; b2sum:
+fa6650810ad70a6a13b5baf33180499f115c2fd160e655b329fa1f708e1f0803432b5a70446e64522107eff67097222e77bd592420c536ed634b2677c5b9befc
+
+sha256sum:
+b2sum-amd64-windows.exe:914abb5152d7f179ca377c843494fe718a87023320edcbbfe8dba6010f57e94a
+b2sum-amd64-linux:
+529c90f8cd003b3485defef239a5ae7f62470342c3a65493abfba9e190413451
+
+- - From random street market vendors in Hong Kong
+4x4 puzzle cube -- unhashable
+
+2 usb drives
+(so much virus scanning and formating)
+Spongebob usb formatted and installed Ubuntu
+I reformatted a pikichu USB stick to ext4, then copied the
+`challenge` file and the `target/release/compute` binary.
+
+Side channel Defenses
+====================
+
+Entropy source: using &quot;4x4 cube&quot; toy,
+- key/value wordlist created on flight Houston &gt;&gt; San Francisco. Hand
+written on &quot;air sick&quot; bag
+- eBook reader last updated: 7/7/2017
+- 1 book from 168 chosen based on first 2 numbers of b2sum sha256,
+&quot;Nueromancer&quot; (fitting)
+- Key: 6 page numbers chosen at random
+- Value: 6 unique words chosen per page
+- Mapping: Center color square == key; reading left to right, top to
+bottom, color == value for word
+- Process:
+- on &quot;compute trip&quot;
+- random turns to scramble set
+- solve 6 center squares
+- &quot;roll cube like dice&quot;
+- enter word set
+- repeat 3 times: 36 total words (key square omitted from set)
+
+Physical/electronic monitoring:
+All steps preformed on an airgapped laptop in &quot;blackout bag&quot; on a moving
+train under the city of Hong Kong so
+no casual monitoring could be employed,
+any physical altercations would be highly unlikely,
+and I would be traveling hundreds of km per hour in a faraday cage over
+under rock and chaos
+
+Procedure
+=========
+
+Prep: on the first leg of multi-leg flight created wordlist
+
+Dwell time: Stay in coffin hotel in questionable part of town with only
+paper checkin and no english, purchase supplie;received new Challenge from
+Sean
+
+Compute:
+Level 0 -
+Computer in airplane mode wifi chip disabled
+        I started windows and the vm with ubuntu 16 desktop(level 1) with
+no network bridging.
+
+Level 1:
+I compiled the compute binary, and transfered to spongebob
+Level 2:  loaded linux Pikichu usb  -&quot;Try Ubuntu&quot; (Live CD mode).
+  I imported the previous challenge/response codes and verified them.
+  Enter the train.
+  I then began the entropy creation &quot;ceremony&quot; and entered the values.
+  Wrote down BLAKE2b hash, unmounted drives
+
+
+Postprocessing
+==============
+
+Destroyed level 2 and level 1 vm image
+
+I took the USB stick and transferred the response file to level zero, and
+then
+uploaded it using the laptop to the aws s3 site from my phone using tor
+over airport wifi and posted the image hash on twitter as well as the
+mailing list
+
+image: ipfs/QmZkVPctuTTDbNfT5fM3aYbDPwBB9hMFjBDSRhNswNx9j3
+- - --
+Cody Burns, CodyWBurns.com
+&#8230;
+
+Ethereum Classic Development community
+Blockchain Architect
+codywburns.com
+-----BEGIN PGP SIGNATURE-----
+
+iJwEAQECAAYFAloO12oACgkQEfOYz7+6WMLjmAP/VpszJATk2ezn++KsBwR9+Xt4
+TEEW9xAtx4mtqrvQ/LtW3tPaGPYN5nXHHqvbqw9tYJgL/fN/IZte6W+fP/sI00Tr
+9Xr7bM/p+8yfohbLahXlozowNvSrLkRZeOUhkUmxxa345UCkfkCQhGGnhsN5SaDc
+Ljnx7uU6/s0LiQck+KU=
+=/z6t
+-----END PGP SIGNATURE-----
+
+
+On Thu, Nov 16, 2017 at 9:55 PM Sean Bowe via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> Thanks Hudson! :)
+</I>&gt;<i>
+</I>&gt;<i> Eric finished but hasn't posted their attestation yet. Now it's Cody's
+</I>&gt;<i> turn.
+</I>&gt;<i>
+</I>&gt;<i> Sean
+</I>&gt;<i>
+</I>&gt;<i> On Thu, Nov 16, 2017 at 8:21 PM, Hudson Jameson via zapps-wg
+</I>&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i> &gt; I have finished the report and made a PR in the attestations repo:
+</I>&gt;<i> &gt; <A HREF="https://github.com/ZcashFoundation/powersoftau-attestations/pull/5">https://github.com/ZcashFoundation/powersoftau-attestations/pull/5</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I also made a fun Imgur album of the adventure:
+</I>&gt;<i> <A HREF="https://imgur.com/a/2rUDz">https://imgur.com/a/2rUDz</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Please note that there are 2 names for round 6, Hudson Jameson and
+</I>&gt;<i> &gt; Steven Schroeder.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Hudson Jameson
+</I>&gt;<i> &gt;
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171117/80997d52/attachment.html">/pipermail/zapps-wg/attachments/20171117/80997d52/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000042.html">[zapps-wg] Who's next? (Powers of Tau)
+</A></li>
+	<LI>Next message (by thread): <A HREF="000046.html">[zapps-wg] Who's next? (Powers of Tau)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

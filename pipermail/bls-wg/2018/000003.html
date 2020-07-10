@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BLS-wg] Reverse BLS12-381
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/bls-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:bls-wg%40lists.zfnd.org?Subject=Re%3A%20%5BBLS-wg%5D%20Reverse%20BLS12-381&In-Reply-To=%3CCAKazn3kOnA8w9r3FR3Ut1EK2-TCxymNccnXxS1rkOxxN5FDfCg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000002.html">
+   <LINK REL="Next"  HREF="000004.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[BLS-wg] Reverse BLS12-381</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:bls-wg%40lists.zfnd.org?Subject=Re%3A%20%5BBLS-wg%5D%20Reverse%20BLS12-381&In-Reply-To=%3CCAKazn3kOnA8w9r3FR3Ut1EK2-TCxymNccnXxS1rkOxxN5FDfCg%40mail.gmail.com%3E"
+       TITLE="[BLS-wg] Reverse BLS12-381">sean at z.cash
+       </A><BR>
+    <I>Fri Mar 16 21:25:46 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000002.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+        <LI>Next message (by thread): <A HREF="000004.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Right, we're swapping the curves from *a* implementation which was used to give reference numbers but not actually misusing the primitive at all.
+</I>
+I think it's totally fine if you want to use G1 for public keys, but
+I'm still confused about the language you're using to describe
+BLS12-381.
+
+The title of this thread (&quot;Reverse BLS12-381&quot;) and &quot;It turns out that
+BLS12-381 as defined has 96 byte public keys and 48 byte signatures&quot;
+are both inaccurate. BLS12-381 doesn't define what a public key is or
+what a signature is because it's a curve construction, not a signature
+scheme.
+
+I just want to make sure others aren't confused because these are
+easily confusable names. Carry on!
+
+Sean
+
+On Fri, Mar 16, 2018 at 6:03 PM, Bram Cohen &lt;<A HREF="/mailman/listinfo/bls-wg">bram at chia.net</A>&gt; wrote:
+&gt;<i> On Fri, Mar 16, 2018 at 4:22 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/bls-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I would caution saying &quot;swapping the curves&quot; because it may indicate
+</I>&gt;&gt;<i> you're changing the curve construction when you're actually just
+</I>&gt;&gt;<i> changing the signature scheme. BLS12-381 doesn't define anything about
+</I>&gt;&gt;<i> how you use them for BLS signature schemes, or which group you use for
+</I>&gt;&gt;<i> the key or the signature.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Right, we're swapping the curves from *a* implementation which was used to
+</I>&gt;<i> give reference numbers but not actually misusing the primitive at all.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm excited to see BLS signatures finally end up in a cryptocurrency.
+</I>&gt;&gt;<i> Besides what group you use for the signature, it'll be important to
+</I>&gt;&gt;<i> specify how you're hashing to that group (for BLS signatures). We've
+</I>&gt;&gt;<i> been having discussions about this in my pairing library and in
+</I>&gt;&gt;<i> another library. I'd like to see everyone using the same
+</I>&gt;&gt;<i> well-specified technique to hash to the curve; hopefully this weekend
+</I>&gt;&gt;<i> I'll have a spec fleshed out and we'll have test vectors for
+</I>&gt;&gt;<i> inter-operability. It seems possible we could have this merged into
+</I>&gt;&gt;<i> RELIC as well.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Dan Boneh just sent us a construction which allows for a speedup on
+</I>&gt;<i> aggregated signatures of a single value, which we'll be implementing for
+</I>&gt;<i> performance. It isn't standardized because it's new but we plan to have
+</I>&gt;<i> everything we're working on be published and reviewed and ideally
+</I>&gt;<i> standardized.
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000002.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+	<LI>Next message (by thread): <A HREF="000004.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/bls-wg">More information about the bls-wg
+mailing list</a><br>
+</body></html>

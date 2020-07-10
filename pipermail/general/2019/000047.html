@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Grant project update - new PoW scheme
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190206215704.GA14775%40openwall.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000031.html">
+   <LINK REL="Next"  HREF="000061.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Grant project update - new PoW scheme</H1>
+    <B>Solar Designer</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190206215704.GA14775%40openwall.com%3E"
+       TITLE="[ZcF-general] Grant project update - new PoW scheme">solar at openwall.com
+       </A><BR>
+    <I>Wed Feb  6 16:57:04 EST 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000031.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+        <LI>Next message (by thread): <A HREF="000061.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#47">[ date ]</a>
+              <a href="thread.html#47">[ thread ]</a>
+              <a href="subject.html#47">[ subject ]</a>
+              <a href="author.html#47">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+This is my second status report on GrantProposals-2018Q2 #25 &quot;review,
+tweaks, and maybe design of a new PoW scheme for Zcash.&quot;
+
+<A HREF="https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25">https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25</A>
+
+Unfortunately, I didn't put as much time into this project as I would
+have liked to.  That said, a few things did advance since last update:
+
+On Sun, Jan 06, 2019 at 03:13:32PM +0100, Solar Designer wrote:
+&gt;<i> - Optionally, purchase and installation of new GPUs and required software
+</I>&gt;<i> 
+</I>&gt;<i> Since Zcash Foundation chose to fund this proposed upgrade of Openwall's
+</I>&gt;<i> HPC Village (&quot;a project of Openwall where we provide Open Source
+</I>&gt;<i> developers with remote access to a system with NVIDIA and AMD GPUs, and
+</I>&gt;<i> Intel Xeon Phi&quot;) - thanks! - we looked into the currently available and
+</I>&gt;<i> reasonable upgrade options and ended up ordering a GTX 1080 (a short
+</I>&gt;<i> enough card to use a slot that we didn't have other good use for, so we
+</I>&gt;<i> can leave more other GPUs in the machine) and a Vega 64 to be installed
+</I>&gt;<i> later in January.
+</I>
+These two new GPUs have been installed and are now available to
+ourselves and the larger Open Source community in our HPC Village:
+
+<A HREF="https://openwall.info/wiki/HPC/Village">https://openwall.info/wiki/HPC/Village</A>
+
+We've also updated to CUDA 10.0 and AMDGPU-PRO 18.50.  We first tested
+the updated setup with John the Ripper and Hashcat, and then I proceeded
+to use this setup to test ProgPOW vs. Ethash (because that's where
+ProgPOW was forked from) taking notes in the process.
+
+I've just posted some results of this testing as two issues on ProgPOW
+GitHub, suggesting that they add this or/and other related information
+to the documentation:
+
+Build instructions
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/27">https://github.com/ifdefelse/ProgPOW/issues/27</A>
+
+Benchmark results
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/26">https://github.com/ifdefelse/ProgPOW/issues/26</A>
+
+The benchmark results show that the two new GPUs were actually required.
+The older GPUs also still present in the machine (Titan Kepler and Titan
+X Maxwell) achieve good speeds at 1 GB DAG size, but no longer achieve
+sane speeds at the 3 GB DAG size currently used by Ethereum (and
+presumably Zcash would use no smaller than that if it switches to
+ProgPOW).  Those older GPUs do have more than enough memory (6 GB and
+12 GB, respectively), but somehow are several times slower than current
+ones at this test.  We might investigate this later.  Maybe some tuning
+will help.
+
+&gt;<i> Unexpectedly, I also ended up looking into Equihash parameters and
+</I>&gt;<i> making suggestions again, as it appears Zcash's temporary second PoW for
+</I>&gt;<i> Blossom will be merely another Equihash instantiation, and this needs to
+</I>&gt;<i> be decided on ASAP:
+</I>&gt;<i> 
+</I>&gt;<i> [Blossom NU] Write spec for Harmony Mining
+</I>&gt;<i> <A HREF="https://github.com/zcash/zcash/issues/3672">https://github.com/zcash/zcash/issues/3672</A>
+</I>
+Zcash no longer plans on having a temporary second PoW in Blossom, so
+the discussion on that issue ceased.
+
+&gt;<i> whereas the work more obviously falling under this grant will probably
+</I>&gt;<i> fit under:
+</I>&gt;<i> 
+</I>&gt;<i> choose new PoW for Zcash 4.0 (NU3)
+</I>&gt;<i> <A HREF="https://github.com/zcash/zcash/issues/3761">https://github.com/zcash/zcash/issues/3761</A>
+</I>
+Alexander
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000031.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+	<LI>Next message (by thread): <A HREF="000061.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#47">[ date ]</a>
+              <a href="thread.html#47">[ thread ]</a>
+              <a href="subject.html#47">[ subject ]</a>
+              <a href="author.html#47">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

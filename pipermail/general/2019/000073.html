@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Grant project update - new PoW scheme
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190406141220.GA12875%40openwall.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000061.html">
+   <LINK REL="Next"  HREF="000082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Grant project update - new PoW scheme</H1>
+    <B>Solar Designer</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190406141220.GA12875%40openwall.com%3E"
+       TITLE="[ZcF-general] Grant project update - new PoW scheme">solar at openwall.com
+       </A><BR>
+    <I>Sat Apr  6 10:12:20 EDT 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000061.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+        <LI>Next message (by thread): <A HREF="000082.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+This is another update on GrantProposals-2018Q2 #25 &quot;review, tweaks, and
+maybe design of a new PoW scheme for Zcash.&quot;
+
+<A HREF="https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25">https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25</A>
+
+On ProgPoW's (under-)use of GPUs' compute power:
+
+On Wed, Mar 06, 2019 at 09:15:11PM +0100, Solar Designer wrote:
+&gt;<i> New this time is the plain C implementation of ProgPoW that I put
+</I>&gt;<i> together based on upstream's README.md and more, and just pushed here:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="https://github.com/solardiz/c-progpow">https://github.com/solardiz/c-progpow</A>
+</I>
+I improved, cleaned up, and ran more tests of c-progpow, and used hacks
+of it to run some simulations on ProgPoW as-is and on some potential
+tweaks to it.  c-progpow now collects and prints some statistics on math
+operations and memory accesses.
+
+Using the statistics from c-progpow and a hashrate seen on Vega 64, I
+calculated exactly how little use of the integer multipliers ProgPoW
+makes.  If we set maximizing use of the multipliers on a given GPU as
+our goal (which there are good reasons for), then the theoretical
+potential for improvement on the Vega 64 may be up to 68x in terms of
+arbitrary multiplies, which is a lot:
+
+&quot;Make greater use of MADs&quot;
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/34">https://github.com/ifdefelse/ProgPOW/issues/34</A>
+
+(On other GPUs it'd be similar.  I just needed to pick an example.)
+
+However, there are plenty of issues and constraints that will likely
+limit the improvement to a much lower figure.  On that GitHub issue, I
+also brought up potential use of floating-point once again, and got
+helpful responses from @ifdefelse.  I think we're on the same page
+regarding the set of issues and constraints now.  Switching to use of
+FP32 multiplies (or multiply-adds) might be the way to go for using the
+multipliers optimally across a variety of GPUs, but it is really tricky
+to do right.  For more detail, see comments on that issue.
+
+On (repairing) Ethash's and ProgPoW's performance drop on older GPUs:
+
+&gt;<i> On Wed, Feb 06, 2019 at 10:57:04PM +0100, Solar Designer wrote:
+</I>&gt;<i> &gt; Benchmark results
+</I>&gt;<i> &gt; <A HREF="https://github.com/ifdefelse/ProgPOW/issues/26">https://github.com/ifdefelse/ProgPOW/issues/26</A>
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; The benchmark results show that the two new GPUs were actually required.
+</I>&gt;<i> &gt; The older GPUs also still present in the machine (Titan Kepler and Titan
+</I>&gt;<i> &gt; X Maxwell) achieve good speeds at 1 GB DAG size, but no longer achieve
+</I>&gt;<i> &gt; sane speeds at the 3 GB DAG size currently used by Ethereum (and
+</I>&gt;<i> &gt; presumably Zcash would use no smaller than that if it switches to
+</I>&gt;<i> &gt; ProgPOW).  Those older GPUs do have more than enough memory (6 GB and
+</I>&gt;<i> &gt; 12 GB, respectively), but somehow are several times slower than current
+</I>&gt;<i> &gt; ones at this test.  We might investigate this later.  Maybe some tuning
+</I>&gt;<i> &gt; will help.
+</I>&gt;<i> 
+</I>&gt;<i> The slowdown on older GPUs with larger DAG size turned out to be a
+</I>&gt;<i> well-known issue for both Ethash and ProgPoW, related to too small page
+</I>&gt;<i> or fragment size on those older GPUs/drivers (I guess a page table no
+</I>&gt;<i> longer fits in a cache).
+</I>&gt;<i> 
+</I>&gt;<i> I suggested a potential way to workaround the issue at high level on the
+</I>&gt;<i> GitHub issue above, but haven't yet heard back on that idea.  I briefly
+</I>&gt;<i> tried to experiment with it myself, with no luck yet.
+</I>
+I experimented with it some more, and got success at recovering the
+speed on NVIDIA Maxwell (aka GTX 9xx series GPUs, or two generations
+behind from latest RTX 2xxx):
+
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/26#issuecomment-480382319">https://github.com/ifdefelse/ProgPOW/issues/26#issuecomment-480382319</A>
+
+Specifically, combining a minor cleanup to untie the different
+parameters, a parameters tweak, and a code hack (not yet final, but
+works for proof-of-concept), I got a 3x+ speedup on Titan X Maxwell (up
+from 4.0M to 12.3M or even to 12.5M) at a cost of maybe a 3.5% slowdown
+on GTX 1080 (down from 15.15M to 14.6M).  This is at block number 7M.
+I ask: &quot;Is this possibly adequate enough speed for some miners to
+reconsider using Maxwell again?&quot;  I don't know the answer.  When I got
+&quot;only&quot; a 65% speedup before, a miner quickly pointed out that they've
+fully moved from Maxwell to Pascal by now, and performance increase on
+Maxwell is irrelevant and isn't worth any (not even tiny) slowdown on
+Pascal.  I don't know if other miners share this sentiment as well or
+not.  Also, this sentiment might be specific to Ethereum miners, who had
+to switch to newer GPUs by now, whereas miners of other altcoins might
+not have had to, yet those altcoins might consider ProgPoW as well.
+
+The maybe-slowdown of a few percent on some newer GPUs won't necessarily
+persist along with this major speedup on Maxwell.  To me, ProgPoW isn't
+otherwise final yet - I am considering many other tweaks - so performance
+differences of a few percent might be premature to take seriously.
+
+Disclaimer: in absence of test vectors for this revised code that we'd
+compare against a pure host-side implementation, it's always possible
+that I made some error and the code doesn't actually behave as I assume
+it does, which would invalidate the benchmark results.  These results
+are consistent with my expectations, and make sense to me, but they'd
+need to be verified.
+
+On Linzhi's Ethash ASICs and their (flawed) evaluation of ProgPoW:
+
+A week ago, @Sonia-Chen from Linzhi made a lengthy Medium post and a
+GitHub thread comment here:
+
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/24#issuecomment-477998643">https://github.com/ifdefelse/ProgPOW/issues/24#issuecomment-477998643</A>
+
+The analysis sort of claims that ProgPoW adds only on the order of 1%
+of cost (die area, power) to ASICs, as compared to Ethash.  Further
+comments in that thread (by others and by me) point out many flaws in
+the analysis (some costs not considered, some numbers off by a factor of
+4), so its result is indeed bogus.  However, the approach looks correct
+to me, and with the flaws corrected it could show ProgPoW adding little -
+just not that little - except for one major difference between Ethash
+and ProgPoW that wasn't considered (more on it a few paragraphs below).
+
+Linzhi also announced Ethash ASICs with truly impressive performance:
+
+&quot;Ethash Miner Announcement, ETC Summit Seoul, September 2018
+Specs: Ethash, 1400 MH/s, 1000 Watts, price commitment 4-6 months ROI.
+Schedule: 12/2018 TapeOut, 04/2019 Samples, 06/2019 Mass Production.&quot;
+
+This translates to a 10x'ish improvement in energy-efficiency over
+current most suitable GPUs.  (BTW, this greatly exceeds ProgPoW
+designers' expectation that only a ~2x improvement over GPUs would be
+possible for Ethash.)
+
+As I understand, and totally non-surprisingly, Linzhi haven't (yet?)
+disclosed how they achieved that result.  Most notably, how they tackled
+the memory bandwidth requirement of Ethash.  I posted several guesses to
+that GitHub thread (maybe helping them or some other ASIC manufacturer,
+even though I'm no ASIC expert) on how they might have achieved the
+required external memory bandwidth or avoided the need.
+
+I ended up with what I think is the most likely guess: they exploited
+the optimization pointed out on Nov 15, 2018 by none other than Marc
+Bevand (who wrote the SILENTARMY Zcash miner, the winning GPU entry to
+Zcash's mining competition):
+
+<A HREF="https://github.com/ifdefelse/ProgPOW/pull/13">https://github.com/ifdefelse/ProgPOW/pull/13</A>
+
+With this, an Ethash ASIC unit can split the memory across multiple ASIC
+dies without requiring the full bandwidth between the dies.
+
+ProgPoW 0.9.1+ includes a fix preventing this optimization.
+
+I now think this tiny fix might very well be the biggest advantage
+ProgPoW actually has over Ethash.  Everything else (including ProgPoW's
+use of compute resources and its programmability) pales in comparison.
+
+Alexander
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000061.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+	<LI>Next message (by thread): <A HREF="000082.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

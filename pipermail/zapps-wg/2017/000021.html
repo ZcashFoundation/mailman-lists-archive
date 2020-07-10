@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Eliminating the possibility of backdoors with high probability
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Eliminating%20the%20possibility%20of%20backdoors%20with%20high%0A%20probability&In-Reply-To=%3C20171114012232.GA26375%40savin.petertodd.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000020.html">
+   <LINK REL="Next"  HREF="000022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Eliminating the possibility of backdoors with high probability</H1>
+    <B>Peter Todd</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Eliminating%20the%20possibility%20of%20backdoors%20with%20high%0A%20probability&In-Reply-To=%3C20171114012232.GA26375%40savin.petertodd.org%3E"
+       TITLE="[zapps-wg] Eliminating the possibility of backdoors with high probability">pete at petertodd.org
+       </A><BR>
+    <I>Mon Nov 13 20:22:32 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000020.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+        <LI>Next message (by thread): <A HREF="000022.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Nov 13, 2017 at 02:16:18PM -0700, Sean Bowe via zapps-wg wrote:
+&gt;<i> There are three ways that a participants' toxic waste can be compromised:
+</I>&gt;<i> 
+</I>&gt;<i> 1. the participant is dishonest and keeps the toxic waste around
+</I>&gt;<i> 2. the toxic waste is extracted from the machine, either from a side
+</I>&gt;<i> channel attack or because the toxic waste still &quot;exists&quot; in the
+</I>&gt;<i> machine somewhere
+</I>&gt;<i> 3. the participant's code, compiler, operating system or hardware are backdoored
+</I>&gt;<i> 
+</I>&gt;<i> Our solution to #1 is to have large numbers of diverse participants,
+</I>&gt;<i> to virtually eliminate the chance that all of them are dishonest and
+</I>&gt;<i> secretly colluding with each other. I am very confident in this
+</I>&gt;<i> approach.
+</I>
+Ditto
+
+&gt;<i> Many of us are solving #2 by performing the computations on hardware
+</I>&gt;<i> we have randomly plucked from a store somewhere, in an environment
+</I>&gt;<i> (like a Faraday cage, or out in a field somewhere) where side-channel
+</I>&gt;<i> attacks are unlikely. And of course, completely destroying the machine
+</I>&gt;<i> afterward. I am very confident in this approach.
+</I>
+I also agree that this is easily achieved.
+
+While ~all the hardware we have available to us is likely backdoored, the bad
+guys can't backdoor the laws of physics.
+
+&gt;<i> However, we don't really have a good handle on #3. Right now,
+</I>&gt;<i> participants are using the `powersoftau` code that I've written in
+</I>&gt;<i> Rust. It is possible to change the code or even make an alternative
+</I>&gt;<i> implementation, but that only gets you so far. You still have to hope
+</I>&gt;<i> your OS/compiler/hardware are not backdoored.
+</I>
+So to be clear, a simple example of such a backdoor attack would be to take the
+secret k that was supposed to be used in the computation and replace it with
+truncate(k,n), where n is low enough to brute force, and high enough to not get
+caught by the birthday paradox; something like 24-bits is probably feasible.
+The attacker would then brute-force the truncated k from the transcripts,
+recovering the toxic waste.
+
+&gt;<i> I think there's a nice solution to this problem which is inspired by
+</I>&gt;<i> an idea that Brian Warner had.
+</I>&gt;<i> 
+</I>&gt;<i> Currently, the code I've written takes some randomness from the system
+</I>&gt;<i> and mixes it with some user-supplied randomness. Instead, imagine
+</I>&gt;<i> using randomness supplied by the participant exclusively. (One way the
+</I>&gt;<i> participant can obtain it is with a boggle set.)
+</I>
+Note that this is better described as a user-supplied *secret*
+
+
+Q: What exactly happens if one participant fails to destroy that secret and/or
+inputs a low-entropy secret? What about N participants?
+
+The paper states that &quot;We show that security holds even if an adversary has
+limited influence on the beacon.&quot; but it's unclear what exactly &quot;limited
+influence&quot; means.
+
+&gt;<i> The trick is that the participant performs the computation N times,
+</I>&gt;<i> each time with different randomness. This produces N response files.
+</I>&gt;<i> Now, the participant randomly chooses N-1 of the response files and
+</I>&gt;<i> reveals the randomness for them, and destroys the randomness of the
+</I>&gt;<i> last response file -- which is their contribution to the ceremony. The
+</I>&gt;<i> participant (and the general public) can perform the computations
+</I>&gt;<i> again on their machines to check that the same response files are
+</I>&gt;<i> produced for the ones we've revealed randomness for.
+</I>
+To be exact, what you mean to say here is that by re-doing the computations on
+a trusted setup implementation that is *not* backdoored, you can detect the
+existence of the backdoor because the results won't match.
+
+&gt;<i> As N increases, the probability that any backdoor in the code,
+</I>&gt;<i> compiler, hardware, operating system etc. could have tampered with the
+</I>&gt;<i> entropy approaches zero. Now there is just one remaining problem: how
+</I>&gt;<i> do we get the response files out of the machine without the backdoor
+</I>&gt;<i> potentially sneaking the entropy over the channel?
+</I>
+As N increases you open up a new exfiltration route: the unused N-1 responses
+could themselves be the exfiltration route, and thus need to be
+deterministically verified against the N-1 unused secrets. This isn't
+particularly user-friendly, and it's easy to imagine how this could be skipped.
+
+
+I'd suggest instead that we ask participants to simply run the computation N&gt;1
+times, and pick at random which output to actually use. If they re-use hardware
+for each run, ask them to do their best at wiping all non-volatile memory; if
+they have the ability to use different hardware for each run, even better.
+
+Note that a variety of procedures to pick outputs at random are desirable. For
+example, one person might decide to flip a coin after each run, and stop when
+it comes up tails; another might do something different. Diversity is good.
+
+After they've completed their runs, simply upload one or more dummy runs and
+associated initial secrets for peer auditing, as well as their official
+contribution.
+
+
+Secondly, once we do get some dummy runs, I'd suggest that future participants
+consider testing their compute nodes against those challenges and secrets to
+verify that they also get the same results.
+
+
+Finally, it's interesting how there's a whole class of &quot;sham&quot; participant
+strategies, where someone who runs the computation and uploads an audit
+response w/ revealed secret, but does not actually participate in that round,
+still frustrates attackers who can not tell in advance if that particular
+participant will or will not actually participate. This suggests that the
+current round's challenge should be made public.
+
+&gt;<i> DVDs are a good
+</I>&gt;<i> approach if it's possible to create many of them and then analyze them
+</I>&gt;<i> for any differences or hidden information.
+</I>
+The experience of the previous trusted setup is that no-one bothers to audit
+evidence collected after the fact. For example, I appear to have been the
+*only* non-Zcash team member who ever bothered to even do the basic step of
+recreating the deterministic builds, readily apparent by the fact that they
+were broken about a month after the setup due to two different (still unfixed)
+bugs in the deterministic build scripts(1). So I'd be cautious about putting
+too much emphasis on &quot;paranoid measures&quot; like this when there are more
+fundamental attack vectors to solve.
+
+
+In any case for this to be effective you really need to completely fill the
+storage medium with a known pattern. You also need to bypass standard
+filesystems, which contain massive amounts of metadata in the form of file
+timestamps and the like - better to write a single file to the medium, and fill
+the rest with zeros.
+
+As I noted after the prior trusted setup, CD's/DVD's/etc. are *not* read-only
+once written, as the writable medium can continue to be written to after the
+initial data has been written to it. This means that an attacker could create a
+DVD that, e.g., compromises the drive at a firmware level, exfiltrates the
+secret, and then uses the laser in the DVD reader to erase the evidence.
+
+But as this setup is multi-participant, this can easily be defeated by using a
+wide variety of techniques. For instance, it turns out that USB drives with
+(allegedly) hardware write-protect switches are readily available, such as the
+Kanguru FlashBlu series:
+
+<A HREF="https://store.kanguru.com/pages/flash-blu-2">https://store.kanguru.com/pages/flash-blu-2</A>
+
+Secondly, using a semi-trusted &quot;firewall&quot; machine that reads the medium, and
+then copies it to a new medium can also avoid unintended data leaks between
+those two mediums.
+
+1) <A HREF="https://github.com/zcash/mpc/pull/9">https://github.com/zcash/mpc/pull/9</A>
+
+&gt;<i> (The original idea that Brian and Zooko briefly considered for the
+</I>&gt;<i> Zcash ceremony last year was similar, except it involved one of the
+</I>&gt;<i> participants revealing all their entropy at the end, and the rest
+</I>&gt;<i> destroying theirs. This is because the previous protocol couldn't
+</I>&gt;<i> support participants performing multiple computations, because they
+</I>&gt;<i> had to commit to their entropy at the very beginning. The new protocol
+</I>&gt;<i> does support participants performing multiple computations with
+</I>&gt;<i> different entropy, though!)
+</I>
+Looks like both myself and Saleem Rashid had similar ideas as well, so either
+it's a good one or we're all wrong. :)
+
+<A HREF="https://twitter.com/spudowiar/status/919615633121300481">https://twitter.com/spudowiar/status/919615633121300481</A>
+<A HREF="https://twitter.com/petertoddbtc/status/919615731615989760">https://twitter.com/petertoddbtc/status/919615731615989760</A>
+
+-- 
+<A HREF="https://petertodd.org">https://petertodd.org</A> 'peter'[:-1]@petertodd.org
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 455 bytes
+Desc: Digital signature
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171113/252279eb/attachment.sig">/pipermail/zapps-wg/attachments/20171113/252279eb/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000020.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+	<LI>Next message (by thread): <A HREF="000022.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,1395 @@
+From josh at z.cash.foundation  Sun Feb 11 15:06:04 2018
+From: josh at z.cash.foundation (Josh Cincinnati)
+Date: Sun, 11 Feb 2018 20:06:04 +0000
+Subject: [ZcF-general] Test Post
+Message-ID: <CA+-Lzu8+G=WAmnPM1heH1e2mGBOopQbnHP+1m5YUG9jYCKT9Vg@mail.gmail.com>
+
+Testing 1 2 3
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180211/02216e48/attachment.html>
+
+From flathashedtree at protonmail.com  Mon Feb 12 01:40:34 2018
+From: flathashedtree at protonmail.com (flathashedtree)
+Date: Mon, 12 Feb 2018 01:40:34 -0500
+Subject: [ZcF-general] Hello foundation
+Message-ID: <-wEamzy1WIc3Cj2vFLmZ9lrvbXfmy2bdIdI5bZTYLr3sKDMEtarYFjzv5a8aH_rQc5LWBT73N2b5nxzXOnJ5yIapJ4JW8i1-nEBsi3O15Q0=@protonmail.com>
+
+1.r2.d2.3 - Test message
+
+
+Nice to have a mailing list.
+
+
+From josh at z.cash.foundation  Mon Feb 12 11:47:52 2018
+From: josh at z.cash.foundation (Josh Cincinnati)
+Date: Mon, 12 Feb 2018 08:47:52 -0800
+Subject: [ZcF-general] Hello foundation
+In-Reply-To: <-wEamzy1WIc3Cj2vFLmZ9lrvbXfmy2bdIdI5bZTYLr3sKDMEtarYFjzv5a8aH_rQc5LWBT73N2b5nxzXOnJ5yIapJ4JW8i1-nEBsi3O15Q0=@protonmail.com>
+References: <-wEamzy1WIc3Cj2vFLmZ9lrvbXfmy2bdIdI5bZTYLr3sKDMEtarYFjzv5a8aH_rQc5LWBT73N2b5nxzXOnJ5yIapJ4JW8i1-nEBsi3O15Q0=@protonmail.com>
+Message-ID: <CA+-Lzu-rGX7TAUguwCDi9gmBffDC_HKgdWYkRQDig0aXU265_g@mail.gmail.com>
+
+Agreed! Just testing that this threads correctly.
+
+c.3.p.0,
+Josh
+
+On Sun, Feb 11, 2018 at 10:40 PM, flathashedtree via general <
+general at lists.z.cash.foundation> wrote:
+
+> 1.r2.d2.3 - Test message
+>
+>
+> Nice to have a mailing list.
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180212/72ea5244/attachment.html>
+
+From o.oluwoye at coincentrix.io  Wed Feb 21 12:53:07 2018
+From: o.oluwoye at coincentrix.io (Oyedeji Oluwoye)
+Date: Wed, 21 Feb 2018 17:53:07 +0000
+Subject: [ZcF-general] Zcash Education Outreach February Update - Coincentrix
+In-Reply-To: <DM5PR17MB132404445DAFD0D43F9901BE95CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+References: <DM5PR17MB132404445DAFD0D43F9901BE95CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+Message-ID: <DM5PR17MB1324D269823BE3E1DF9973EA95CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+
+Dear Community members,
+
+
+Just brief update from the Coincentrix Team. We are moving forward into the accordance with the schedule we have laid out in the grant.
+
+Since the beginning of the year planning and workshop material have been created to meet the goals of the project. We have chosen 4 pilot schools with a possibility of 2 additional schools. Also we are doing a joint presentation with a local non profit organization in Birmingham Alabama at the town public library to reach awareness to local community members and college students.We have our first order of Zcash foundation shirts to arrive as well as identified ambassadors at the 4 chosen schools to start the organizing of the events.
+
+This month we have had calls with Andrew and Linda from Guarda to discuss points on the development of their ZCASH wallet and also  Josh Cincinnati to discuss our project progress, next steps and technical overview. In Birmingham Alabama this month we have 2 back to back presentations at University of Alabama Birmingham and Bessemer Public Library. We invited 2  local experts in the crypto space to come speak regarding mining and investments to involve local blockchain entrepreneurs and businesses. We believe local involvement by blockchain entrepreneurs, businesses and  enthusiasts is the key success tool to spread massive grassroots adoption of Zcash.
+
+For February we are on the active pursuit to push Zcash adoption sticking to our schedule and involving all fundamental parts of the blockchain ecosystem. We are scheduled to have calls with Jason davis and radix to get additional highlights on our presentation material as well as engage actively in the Zcash community.
+
+
+I'll put all valuable updates here as well as Zcash forums to actively in the Zcash community!
+
+
+Please see attached Flyers and Shirt images.
+
+
+Oyedeji Oluwoye | Founder | Coincentrix.io
+
+
+[1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-ef9faadb00e6.png]
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180221/ea1a979c/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook-1508555153.png
+Type: image/png
+Size: 9919 bytes
+Desc: Outlook-1508555153.png
+URL: </pipermail/general/attachments/20180221/ea1a979c/attachment.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0149.PNG
+Type: image/png
+Size: 406960 bytes
+Desc: IMG_0149.PNG
+URL: </pipermail/general/attachments/20180221/ea1a979c/attachment-0001.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 2018activateNSBEFINAL.jpg
+Type: image/jpeg
+Size: 6913708 bytes
+Desc: 2018activateNSBEFINAL.jpg
+URL: </pipermail/general/attachments/20180221/ea1a979c/attachment.jpg>
+
+From o.oluwoye at coincentrix.io  Wed Feb 21 12:55:55 2018
+From: o.oluwoye at coincentrix.io (Oyedeji Oluwoye)
+Date: Wed, 21 Feb 2018 17:55:55 +0000
+Subject: [ZcF-general] Zcash Education Outreach February Update - Coincentrix
+In-Reply-To: <DM5PR17MB132404445DAFD0D43F9901BE95CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+References: <DM5PR17MB132404445DAFD0D43F9901BE95CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+Message-ID: <DM5PR17MB1324C7B093FF1BE42FA0A5A995CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+
+ Shirt images!
+
+
+Oyedeji Oluwoye | Founder | Coincentrix.io
+
+
+[1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-ef9faadb00e6.png]
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180221/18e43ce9/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook-1508555153.png
+Type: image/png
+Size: 9919 bytes
+Desc: Outlook-1508555153.png
+URL: </pipermail/general/attachments/20180221/18e43ce9/attachment.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0150.JPG
+Type: image/jpeg
+Size: 1061742 bytes
+Desc: IMG_0150.JPG
+URL: </pipermail/general/attachments/20180221/18e43ce9/attachment.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0151.JPG
+Type: image/jpeg
+Size: 1049015 bytes
+Desc: IMG_0151.JPG
+URL: </pipermail/general/attachments/20180221/18e43ce9/attachment-0001.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0043.JPEG
+Type: image/jpeg
+Size: 4394749 bytes
+Desc: IMG_0043.JPEG
+URL: </pipermail/general/attachments/20180221/18e43ce9/attachment-0002.jpe>
+
+From josh at z.cash.foundation  Sun Feb 25 19:12:46 2018
+From: josh at z.cash.foundation (Josh Cincinnati)
+Date: Sun, 25 Feb 2018 16:12:46 -0800
+Subject: [ZcF-general] Zcash Education Outreach February Update -
+ Coincentrix
+In-Reply-To: <DM5PR17MB1324C7B093FF1BE42FA0A5A995CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+References: <DM5PR17MB132404445DAFD0D43F9901BE95CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+ <DM5PR17MB1324C7B093FF1BE42FA0A5A995CE0@DM5PR17MB1324.namprd17.prod.outlook.com>
+Message-ID: <CA+-Lzu8u2DBymCBf7N3L5Xi1N8yqtAp8V0TzcMttzjGubFqbpw@mail.gmail.com>
+
+Thanks for the update Oyedeji! Looking forward to hearing how the
+presentations go.
+
+On Wed, Feb 21, 2018 at 9:55 AM, Oyedeji Oluwoye <o.oluwoye at coincentrix.io>
+wrote:
+
+>  Shirt images!
+>
+> *Oyedeji Oluwoye *| *Founder* | *Coincentrix.io*
+>
+>
+> *[image:
+> 1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-ef9faadb00e6.png]*
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180225/f3701fa7/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook-1508555153.png
+Type: image/png
+Size: 9919 bytes
+Desc: not available
+URL: </pipermail/general/attachments/20180225/f3701fa7/attachment.png>
+
+From josh at z.cash.foundation  Thu Mar  1 01:33:52 2018
+From: josh at z.cash.foundation (Josh Cincinnati)
+Date: Wed, 28 Feb 2018 22:33:52 -0800
+Subject: [ZcF-general] Zcash Foundation End of February Update
+Message-ID: <CA+-Lzu_ihdubzqseS_UZMcYn=M5heVJBn8vzQTqvscCKtZRMMg@mail.gmail.com>
+
+February 2018 Zcash Foundation Update
+=====================================
+
+Dear ZcF General Subscribers,
+
+In an effort to provide greater visibility into the Zcash Foundation,
+I'll be writing end-of-the-month updates on our work by posting to
+this list. Attempting a monthly cadence, but may adjust as we learn.
+
+Without further adieu, here are the updates for the month of February,
+in no particular order:
+
+I was appointed Executive Director, in addition to preparing and
+presenting a vision/roadmap doc to the Board. More info in the blog
+post: https://z.cash.foundation//blog/exec-director-and-roadmap/ I'm
+really excited to represent the Zcash Foundation and looking forward
+to our work this year.
+
+Powers of Tau continues! It's been coordinated on a Foundation mailing
+list, though all credit for organizing and maintaining goes to Sean
+Bowe and Jason Davies. There's still time to participate?if you're
+interested, join the mailing list here:
+https://lists.z.cash.foundation/pipermail/zapps-wg/ and request to
+participate.
+
+We are beginning the planning process for the 2018Q2 grant program. We
+have $125k slated for the program this time around, but the amount may
+be increased with some outside support. Draft Q2 grant process
+available here:
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/tree/draft.
+Feedback is most welcome!
+
+Additionally, we have encouraged 2017Q4 grant recipients to post their
+updates to this list; Guarda and Coincentrix have been quite
+communicative either here or on GitHub?other grant receivers, if
+you're reading this, please consider posting. ;)
+
+We have been diligently planning Zcon0?our first conference, and what
+we're hoping will be the preeminent event on privacy technology in
+cryptocurrencies. It's June 25th-28th in Montreal, and if you're
+interested attending, the application is available here:
+https://z.cash.foundation//zcon/
+
+As part of the Zcon0, we're going to certify votes from the community
+to determine new board members and elect (or reject) current board
+members. There's long discussion on the governance issue available
+here: https://github.com/ZcashFoundation/ZcashFoundation/issues/56 ,
+but at the conclusion of that debate Zcash Foundation Board Chairman
+Andrew Miller posted this governance election proposal:
+https://github.com/amiller/ZcashFoundation/blob/election/election-proposal.md
+. As you might have guessed by now, feedback is very much welcome,
+either here or on GitHub!
+
+We've been actively pursuing hires for protocol development, web
+contracting, and communications?either full time or contractors.
+Pertinent GitHub Issues here:
+https://github.com/ZcashFoundation/ZcashFoundation/issues/53
+https://github.com/ZcashFoundation/ZcashFoundation/issues/54 . If you
+have any interest, please reach out to me directly (this address: josh
+[at] z.cash.foundation).
+
+Thanks all,
+
+Josh Cincinnati
+Executive Director, Zcash Foundation
+
+
+From flathashedtree at protonmail.com  Wed Mar 14 00:56:26 2018
+From: flathashedtree at protonmail.com (flathashedtree)
+Date: Wed, 14 Mar 2018 00:56:26 -0400
+Subject: [ZcF-general] Request for feedback - Zcash hardwallet
+Message-ID: <fjGLV8Z_Vho4Gza2PTqOPgw8vChJQV2GNmWRHzKEX5ETCGsGK6dJxJ810k8DSeIpaQRekChGpRk5rA0-BA8hpVzm52WAkzTqMPmbhdiq-4c=@protonmail.com>
+
+Hello everyone,
+
+to get the rocks rolling, here are the issue -& concept page link.
+
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/1
+https://arcula.bitbucket.io
+
+/Eagerly awaiting input ;)
+
+
+From josh at z.cash.foundation  Wed Mar 21 18:53:19 2018
+From: josh at z.cash.foundation (Josh Cincinnati)
+Date: Wed, 21 Mar 2018 15:53:19 -0700
+Subject: [ZcF-general] Request for feedback - Zcash hardwallet
+In-Reply-To: <fjGLV8Z_Vho4Gza2PTqOPgw8vChJQV2GNmWRHzKEX5ETCGsGK6dJxJ810k8DSeIpaQRekChGpRk5rA0-BA8hpVzm52WAkzTqMPmbhdiq-4c=@protonmail.com>
+References: <fjGLV8Z_Vho4Gza2PTqOPgw8vChJQV2GNmWRHzKEX5ETCGsGK6dJxJ810k8DSeIpaQRekChGpRk5rA0-BA8hpVzm52WAkzTqMPmbhdiq-4c=@protonmail.com>
+Message-ID: <CA+-Lzu_pJLcS34qLHSTTOjBHJo9os1uzRztWGeD2kwABeMt=jA@mail.gmail.com>
+
+Thanks so much for the early submission and solicitation of feedback! I
+left a comment on the GitHub issue, but thanks for reaching out here as
+well.
+
+On Tue, Mar 13, 2018 at 9:56 PM, flathashedtree via general <
+general at lists.z.cash.foundation> wrote:
+
+> Hello everyone,
+>
+> to get the rocks rolling, here are the issue -& concept page link.
+>
+> https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/1
+> https://arcula.bitbucket.io
+>
+> /Eagerly awaiting input ;)
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180321/1f5cb181/attachment.html>
+
+From o.oluwoye at coincentrix.io  Wed Apr 18 16:32:17 2018
+From: o.oluwoye at coincentrix.io (Oyedeji Oluwoye)
+Date: Wed, 18 Apr 2018 20:32:17 +0000
+Subject: [ZcF-general] In progress Updates Zcash - Coincentrix Capital
+Message-ID: <BN6PR17MB1313CF184DC945B55FAFA5BC95B60@BN6PR17MB1313.namprd17.prod.outlook.com>
+
+
+Snippets of the 3 events completed.
+
+
+UAB & Bessmer Public Library:
+
+
+On February 22nd, we held an event that proved exciting and highly informative. We managed to collaborate with Siamese Dreams (a local non-profit), National Society of Black Engineers (NSBE) and Alabama Power. While at the University of Alabama Birmingham, experienced crypto experts came from across the state. Our speakers included Tyler Frost and Matthew Rizzio, who partnered with us to educate and relay their experiences within the space, as well as their individual interactions with Zcash. The crowd was relevant and alert, since it consisted of Alabama Power Engineers and students that showcased their interest by submitting survey data both preceding and following the event. Our full and complete debrief will be available end of month via Medium, Linkedin and Steemit. The Bessemer Public Library event was also a new experience since it exposed Zcash to a rural area of Birmingham, Alabama. Our survey data compared across regions emphasized that more outreach is necessary in often overlooked outskirts like these. We were continually told this was the first time individuals at the Bessemer Public Library had seen or heard of Blockchain, Cryptocurrency and Zcash.
+
+
+[https://lh6.googleusercontent.com/WBdP6cJgTvIArx2uyzrMKisWn9kl7OsGD8FAJaGtqHJXxEGmPIQ474KozvWHnDCrz0ZaB4NhjFD4v6GsmURXwWFUDjM7pXis-qksPqXnfggHP6OH7gtniWpODEqWyx5dZLwdYl4I]
+
+
+Howard University:
+
+
+On March 30th, we held a successful event in collaboration with the African Business Club and Howard Blockchain Labs. Hosted in Annex Seminar Room, the crowd and audience was very much engaged with the privacy aspects of Zcash and the impact of Blockchain technology in Africa. Howard is a Historical Black College University (HBCU) and the Eventbrite link also managed to attract local cryptocurrency enthusiasts that did not attend the college. Students and community members actively engaged by also submitting survey data both preceding and following the event.
+
+
+After the event, surveys show the majority had an increased interest in utilizing Zcash while investing, even favoring Zcash over more popularized cyrptocurrencies like Bitcoin. Our full and complete debrief will also be available end of month via Medium, LinkedIn and Steemit.
+
+
+
+[https://lh4.googleusercontent.com/YHo82Y8NI_MFQcgN6dBOZxK8j-CR6CSvsRoVyetHv8h95z6r55afQLrW2Ce6pJC4gy9lsdZoeJTB0F2e8XEX3lCunTy5DjwzzOa1rYBDGPx8gAMO8q0fKzfZlCUvrwyuWCK90iW_]
+
+
+In April, we have multiple events planned in both Nashville, Tennessee and Huntsville, Alabama. Currently, we have speaking events at Alabama A&M and Tennessee State University (TSU), as well as a community event in Nashville. This event will be hosted at Pluckerz, a local favored chicken restaurant that caters to millennials. After exposing this business to cryptocurrency and blockchain, the restaurant has now decided to enlist Zcash as a form of payment within the store for clients. This event will celebrate this addition to their payments platform and mark the beginning of Zcash purchases following the event. Plucerz serves as a direct example of our local strategy to promote buy-in from small businesses and expose them further to Zcash. Throughout this process, we will also make sure to update the MineZcash list for businesses accepting Zcash.
+
+
+Please find attached samples of data we are currently analyzing to form a debrief outlining preceding and post-event insights, in addition to pictures and media resulting from the events.
+
+[https://lh6.googleusercontent.com/sZNs-aeWPtgYItumaPUGsVn2r_bjRxjFtGobtQmAhQhYsHNf0DtgqyB1JwZ3NRmukfjtgnYqTF-GILJJJ3cuYrJncec6C35wTbQajKM6ZZKovpCrCbyzuBT7ghB46JXvKomgRdyT]
+
+[https://lh4.googleusercontent.com/4Jh_D7jbd9lxQOyKp8Zh3vfTR9KLGOGrScG-8fZ0rSjB4E1-5ZqfJIquVf2O0JpCVXzCAJ0_w1lrpxI2YmuVhBhro6Wwport1alRPKIepoPOEOpjUDpjICSKo2NZQfnRnsRJbHqC][https://lh3.googleusercontent.com/lYR3tDcuNbrK-xonHbJXvrwCtYbXpuXJk_D0g4-5vkKqQdTJXi0KEMS2ztmcQsreOat5TjCCi0e0RG8qcqAFBZ1UPZle9-pAG5Bz8V-awzohVEgsUpIpwWGnwBqwGrKSxaIzoiPL]
+
+
+Regards
+
+
+Coincentrix Capital
+
+
+
+Oyedeji Oluwoye | Founder | Coincentrix.io
+
+
+[1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-ef9faadb00e6.png]
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180418/01800a13/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook-1508555153.png
+Type: image/png
+Size: 9919 bytes
+Desc: Outlook-1508555153.png
+URL: </pipermail/general/attachments/20180418/01800a13/attachment.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0199.JPG
+Type: image/jpeg
+Size: 329061 bytes
+Desc: IMG_0199.JPG
+URL: </pipermail/general/attachments/20180418/01800a13/attachment.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0185.JPG
+Type: image/jpeg
+Size: 2069628 bytes
+Desc: IMG_0185.JPG
+URL: </pipermail/general/attachments/20180418/01800a13/attachment-0001.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Edited10.jpg
+Type: image/jpeg
+Size: 4733257 bytes
+Desc: Edited10.jpg
+URL: </pipermail/general/attachments/20180418/01800a13/attachment.jpg>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Screen Shot 2018-04-18 at 3.45.19 PM.png
+Type: image/png
+Size: 90214 bytes
+Desc: Screen Shot 2018-04-18 at 3.45.19 PM.png
+URL: </pipermail/general/attachments/20180418/01800a13/attachment-0001.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Screen Shot 2018-04-18 at 3.45.26 PM.png
+Type: image/png
+Size: 74274 bytes
+Desc: Screen Shot 2018-04-18 at 3.45.26 PM.png
+URL: </pipermail/general/attachments/20180418/01800a13/attachment-0002.png>
+
+From o.oluwoye at coincentrix.io  Tue May  1 19:58:00 2018
+From: o.oluwoye at coincentrix.io (Oyedeji Oluwoye)
+Date: Tue, 1 May 2018 23:58:00 +0000
+Subject: [ZcF-general] Alabama A&M Update Zcash Outreach :
+Message-ID: <BN6PR17MB1313DFEF984F0E5BA5059DFD95810@BN6PR17MB1313.namprd17.prod.outlook.com>
+
+
+On April 26th, 2018 we were invited by Dr. Chance Glenn the Dean of the College of Engineering at Alabama A&M University to participate and provide a 1-hour presentation on Zcash and Blockchain Fundamentals for the Dean Speaker Series. It was an opportunity for residents within Huntsville, AL and other areas of Madison County to share ideas, lessons learned, and listen to important topics from invited speakers within the Southern region. This event was featured as a spotlight on WAFF 48, a local news station, and promoted by Alabama A&M University?s public relations department. This event attracted a crowd of more than 100 people that consisted of faculty, students, and community business and residents. Attendees were excited to be exposed to Zcash and Blockchain technology that led to a lengthy Q&A segment that last an hour. Attendees asked questions such as ?How do you see Zcash be utilized in everyday transactions? ?The Dean Speakers Series concluded with additional conversations about innovation and new opportunities that included integrating Zcash and Blockchain technology into student projects and course material within the College of Engineering. Several faculty members and residents from the community inquired about additional information and future collaborations. Below are several pictures from the Dean Speaker Series.
+
+
+
+
+
+Oyedeji Oluwoye | Founder | Coincentrix.io
+
+
+[1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-ef9faadb00e6.png]
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180501/f218465e/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook-1508555153.png
+Type: image/png
+Size: 9919 bytes
+Desc: Outlook-1508555153.png
+URL: </pipermail/general/attachments/20180501/f218465e/attachment.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: aamu6JPG.JPG
+Type: image/jpeg
+Size: 510869 bytes
+Desc: aamu6JPG.JPG
+URL: </pipermail/general/attachments/20180501/f218465e/attachment.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: AAMU2.JPG
+Type: image/jpeg
+Size: 2224178 bytes
+Desc: AAMU2.JPG
+URL: </pipermail/general/attachments/20180501/f218465e/attachment-0001.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: AAMU1.JPG
+Type: image/jpeg
+Size: 520556 bytes
+Desc: AAMU1.JPG
+URL: </pipermail/general/attachments/20180501/f218465e/attachment-0002.jpe>
+
+From sonya at z.cash.foundation  Tue May  1 20:24:55 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Tue, 1 May 2018 17:24:55 -0700
+Subject: [ZcF-general] Alabama A&M Update Zcash Outreach
+Message-ID: <CAOztXWir9VU9kAyPqALJ7NqyEYV4naXbZ8V=Xw1eDFi3YP2sqw@mail.gmail.com>
+
+Sounds like an excellent event! Oyedeji, is there video by any chance?
+
+Also, I should introduce myself to the list. I'm Sonya Mann, newest
+employee of the Zcash Foundation. I'll be running communications. In the
+future, anyone who's organizing an event like this should definitely reach
+out and I'll do what I can to help promote!
+
+Cheers,
+Sonya
+
+On Tue, May 1, 2018 at 5:00 PM, <general-request at lists.z.cash.foundation>
+wrote:
+>
+> ----------------------------------------------------------------------
+>
+> Message: 1
+> Date: Tue, 1 May 2018 23:58:00 +0000
+> From: Oyedeji Oluwoye <o.oluwoye at coincentrix.io>
+> To: "general at lists.z.cash.foundation"
+>         <general at lists.z.cash.foundation>
+> Cc: "josh at z.cash.foundation" <josh at z.cash.foundation>, "Pascal
+>         Ntsama" <info at coincentrix.io>
+> Subject: [ZcF-general] Alabama A&M Update Zcash Outreach :
+> Message-ID:
+>         <BN6PR17MB1313DFEF984F0E5BA5059DFD95810 at BN6PR17MB1313.
+> namprd17.prod.outlook.com>
+>
+> Content-Type: text/plain; charset="windows-1252"
+>
+>
+> On April 26th, 2018 we were invited by Dr. Chance Glenn the Dean of the
+> College of Engineering at Alabama A&M University to participate and provide
+> a 1-hour presentation on Zcash and Blockchain Fundamentals for the Dean
+> Speaker Series. It was an opportunity for residents within Huntsville, AL
+> and other areas of Madison County to share ideas, lessons learned, and
+> listen to important topics from invited speakers within the Southern
+> region. This event was featured as a spotlight on WAFF 48, a local news
+> station, and promoted by Alabama A&M University?s public relations
+> department. This event attracted a crowd of more than 100 people that
+> consisted of faculty, students, and community business and residents.
+> Attendees were excited to be exposed to Zcash and Blockchain technology
+> that led to a lengthy Q&A segment that last an hour. Attendees asked
+> questions such as ?How do you see Zcash be utilized in everyday
+> transactions? ?The Dean Speakers Series concluded with additional
+> conversations
+>  about innovation and new opportunities that included integrating Zcash
+> and Blockchain technology into student projects and course material within
+> the College of Engineering. Several faculty members and residents from the
+> community inquired about additional information and future collaborations.
+> Below are several pictures from the Dean Speaker Series.
+>
+>
+>
+>
+>
+> Oyedeji Oluwoye | Founder | Coincentrix.io
+>
+>
+> [1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-
+> ef9faadb00e6.png]
+> -------------- next part --------------
+> An HTML attachment was scrubbed...
+> URL: <https://lists.z.cash.foundation/pipermail/general/
+> attachments/20180501/f218465e/attachment.html>
+> -------------- next part --------------
+> A non-text attachment was scrubbed...
+> Name: Outlook-1508555153.png
+> Type: image/png
+> Size: 9919 bytes
+> Desc: Outlook-1508555153.png
+> URL: <https://lists.z.cash.foundation/pipermail/general/
+> attachments/20180501/f218465e/attachment.png>
+> -------------- next part --------------
+> A non-text attachment was scrubbed...
+> Name: aamu6JPG.JPG
+> Type: image/jpeg
+> Size: 510869 bytes
+> Desc: aamu6JPG.JPG
+> URL: <https://lists.z.cash.foundation/pipermail/general/
+> attachments/20180501/f218465e/attachment.jpe>
+> -------------- next part --------------
+> A non-text attachment was scrubbed...
+> Name: AAMU2.JPG
+> Type: image/jpeg
+> Size: 2224178 bytes
+> Desc: AAMU2.JPG
+> URL: <https://lists.z.cash.foundation/pipermail/general/
+> attachments/20180501/f218465e/attachment-0001.jpe>
+> -------------- next part --------------
+> A non-text attachment was scrubbed...
+> Name: AAMU1.JPG
+> Type: image/jpeg
+> Size: 520556 bytes
+> Desc: AAMU1.JPG
+> URL: <https://lists.z.cash.foundation/pipermail/general/
+> attachments/20180501/f218465e/attachment-0002.jpe>
+>
+> End of general Digest, Vol 4, Issue 1
+> *************************************
+>
+
+
+
+-- 
+Best,
+Sonya
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180501/c97bb7ed/attachment.html>
+
+From o.oluwoye at coincentrix.io  Wed May  2 10:41:38 2018
+From: o.oluwoye at coincentrix.io (Oyedeji Oluwoye)
+Date: Wed, 2 May 2018 14:41:38 +0000
+Subject: [ZcF-general] Nashville Outreach and BTC Media CEO Meeting
+Message-ID: <DM5PR17MB13249A2A5C920531F0437A5B95800@DM5PR17MB1324.namprd17.prod.outlook.com>
+
+Just wanted to notify the community that while in Nashville TN USA our team had a very informative meeting with CEO David Bailey of BTC Media. After our talk David sent us Bitcoin magazines and Distributed Magazines to help enhance our ZCash Outreach Program!! Special Thanks to BTC Media staff for hosting us while we did a presentation at Tennessee State University.
+
+
+
+
+
+Oyedeji Oluwoye | Founder | Coincentrix.io
+
+
+[1508555153029_OutlookEmoji-1508554593370_logo.png5be2b611-829e-4cf8-a39f-ef9faadb00e6.png]
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180502/cb948bf7/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook-1508555153.png
+Type: image/png
+Size: 9919 bytes
+Desc: Outlook-1508555153.png
+URL: </pipermail/general/attachments/20180502/cb948bf7/attachment.png>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0455.JPG
+Type: image/jpeg
+Size: 485246 bytes
+Desc: IMG_0455.JPG
+URL: </pipermail/general/attachments/20180502/cb948bf7/attachment.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0456.JPG
+Type: image/jpeg
+Size: 555275 bytes
+Desc: IMG_0456.JPG
+URL: </pipermail/general/attachments/20180502/cb948bf7/attachment-0001.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0457.JPG
+Type: image/jpeg
+Size: 516346 bytes
+Desc: IMG_0457.JPG
+URL: </pipermail/general/attachments/20180502/cb948bf7/attachment-0002.jpe>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: IMG_0458.JPG
+Type: image/jpeg
+Size: 878869 bytes
+Desc: IMG_0458.JPG
+URL: </pipermail/general/attachments/20180502/cb948bf7/attachment-0003.jpe>
+
+From sonya at z.cash.foundation  Sat Jun  2 21:34:32 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Sat, 2 Jun 2018 18:34:32 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_May=2C?=
+ =?utf-8?q?_2018?=
+Message-ID: <CAOztXWiN5VpP1vyTjNVnbGg_Zw-SeewRWo1VmkwU0kGNYeqHwQ@mail.gmail.com>
+
+Hello everyone! In case you haven't met me yet, my name is Sonya Mann. I'm
+the Zcash Foundation's third employee and new Communications Manager
+<https://z.cash.foundation//blog/welcome-sonya/>.
+
+I'll be the person writing and sending these updates going forward. My
+apologies that this one is late ? it was supposed to go out on Friday, but
+hopefully you wouldn't have read your email until Monday anyway ?
+
+Aside from hiring me, here's what the Zcash Foundation did in May:
+
+Grants Program
+We continued to spread the word of our Grants Program
+<https://z.cash.foundation//blog/q2-grant-program/>, which had an initial
+deadline of May 18. Ultimately we received 41 pre-proposals
+<https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues> (roughly
+10 more than last year
+<https://github.com/ZcashFoundation/GrantProposals-2017Q4/issues>). So far, 22
+applicants
+<https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues?q=is%3Aopen+is%3Aissue+label%3Ainvited-full>
+have been invited to submit full proposals.
+
+Updates on the last round of grant projects are due in June. We've reminded
+the recipients, and hope to see a handful of their faces at Zcon0. Speaking
+of which...
+
+Zcon0
+Planning and promotion for our first conference
+<https://z.cash.foundation//zcon/>, which takes place in late June, are
+ongoing. There is a list of confirmed speakers
+<https://z.cash.foundation/zcon/speakers/>, but we're still nailing down
+the exact agenda. Merchandise orders have either gone out or will be going
+out this week.
+
+Governance
+We are doing direct outreach to increase participation in our Community
+Governance Panel
+<https://github.com/ZcashFoundation/elections#the-community-governance-panel>
+(which Executive Director Josh Cincinnati blogged about in April
+<https://z.cash.foundation//blog/zcon0-and-community-governance/>).
+Currently there are 54 participants on the list
+<https://github.com/ZcashFoundation/Elections/blob/master/2018-Q2/governance_panel.md>
+.
+
+Nine people have self-nominated to join the Foundation's Board of
+Directors, as you can see on GitHub
+<https://github.com/ZcashFoundation/elections/pulls>.
+
+The current deadline for ballot proposals is June 8. At least one of them
+will address the question of ASIC mining. On that subject...
+
+ASIC Debate
+On May 8 the Foundation released a statement on ASIC resistance
+<https://z.cash.foundation//blog/statement-on-asics/>, in light of
+Bitmain's new Equihash-oriented ASIC miner
+<https://shop.bitmain.com/product/detail?pid=00020180516100211649AUOpGcK4066D>.
+How to approach ASIC resistance, or whether resistance is worthwhile at
+all, has generated a great deal of contentious discussion. You can get a
+taste on the forum
+<https://forum.z.cash/t/let-s-talk-about-asic-mining/27353>.
+
+The Foundation has already contracted researchers to search for evidence of
+Zcash stealth mining. Expect an update on their findings sometime soon.
+
+Miscellaneous
+The Foundation is actively recruiting for technical hires, and we have a
+couple of excellent candidates in the pipeline. Our current expectation is
+that we'll move forward with offers after Zcon0.
+
+On May 26 the Foundation organized a low-key gathering
+<https://z.cash.foundation//blog/east-bay-meetup/> in the SF Bay Area, in
+partnership with community member Howard Loo.
+
+The End
+That's all, folks! Feedback on the format and contents of these monthly
+updates is very welcome. Would you like more details? Less? Let me know!
+
+Cheers,
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180602/a1c483c0/attachment.html>
+
+From sonya at z.cash.foundation  Thu Jun  7 17:54:03 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Thu, 7 Jun 2018 14:54:03 -0700
+Subject: [ZcF-general] Study: Detecting ASIC Miners in Zcash
+Message-ID: <CAOztXWjA=AwmjYKiHHBagvY9BkHPDBGfhtO3OOcAJi9e_--E6Q@mail.gmail.com>
+
+Hi everybody! I'm cross-posting from our announcement blog post:
+https://z.cash.foundation//blog/asic-equihash-study/
+
+The Zcash Foundation asked University of Luxembourg researchers Alex
+Biryukov and Daniel Feher to investigate the potential presence (now or in
+the past) of ASIC miners in the Zcash and Equihash ecosystems. This is the
+first step in addressing the commitments we made in our official statement
+<https://z.cash.foundation//blog/statement-on-asics/> on the ASIC
+resistance debate. Today we are jointly releasing the results; the full
+report is available on their website
+<https://cryptolux.org/images/e/ef/Zcash_Mining.pdf>.
+
+Biryukov and Feher concluded, ?In the short period of time of this study (2
+weeks) we could put an upper bound on the ASIC/FPGA potential presence in
+Equihash mining ecosystem as of end of May 2018 at 20 ? 30% of total mining
+operations,? based on GPU miner?s dev-fee estimates and the fraction of
+above 8Ksol miners in the Equihash mining landscape. Dev fees are typically
+2% voluntary fees that many of the GPU miners pay to the developers of the
+most optimized GPU mining software.
+
+To be clear, that means that *if* ASIC operations were active in the
+Equihash ecosystem, they did not comprise more than 20 ? 30% of total hash
+power.
+
+Biryukov and Feher continued, ?Most of the mining power (95%) is
+concentrated in pools so any large hidden ASIC/FPGA operation should be
+present in one or several of the pools, moreover four pools concentrate
+87.5% of the total mining power.?
+
+The researchers made sure to include a caveat: ?It is important to note
+that our current methods can be ?fooled? by careful ASIC miner and the
+methods are also not fine-grained enough to detect ASIC miner testing of
+few % of the total hash-rate. This is a work for further research.?
+
+We encourage you to read the study
+<https://cryptolux.org/images/e/ef/Zcash_Mining.pdf> yourself, as well as
+the ballots <https://github.com/ZcashFoundation/Elections/pulls> that will
+be part of our upcoming governance process.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180607/d8e323e6/attachment.html>
+
+From sonya at z.cash.foundation  Fri Jun 15 18:17:36 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Fri, 15 Jun 2018 15:17:36 -0700
+Subject: [ZcF-general] Community governance / voting process underway!
+Message-ID: <CAOztXWgafKoc6oQF4ZV4iibBz5j23qb9SXxTeMMyubequC9RWw@mail.gmail.com>
+
+Hi everyone! Here is our latest update on Zcash Foundation ballot proposals
+and board nominations: https://z.cash.foundation//blog/governance-voting/
+
+It's especially relevant to those of you on the Community Governance Panel.
+But we want everyone to understand how the governance process will proceed,
+and what exactly is being voted on. It's also useful for everyone to have
+the opportunity to comment, regardless of whether they're going to vote.
+
+Let me know if you have any questions, and feel free to share your thoughts
+here via email, or on the forum:
+https://forum.z.cash/t/voting-on-proposals-and-board-candidates/29713
+
+Have a great weekend!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180615/6b00d3b2/attachment.html>
+
+From sonya at z.cash.foundation  Mon Jul  2 21:50:07 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Mon, 2 Jul 2018 18:50:07 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_June?=
+ =?utf-8?q?=2C_2018?=
+Message-ID: <CAOztXWiJ=F4k5T6kbTZc5NG8Wi+g4oLhOcBv_RU-9QtmMFp_Jg@mail.gmail.com>
+
+Hello everyone! June was a hectic month for the Foundation. In the best
+possible way ? but I think we're all looking forward to a calmer July.
+Anyway, here's everything we did in June:
+
+ASICs
+
+As background, hopefully you've read the official statement on ASIC
+resistance that we published in May:
+https://z.cash.foundation//blog/statement-on-asics/
+
+Making good on our promises, in June the Foundation co-released a study
+conducted by University of Luxembourg researchers Alex Biryukov and Daniel
+Feher, which examined the presence of Equihash ASIC miners:
+https://z.cash.foundation//blog/asic-equihash-study/
+
+Not long after that, the Foundation issued an open request to miner
+manufacturers, outlining the transparency we'd like to see from them:
+https://z.cash.foundation//blog/hardware-transparency/
+
+We plan to circle back on the results of that request sometime in the
+coming months. Exact date TBD.
+
+Grants
+
+The Grant Review Committee invited 23 candidates to submit full proposals:
+https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues?q=is%3Aopen+is%3Aissue+label%3Ainvited-full
+
+All but two have done so. Stay tuned for further decisions from the
+Committee!
+
+Updates from the previous round of grantees will be shared in July. The
+format is TBD; this may be a Foundation blog post or it may be part of Eran
+Tromer's program report. Perhaps both. Either way, we'll let you know on
+Twitter and in the next edition of this email.
+
+Governance
+
+Our experimental community governance process went forward in June, thanks
+to heroic effort from Executive Director Josh Cincinnati. Here's how the
+process worked, and the spirit in which we conducted it:
+https://github.com/ZcashFoundation/Elections
+
+The list of people who voted:
+https://github.com/ZcashFoundation/Elections/blob/master/2018-Q2/governance_panel.md
+
+And what they were voting on:
+https://z.cash.foundation//blog/governance-voting/
+
+Many participants told us that the governance process was confusing. (The
+fact that I had to list three separate links above is indicative of our UX
+problems.) A handful of would-be participants said that it was not
+announced widely enough.
+
+On the bright side, one person noted that they were impressed by how many
+people voted despite these issues! The 88.88% turnout is mostly thanks to
+Josh "getting out the vote," so to speak, by repeatedly emailing Panel
+members.
+
+On the even brighter side, we've already conducted detailed postmortems,
+both with the Zcash Foundation Board and a larger group. We have a good
+idea of what ought to be changed next time (although more feedback is still
+welcome). Expect much greater clarity and streamlining during our next
+round of governance!
+
+The actual results were announced at Zcon0. You can review the full details
+here:
+https://vote.heliosvoting.org/helios/elections/cdc15aa6-6f75-11e8-b5e0-0e48ec97cebb/view
+
+Foundation Chairman Andrew Miller got on stage to walk Zcon0 attendees
+through the proposals and results: https://youtu.be/m8gv8rvcV08
+
+In a concurrent meeting, Naval Ravikant and Yan Zhu stepped down from the
+Board, while new members Ian Miers and Amber Baldet were unanimously
+approved to join. We are thrilled to have them on board (pun intended), and
+we are grateful to Naval and Yan for their service.
+
+As for the other ballot proposals, the Foundation plans to release a
+detailed statement outlining our response(s) to the Panel's decisions on
+Tuesday the 3rd (tomorrow). You'll find it on our blog:
+https://z.cash.foundation//blog/hardware-transparency/
+
+Our direction will be influenced by the Board discussion that took place on
+June 28th:
+https://github.com/ZcashFoundation/ZcashFoundation/blob/master/board-documents/minutes/2018-06-28.md
+
+Zcon0
+
+The conference was a triumph (and it's not bragging for me to say that,
+because personally I did close-to-zero planning). The whole Zcash community
+has taken the #BUIDL meme to heart, and we could not be more appreciative.
+
+If you attended, hopefully you heard Operations Director Antonie Hodge
+congratulated several times, but she deserves at least one more shoutout.
+Thank you also to Paige Peterson from the Zcash Company, and of course our
+Executive Director Josh Cincinnati, for doing substantial work alongside
+Antonie. And on top of that, much love to the many speakers and workshop
+leaders who shared their expertise and wisdom!
+
+Check out a few of the highlights on Twitter:
+https://twitter.com/search?q=zcon0&src=typd
+
+All of the talks were livestreamed, and can be watched on our YouTube page:
+https://www.youtube.com/playlist?list=PL40dyJ0UYTLK507afWUMgzUYeh-i4qQWS
+
+HD versions are coming soon. Ryan Taylor from the Zcash Company took
+ownership of handling the live video and he did a fantastic job!
+
+Workshop notes are available on GitHub:
+https://github.com/ZcashFoundation/zcon0-workshop-notes
+
+Final Tidbits
+
+The Freedom of the Press Foundation now accepts donations in $ZEC, and
+plans to support shielded transactions soon!
+https://z.cash.foundation//blog/freedom-of-the-press/
+
+Check out the Zcash Community merch store: https://shop.zcashcommunity.com/
+
+That's all. Thanks for getting to the end of this extensive email. As
+usual, please ping me if you have any questions or comments!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180702/8aef9687/attachment.html>
+
+From sonya at z.cash.foundation  Mon Aug  6 20:54:45 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Mon, 6 Aug 2018 17:54:45 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_July?=
+ =?utf-8?q?=2C_2018?=
+Message-ID: <CAOztXWhq7+wRJG9qh3KD6uaBda_nnRBoYjTApV=gJwcvik2QXg@mail.gmail.com>
+
+Hello everyone! I hope you're having a lovely August so far. Apologies for
+the delay in sending this email ? I was tied up with the Decentralized Web
+Summit last week. But I'll tell you about that next month in the August
+recap :)
+
+After a very eventful June, the Foundation spent July getting our feet back
+under us. There's a lot going on internally that we're not ready to
+announce, except in broad strokes: We're continuing to work on hiring,
+technical partnerships, the grants program, and an overhaul of our web
+presence.
+
+Notable July events:
+
+? On the 3rd, we published the Foundation's interpretation of the results
+from our governance process, including thoughts on how to improve it next
+time: https://z.cash.foundation//blog/governance-results/
+
+? On the 10th, we weighed in on the Zcash Ecosystem Fund controversy:
+https://z.cash.foundation//blog/founders-reward/
+
+? On the 12th, we published a comprehensive Zcon0 recap with lots of links:
+https://z.cash.foundation//blog/zcon0-recap/
+
+? On the 26th, we were pleased to see Bitmain take further steps toward
+transparency:
+https://blog.bitmain.com/en/transparency-policy-shipping-mining-practices/
+
+Bitmain's announcement is worth including because it was formulated, at
+least in part, as a response to our June request that hardware
+manufacturers start sharing more metrics:
+https://z.cash.foundation//blog/hardware-transparency/ (we know this for
+certain from conversations with Bitmain staff)
+
+A few additional items from the wider world of Zcash...
+
+Billy Garrison blogged about how and why to participate in the Sapling MPC:
+
+1)
+https://medium.com/@blockchainbilly/participating-in-the-zcash-sapling-mpc-8fdbe89d8838
+
+2)
+https://medium.com/@blockchainbilly/what-is-the-zcash-sapling-mpc-ceremony-8b9c29e4c7c6
+
+BitGo added Zcash support! "BitGo isn't a run-of-the-mill ZCash
+implementation ? this is the FIRST multi-signature ZCash wallet. Technical
+folks will know that multi-sig in ZCash is different from other blockchains
+and it does affect privacy. But finally ? a secure platform for ZCash is
+here!" ? BitGo CEO Mike Belshe:
+https://twitter.com/mikebelshe/status/1022128951693459456
+
+Coinbase might add support for $ZEC, a possibility summed up in a Zcash
+Company blog post: https://blog.z.cash/coinbase-exploring-zcash/
+
+Reply to this email if you have any specific questions and I'll be happy to
+provide whatever additional details I can! Thank you.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180806/dd44144c/attachment.html>
+
+From sonya at z.cash.foundation  Wed Sep  5 03:30:15 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Wed, 5 Sep 2018 00:30:15 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_August?=
+ =?utf-8?q?=2C_2018?=
+Message-ID: <CAOztXWhDFiHbncMwsSKKYgS6Wuav=xnGNi2Kdp4tB3-c-s5+tg@mail.gmail.com>
+
+Hello everyone! Happy Labor Day / International Workers' Day to all of you.
+If you had a long weekend, I hope you enjoyed it.
+
+August was a heads-down month for the Zcash Foundation, so this update will
+be on the shorter side. Two items from previous months that are still in
+progress, moving forward but not finished:
+
+   - Technical hiring.
+   - Website overhaul.
+   - Finalizing the grants.
+
+Speaking of those last two, we have a handy grants page now:
+https://z.cash.foundation/grants/
+
+While you're at it, sign up for our new proper newsletter:
+https://buttondown.email/zcashfoundation
+
+(I don't plan to replicate content between this list and that one. And
+don't worry, we'll have our own URL for the newsletter archives before
+long. I didn't want to wait to start gathering contact info, since email is
+such a powerful marketing channel.)
+
+Meanwhile, Antonie has been preparing the financial audit of 2017. She has
+also undertaken early planning for Zcon1. We're not ready to announce
+concrete details, but potential attendees will get much more advance notice
+this year.
+
+I've been primarily focused on meetups, collaborating with Paige from the
+Zcash Company. I got to meet the New York and Sacramento volunteers in
+person this month, which was illuminating.
+
+The Foundation has an umbrella network on Meetup.com now:
+https://meetup.com/pro/zcash-foundation
+
+If you're in LA, go hang out and talk about Sapling on the 22nd:
+https://www.meetup.com/lazcash/events/254133917/
+
+And if you're near Boston, go to the Sapling activation party that Neal
+Jayu is hosting in October!
+https://www.meetup.com/Boston-Zcash-Users-Group/events/253859408/
+
+Paige and I hope to get more Sapling activation parties rolling.
+
+We've written an in-depth guide for organizers that is almost ready to
+publish. It's just waiting on a couple of design elements.
+
+Some miscellaneous items:
+
+   - A discussion of Bitmain's transparency policy, and whether it's good
+   enough, on the forum:
+   https://forum.z.cash/t/bitmains-transparency-policy-over-zcash-asics-ended-after-just-one-month-and-nobody-even-noticed/30886
+   - "Decentralized funding? An analysis of three programs" by Nadia
+   Eghbal, which includes the Zcash Foundation:
+   https://nadiaeghbal.com/grant-programs
+   - BOLT! https://twitter.com/ja_akinyele/status/1029550602404200454
+   - The Foundation helped sponsor the Zero Knowledge Summit, which is
+   happening this week in Berlin: http://www.zeroknowledge.fm/summit
+
+As usual, please let me know if you have any questions.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20180905/bca8dedb/attachment.html>
+
+From sonya at z.cash.foundation  Wed Oct  3 14:20:14 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Wed, 3 Oct 2018 11:20:14 -0700
+Subject: [ZcF-general] Zcash Foundation September Summary
+Message-ID: <CAOztXWgM6ACZAhDQfD906iPMAG71kVaFKKHJpCSWwSz0AQWA9A@mail.gmail.com>
+
+Hello everyone, and happy October! Here's a snappy update on the
+Foundation's September doings.
+
+We took over the Zcash forum and the chat:
+https://forum.zcashcommunity.com/t/forum-handover-url-change/31168
+
+We sponsored the Zero Knowledge Summit in Berlin. Check out the videos from
+the event:
+https://www.youtube.com/watch?v=w4eYj_tPcTU&list=PL3bvPCw5QCLK0B6tN7LtAjRdVOstQSiU8
+
+The Foundation also sponsored Crypto Springs in Palm Springs (in fact, Josh
+is attending right now).
+
+We launched a full guide to running Zcash meetups:
+https://z.cash.foundation/meetups/
+
+Unveiled our new visual branding:
+https://twitter.com/ZcashFoundation/status/1040691595341848576
+
+Announced an upcoming meetup during SF Blockchain Week:
+https://www.meetup.com/urbit-sf/events/255001807/
+
+The Foundation also continued to work on technical hiring. A couple of
+favored candidates fell through, unfortunately, but we're pursuing multiple
+proposals for reference wallet implementations (both on mobile and
+desktop). We still want to hire a protocol developer, so please send this
+link to anyone who might be interested:
+https://github.com/ZcashFoundation/ZcashFoundation/issues/74
+
+We started fleshing out the new website, which will be more organized and
+accessible ? see the WIP here:
+https://github.com/RichardLitt/zcashfoundation.github.io
+
+We started brainstorming a revamped, nimbler Grants Program. Details are
+still being figured out.
+
+And lastly, Antonie is still doing early planning for Zcon1. We hope to
+announce a location soon!
+-- 
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181003/5adb408b/attachment.html>
+
+From sonya at z.cash.foundation  Thu Nov  1 21:08:17 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Thu, 1 Nov 2018 18:08:17 -0700
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_Octobe?=
+ =?utf-8?q?r=2C_2018?=
+Message-ID: <CAOztXWhS64oqkFkzwe99k7XG9aEP-5JyVS9qWrgFZZDE_TTC6A@mail.gmail.com>
+
+Happy November, friends! In chronological order, here's how the Zcash
+Foundation spent its time during October ???????
+
+We contributing to sponsoring Crypto Springs, a conference in Southern
+California. Executive Director Josh Cincinnatti attended.
+
+We held a successful meetup during SF Blockchain Week. The presentations
+were not recorded, but here's a snapshot of Alejandro Machado as he
+described his research on Zcash usage in Venezuela:
+https://twitter.com/ZcashFoundation/status/1050224386060382208
+
+We published a blog post with updates from the previous round of grant
+winners, and included a brief note on the delay in announcing the next
+round: https://z.cash.foundation/blog/update-on-grants/
+
+That brief note is important enough to excerpt here:
+
+> You may be wondering what on earth is going on with our Grants Program.
+We know that this answer is unsatisfying, but we?re dealing with internal
+delays and figuring out how to address the process deficiencies for future
+programs.
+
+> Our plan for Q4 and beyond is to switch to a more lightweight, nimble
+funding option. The Grants Program has produced excellent work, but the
+Foundation wants to accelerate that progress and improve our ability to
+support the Zcash ecosystem.
+
+Later in the month, we hosted a Sapling celebration livestream that
+featured Q&A with Zcash Company engineers and other staff:
+https://www.youtube.com/watch?v=XtIYLqHfbSk
+
+Here's the most exciting item on the list! We announced a technical
+partnership with Parity Technologies to build an independent Zcash node
+implementation. Many more details in our press release:
+https://z.cash.foundation/blog/parity-partnership/
+
+Parity's blog post:
+https://medium.com/paritytech/parity-teams-up-with-zcash-foundation-for-parity-zcash-client-cca8a47e18f3
+
+CoinDesk coverage: https://www.coindesk.com/parity-zcash-crypto/
+
+At the very end of the month, Executive Director Josh Cincinnati spoke at
+Devcon4, as did Ian Miers, who is on the Zcash Foundation Board. We're
+developing blog posts based on both talks.
+
+You can watch a recorded livestream of Josh's talk at this link, just
+navigate to the 5:43:00 timestamp:
+https://slideslive.com/38911452/devcon4-day2
+
+The timestamp of Ian's talk has yet to be unearthed, but you can watch a
+previous version that he presented at Scaling Bitcoin. Timestamped link:
+https://www.youtube.com/watch?v=YgtF7psIKWg&feature=youtu.be&t=3685
+
+Throughout the month, behind the scenes, we continued conversations about
+revamping the Grants Program and coordinating with the Zcash Company on
+standards and development work. We also continued evaluating several
+potential partnerships that are still too early or tentative to share in
+public.
+
+Phew, that's everything! We hope that you all had a happy Sapling
+activation and a happy Halloween! As always, feel free to respond to this
+email with any questions or comments.
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181101/89d661d3/attachment.html>
+
+From adityapk at protonmail.com  Sat Nov 24 20:17:46 2018
+From: adityapk at protonmail.com (adityapk)
+Date: Sun, 25 Nov 2018 01:17:46 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <hNjh1wzJJ7q-6TcI0vbpO3gQg-_XTJQWueU6KzznEF6ZRAB4vO8ghBf3tnfGe1UMFUaEBhszWK-Iy45iPXgA4HXSfxwcINLa7oiFqy9Ri_o=@protonmail.com>
+
+Week 3:
+ - Installers for Windows and Linux (deb packages) done. Will launch on Monday.
+ - Full labels support including Address Book
+ - Auto-shielding of change from t-Addresses
+ - Update github with FAQs, instructions. Several developers have now successfully compiled and built their own zec-qt-wallet.
+
+Next week:
+
+ - Localization & translations support, solicit help from community to translate zec-qt-wallet to other languages
+ - Continue working on performance.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181125/850b5084/attachment.html>
+
+From ericvaughn at pm.me  Wed Nov 28 19:53:04 2018
+From: ericvaughn at pm.me (ericvaughn at pm.me)
+Date: Thu, 29 Nov 2018 00:53:04 +0000
+Subject: [ZcF-general] PayWithZ.cash Progress
+Message-ID: <A-gwh-Tpl0698TGP4fJlY8IJ_yAlPs96hMPxvNqugnT40rq205GlgXcUbrIB8OZ6bYMv1xxeUkVvIfyH8nO4QGPRBTiLVd6nyJoDpf1CkJA=@pm.me>
+
+PaywithZ.cash
+Progress and Success as of November 28, 2018
+
+- 5 years of hosting services and domain registration secured through 10/22/2023.
+- Website redesign with dark abstract theme, multiple pages, and easier to read formatting, optimized for mobile viewing.
+- @PayWithZcash Twitter followers increased from 26 this spring to 147 currently.
+- Listings of merchants and non-profits who accept Zcash increased from 29 this spring to 98 currently. A special thanks to Dimitris A. for recently onboarding 20+ merchants in Greece.
+- I look forward to continually updating with new merchants and non-profits, and growing with the Zcash community.
+
+Thanks again, Eric
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181129/ac24807c/attachment.html>
+
+From adityapk at protonmail.com  Fri Nov 30 15:20:51 2018
+From: adityapk at protonmail.com (adityapk)
+Date: Fri, 30 Nov 2018 20:20:51 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <XCQxiB2x1pW8spRRMypBmv_1VrVbf0yFFd7Vfrgx_XVLGAEuGP7J6aJgKXZlErczQuYDNKkOdRmICAux_jWsGtxwtTNcX08KDdMJlrnUs14=@protonmail.com>
+
+This week:
+ - Fixed lots of rendering problems in prep for localization
+ - Created compile + build infra to support multiple languages
+ - A couple of volunteers are translating the UI
+ - Localization is finally ready, we'll release our first language next week.
+
+Next week
+ - Add more languages for localization, release localized builds
+ - Performance improvements for large wallets (lots of tx / addresses)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181130/29cc6e0d/attachment.html>
+
+From sonya at z.cash.foundation  Mon Dec  3 20:51:34 2018
+From: sonya at z.cash.foundation (Sonya Mann)
+Date: Mon, 3 Dec 2018 17:51:34 -0800
+Subject: [ZcF-general] =?utf-8?q?Zcash_Foundation_Update_=E2=80=94_Novemb?=
+ =?utf-8?q?er=2C_2018?=
+Message-ID: <CAOztXWjm3qRBFdQrBjS_4Ck7iFHedVcENmjD4eU=2z7AaVyFGA@mail.gmail.com>
+
+Hello everyone, happy December! We hope that whatever fall or winter
+holidays you celebrate have been, and will continue to be, full of joy.
+
+November was certainly a joyful month for the Zcash Foundation. We
+announced the winners of the 2018Q2 Grants Program:
+https://z.cash.foundation/blog/q2-grant-winners/
+
+We also announced that we're funding Aditya Kulkarni's zec-qt-wallet, a
+cross-platform GUI wallet that includes a full node, as well as a new iOS
+wallet to be created by Justin Smith:
+https://z.cash.foundation/blog/wallet-agreements/
+
+We helped sponsor a zk-proofs workshop in London:
+https://www.eventbrite.com/e/free-two-day-zero-knowledge-proof-developer-workshop-hackathon-tickets-52320521087#
+
+And the Foundation is among the sponsors of an upcoming event on Wednesday
+called Blockchain Against Evil:
+https://www.eventbrite.com/e/blockchain-against-evil-tickets-52069749021
+(tickets are still available!)
+
+Last month we wrote: "Throughout the month, behind the scenes, we continued
+conversations about revamping the Grants Program and coordinating with the
+Zcash Company on standards and development work. We also continued
+evaluating several potential partnerships that are still too early or
+tentative to share in public." That remains true.
+
+December is likely to be a slow month, but we'll have more exciting news to
+share in Q1 and Q2 of 2019.
+
+A question about this monthly summary email: We've been focusing on
+tangible public progress that the Zcash Foundation made in a given month.
+Would you prefer more operational details? (The operational details tend to
+be, "The team sent a lot of emails and did some phone calls," so that might
+not be interesting.) News about the general Zcash ecosystem? No guarantees
+that we'll shift format, but feedback is welcome!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+@sonyaellenmann <https://twitter.com/sonyaellenmann>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181203/70ed4079/attachment.html>
+
+From adityapk at protonmail.com  Fri Dec  7 14:01:37 2018
+From: adityapk at protonmail.com (adityapk)
+Date: Fri, 07 Dec 2018 19:01:37 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <TgjGGE9qfpfgtEc0WrVtCVN-PhBGcPx4EKc4rak6TDWkxJ4G7LkG7yECJm7qI_RDm6uI5dPJf135xiCQs7Fdxk4KcsdiC_JML2Op1-XiLYk=@protonmail.com>
+
+This week
+ - Released localized zec-qt-wallet in 3 languages - FR, PT and ES.
+- Simple messaging with the ability to reply to messages and include a "reply-to" address
+ - Several new features / bug fixes
+   - Show if address is reused
+   - Improve performance on the RPC calls
+   - Several small bugfixes
+- Update embedded zcashd to 2.0.2
+
+Next week
+- Continue working on perf, handle very large Txs
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181207/72abf6d9/attachment.html>
+
+From adityapk at protonmail.com  Fri Dec 14 13:19:14 2018
+From: adityapk at protonmail.com (adityapk)
+Date: Fri, 14 Dec 2018 18:19:14 +0000
+Subject: [ZcF-general] zec-qt-wallet update
+Message-ID: <Li6O9u8DjAGOfpVhJH5BzMd8gI0DZEQxHqUSoyw1DbMwZi8MVha5PTaA1Be-oYquyaJDkv2nwTJXWpqMEfnZWS_E_7LQFDD8qec8CAbCE8M=@protonmail.com>
+
+This week
+- Added ability to connect over Tor
+- RPC improvements to help large wallets load easily.
+- Few community-requested features (Balances on the Tx window, Max button with custom fees, Previously used addresses, Warning if no peers)
+
+Next week
+- Wrap up feature work, close issues
+- Add tests and improve code so we can maintain it properly going forward
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/general/attachments/20181214/a07d4f8a/attachment.html>
+
+From radoslaw.michalski at pwr.edu.pl  Mon Dec 24 04:50:18 2018
+From: radoslaw.michalski at pwr.edu.pl (=?UTF-8?Q?Rados=c5=82aw_Michalski?=)
+Date: Mon, 24 Dec 2018 10:50:18 +0100
+Subject: [ZcF-general] Grant project progress report: platform for zcash
+ blockchain analysis
+Message-ID: <ab08af29-e284-b08e-fd1c-f346a6e9c887@pwr.edu.pl>
+
+Dear All,
+
+In this e-mail we would like to update you on the progress of the tool
+for zcash blockchain analysis platform (GrantProposals-2018Q2, grant
+proposal #39).
+
+Firstly, we established a dedicated repository for the tool (called
+"Dru"): https://github.com/bergplace/Dru.
+
+Secondly, we made a decision that Dru will consist from two layers:
+- block-engine devoted for obtaining and block storage in a database
+- frontend that will be responsible for interaction with the user (API,
+handling requests, messaging)
+
+This will allow to obtain and run only a docker image of the
+block-engine for those who have different ideas for the use of the
+system, not related to the frontent/API. Of course, in the grant project
+we will deliver both layers.
+
+We successfuly moved and abstracted the blockchain layer and as for now
+the block-engine is capable of working with zcash.
+
+We also await the security recommendations of the security expert who
+joined and evaluates the project idea.
+
+Apart from that we started to work on the documentation of the project.
+
+Greetings,
+Radoslaw Michalski & team
+
+
+

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Version of Rust
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Version%20of%20Rust&In-Reply-To=%3C20171117182435.GA19911%40savin.petertodd.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000049.html">
+   <LINK REL="Next"  HREF="000056.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Version of Rust</H1>
+    <B>Peter Todd</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Version%20of%20Rust&In-Reply-To=%3C20171117182435.GA19911%40savin.petertodd.org%3E"
+       TITLE="[zapps-wg] Version of Rust">pete at petertodd.org
+       </A><BR>
+    <I>Fri Nov 17 13:24:35 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000049.html">[zapps-wg] Version of Rust
+</A></li>
+        <LI>Next message (by thread): <A HREF="000056.html">[zapps-wg] Version of Rust
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Nov 17, 2017 at 05:08:02PM +0000, Devrandom wrote:
+&gt;<i> I'm going to try to compile with older versions, will let you know how it
+</I>&gt;<i> goes.  Ideally we could get to versions before zcash was announced.
+</I>&gt;<i> 
+</I>&gt;<i> This will be fun, have not done Rust before.  But here are some thoughts
+</I>&gt;<i> about the Rust compiler after trying to compile it from source:
+</I>&gt;<i> 
+</I>&gt;<i> - the Rust compiler can only be built with itself, which means that you
+</I>&gt;<i> have to start from a binary, so you might as well trust the binary
+</I>
+Nope! There's an alternate Rust compiler written in C++ called mrustc:
+
+    <A HREF="https://github.com/thepowersgang/mrustc">https://github.com/thepowersgang/mrustc</A>
+
+It's not suitable for general use as it lacks a borrow checker, but Rust only
+needs the borrow checker to catch mistakes; if your code is perfect alredy you
+don't need it. Thus mrustc is suitable for compiling the Rust compiler itself,
+something I hear it is able to do. Assuming you can in fact get that to work,
+that's sufficient to do diverse double-compilation.
+
+Secondly, if you're feeling adventerous, you could try re-bootstrapping it from
+the original OCaml implementation. :)
+
+FWIW I have a timestamp on mrustc from a few days ago:
+
+    <A HREF="https://github.com/petertodd/mrustc/commit/6b30d486dc3b653302fd4bc4887b92e5feb1044c">https://github.com/petertodd/mrustc/commit/6b30d486dc3b653302fd4bc4887b92e5feb1044c</A>
+
+&gt;<i> - if we start with a really old one, the chances of a targeted attack are
+</I>&gt;<i> pretty slim
+</I>
+Agreed, but note that a targeted attack isn't our *only* threat.
+
+When you think about it, compiler backdoors are basically a class of exploit
+where the attack causes source code to be miscompiled into machine code that
+the auditors looking at the source code didn't expect. This means that a
+compiler backdoor can be generic, and can be prepared in advance.
+
+Basically, in this scenario the Rust compiler would have a subtle compilation
+flaw that could be maliciously triggered by the powersoftau authors to produce
+machine code that did something other than what you'd expect it to do, e.g.
+causing a PRNG to zero out part of it's entropy pool. Starting with a really
+old Rust compiler doesn't necessarily protect us from this attack; this type of
+attack may also be done with an *accidental* compiler bug too (although it'd be
+harder to find a suitable one).
+
+
+A cheap way to defeat this intentional miscompilation attack is to simply
+modify the powersoftau codebase as much as possible so that any hypothetical
+miscompilations are no longer triggered. For example, even if you didn't have
+the skillset to understand the code, you could mechanically go through the
+codebase (and dependencies) and replace all integers with a hexadecimal string
+type, and reimplement the necessary operator traits for that new type.
+
+Sure, that'd be slow as heck, but it doesn't have to be fast: by using a
+deterministic secret you can compare your ridiculous hex string implementation
+with the reference implementation offline. If both implementations match,
+you've just ruled out a whole class of intentional miscompilation attacks.
+
+&gt;<i> - a general trojan that detects access to /dev/random and reduces entropy
+</I>&gt;<i> could still be lurking
+</I>&gt;<i> - the mixing of entropy from the user should mitigate, unless the compiler
+</I>&gt;<i> can be smart enough to detect even that
+</I>
+A trojan that can detect access to /dev/random would be in a position to do
+whatever it wanted to the powersoftau binary; this is basically the same
+problem as getting a clean Rust compiler.
+
+&gt;<i> BTW, what does the timestamp on crates.io buy us? Looking at the repo, it
+</I>&gt;<i> looks like they just commit version numbers, but not git hashes of the
+</I>&gt;<i> source code.
+</I>
+They do. For example, powersoftau depends on the blake2 crate, v0.6.1
+
+The relevant crates.io-index entry is at <A HREF="https://github.com/rust-lang/crates.io-index/blob/master/bl/ak/blake2,">https://github.com/rust-lang/crates.io-index/blob/master/bl/ak/blake2,</A>
+specifically:
+
+    {&quot;name&quot;:&quot;blake2&quot;,&quot;vers&quot;:&quot;0.6.1&quot;,&quot;deps&quot;:[{&quot;name&quot;:&quot;digest&quot;,&quot;req&quot;:&quot;^0.6&quot;,&quot;features&quot;:[],&quot;optional&quot;:false,&quot;default_features&quot;:true,&quot;target&quot;:null,&quot;kind&quot;:&quot;normal&quot;},{&quot;name&quot;:&quot;crypto-mac&quot;,&quot;req&quot;:&quot;^0.4&quot;,&quot;features&quot;:[],&quot;optional&quot;:false,&quot;default_features&quot;:true,&quot;target&quot;:null,&quot;kind&quot;:&quot;normal&quot;},{&quot;name&quot;:&quot;generic-array&quot;,&quot;req&quot;:&quot;^0.8&quot;,&quot;features&quot;:[],&quot;optional&quot;:false,&quot;default_features&quot;:true,&quot;target&quot;:null,&quot;kind&quot;:&quot;normal&quot;},{&quot;name&quot;:&quot;byte-tools&quot;,&quot;req&quot;:&quot;^0.2&quot;,&quot;features&quot;:[],&quot;optional&quot;:false,&quot;default_features&quot;:true,&quot;target&quot;:null,&quot;kind&quot;:&quot;normal&quot;},{&quot;name&quot;:&quot;crypto-tests&quot;,&quot;req&quot;:&quot;^0.5&quot;,&quot;features&quot;:[],&quot;optional&quot;:false,&quot;default_features&quot;:true,&quot;target&quot;:null,&quot;kind&quot;:&quot;dev&quot;}],&quot;cksum&quot;:&quot;53bf612c0f2839b7e764ebac65d6cb985f7c6812de399d0728038f4b1da141bc&quot;,&quot;features&quot;:{&quot;simd_asm&quot;:[&quot;simd_opt&quot;],&quot;simd_opt&quot;:[&quot;simd&quot;],&quot;simd&quot;:[]},&quot;yanked&quot;:false}
+
+The &quot;chsum&quot; field is actually the SHA256 hash of the crate file for that
+specific version, and the crate file is simply a tarball of the sourcecode.
+
+You'll also note how the Cargo.lock file in the powersoftau repo specifies the
+exact hash digest in the [metadata] section at the end:
+
+    &quot;checksum blake2 0.6.1 (registry+<A HREF="https://github.com/rust-lang/crates.io-index">https://github.com/rust-lang/crates.io-index</A>)&quot; = &quot;53bf612c0f2839b7e764ebac65d6cb985f7c6812de399d0728038f4b1da141bc&quot;
+
+-- 
+<A HREF="https://petertodd.org">https://petertodd.org</A> 'peter'[:-1]@petertodd.org
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 455 bytes
+Desc: Digital signature
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171117/71e9fb30/attachment.sig">/pipermail/zapps-wg/attachments/20171117/71e9fb30/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000049.html">[zapps-wg] Version of Rust
+</A></li>
+	<LI>Next message (by thread): <A HREF="000056.html">[zapps-wg] Version of Rust
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

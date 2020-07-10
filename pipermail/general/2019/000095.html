@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Grant project report: platform for Zcash blockchain analysis
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20report%3A%20platform%20for%20Zcash%20blockchain%0A%20analysis&In-Reply-To=%3Cc09c6edd-e235-025a-1fec-4466b462b40e%40pwr.edu.pl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000094.html">
+   <LINK REL="Next"  HREF="000096.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Grant project report: platform for Zcash blockchain analysis</H1>
+    <B>Rados&#322;aw Michalski</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20report%3A%20platform%20for%20Zcash%20blockchain%0A%20analysis&In-Reply-To=%3Cc09c6edd-e235-025a-1fec-4466b462b40e%40pwr.edu.pl%3E"
+       TITLE="[ZcF-general] Grant project report: platform for Zcash blockchain analysis">radoslaw.michalski at pwr.edu.pl
+       </A><BR>
+    <I>Sat Aug  3 22:03:26 EDT 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000094.html">[ZcF-general] Cryptolux Project Report
+</A></li>
+        <LI>Next message (by thread): <A HREF="000096.html">[ZcF-general] Zcash Foundation Monthly Update &#8212; July (sort of)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#95">[ date ]</a>
+              <a href="thread.html#95">[ thread ]</a>
+              <a href="subject.html#95">[ subject ]</a>
+              <a href="author.html#95">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear All,
+
+This e-mail contains the final report on the Zcash blockchain analysis
+platform (GrantProposals-2018Q2, grant proposal #39).
+
+Throughout the project we created a platform (called Dru*) that
+facilitates the process of analysing blockchain data for network
+scientists and other researchers in a number of aspects:
+- centralized and always up-to-date blocks repository (delivered by the
+block engine component) provides the possibility to access the
+blockchain data without the necessity to have a local cryptocurrency
+client up and running,
+- the API endpoints let to run a number of network science queries that
+can be helpful in looking at the variety of aspects of blokchain data,
+- by the NoSQL storage of blockchain data researchers can easily perform
+their own queries if they cannot find suitable ones in the endpoints
+repository,
+- it is also possible to export the edges and import them to local
+programs created by researchers.
+
+The Dru platform consists of two main components: the block engine (MIT
+license) and the analytical platform itself (GNU GPL v3 license). It is
+contained in a Docker image, so it is portable among variety of
+platforms. Dru provides a queuing engine, so each query is being
+executed in the backend. After submitting it, the researcher gets a link
+with the details on the status of the query and can be also notified by
+e-mail about the status of it.
+
+The platform is compatible with any RPC-based altcoin client, yet the
+development and testing was made with Zcash.
+
+The code of the platform is located here:
+<A HREF="https://github.com/bergplace/Dru">https://github.com/bergplace/Dru</A> and the documentation is here:
+<A HREF="https://dru.readthedocs.io.">https://dru.readthedocs.io.</A> Within the Zcash grant we host also an
+instance of Dru running on our server:
+<A HREF="https://dru.readthedocs.io/en/docs/docs/server.html">https://dru.readthedocs.io/en/docs/docs/server.html</A>
+
+The core developers of the platform are the following: Rados&#322;aw
+Michalski (PI &amp; developer) Marcin Pieczka (lead developer), Wojciech
+Puchta (developer) and Weronika Mruga&#322;a (developer).
+
+Now, the Dru platform will be the main way of performing the blockchain
+analyses by BERG (<A HREF="https://www.bergplace.org/">https://www.bergplace.org/</A>) and further development of
+endpoins is expected in upcoming months to make them adjusted to current
+research directions of the group. However, all the blockchain
+researchers are invited for cooperation and further development of Dru,
+as well as to suggest any new endpoints we could implement. Any feedback
+from the community is highly anticipated. We will be also promoting the
+Dru platform at upcoming scientific events/conferences.
+
+* - the name of the platform comes from the peak Aiguille du Dru in the
+French Alps
+
+Greetings,
+Radoslaw Michalski &amp; Team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/general/attachments/20190804/60f4d5da/attachment.html">/pipermail/general/attachments/20190804/60f4d5da/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000094.html">[ZcF-general] Cryptolux Project Report
+</A></li>
+	<LI>Next message (by thread): <A HREF="000096.html">[ZcF-general] Zcash Foundation Monthly Update &#8212; July (sort of)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#95">[ date ]</a>
+              <a href="thread.html#95">[ thread ]</a>
+              <a href="subject.html#95">[ subject ]</a>
+              <a href="author.html#95">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

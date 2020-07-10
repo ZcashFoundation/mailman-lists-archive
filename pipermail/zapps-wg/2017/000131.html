@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Participate in next MPC round
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Participate%20in%20next%20MPC%20round&In-Reply-To=%3C4f3cdfb36ab3099bc2e516d4c36a7480%40fmarchal.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000129.html">
+   <LINK REL="Next"  HREF="000132.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Participate in next MPC round</H1>
+    <B>Fabrice MARCHAL</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Participate%20in%20next%20MPC%20round&In-Reply-To=%3C4f3cdfb36ab3099bc2e516d4c36a7480%40fmarchal.fr%3E"
+       TITLE="[zapps-wg] Participate in next MPC round">fabrice at fmarchal.fr
+       </A><BR>
+    <I>Sun Dec 17 06:47:42 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000129.html">[zapps-wg] Participate in next MPC round
+</A></li>
+        <LI>Next message (by thread): <A HREF="000132.html">[zapps-wg] Participate in next MPC round
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#131">[ date ]</a>
+              <a href="thread.html#131">[ thread ]</a>
+              <a href="subject.html#131">[ subject ]</a>
+              <a href="author.html#131">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Sean,
+I just noticed that my built-in webmail signing option didn't signed my 
+email as expected. In order to do the right thing I prefer to send again 
+my report, this time as a real PGP signed message.
+Sorry for this mistake.
+
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Powers of Tau Operational Writeup
+=================================
+
+Round: 25
+Date: 2017-12-15
+Name: Fabrice Marchal
+Location: Paris, FR
+
+BLAKE2b (challenge) = 
+5e082983f7b07fefeff1303209caeb9eccaa1ccd5ec365d09cdcb413b9f9fecfd85f79c577028e67efd9ff1f062c8b603b65a6e5ed51b98bd477704a1341034d
+BLAKE2b (response) = 
+b39c2f54485df51cd0434b0d3cbfcff7b7cc02c2e941097526cf5e605c9f8aaddd3cf9372d0e567cad8c49d7b507a47dac7510203a7f2f00b7d7810636064f06
+
+<A HREF="https://github.com/LeBleu89/powersoftau-tools/">https://github.com/LeBleu89/powersoftau-tools/</A>
+- - Binaries and packages used to create response file
+- - Some pictures
+
+Preparation steps
+=================
+
+Git repository: <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+Commit hash: d47a1d3d1f007063cbcc35f1ab902601a8b3bd91
+powersoftau-master-d47a1d3.zip : SHA256 = 
+0902301defc0705d3d824d9ec17382f40785cb9ce84502ee13b774840752def7
+rust-1.21.0-1.fc27.x86_64.rpm : SHA256 = 
+c4abe782505c90232fa65eb6f3de550cf3068cc3f4ba8dfeeb3a4967fc783aea
+cargo-0.22.0-1.fc27.x86_64.rpm : SHA256 = 
+078b1292716488af6b96494a581726565c24e41b913a424b7a2fbfdf73ccb613
+Fedora-Workstation-Live-x86_64-27-1.6.iso : SHA256 = 
+d242345fa6b5f8cc80e2317c46d15bb1fc4ad70b9a3516c9bc2fb6f3599c8117
+
+I burned 3 DVD-R with all needed software :
+1) Fedora 27 Live DVD
+2) compute binary (build by myself) and brasero software
+3) challenge file
+
+
+Sidechannel Defences
+====================
+
+I tried to make a rudimentary faraday cage with aluminum foil all around 
+the airgap compute node. The compute node was plug only to the screen, 
+keyboard, mouse and DVD reader.
+The compute node is a spare Dell precision T3610 already used before. I 
+removed hard drive and speaker. There was no wifi or bluetooth chip 
+inside.
+All the computing process was done on RAM and i run 1 pass of Memtest 
+before and 2 passes after.
+I was alone in my flat(except my cat) during the compute process with no 
+device around the compute node.
+
+Procedure
+=========
+I downloaded Fedora iso and challenge file on my daily computer and i 
+burned then into DVD-R media.
+
+I booted the airgap compute node, on Fedora Live DVD and I created a 
+ramfs partition to store compute binary and challenge file.
+I enter some text to provide additional entropy as requested :
+- - License plate of random cars in the street
+- - Words taken randomly in one book on my desk
+- - Random type on keyboard
+
+Computing process took around 1 hour.
+
+I burned a 4th DVD-R with response file and I inserted it inside my 
+daily computer to upload it.
+
+The BLAKE2b hash of `./response` is:
+     b39c2f54 485df51c d0434b0d 3cbfcff7
+     b7cc02c2 e9410975 26cf5e60 5c9f8aad
+     dd3cf937 2d0e567c ad8c49d7 b507a47d
+     ac751020 3a7f2f00 b7d78106 36064f06
+
+Postprocessing
+==============
+I destroyed the 4 DVD and i run a complete Memtest on compute node, 2 
+passes.
+
+I did not destroy the computer or hardware inside but i won't used it 
+until 1 month and it will be unplugged from power source.
+
+- ---
+Fabrice MARCHAL
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCAAGBQJaNlYKAAoJEPTtXwPD0Ss0m/IQAKtzr0UvFwIYbKqY2hEkWPrn
+I2d6D5OZx+7vMaA2iB003IM+8J3oFePa/+pzCbiSdo55C6c3jHrkqYFNADLfvcO+
+NOpZ0bi5X+C419ai2i355j0FHIvWIexapkMTZKk1mUTqroWEX9RA+RMrIOlb0+wr
+wnPtwZ2fYVVk4TyEpt6W9eJDGpJHrFegT9V+ojnQeC36Bfg60+W7U+J/KRnMJ3iN
+t3pZpWfrNjJdEgYwPhpkBVZFDd5v5LlsKek0o7AKn5WV8SczT4+fNT60FA2bzi6o
+2dAEqsw71PEPBp9EQp8gsFFeW0ux2brX0iZEruEuFM8dbnboDqrIooszNFsgP9gU
+veoq6pC0MYEto0LGuTqSlbSuGX2VDCWJol9Vy6Td7AyaiMWwqbs/TzHV3H77Mh+C
+ZYxhHRm6xcOGAY81lArPIC/ocxApomE+vBpeifgaspH6c+VpmojIxBeDSi5IX//P
+M8wPYyrVT9AGe0fsKPo3/WMDzHBGYuxrGeaswXGHYlChYDnePTPYoSAjptKuNTxl
+S2ro6yscDcYvQ8nEViFQBQtVgQrZ15iXlYk0gVZuSbB7htnC9b/eNXHJW7yWTKFr
+RF/TyuyzqR2Krm/OYVdiqoahjv5/9kb7genmfYfNrigSZTGgXcnNlM0R2AyCYOHT
+CwIe4V7cpZBf7SaiakgI
+=87F1
+-----END PGP SIGNATURE-----
+
+Le 16-12-2017 21:47, Sean Bowe a &#233;crit :
+
+&gt;<i> Thanks! This has been entered into the transcript.
+</I>&gt;<i> 
+</I>&gt;<i> Feel free to submit a PR to:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="https://github.com/ZcashFoundation/powersoftau-attestations">https://github.com/ZcashFoundation/powersoftau-attestations</A>
+</I>&gt;<i> 
+</I>&gt;<i> to add any additional context for your attestation.
+</I>&gt;<i> 
+</I>&gt;<i> Sean
+</I>&gt;<i> 
+</I>&gt;<i> On Fri, Dec 15, 2017 at 10:11 AM, Fabrice MARCHAL &lt;<A HREF="/mailman/listinfo/zapps-wg">fabrice at fmarchal.fr</A>&gt; 
+</I>&gt;<i> wrote:
+</I>&gt;<i> Powers of Tau Operational Writeup
+</I>&gt;<i> =================================
+</I>&gt;<i> 
+</I>&gt;<i> Round: 25
+</I>&gt;<i> Date: 2017-12-15
+</I>&gt;<i> Name: Fabrice Marchal
+</I>&gt;<i> Location: Paris, FR
+</I>&gt;<i> 
+</I>&gt;<i> BLAKE2b (challenge) =
+</I>&gt;<i> 5e082983f7b07fefeff1303209caeb9eccaa1ccd5ec365d09cdcb413b9f9fecfd85f79c577028e67efd9ff1f062c8b603b65a6e5ed51b98bd477704a1341034d
+</I>&gt;<i> BLAKE2b (response) =
+</I>&gt;<i> b39c2f54485df51cd0434b0d3cbfcff7b7cc02c2e941097526cf5e605c9f8aaddd3cf9372d0e567cad8c49d7b507a47dac7510203a7f2f00b7d7810636064f06
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="https://github.com/LeBleu89/powersoftau-tools/">https://github.com/LeBleu89/powersoftau-tools/</A>
+</I>&gt;<i> - Binaries and packages used to create response file
+</I>&gt;<i> - Some pictures
+</I>&gt;<i> 
+</I>&gt;<i> Preparation steps
+</I>&gt;<i> =================
+</I>&gt;<i> 
+</I>&gt;<i> Git repository: <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+</I>&gt;<i> Commit hash: d47a1d3d1f007063cbcc35f1ab902601a8b3bd91
+</I>&gt;<i> powersoftau-master-d47a1d3.zip : SHA256 =
+</I>&gt;<i> 0902301defc0705d3d824d9ec17382f40785cb9ce84502ee13b774840752def7
+</I>&gt;<i> rust-1.21.0-1.fc27.x86_64.rpm : SHA256 =
+</I>&gt;<i> c4abe782505c90232fa65eb6f3de550cf3068cc3f4ba8dfeeb3a4967fc783aea
+</I>&gt;<i> cargo-0.22.0-1.fc27.x86_64.rpm : SHA256 =
+</I>&gt;<i> 078b1292716488af6b96494a581726565c24e41b913a424b7a2fbfdf73ccb613
+</I>&gt;<i> Fedora-Workstation-Live-x86_64-27-1.6.iso : SHA256 =
+</I>&gt;<i> d242345fa6b5f8cc80e2317c46d15bb1fc4ad70b9a3516c9bc2fb6f3599c8117
+</I>&gt;<i> 
+</I>&gt;<i> I burned 3 DVD-R with all needed software :
+</I>&gt;<i> 1) Fedora 27 Live DVD
+</I>&gt;<i> 2) compute binary (build by myself) and brasero software
+</I>&gt;<i> 3) challenge file
+</I>&gt;<i> 
+</I>&gt;<i> Sidechannel Defences
+</I>&gt;<i> ====================
+</I>&gt;<i> 
+</I>&gt;<i> I tried to make a rudimentary faraday cage with aluminum foil all 
+</I>&gt;<i> around the
+</I>&gt;<i> airgap compute node. The compute node was plug only to the screen, 
+</I>&gt;<i> keyboard,
+</I>&gt;<i> mouse and DVD reader.
+</I>&gt;<i> The compute node is a spare Dell precision T3610 already used before. I
+</I>&gt;<i> removed hard drive and speaker. There was no wifi or bluetooth chip 
+</I>&gt;<i> inside.
+</I>&gt;<i> All the computing process was done on RAM and i run 1 pass of Memtest 
+</I>&gt;<i> before
+</I>&gt;<i> and 2 passes after.
+</I>&gt;<i> I was alone in my flat(except my cat) during the compute process with 
+</I>&gt;<i> no
+</I>&gt;<i> device around the compute node.
+</I>&gt;<i> 
+</I>&gt;<i> Procedure
+</I>&gt;<i> =========
+</I>&gt;<i> I downloaded Fedora iso and challenge file on my daily computer and i 
+</I>&gt;<i> burned
+</I>&gt;<i> then into DVD-R media.
+</I>&gt;<i> 
+</I>&gt;<i> I booted the airgap compute node, on Fedora Live DVD and I created a 
+</I>&gt;<i> ramfs
+</I>&gt;<i> partition to store compute binary and challenge file.
+</I>&gt;<i> I enter some text to provide additional entropy as requested :
+</I>&gt;<i> - License plate of random cars in the street
+</I>&gt;<i> - Words taken randomly in one book on my desk
+</I>&gt;<i> - Random type on keyboard
+</I>&gt;<i> 
+</I>&gt;<i> Computing process took around 1 hour.
+</I>&gt;<i> 
+</I>&gt;<i> I burned a 4th DVD-R with response file and I inserted it inside my 
+</I>&gt;<i> daily
+</I>&gt;<i> computer to upload it.
+</I>&gt;<i> 
+</I>&gt;<i> The BLAKE2b hash of `./response` is:
+</I>&gt;<i> b39c2f54 485df51c d0434b0d 3cbfcff7
+</I>&gt;<i> b7cc02c2 e9410975 26cf5e60 5c9f8aad
+</I>&gt;<i> dd3cf937 2d0e567c ad8c49d7 b507a47d
+</I>&gt;<i> ac751020 3a7f2f00 b7d78106 36064f06
+</I>&gt;<i> 
+</I>&gt;<i> Postprocessing
+</I>&gt;<i> ==============
+</I>&gt;<i> I destroyed the 4 DVD and i run a complete Memtest on compute node, 2
+</I>&gt;<i> passes.
+</I>&gt;<i> 
+</I>&gt;<i> I did not destroy the computer or hardware inside but i won't used it 
+</I>&gt;<i> until
+</I>&gt;<i> 1 month and it will be unplugged from power source.
+</I>&gt;<i> 
+</I>&gt;<i> ---
+</I>&gt;<i> Fabrice MARCHAL
+</I>&gt;<i> 
+</I>&gt;<i> Le 14-12-2017 08:34, Fabrice MARCHAL via zapps-wg a &#233;crit :
+</I>&gt;<i> 
+</I>&gt;<i> Hi Sean,
+</I>&gt;<i> I mean this week (15/12, 16/12, 17/12) and next week (22/12, 23/12,
+</I>&gt;<i> 24/12).
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Fabrice MARCHAL
+</I>&gt;<i> 
+</I>&gt;<i> Le 14 d&#233;cembre 2017 05:51:35 GMT+01:00, Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; a &#233;crit 
+</I>&gt;<i> :
+</I>&gt;<i> 
+</I>&gt;<i> Absolutely! By &quot;next Friday, Saturday or Sunday&quot; do you mean over the
+</I>&gt;<i> next 3 or 4 days or next week?
+</I>&gt;<i> 
+</I>&gt;<i> Sean
+</I>&gt;<i> 
+</I>&gt;<i> On Wed, Dec 13, 2017 at 12:15 PM, Fabrice MARCHAL via zapps-wg
+</I>&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i> Hello,
+</I>&gt;<i> 
+</I>&gt;<i> I would like to participate in MPC.
+</I>&gt;<i> 
+</I>&gt;<i> My compute node is ready and i fully tested the computing process.
+</I>&gt;<i> 
+</I>&gt;<i> Let me know if you need more information about my process or about me
+</I>&gt;<i> before
+</I>&gt;<i> to participate in MPC.
+</I>&gt;<i> 
+</I>&gt;<i> If nobody is in line i can be the next, i'm able to do this on next
+</I>&gt;<i> Friday,
+</I>&gt;<i> Saturday or Sunday.
+</I>&gt;<i> 
+</I>&gt;<i> Thank you
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Fabrice MARCHAL
+</I>-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: report.asc
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171217/a8b41f0b/attachment.asc">/pipermail/zapps-wg/attachments/20171217/a8b41f0b/attachment.asc</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000129.html">[zapps-wg] Participate in next MPC round
+</A></li>
+	<LI>Next message (by thread): <A HREF="000132.html">[zapps-wg] Participate in next MPC round
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#131">[ date ]</a>
+              <a href="thread.html#131">[ thread ]</a>
+              <a href="subject.html#131">[ subject ]</a>
+              <a href="author.html#131">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

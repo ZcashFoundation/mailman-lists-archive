@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Hardware-accelerated verification of randomness beacon
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Hardware-accelerated%20verification%20of%20randomness%0A%20beacon&In-Reply-To=%3CCAG7e9nSXvQGkgsUBYDO1%3D2uJGWu4kHxWpVdSoVSGBtjHKmhXKA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000364.html">
+   <LINK REL="Next"  HREF="000366.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Hardware-accelerated verification of randomness beacon</H1>
+    <B>Kobi Gurkan</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Hardware-accelerated%20verification%20of%20randomness%0A%20beacon&In-Reply-To=%3CCAG7e9nSXvQGkgsUBYDO1%3D2uJGWu4kHxWpVdSoVSGBtjHKmhXKA%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Hardware-accelerated verification of randomness beacon">kobi at qed-it.com
+       </A><BR>
+    <I>Fri Apr 20 09:08:58 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000364.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+        <LI>Next message (by thread): <A HREF="000366.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#365">[ date ]</a>
+              <a href="thread.html#365">[ thread ]</a>
+              <a href="subject.html#365">[ subject ]</a>
+              <a href="author.html#365">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>That's pretty cool!
+
+Out of interest - I'm not deeply familiar with Intel SHA extensions nor ARM
+NEON crypto - was wondering if you know of the top of your head if the
+abstraction is low level enough to compute only the compression function as
+well?
+
+Kobi
+
+----------
+Kobi Gurkan
+VP R&amp;D
+(+972)-549743033 &lt;+972%2054-974-3033&gt;
+
+On Wed, Apr 18, 2018 at 5:53 PM, Jason Davies via zapps-wg &lt;
+<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> I've implemented a simple Rust tool for parallel verification of the
+</I>&gt;<i> randomness
+</I>&gt;<i> beacon:
+</I>&gt;<i>
+</I>&gt;<i>   <A HREF="https://github.com/plutomonkey/verify-beacon">https://github.com/plutomonkey/verify-beacon</A>
+</I>&gt;<i>
+</I>&gt;<i> It uses Intel SHA extensions or ARM NEON crypto for performance.  I've
+</I>&gt;<i> added
+</I>&gt;<i> the relevant SHA-256 intrinsics to Rust's stdsimd, which should land in
+</I>&gt;<i> nightly
+</I>&gt;<i> very soon, but for now the tool should work fine using stdsimd directly.
+</I>&gt;<i>
+</I>&gt;<i> If you have a Ryzen CPU, performance is rather good, e.g. 1h45m on 24 cores
+</I>&gt;<i> running at 3.8GHz.  On ARM, it's not quite as good (indicating I may be
+</I>&gt;<i> able to
+</I>&gt;<i> optimise further), but I was able to complete verification in 2h20m on 96
+</I>&gt;<i> cores
+</I>&gt;<i> running at 2GHz.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Jason Davies, <A HREF="https://www.jasondavies.com/">https://www.jasondavies.com/</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180420/e93ee84f/attachment.html">/pipermail/zapps-wg/attachments/20180420/e93ee84f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000364.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+	<LI>Next message (by thread): <A HREF="000366.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#365">[ date ]</a>
+              <a href="thread.html#365">[ thread ]</a>
+              <a href="subject.html#365">[ subject ]</a>
+              <a href="author.html#365">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

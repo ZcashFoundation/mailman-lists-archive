@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Grant project update - new PoW scheme
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190722175823.GA6446%40openwall.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000089.html">
+   <LINK REL="Next"  HREF="000033.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Grant project update - new PoW scheme</H1>
+    <B>Solar Designer</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190722175823.GA6446%40openwall.com%3E"
+       TITLE="[ZcF-general] Grant project update - new PoW scheme">solar at openwall.com
+       </A><BR>
+    <I>Mon Jul 22 13:58:23 EDT 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000089.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+        <LI>Next message (by thread): <A HREF="000033.html">[ZcF-general] ANYPAY - Shielded ZCash at Retail - December Update
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#93">[ date ]</a>
+              <a href="thread.html#93">[ thread ]</a>
+              <a href="subject.html#93">[ subject ]</a>
+              <a href="author.html#93">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+The grant recipients are expected to deliver and post in here &quot;a more
+comprehensive report 6 months after receiving funding&quot;, so here's one
+for this project summarizing the 6 monthly reports.  It's also posted
+on GitHub with more hyperlinks:
+
+<A HREF="https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25#issuecomment-513876705">https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25#issuecomment-513876705</A>
+
+Executive summary and personal impression:
+
+The project validated ProgPoW, improved understanding of its strengths
+and weaknesses, provided a plain C implementation of it, slightly
+cleaned up the upstream GPU implementation, and identified areas for
+further tweaks.  Overall, ProgPoW is viable, but its use of GPU compute
+resources is far from optimal and its biggest advantage over Ethash
+isn't its &quot;programmability&quot; but rather its different than Ethash's reads
+from the DAG.  The design and implementation of ProgPoW could both still
+use some invasive tweaks and enhancements for much better results, but
+the community's motivation to work on those (or even to accept them)
+appears to have waned.  It's hard to stay motivated not knowing whether
+one's work would actually be made use of (by a major project like
+Ethereum) or not, and it's hard not to declare development done and not
+to move on since ProgPoW was introduced (with much enthusiasm) over a
+year ago.  People appear to have mostly moved on.
+
+Monthly technical reports and their summaries:
+
+1. <A HREF="000031.html">/pipermail/general/2019/000031.html</A>
+
+- Getting up to speed with ProgPoW and its heritage
+
+- Purchase of new GPUs (GTX 1080 and Vega 64)
+
+- Looking into Equihash parameters and making suggestions on them (as
+  Zcash's temporary second PoW for Blossom could be merely another
+  Equihash instantiation, and this needed to be decided on ASAP)
+
+2. <A HREF="000047.html">/pipermail/general/2019/000047.html</A>
+
+- Installation and testing of the new GPUs and required software (added
+  the GPUs to Openwall's HPC Village available to Open Source developers
+  worldwide)
+
+- Experiments with ProgPoW vs. Ethash on the new and older GPUs
+  resulting in &quot;Build instructions&quot; and &quot;Benchmark results&quot;
+
+3. <A HREF="000061.html">/pipermail/general/2019/000061.html</A>
+
+- Put together c-progpow, a plain C implementation of ProgPoW, based
+  on upstream's README.md and more
+
+- More experiments with ProgPoW on the GPUs with some tweaking,
+  getting it to match performance figures that others reported to have a
+  proper baseline for further work
+
+4. <A HREF="000073.html">/pipermail/general/2019/000073.html</A>
+
+- Analysis of how little use of the multipliers ProgPoW makes
+  (estimated as 68x lower than the theoretical peak throughput of FP32
+  multiplies would be on the Vega 64)
+
+- Getting on the same page with @ifdefelse on the set of issues and
+  constraints for starting to use floating-point
+
+- With incompatible ProgPoW tweaks, got a 3x+ speedup on Titan X
+  Maxwell (up from 4.0M to 12.3M or even to 12.5M) at a cost of maybe a
+  3.5% slowdown on GTX 1080 (down from 15.15M to 14.6M)
+
+- Looked into and commented on Linzhi's planned Ethash ASICs and their
+  (flawed) evaluation of ProgPoW
+
+- Realized that the biggest advantage ProgPoW has over Ethash has
+  nothing to do with its &quot;programmability&quot;, but is probably @mbevand's
+  finding and fix that got into ProgPoW 0.9.1+ to prevent splitting the
+  memory across multiple ASIC dies without requiring the full bandwidth
+  between the dies
+
+5. <A HREF="000082.html">/pipermail/general/2019/000082.html</A>
+
+- Thought of and experimented with a floating-point hack of ProgPoW,
+  and arrived at some conclusions
+
+- While staying with integers only, managed to get to a (geometric)
+  middle point between official
+
+- ProgPoW's MUL/s rate and theoretical maximum FP32 MUL/s rate: ~7x
+  higher than original, but still ~9x lower than theoretical maximum
+
+- Started to maintain an unofficial fork of ProgPoW with a more
+  elaborate revision of the NVIDIA Maxwell speedup tweak in the
+  &quot;maxwell&quot; branch
+
+- Also added to the branch and proposed for inclusion upstream &quot;Index
+  cache with byte offsets&quot;, which provides a 1% speedup on new GPUs (and
+  2% speedup on Maxwell) with no ill effects
+
+- Arrived at an opinion on and brought up for discussion with upstream
+  Make cache content vary per-hash
+
+6. <A HREF="000089.html">/pipermail/general/2019/000089.html</A>
+
+- Wrote debugging code as a hack to upstream ProgPoW
+
+- Proceeded with additional correctness testing of ProgPoW upstream
+  implementation against c-progpow and of upstream's CUDA against OpenCL
+
+- Uncovered issues with the OpenCL implementation: the kernel was
+  being built for a wrong ProgPoW period most of the time (a bug in
+  ProgPoW), and further it was often miscompiled when targeting AMD GPUs
+  (a bug in AMD's &quot;driver&quot;)
+
+- Got 5 PRs merged into upstream ProgPoW, including 2 fixing the
+  issues mentioned above
+
+Alexander
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000089.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+	<LI>Next message (by thread): <A HREF="000033.html">[ZcF-general] ANYPAY - Shielded ZCash at Retail - December Update
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#93">[ date ]</a>
+              <a href="thread.html#93">[ thread ]</a>
+              <a href="subject.html#93">[ subject ]</a>
+              <a href="author.html#93">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

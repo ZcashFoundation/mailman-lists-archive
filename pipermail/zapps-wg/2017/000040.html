@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Eliminating the possibility of backdoors with high probability
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Eliminating%20the%20possibility%20of%20backdoors%20with%20high%0A%20probability&In-Reply-To=%3CCAKazn3%3DV6e7Wb1PB00fmmB_bcDax8_01zC5oaq%2BOvG_WtjZSvg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000039.html">
+   <LINK REL="Next"  HREF="000027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Eliminating the possibility of backdoors with high probability</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Eliminating%20the%20possibility%20of%20backdoors%20with%20high%0A%20probability&In-Reply-To=%3CCAKazn3%3DV6e7Wb1PB00fmmB_bcDax8_01zC5oaq%2BOvG_WtjZSvg%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Eliminating the possibility of backdoors with high probability">sean at z.cash
+       </A><BR>
+    <I>Thu Nov 16 22:19:27 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000039.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+        <LI>Next message (by thread): <A HREF="000027.html">[zapps-wg] Who's next? (Powers of Tau)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Oh, I might have misunderstood the paper then: when it says &quot;Random beacon&quot; it
+</I>&gt;<i> really does mean an external random beacon such as the NIST Randomness Beacon,
+</I>&gt;<i> not something generated within the ceremony itself?
+</I>
+Indeed. The ceremony itself cannot be a source of randomness or it
+would be vulnerable to adaptive attacks.
+
+This deserves its own thread, but there are much better beacons than
+NIST's available to us. Joseph Bonneau suggested an iterated hash over
+(say) a future bitcoin block, serving as a kind of delay function.
+
+Sean
+
+Sean
+
+On Thu, Nov 16, 2017 at 6:05 PM, Peter Todd &lt;<A HREF="/mailman/listinfo/zapps-wg">pete at petertodd.org</A>&gt; wrote:
+&gt;<i> On Mon, Nov 13, 2017 at 08:26:04PM -0700, Sean Bowe wrote:
+</I>&gt;&gt;<i> &gt; Q: What exactly happens if one participant fails to destroy that secret and/or
+</I>&gt;&gt;<i> &gt; inputs a low-entropy secret? What about N participants?
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; The paper states that &quot;We show that security holds even if an adversary has
+</I>&gt;&gt;<i> &gt; limited influence on the beacon.&quot; but it's unclear what exactly &quot;limited
+</I>&gt;&gt;<i> &gt; influence&quot; means.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> My understanding was that we lose N bits of security when an attacker
+</I>&gt;&gt;<i> can influence N bits of the randomness beacon.
+</I>&gt;<i>
+</I>&gt;<i> Oh, I might have misunderstood the paper then: when it says &quot;Random beacon&quot; it
+</I>&gt;<i> really does mean an external random beacon such as the NIST Randomness Beacon,
+</I>&gt;<i> not something generated within the ceremony itself?
+</I>&gt;<i>
+</I>&gt;&gt;<i> This MPC is of the &quot;only one has to be honest&quot; kind. It is irrelevant
+</I>&gt;&gt;<i> if N-1 of the participants have low entropy / known secrets, so long
+</I>&gt;&gt;<i> as just one has high entropy w.r.t. the security parameter.
+</I>&gt;<i>
+</I>&gt;<i> Right
+</I>&gt;<i>
+</I>&gt;&gt;<i> &gt; As N increases you open up a new exfiltration route: the unused N-1 responses
+</I>&gt;&gt;<i> &gt; could themselves be the exfiltration route, and thus need to be
+</I>&gt;&gt;<i> &gt; deterministically verified against the N-1 unused secrets. This isn't
+</I>&gt;&gt;<i> &gt; particularly user-friendly, and it's easy to imagine how this could be skipped.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Note that the compute process prints out a hash of the response file,
+</I>&gt;&gt;<i> and so we can &quot;cut-and-choose&quot; in the same way to guard against these
+</I>&gt;&gt;<i> exfiltration routes. As an example, if we use DVDs, we can burn N
+</I>&gt;&gt;<i> response files and note each's respective hash and entropy. Then,
+</I>&gt;&gt;<i> reveal N-1's hash/entropy, but destroy those N-1 DVDs.
+</I>&gt;<i>
+</I>&gt;<i> But note here how there's more opportunities to leak data because the
+</I>&gt;<i> secrets(1) associated with each DVD are simultaneously available to the
+</I>&gt;<i> attacker. OTOH, by simply doing each round separately the code is both simpler,
+</I>&gt;<i> and the attacker has access to less information as only one secret should be
+</I>&gt;<i> available to them at a time.
+</I>&gt;<i>
+</I>&gt;<i> 1) Entropy is an *implementation* of a secret; entropy itself isn't enough.
+</I>&gt;<i>
+</I>&gt;&gt;<i> &gt; Finally, it's interesting how there's a whole class of &quot;sham&quot; participant
+</I>&gt;&gt;<i> &gt;strategies, where someone who runs the computation and uploads an audit
+</I>&gt;&gt;<i> &gt;response w/ revealed secret, but does not actually participate in that round,
+</I>&gt;&gt;<i> &gt;still frustrates attackers who can not tell in advance if that particular
+</I>&gt;&gt;<i> &gt;participant will or will not actually participate. This suggests that the
+</I>&gt;&gt;<i> &gt;current round's challenge should be made public.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> That's very interesting. Right now the transcript is public and so the
+</I>&gt;&gt;<i> current challenge can be computed by anyone, but it would be a little
+</I>&gt;&gt;<i> better if I put the &quot;current&quot; challenge file up for download.
+</I>&gt;<i>
+</I>&gt;<i> Publishing a link on this mailing list would work well. Secondly, as we'll have
+</I>&gt;<i> to archive all this stuff anyway, I'd suggest using the Internet Archive for
+</I>&gt;<i> distribution of the challenges.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> <A HREF="https://petertodd.org">https://petertodd.org</A> 'peter'[:-1]@petertodd.org
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000039.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+	<LI>Next message (by thread): <A HREF="000027.html">[zapps-wg] Who's next? (Powers of Tau)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Attestation No 12
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20No%2012&In-Reply-To=%3CCAKazn3mdEFgRoE-EpATYHrevb_dX%3DAkF%2BkjJFPLaXA7wtmCxsg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000073.html">
+   <LINK REL="Next"  HREF="000075.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Attestation No 12</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20No%2012&In-Reply-To=%3CCAKazn3mdEFgRoE-EpATYHrevb_dX%3DAkF%2BkjJFPLaXA7wtmCxsg%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Attestation No 12">sean at z.cash
+       </A><BR>
+    <I>Mon Nov 20 18:54:57 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000073.html">[zapps-wg] Attestation No 12
+</A></li>
+        <LI>Next message (by thread): <A HREF="000075.html">[zapps-wg] Request for permission to join Tao Ceremony
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Looking good! I've added this response file to the transcript and will
+update the attestation repo soon.
+
+I am letting someone see if they can contribute tonight before Alyssa
+tomorrow, but if they can't we'll just move on to Alyssa.
+
+Sean
+
+On Mon, Nov 20, 2017 at 4:05 PM, Miguel Angel Marco Buzunariz via
+zapps-wg &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+&gt;<i> Powers of Tau Operational Write-up
+</I>&gt;<i> =============================
+</I>&gt;<i>
+</I>&gt;<i> Round: 12
+</I>&gt;<i>
+</I>&gt;<i> Date: 2017-11-20
+</I>&gt;<i>
+</I>&gt;<i> Name: Miguel Angel Marco Buzunariz
+</I>&gt;<i>
+</I>&gt;<i> Location: Spain
+</I>&gt;<i>
+</I>&gt;<i> Response: BLAKE2b
+</I>&gt;<i> 22fd2b37f794b19dab85cfbb3dd018c8ab7a07e44b34394449ab1b28ed7ef133e8ca0fc77a497670a622dfb1e74e8af57cda01cc9b8614ba65a29a0d64dadadf
+</I>&gt;<i>
+</I>&gt;<i> Procedure
+</I>&gt;<i> =================
+</I>&gt;<i>
+</I>&gt;<i> * Followed the plan written in plancommit.txt (sha256hash
+</I>&gt;<i> 8829a8a45363c98ced7d6059e90b9095f875863c78ba8474ea9017e9e9820405), to which I
+</I>&gt;<i> commited in the mailing list.
+</I>&gt;<i>
+</I>&gt;<i> * Preparation:
+</I>&gt;<i>     * Downloaded [Powers of Tau](<A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>) commit
+</I>&gt;<i> d47a1d3d1f007063cbcc35f1ab902601a8b3bd91, and compiled it in a gentoo linux
+</I>&gt;<i> box with rustc 1.21.0-dev (compiled in the same system). Obtained a `compute`
+</I>&gt;<i> binary with sha256hash
+</I>&gt;<i> 2603d31c9394ac624a0a3bceb5c9d227f73447dac29c4e2a598dd69590c92cd3
+</I>&gt;<i>     * Take the hard drive and wifi card out of an old core2duo laptop with 4GB
+</I>&gt;<i> RAM to be used as airgapped node
+</I>&gt;<i>     * Download a Linux Mint 18.2 Kde .iso file from its website, and
+</I>&gt;<i> (sha256hash 9173901fbead7d2ece2454f8f51dbb375e1dfdfc74cfaef450342a3144955fe1)
+</I>&gt;<i> and burn it in six different usb drives.
+</I>&gt;<i> * Ceremony
+</I>&gt;<i>     * Downloaded the `challenge` file from <A HREF="https://s3-us-west-2.amazonaws.com/">https://s3-us-west-2.amazonaws.com/</A>
+</I>&gt;<i> powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html, checked its
+</I>&gt;<i> sha256hash f767da9aa257a15869ead2e2c7b9019f5cbb3ae9454bf9cff2456b0cf73dd36e
+</I>&gt;<i>     * Copied the `challenge` file and the `compute` binary to six different usb
+</I>&gt;<i> drives.
+</I>&gt;<i>     * Chose one of the 6 Linux Mint usb drives at random (rolling a dice) and
+</I>&gt;<i> boot the airgapped node with it. Keep the other five untouched.
+</I>&gt;<i>     * Chose one of the 6 usb drives with the `challenge` and `compute` files at
+</I>&gt;<i> random (dice roll) and insert it in the airgapped machine. Keep the other five
+</I>&gt;<i> untouched.
+</I>&gt;<i>     * Checked the hash of the `compute` and `challenge`files in the airgapped
+</I>&gt;<i> machine, and run `compute`
+</I>&gt;<i>     * Inserted the source of entropy: a bunch of random keys, plus the result
+</I>&gt;<i> of 50 dice rolls.
+</I>&gt;<i>     * Copied the sha256hash of the `response` file (
+</I>&gt;<i> d7c3f0f75867bed812e056a7ddef6b7994d2d9b3c658c60cbdd18f1e6a06dacf )
+</I>&gt;<i>     * Burnt the `response` file to six different DVD-R
+</I>&gt;<i>     * Chose one of the DVD-R at random with a dice, insert it in the network
+</I>&gt;<i> node, copied its content to the hard drive and verified the hash. The other five
+</I>&gt;<i> were kept untouched.
+</I>&gt;<i>     * Uploaded the response file to the [Amazon S3 bucket](<A HREF="https://s3-us-west-2.amazonaws.com/powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html">https://s3-us-west-2.amazonaws.com/powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html</A>)
+</I>&gt;<i>
+</I>&gt;<i> Side channel defenses
+</I>&gt;<i> =================
+</I>&gt;<i>
+</I>&gt;<i> Entropy source: Many keys pressed at random, plus the result of 50 dice rolls.
+</I>&gt;<i>
+</I>&gt;<i> Computation took place on an airgapped machine, with no wifi card nor hard
+</I>&gt;<i> drive. The media that was used to move information between the compute mode
+</I>&gt;<i> was copied in 6 different devices, only one of each (chosen at random with a
+</I>&gt;<i> dice) was inserted in the other machine, the other five will be kept untouched
+</I>&gt;<i> for several months at least.
+</I>&gt;<i>
+</I>&gt;<i> The following material will be kept available for forensic audit in case
+</I>&gt;<i> someone is interested in doing it:
+</I>&gt;<i>
+</I>&gt;<i> * airgapped machine (will be kept turned off, with no battery and no power
+</I>&gt;<i> cable).
+</I>&gt;<i> * the six usb drives with the live linux system (the one actually used and the
+</I>&gt;<i> other five that didn't gt in touch with the airgapped machine)
+</I>&gt;<i> * the six usb drives with the `compute` binary, and the `challenge` file (again
+</I>&gt;<i> one was used, and the other five didn't get in contact with the airgapped
+</I>&gt;<i> machine)
+</I>&gt;<i> * the six DVD-R with the `response` file  (again, one was actually inserted in
+</I>&gt;<i> the network node, and the other five never touched it)
+</I>&gt;<i>
+</I>&gt;<i> I plan to keep this material for several months. If someone is interested in
+</I>&gt;<i> auditing it, please get in touch with me. In case nobody shows interest, I
+</I>&gt;<i> might decide to reuse all or part of it at some point.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Miguel Angel Marco Buzunariz
+</I>&gt;<i> Universidad de Zaragoza
+</I>&gt;<i> <A HREF="/mailman/listinfo/zapps-wg">mmarco at unizar.es</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000073.html">[zapps-wg] Attestation No 12
+</A></li>
+	<LI>Next message (by thread): <A HREF="000075.html">[zapps-wg] Request for permission to join Tao Ceremony
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

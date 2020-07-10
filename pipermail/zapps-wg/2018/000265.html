@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Randomness Beacon
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Randomness%20Beacon&In-Reply-To=%3C3358456.ciBGlDsQ2M%40localhost%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000262.html">
+   <LINK REL="Next"  HREF="000266.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Randomness Beacon</H1>
+    <B>mmarco at unizar.es</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Randomness%20Beacon&In-Reply-To=%3C3358456.ciBGlDsQ2M%40localhost%3E"
+       TITLE="[zapps-wg] Randomness Beacon">mmarco at unizar.es
+       </A><BR>
+    <I>Fri Feb 16 11:33:06 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000262.html">[zapps-wg] Randomness Beacon
+</A></li>
+        <LI>Next message (by thread): <A HREF="000266.html">[zapps-wg] Randomness Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#265">[ date ]</a>
+              <a href="thread.html#265">[ thread ]</a>
+              <a href="subject.html#265">[ subject ]</a>
+              <a href="author.html#265">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>In order to reduce the probability of a powerful adversary influencing the 
+beacon, I would propose to use several sources of entropy, mixing them 
+together (maybe concatenating and hashing) and use the result as a seed for a 
+PRNG. The mentioned bitcoin block could be one of those sources, but we can 
+also add more. Some ideas:
+
+- Results of sports competitions (i.e.: we commit to use the results of the 
+NBA playoffs, or something like that)
+- Values of several stock markets at a given future date.
+- Some meteorological information, like &quot;the maximum temperature reached in 
+these cities in this given future date, as given by the official daily report of 
+these organizations.
+- Some astronomical phenomena: things like solar activity at a given future 
+instant (again, as reported by a specific set of observatories that regularly 
+reports those things), radiation of a specific pulsar...
+- number of births/deaths/marriages... in a given set of countries/cities/
+whatever (as reported by the corresponding institutions...)
+
+Of course, we need to be very specific in advance about how these pieces of 
+information will be collected and represented. But once done that, each one of 
+them would add extra entropy. That way,  an adversary that wants to predict or 
+influence the result of the beacon, would need a huge social power to 
+manipulate both sport competitions, stock markets, scientific institutions, 
+statistical services... And even then, the meteorological/astronomical reports 
+could only be manipulated to a limited extent (it would be too evident if the 
+maximum reported temperature differs more than a few degrees to the one that 
+people actually experienced in that place).
+
+
+El viernes, 16 de febrero de 2018 0:37:05 (CET) Sean Bowe via zapps-wg 
+escribi&#243;:
+&gt;<i> The Powers of Tau security proof (see
+</I>&gt;<i> <A HREF="https://eprint.iacr.org/2017/1050">https://eprint.iacr.org/2017/1050</A>) holds in the &quot;random beacon model,&quot;
+</I>&gt;<i> meaning that we must apply a random beacon at the end of the ceremony.
+</I>&gt;<i> It's not good enough to use (say) a hash of the transcript, because of
+</I>&gt;<i> adaptive attacks (the last participant could predict the beacon
+</I>&gt;<i> output). We must apply a beacon that is queried after the ceremony has
+</I>&gt;<i> completed.
+</I>&gt;<i> 
+</I>&gt;<i> There is some good news on this front:
+</I>&gt;<i> 
+</I>&gt;<i> 1. We *can* query reasonably secure beacons. More on that later.
+</I>&gt;<i> 2. Even if the beacon is partially controlled by an adversary, we only
+</I>&gt;<i> lose a bit of security for every bit of the beacon output that is
+</I>&gt;<i> influenced by the adversary. This means our beacon could be somewhat
+</I>&gt;<i> broken and we'll live in acceptable security bounds.
+</I>&gt;<i> 3. Even if the beacon is _totally_ insecure, it may not even matter
+</I>&gt;<i> because we may be able to prove the MPC is secure using the same
+</I>&gt;<i> assumptions the proving system itself uses. We haven't had time to
+</I>&gt;<i> write a security proof of this yet.
+</I>&gt;<i> 4. Even if we choose a _totally_ insecure beacon, you can just apply
+</I>&gt;<i> your own beacon instead (one that you're more confident in, or perhaps
+</I>&gt;<i> the result of a random coinflip protocol depending on what you're
+</I>&gt;<i> doing).
+</I>&gt;<i> 
+</I>&gt;<i> But, let's choose a pretty good beacon anyway. Some notes on that:
+</I>&gt;<i> 
+</I>&gt;<i> * There is a large space of possible choices for a beacon, so it's
+</I>&gt;<i> important that we choose the most obvious and reliable one we can
+</I>&gt;<i> think of.
+</I>&gt;<i> * It's important that we choose when we intend to query it, before we do so.
+</I>&gt;<i> * The result of the beacon (and how the beacon is applied to the
+</I>&gt;<i> parameters, such as what PRNG we use, and the code) needs to be
+</I>&gt;<i> determined before we query the beacon.
+</I>&gt;<i> * Since we could choose multiple beacons (and adaptively select from
+</I>&gt;<i> them) we need to publish our choice of a beacon widely, using
+</I>&gt;<i> signatures and social media, so that proof we had attempted to do so
+</I>&gt;<i> would be easy to find.
+</I>&gt;<i> * Anything else?
+</I>&gt;<i> 
+</I>&gt;<i> So, what beacon should we use? I'm borrowing my recommendation from
+</I>&gt;<i> advice given by Joseph Bonneau.
+</I>&gt;<i> 
+</I>&gt;<i> I think that we should select a Bitcoin block height (in advance) and
+</I>&gt;<i> iteratively SHA256 the eventual block (hash or header) n times to
+</I>&gt;<i> produce the seed of a ChaCha20 PRNG, which is then used to apply the
+</I>&gt;<i> beacon to the parameters. This iterative function is not intended to
+</I>&gt;<i> be a proof-of-work function but instead a &quot;delay function,&quot; so it is
+</I>&gt;<i> deliberately not parallelizable. As the time required for a powerful
+</I>&gt;<i> adversary to compute the delay function grows (with respect to the
+</I>&gt;<i> average time between blocks) we become more and more confident the
+</I>&gt;<i> result could not be significantly influenced.
+</I>&gt;<i> 
+</I>&gt;<i> How large should n be? I think n=2^40 would be enough, since even if
+</I>&gt;<i> we're off by a couple orders of magnitude the adversary cannot
+</I>&gt;<i> influence enough bits of the result for it to really matter.
+</I>&gt;<i> 
+</I>&gt;<i> Other questions include: How should we choose the block height? Should
+</I>&gt;<i> we hash the header or the block hash or even the whole block?
+</I>&gt;<i> 
+</I>&gt;<i> Sean
+</I>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: This is a digitally signed message part.
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180216/f92d8fe2/attachment.sig">/pipermail/zapps-wg/attachments/20180216/f92d8fe2/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000262.html">[zapps-wg] Randomness Beacon
+</A></li>
+	<LI>Next message (by thread): <A HREF="000266.html">[zapps-wg] Randomness Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#265">[ date ]</a>
+              <a href="thread.html#265">[ thread ]</a>
+              <a href="subject.html#265">[ subject ]</a>
+              <a href="author.html#265">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

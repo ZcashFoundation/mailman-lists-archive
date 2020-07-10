@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Update Benedikt B&#252;nz Scholarship Grant
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20%3D%3Fiso-8859-1%3Fq%3FUpdate_Benedikt_B%3DFCnz_Scholarship_%3F%3D%0A%20%3D%3Fiso-8859-1%3Fq%3FGrant%3F%3D&In-Reply-To=%3C3EB895B2-70CC-460D-914E-A3C8818DC339%40stanford.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000072.html">
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Update Benedikt B&#252;nz Scholarship Grant</H1>
+    <B>Benedikt Bunz</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20%3D%3Fiso-8859-1%3Fq%3FUpdate_Benedikt_B%3DFCnz_Scholarship_%3F%3D%0A%20%3D%3Fiso-8859-1%3Fq%3FGrant%3F%3D&In-Reply-To=%3C3EB895B2-70CC-460D-914E-A3C8818DC339%40stanford.edu%3E"
+       TITLE="[ZcF-general] Update Benedikt B&#252;nz Scholarship Grant">buenz at stanford.edu
+       </A><BR>
+    <I>Fri Feb  1 15:50:06 EST 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000072.html">[ZcF-general] Pay With Zcash
+</A></li>
+        <LI>Next message (by thread): <A HREF="000044.html">[ZcF-general] Dec/Jan update on implementing anonymous payment channels
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear ZCash community,
+
+I spent the last month mostly presenting at conferences and presenting our own Stanford Blockchain Conference <A HREF="https://cyber.stanford.edu/sbc19">https://cyber.stanford.edu/sbc19</A> conference.  The conference was a huge success and we have had many amazing talks, many of which are relevant to ZCash. We will upload all of the talk and I encourage to check them out. I talked about our new accumulator and vector commitment construction. 
+I also communicated with Nathan about how accumulators could be used to reduce the burden of storing the entire nullifier set. The accumulator can store all of the nullifiers and new nullifiers can be added to it. The nice property of accumulators is that the miners and fully verifying nodes will only be required to store the short ~250 byte accumulator value and can even update it without knowing the contents. In every transaction users would supply an exclusion proof that their nullifier is not part of the accumulator. Additionally multiple users could create a joint exclusion proof for all of their nullifiers which is still constant in size.
+The one significant downside of this design is that creating this exclusion proof is somewhat expensive and still requires knowledge of the entire set. Perhaps there could be service providers who can create these proofs. Note that these service providers would not be trusted for security or privacy but only availability.
+
+
+Benedikt
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000072.html">[ZcF-general] Pay With Zcash
+</A></li>
+	<LI>Next message (by thread): <A HREF="000044.html">[ZcF-general] Dec/Jan update on implementing anonymous payment channels
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

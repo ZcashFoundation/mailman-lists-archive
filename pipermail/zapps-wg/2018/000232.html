@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] The Go implementation of Powers of Tau
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20The%20Go%20implementation%20of%20Powers%20of%20Tau&In-Reply-To=%3CCAB0O3SUwzTw59mxUK8rGXMYuqiRfx8JbPTuLwbiDdW9u%2By0_PQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000231.html">
+   <LINK REL="Next"  HREF="000233.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] The Go implementation of Powers of Tau</H1>
+    <B>Devrandom</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20The%20Go%20implementation%20of%20Powers%20of%20Tau&In-Reply-To=%3CCAB0O3SUwzTw59mxUK8rGXMYuqiRfx8JbPTuLwbiDdW9u%2By0_PQ%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] The Go implementation of Powers of Tau">c1.devrandom at niftybox.net
+       </A><BR>
+    <I>Sun Jan 28 13:23:18 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000231.html">[zapps-wg] The Go implementation of Powers of Tau
+</A></li>
+        <LI>Next message (by thread): <A HREF="000233.html">[zapps-wg] The Go implementation of Powers of Tau
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#232">[ date ]</a>
+              <a href="thread.html#232">[ thread ]</a>
+              <a href="subject.html#232">[ subject ]</a>
+              <a href="author.html#232">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Very happy to hear about the go implementation for a couple of reasons:
+
+- this gives us another path to trusted binaries from pure source + gcc
+- this may work well on ARM64, which gives us another architecture - one
+that doesn't have a management engine (in contrast, mrustc currently only
+works on x86)
+
+It would be good to look into how distributions compile their go binaries -
+whether they use the latest version of the toolchain, or they bootstrap
+from golang 1.4 (which only depends on gcc).  If they use the latest, it
+would be good to have people compile their own from source.
+
+About the mrustc work that I've done - I don't think the lack of
+determinism is a showstopper.  It just means that contributors have to
+compile from source, which is time consuming.  Perhaps there was some
+miscommunication about that?
+
+
+On Sun, Jan 28, 2018 at 5:12 AM Sean Bowe via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> Great work on this. I wonder if this implementation will be a better
+</I>&gt;<i> foundation for fully-deterministic and trustworthy builds? I am
+</I>&gt;<i> disappointed that devrandom's efforts were stymied by non-determinism
+</I>&gt;<i> in the Rust compiler. :(
+</I>&gt;<i>
+</I>&gt;<i> Sean
+</I>&gt;<i>
+</I>&gt;<i> On Sat, Jan 27, 2018 at 12:30 PM, Filippo Valsorda via zapps-wg
+</I>&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i> &gt; Hello folks,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; <A HREF="https://github.com/FiloSottile/powersoftau">https://github.com/FiloSottile/powersoftau</A> is a fully independent
+</I>&gt;<i> implementation of Powers of Tau. It is written in Go, shares no code with
+</I>&gt;<i> the main Rust implementation, and uses the RELIC library for BLS12-381.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I used it for my contribution, but for it to be truly valuable to the
+</I>&gt;<i> security of the MPC ceremony more people need to run it, including in more
+</I>&gt;<i> secure settings than my laptop.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The README includes build instructions. If there are any problems feel
+</I>&gt;<i> free to open an issue on GitHub or email me.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; To enable people to run both implementations there's a -next option to
+</I>&gt;<i> generate the next challenge file while computing the response. This is much
+</I>&gt;<i> faster than running verify_transform as it doesn't do verification and it
+</I>&gt;<i> doesn't have to decompress points.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; You should assume that secret material will be left in memory, and
+</I>&gt;<i> protect against side channels, just like with the Rust implementation.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _o/
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180128/7b0ef9b9/attachment.html">/pipermail/zapps-wg/attachments/20180128/7b0ef9b9/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000231.html">[zapps-wg] The Go implementation of Powers of Tau
+</A></li>
+	<LI>Next message (by thread): <A HREF="000233.html">[zapps-wg] The Go implementation of Powers of Tau
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#232">[ date ]</a>
+              <a href="thread.html#232">[ thread ]</a>
+              <a href="subject.html#232">[ subject ]</a>
+              <a href="author.html#232">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

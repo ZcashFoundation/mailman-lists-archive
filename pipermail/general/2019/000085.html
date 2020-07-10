@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Status update - Update of the Equihash Algorithm (#38)
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Status%20update%20-%20Update%20of%20the%20Equihash%20Algorithm%20%28%2338%29&In-Reply-To=%3Ce7f4f164-7ba5-9ae2-6651-062b3b6ef8d4%40uni.lu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000084.html">
+   <LINK REL="Next"  HREF="000086.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Status update - Update of the Equihash Algorithm (#38)</H1>
+    <B>Dag Arne Osvik</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Status%20update%20-%20Update%20of%20the%20Equihash%20Algorithm%20%28%2338%29&In-Reply-To=%3Ce7f4f164-7ba5-9ae2-6651-062b3b6ef8d4%40uni.lu%3E"
+       TITLE="[ZcF-general] Status update - Update of the Equihash Algorithm (#38)">dagarne.osvik at uni.lu
+       </A><BR>
+    <I>Tue May 21 18:48:13 EDT 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000084.html">[ZcF-general] Grant project progress report: platform for zcash blockchain analysis - April
+</A></li>
+        <LI>Next message (by thread): <A HREF="000086.html">[ZcF-general] Zcash Foundation Monthly Update &#8212; May, 2019
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#85">[ date ]</a>
+              <a href="thread.html#85">[ thread ]</a>
+              <a href="subject.html#85">[ subject ]</a>
+              <a href="author.html#85">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear all,
+
+Here is the current status for project #38:
+
+- My focus so far is to make a really good GPU implementation of 
+Equihash 144,5.
+
+- Right now the speed of hashing and writing to main memory corresponds 
+to 118 sol/s for Equihash 144,5 on a 1080 Ti. This is the only 
+processing-intensive part of the solver, leaving most of the bandwidth 
+for the matching stages. The resulting data structure passes 
+verification performed on the CPU side.
+
+- The hashing code is in inline PTX (assembler portable between GPU 
+generations), and further speedup is possible by going down to SASS 
+(generation-specific assembler), but this is already fast enough that it 
+makes more sense to complete the solution finding first.
+
+- I have been refining the algorithm for the matching stages over and 
+over innumerable times to find an approach that matches the rather 
+complex (and under-documented) high-latency memory hierarchy of GPUs. 
+The result is an algorithm that parallelises almost all reading and 
+writing for all memories. There is very little computation, so hopefully 
+there will not be much slowdown due to contention between hashing and 
+matching.
+
+- Expected main memory bandwidth requirement is below 5 GiB per 2 solutions.
+
+- I suspect the overall structure of a future FPGA implementation will 
+be similar to my current design for GPU.
+
+- I have now started implementing a simplified version of the matching 
+algorithm, aiming to have it working as soon as possible so I can move 
+on to the final stage of rebuilding solutions.
+
+Best regards,
+Dag Arne
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000084.html">[ZcF-general] Grant project progress report: platform for zcash blockchain analysis - April
+</A></li>
+	<LI>Next message (by thread): <A HREF="000086.html">[ZcF-general] Zcash Foundation Monthly Update &#8212; May, 2019
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#85">[ date ]</a>
+              <a href="thread.html#85">[ thread ]</a>
+              <a href="subject.html#85">[ subject ]</a>
+              <a href="author.html#85">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

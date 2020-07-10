@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Hardware-accelerated verification of randomness beacon
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Hardware-accelerated%20verification%20of%20randomness%20beacon&In-Reply-To=%3CA86543F9-76E5-44A3-B3F9-83A58F22F72B%40jasondavies.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000363.html">
+   <LINK REL="Next"  HREF="000365.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Hardware-accelerated verification of randomness beacon</H1>
+    <B>Jason Davies</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Hardware-accelerated%20verification%20of%20randomness%20beacon&In-Reply-To=%3CA86543F9-76E5-44A3-B3F9-83A58F22F72B%40jasondavies.com%3E"
+       TITLE="[zapps-wg] Hardware-accelerated verification of randomness beacon">jason at jasondavies.com
+       </A><BR>
+    <I>Wed Apr 18 10:53:29 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000363.html">[zapps-wg] zapps-wg Digest, Vol 7, Issue 4
+</A></li>
+        <LI>Next message (by thread): <A HREF="000365.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#364">[ date ]</a>
+              <a href="thread.html#364">[ thread ]</a>
+              <a href="subject.html#364">[ subject ]</a>
+              <a href="author.html#364">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I've implemented a simple Rust tool for parallel verification of the randomness
+beacon:
+
+  <A HREF="https://github.com/plutomonkey/verify-beacon">https://github.com/plutomonkey/verify-beacon</A>
+
+It uses Intel SHA extensions or ARM NEON crypto for performance.  I've added
+the relevant SHA-256 intrinsics to Rust's stdsimd, which should land in nightly
+very soon, but for now the tool should work fine using stdsimd directly.
+
+If you have a Ryzen CPU, performance is rather good, e.g. 1h45m on 24 cores
+running at 3.8GHz.  On ARM, it's not quite as good (indicating I may be able to
+optimise further), but I was able to complete verification in 2h20m on 96 cores
+running at 2GHz.
+
+--
+Jason Davies, <A HREF="https://www.jasondavies.com/">https://www.jasondavies.com/</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000363.html">[zapps-wg] zapps-wg Digest, Vol 7, Issue 4
+</A></li>
+	<LI>Next message (by thread): <A HREF="000365.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#364">[ date ]</a>
+              <a href="thread.html#364">[ thread ]</a>
+              <a href="subject.html#364">[ subject ]</a>
+              <a href="author.html#364">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

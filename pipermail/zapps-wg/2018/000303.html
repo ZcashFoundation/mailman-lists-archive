@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Cut-off date for Powers of Tau Contributions
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Cut-off%20date%20for%20Powers%20of%20Tau%20Contributions&In-Reply-To=%3CCAB0O3SWRquUs%3D7rbinU%3DTm_EtiFzLbZv9GTf3jESLRM7bt_wow%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000302.html">
+   <LINK REL="Next"  HREF="000304.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Cut-off date for Powers of Tau Contributions</H1>
+    <B>Devrandom</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Cut-off%20date%20for%20Powers%20of%20Tau%20Contributions&In-Reply-To=%3CCAB0O3SWRquUs%3D7rbinU%3DTm_EtiFzLbZv9GTf3jESLRM7bt_wow%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Cut-off date for Powers of Tau Contributions">c1.devrandom at niftybox.net
+       </A><BR>
+    <I>Fri Mar  9 11:49:37 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000302.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+        <LI>Next message (by thread): <A HREF="000304.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I have some concerns about the lack of diversity of contributions:
+
+- most (all?) of the contributions used a distributed Rust toolchain, which
+suffers from the &quot;trusting-trust&quot; issue since they are self-compiled.  I
+don't think I've seen any contributions using the mrustc build path.
+- there were very few contributions (two?) using the golang implementation
+- no attempt has been made to replicate the deterministic golang build
+- people did not capture the binary they used, so we can't do forensics in
+case of future questions
+- there were no contributions using alternative processor architectures
+(e.g. ARM64).  I believe this is possible using the golang implementation.
+- there was a lot of focus on destroying toxic waste and not enough on the
+trustworthiness of the tools
+
+Lastly, the deadline was announce less than a week in advance, which makes
+it difficult to address the above issues.
+
+On Thu, Mar 8, 2018 at 5:25 PM Andrew Miller via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> Let me add a bit to this:
+</I>&gt;<i> 1. First of all, all the code you need to add your own rounds to
+</I>&gt;<i> powers-of-tau is already provided in Sean's repo. You could fork the
+</I>&gt;<i> repository and add more rounds yourself if you wanted to. You could also
+</I>&gt;<i> start using the powers-of-tau from early phases if you want too.
+</I>&gt;<i> 2. While we'll go along with Sean's suggestion to conclude the &quot;official&quot;
+</I>&gt;<i> one on Mar 15, which will be used for Sapling, if there's interest from the
+</I>&gt;<i> community in continuing to add more rounds, the Foundation will continue to
+</I>&gt;<i> facilitate that, probably in another branch to avoid any confusion.
+</I>&gt;<i> 3. So far we have only been doing powers of tau for the 2^21 size circuit,
+</I>&gt;<i> over the BLS12-381 curve. If there is any interest in conducting Powers of
+</I>&gt;<i> Tau for larger circuit sizes, or for different curves (such as the
+</I>&gt;<i> alt_bn128 supported in Ethereum), then the Foundation would support that
+</I>&gt;<i> too. Although someone would have to adapt Sean's or FiloSottile's code to
+</I>&gt;<i> do so...
+</I>&gt;<i>
+</I>&gt;<i> Cheers,
+</I>&gt;<i>
+</I>&gt;<i> On Mon, Mar 5, 2018 at 11:03 PM, Sean Bowe via zapps-wg &lt;
+</I>&gt;<i> <A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> We're almost finished with the Powers of Tau ceremony!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On March 15 no new contributions will be accepted. If you still want to
+</I>&gt;&gt;<i> participate, you will need to contact Jason Davies ASAP and arrange for a
+</I>&gt;&gt;<i> time.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'll be making an announcement about the random beacon soon.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Sean
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Andrew Miller
+</I>&gt;<i> University of Illinois at Urbana-Champaign
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180309/4f3e2ef8/attachment.html">/pipermail/zapps-wg/attachments/20180309/4f3e2ef8/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000302.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+	<LI>Next message (by thread): <A HREF="000304.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

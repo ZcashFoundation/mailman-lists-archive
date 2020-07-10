@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Round 15
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Round%2015&In-Reply-To=%3CCA%2BpmEP7HGRaWGWX%3DOznQHWm8RncoGG75wdCGW9VKcVgGefmw4w%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000082.html">
+   <LINK REL="Next"  HREF="000085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Round 15</H1>
+    <B>Jack Grigg</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Round%2015&In-Reply-To=%3CCA%2BpmEP7HGRaWGWX%3DOznQHWm8RncoGG75wdCGW9VKcVgGefmw4w%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Round 15">jack at z.cash
+       </A><BR>
+    <I>Wed Nov 22 20:49:53 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000082.html">[zapps-wg] round 13
+</A></li>
+        <LI>Next message (by thread): <A HREF="000085.html">[zapps-wg] Round 15
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Powers of Tau Operational Writeup
+=================================
+
+Round: 15
+Date: 2017-11-22
+Name: Jack Grigg
+Location: UK
+
+Challenge:
+
+    d27e5d6c5a7611f6690443d8a47c6ebd134bc863f05984d9b3d845060a3f036a
+
+
+Response:
+
+    2c052c1f 039810e7 69779017 9943bdb9
+    d00a84fb 25593453 85af3826 1fbe061c
+    4dc79f4e 87da26f4 3202bcf4 3960db16
+    be870511 7f3de50c 8922b502 32a3e126
+
+
+Procedure
+=========
+
+2017-11-18
+- ----------
+
+I withdrew cash from an ATM I happened to be passing in London.
+
+2017-11-19
+- ----------
+
+I withdrew more cash from a different ATM. I then drove four hours south-west of
+London to my grandmother's farm. She lives in a valley with no cell reception,
+and her granite house is well-known in our family for its electromagnetic and
+audio shielding properties (ie. WiFi reception sucks beyond the one room the
+router is in, and you can't hear someone calling you from a few rooms away).
+
+On the way down, I stopped in at a shopping center, turning off my phone and
+leaving it in the car. I then purchased:
+
+- - An HP Pavilion Notebook 15 (15-cd054na)
+  - I had no device in mind when I entered the store. After browsing the
+    available models, I chose this laptop based on a combination of price,
+    performance, the use of an AMD chip, and the presence of a DVD burner.
+  - I asked the sales assistant if I could choose a laptop at random from their
+    stock room. The manager confirmed I could not, as it was a secure area. I
+    asked them to bring out three laptops for me to choose from, which they did.
+    I flipped two coins to determine which of the three I chose.
+- - Five identical USB drives
+- - A stack of 10 DVD+R discs (which were eventually not used)
+- - A screwdriver set
+- - A soldering iron (which turned out to be unnecessary)
+
+2017-11-20
+- ----------
+
+I unboxed the laptop, and opened it up. I removed the WiFi/Bluetooth chip, and
+unplugged the built-in speakers. I then started the laptop and set up the
+default Windows installation, confirming that there was no wireless connectivity
+or sound, but the headphone jack still worked. I pried off the screen bezel,
+unplugged the built-in camera and microphone array, and confirmed that they both
+no longer worked (the microphone array still showed up as a device, but
+registered no input).
+
+I used Tor Browser and the Tails downloader plugin to download the Tails 3.3 ISO
+(the first deterministically-built one) on my development laptop (a Thinkpad X1
+Carbon Gen4), and verified its GPG signature. SHA256 hash of the ISO:
+
+    5ac6b8a563a999701aa394a0761ba3e29d5a964537549e5b4a81b2abf12a1c09
+
+I also installed tails-live-installer from their PPA.
+
+2017-11-22
+- ----------
+
+I opened up the laptop again, and confirmed that the wireless functionality and
+speakers were still disabled. I then removed the hard drive and re-assembled the
+laptop. From this point onward, I did not let the laptop (henceforth referred to
+as the compute node), nor any of the USB drives, out of my sight for more than a
+few seconds.
+
+I rolled a dice to select one of the five USB drives at random. I used
+tails-live-installer to install Tails 3.3 on the USB drive. I then realised that
+I hadn't yet upgraded the drivers for my development laptop to fix the Intel
+AMT/ME vulnerability. I booted into the Windows partition to do so. Following
+this, I rebooted into Ubuntu again, imaged the USB drive, and then wiped it and
+re-installed Tails 3.3.
+
+I installed Docker CE on my development laptop, and used Andrew Miller's
+Dockerfile to deterministically build the powersoftau compute binary. SHA256
+hash:
+
+    922b2e0a59841ecdaba7b4953d8c67e62b74b8f52f968624cff664dc086da93a
+
+On my Qubes 3.2 laptop (a Purism Librem 15) I created a disposable VM, and
+downloaded the challenge file in it. SHA256 hash:
+
+    d27e5d6c5a7611f6690443d8a47c6ebd134bc863f05984d9b3d845060a3f036a
+
+I created a fresh AppVM for staging (backed by the fully-upgraded
+fedora-24-minimal TemplateVM) with network access. I ran the following commands:
+
+$ su - (the minimal template does not have sudo)
+$ dnf config-manager \
+    --add-repo \
+    <A HREF="https://download.docker.com/linux/fedora/docker-ce.repo">https://download.docker.com/linux/fedora/docker-ce.repo</A>
+$ dnf install docker-ce
+$ docker --version
+Docker version 17.06.0-ce, build 02c1d87
+$ systemctl start docker
+$ docker run -it socrates1024/powersoftau
+[snip]
+Digest: sha256:3d42ec3bc947c410dca07e4bbbe5e88bf264b147ecaa87807ec58424f309b046
+$ $ sha256sum target/x86_64-unknown-linux-musl/release/compute
+
+    922b2e0a59841ecdaba7b4953d8c67e62b74b8f52f968624cff664dc086da93a
+
+Having obtained the same binary hash on both machines, I then fetched the
+compute binary out of the staging AppVM's Docker container, and copied the
+challenge file from the disposable AppVM to the staging AppVM. I also downloaded
+EFF's long wordlist: <A HREF="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt">https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt</A>
+SHA256 hash:
+
+    addd35536511597a02fa0a9ff1e5284677b8883b83e986e43f15a3db996b903e
+
+BEGIN COMPUTATION STEPS
+```````````````````````
+I rolled a dice to select one of the four remaining USB drives at random. I
+attached the USB drive to my Qubes laptop, and then redirected it from sys-usb
+to the staging AppVM using qubes-usb on Dom0. I copied the challenge file, the
+compute binary, and the wordlist to the USB drive.
+
+I took the compute node, Tails USB drive, and challenge USB drive to a room at
+the far end of the house (from the router), which had the most line-of-sight
+granite surrounding it, and also had a large metal filing cabinet. I emptied one
+of the drawers and set up the compute node inside it. I inserted the Tails USB
+drive, started the compute node, and disabled SecureBoot. Once in the Tails
+environment, I inserted the challenge USB drive, copied the compute binary and
+wordlist to the Tails home directory (in RAM), and symlinked the challenge file
+into that directory (as I didn't have enough RAM to hold the challenge file in
+memory twice).
+
+I started the compute binary, opened the wordlist, and then used five dice (of
+assorted sizes, that I scrounged from around the house) in a cardboard box to
+generate an eight-word random phrase. I typed the phrase into the compute binary
+input (space-separated, no leading or trailing spaces), and also wrote it down
+on the inside of a piece of folded card. I then started the computation process,
+and closed the filing cabinet drawer. The computation took around 40 minutes,
+during which I sat beside it, occasionally pulling the drawer open slightly to
+check progress, and reading Serious Cryptography in between. At the point where
+I noticed that the challenge itself had been read into memory, I unmounted and
+removed the challenge USB drive.
+
+After the computation was completed, I rolled a dice to select one of the three
+remaining USB drives at random. I copied the response file to it, and used my
+phone to tweet out the BLAKE2b hash printed by the compute binary:
+
+    2c052c1f 039810e7 69779017 9943bdb9
+    d00a84fb 25593453 85af3826 1fbe061c
+    4dc79f4e 87da26f4 3202bcf4 3960db16
+    be870511 7f3de50c 8922b502 32a3e126
+
+I then shut down the compute node.
+
+END COMPUTATION STEPS
+`````````````````````
+
+I repeated the steps above a second time (using the two remaining USB drives),
+to obtain a second response file, and a second BLAKE2b hash:
+
+    3df44b57 4c66cb75 9bba2f2a 96b12ea1
+    9037a70c 4c898397 35ad6b3d 50b84715
+    39bfdea2 0d6e6db3 79ce6f3d 3d823d32
+    901d2651 20481863 45d99475 e63a91a9
+
+Finally, I rolled a dice to decide which of the two responses to upload; the
+dice landed on an odd number, meaning that I uploaded the first response. I am
+revealing the randomness used to compute the second response:
+
+    boogeyman amber reverse oversight scorn impending wheat engraver
+
+After typing in the above phrase, I burned the card on which I had written the
+two random phrases. I opened up the compute node, and removed the battery and
+RAM stick. I have not yet destroyed the RAM chips, and am keeping the stick on
+my person until I am able to (so I've probably damaged it already with static).
+
+I connected the USB drive containing the first response to my Qubes laptop, and
+then redirected it from sys-usb to the staging AppVM. I then copied the response
+to the disposable AppVM, and then into another AppVM to upload it to one of my
+personal servers (as the upload to AWS was timing out).
+
+
+Security Considerations
+=======================
+
+- - The laptop was chosen randomly, with as little unreported bias as possible,
+  and with my participation at that point only mentioned to Sean. However, a
+  sufficiently-motivated adversary could potentially have figured out that I was
+  participating, guessed which store I would go to on my route, and persuaded
+  the staff to alter the displays to draw my attention towards a particular
+  laptop. A constraint, or a private deterministic metric for selection, may
+  have helped to eliminate more bias.
+
+- - Using a deterministically-built ISO for the operating system should make it
+  easier to determine the OS code that was running at the time, modulo the trust
+  in the machine that the live USB was built on (which is my Zcash dev laptop).
+
+- - Using a fresh Qubes AppVM for staging increases the bar for having
+compromised
+  the OS in order to compromise the challenge USB drive.
+
+- - Tails by default disables sudo and mounts itself as read-only,
+meaning that a
+  malicious userspace process shouldn't be able to persist data on that USB
+  drive.
+
+- - Tails by default mounts plugged-in USB drives as read-write. Using
+a fresh USB
+  drive each time to transfer the compute binary, challenge and wordlist to the
+  compute node removed that as a vector for persistance between iterations.
+
+- - Revealing the randomness in the unused response, after the compute node had
+  been shut down, should make it possible to ascertain that the compute binary
+  was behaving correctly, by having third parties independently re-compute the
+  corresponding response file and verify the hash against the one I published.
+
+
+Things I'd Do Differently In Future
+===================================
+
+- - Pick somewhere with faster internet. The internet here isn't snappy to begin
+  with, and it was raining and blowing which significantly impacts speeds. As a
+  result, the challenge file took several hours to download, and the response
+  file took probably double that.
+
+- - Use a DVD to set up the compute OS instead of a USB (and then load
+the OS into
+  RAM to free up the DVD drive). A DVD would in theory be more easily auditable,
+  putting less trust in the machine creating it than the live USB. This would
+  also increase the amount of RAM required in the machine (I ran this entirely
+  in 4GB memory).
+
+- - Build the compute binary ahead of time. In particular, the time it took to
+  download Docker and build dependencies (twice) significantly extended the
+  setup time.
+
+- - The binary was built deterministically, but it would be preferable
+to have it
+  only use dependencies and a compiler that could be reasonably assumed to not
+  have backdoors targeted at the MPC in general or participants in particular. I
+  did briefly try to compile Devrandom's branch, but decided determinism was
+  more important for now.
+
+- - Monitor and keyboard. I had to open the filing cabinet drawer in
+order to type
+  in the randomness and monitor progress; an external monitor and keyboard would
+  limit the EM leakage of doing so.
+
+- - Hardware separation of randomness. There was maybe 10 minutes between
+  compute iterations (as I created the second challenge USB drive), and the
+  battery was not removed in between (as that required disassembly), so there is
+  a small but non-zero possibility that the second computation could have been
+  influenced by (maliciously or otherwise) the first one. In this case it
+  happens to not matter much, as the random roll at the end selected the result
+  of the first computation, but in a future MPC I'd prefer to at least remove
+  the battery in between runs, and ideally swap out the RAM.
+
+- - Different response extraction mechanism. I neglected to purchase a
+DVD reader
+  for my existing laptops, so could not use DVDs as the airgap mechanism,
+  falling back to the USB drives. I also had a more ambitious mechanism in mind,
+  but that will require significant additional development work.
+
+- - Use a separate AppVM for staging the response. I had intended to do this (to
+  limit the ability of any malicious data hidden on the response USB to escape),
+  but reused the previous qubes-usb command neglecting to change the AppVM name.
+  Once it was connected to the challenge staging VM, I decided that any damage
+  had already been done, and continued.
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCgAGBQJaFib5AAoJEGZdvNKE99r/tHsP/jZjS+VbrYQz0pHi9MS4wQzP
+4kErUDJgF8t6TkNj6W4ZCBIu9ryEQthUxpMgDEqbRFt9M7ueYB8bys9YUtna7fVJ
+tyrj7UmPlYGOLs6QaFaE+TBhnDoWA+bdHNb5bHzC2mWaXwya3DYrW5ai7BA7/YUF
+hcW5dMtyQRrL4vKMLWq500nhZ1n5aa0Njq0NJ3XEzDa3W4+Wq3nJBTk5NNXz0iAC
++h0j542AlrHcp4dzWf/PvBpZrnerpMlMatJmR/GN0153tbdFVs8zqPAfRmLvyl3m
+vYPuW4S/QGUoKKsyM3zJps3QtaNQJooHkD8Y6nOBbX9piEURy2hZUMoPYhiIVyM7
+T8wvt3UNXjBAzzoNWOSt8+s/OMGt+E++9bFKxOKqE2zXQAxIGGVxYfc563DHM051
+BuYNSfYKwoFP5Cq2pU2j6WOGs20zQxh6ySRd8Iz1v5uJSQ0Z6+GJ9Ddc1Lo2YDpt
+hcPa8oe2vGReuX33lN6PBNYjr+CkwV8metJXG+2irKCTGdgaBv+IweBUkP4SUxe6
+C0kmxjgQ9BJ0/kW4EHeyIS1YGFAyZDbXedsaSRBvBNegnCYfCavPKBIYcRINrCPk
+1XJ/J6Lhhc0xC4fILsXhot3uoAl1QHwT69a5Gfj/nTCSaJ6E3vbbaOgr8Igu6Jf8
+VCTWs0YxUiG8EctFHElQ
+=uVQb
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171123/2d235da7/attachment.html">/pipermail/zapps-wg/attachments/20171123/2d235da7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000082.html">[zapps-wg] round 13
+</A></li>
+	<LI>Next message (by thread): <A HREF="000085.html">[zapps-wg] Round 15
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

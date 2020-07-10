@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BLS-wg] Reverse BLS12-381
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/bls-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:bls-wg%40lists.zfnd.org?Subject=Re%3A%20%5BBLS-wg%5D%20Reverse%20BLS12-381&In-Reply-To=%3CCAHUJnBCQd0V24N4DJgH4yXf9wcK%3DO5Pwf3_eCc8dHQbcjbrV6A%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000001.html">
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[BLS-wg] Reverse BLS12-381</H1>
+    <B>Bram Cohen</B> 
+    <A HREF="mailto:bls-wg%40lists.zfnd.org?Subject=Re%3A%20%5BBLS-wg%5D%20Reverse%20BLS12-381&In-Reply-To=%3CCAHUJnBCQd0V24N4DJgH4yXf9wcK%3DO5Pwf3_eCc8dHQbcjbrV6A%40mail.gmail.com%3E"
+       TITLE="[BLS-wg] Reverse BLS12-381">bram at chia.net
+       </A><BR>
+    <I>Fri Mar 16 20:03:38 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000001.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+        <LI>Next message (by thread): <A HREF="000003.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Mar 16, 2018 at 4:22 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/bls-wg">sean at z.cash</A>&gt; wrote:
+
+&gt;<i>
+</I>&gt;<i> I would caution saying &quot;swapping the curves&quot; because it may indicate
+</I>&gt;<i> you're changing the curve construction when you're actually just
+</I>&gt;<i> changing the signature scheme. BLS12-381 doesn't define anything about
+</I>&gt;<i> how you use them for BLS signature schemes, or which group you use for
+</I>&gt;<i> the key or the signature.
+</I>&gt;<i>
+</I>
+Right, we're swapping the curves from *a* implementation which was used to
+give reference numbers but not actually misusing the primitive at all.
+
+
+&gt;<i> I'm excited to see BLS signatures finally end up in a cryptocurrency.
+</I>&gt;<i> Besides what group you use for the signature, it'll be important to
+</I>&gt;<i> specify how you're hashing to that group (for BLS signatures). We've
+</I>&gt;<i> been having discussions about this in my pairing library and in
+</I>&gt;<i> another library. I'd like to see everyone using the same
+</I>&gt;<i> well-specified technique to hash to the curve; hopefully this weekend
+</I>&gt;<i> I'll have a spec fleshed out and we'll have test vectors for
+</I>&gt;<i> inter-operability. It seems possible we could have this merged into
+</I>&gt;<i> RELIC as well.
+</I>&gt;<i>
+</I>
+Dan Boneh just sent us a construction which allows for a speedup on
+aggregated signatures of a single value, which we'll be implementing for
+performance. It isn't standardized because it's new but we plan to have
+everything we're working on be published and reviewed and ideally
+standardized.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/bls-wg/attachments/20180316/16ba1fbe/attachment.html">/pipermail/bls-wg/attachments/20180316/16ba1fbe/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000001.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+	<LI>Next message (by thread): <A HREF="000003.html">[BLS-wg] Reverse BLS12-381
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/bls-wg">More information about the bls-wg
+mailing list</a><br>
+</body></html>

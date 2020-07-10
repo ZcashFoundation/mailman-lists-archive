@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Zkproofs.org standards workshop
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Zkproofs.org%20standards%20workshop&In-Reply-To=%3CCAF7tpEzct4tMBT2M_p8f26hQUOXwxxzkUCzAz0_wpk-gjDggug%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000343.html">
+   <LINK REL="Next"  HREF="000351.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Zkproofs.org standards workshop</H1>
+    <B>Andrew Miller</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Zkproofs.org%20standards%20workshop&In-Reply-To=%3CCAF7tpEzct4tMBT2M_p8f26hQUOXwxxzkUCzAz0_wpk-gjDggug%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Zkproofs.org standards workshop">soc1024 at illinois.edu
+       </A><BR>
+    <I>Sat Mar 24 19:05:14 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000343.html">[zapps-wg] Zkproofs.org standards workshop
+</A></li>
+        <LI>Next message (by thread): <A HREF="000351.html">[zapps-wg] Zkproofs.org standards workshop
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#344">[ date ]</a>
+              <a href="thread.html#344">[ thread ]</a>
+              <a href="subject.html#344">[ subject ]</a>
+              <a href="author.html#344">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Lucas's post reminded me of something I wanted to post about:
+If there's one thing I'd like to take up the torch for and advocate as a
+standard, it's to use a conventional pseudocode for describing snark
+application ideas. What I have in mind is Camenisch-Stadler proof
+notation. It looks like this:
+
+ ZkPoK{ (witness):  Predicate(statement, witness) }
+
+The idea is that &quot;witness&quot; is the private witness, &quot;statement&quot; is
+public information that the verifier provides, and you replace
+&quot;Predicate&quot; with whatever pseudocode you want to check.
+Here are some examples:
+
+1. Pay-to-Sudoku:
+ ZkPoK{ (solution, nonce):
+     SHA2(nonce || solution) == H,
+     CheckSudokuSolution(puzzleBoard, solution) == 1 }
+
+2. Show two hashes have related preimages:
+
+ZkPoK{ (R1, R2): H1 = sha256(R1) and H2 = sha256(R2) and R1 = R2 ^ X }
+
+  <A HREF="https://github.com/ebfull/lightning_circuit/blob/master/README.md">https://github.com/ebfull/lightning_circuit/blob/master/README.md</A>
+
+This notation is a starting point, it can be extended to say a
+Signature-of-Knowledge, like in BabyZoe (a simplified form of ZSL,
+where the only shielded operation is to withdraw 1.0 coin from the
+shielded pool):
+
+3. SoK[tx]{ (secretkey, Com, merkleProof):
+   // Com is included in the commitment tree
+   MerkleVerify(coinTree, merkleProof, Com),
+   Com is a commitment to (secretkey, Nullifier)
+}
+
+Notes on BabyZoe:
+<A HREF="https://github.com/zcash-hackworks/babyzoe/blob/master/talks/2016-07-27-IC3---SNARKs-for-Ethereum.pdf">https://github.com/zcash-hackworks/babyzoe/blob/master/talks/2016-07-27-IC3---SNARKs-for-Ethereum.pdf</A>
+
+To take a stab at translating the snark-based password authentication
+idea into this pseudocode, I think it could look like this:
+
+4. SoK[signedMessage]{ (derivedkey):
+    username = SHA256(addrContract, derivedkey)
+}
+
+The user would then use standard PBKDF2  from something like:
+   derivedKey := Argon2(addrContract, password)
+
+so the snark circuit itself doesn't even have to have the expensive
+hash. The smart contract would use the final password hash as the
+username.
+
+On Sat, Mar 24, 2018 at 4:47 PM, Andrew Miller &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt; wrote:
+&gt;<i> That's awesome Lucas, thanks for this input, these are pretty cool
+</I>&gt;<i> application scenarios. They're all quite relevant to a standards effort
+</I>&gt;<i> because they seem to involve interfacing between zkSNARKs and other
+</I>&gt;<i> standardized primitives (password hash functions, anonymous credentials,
+</I>&gt;<i> extensions to ZSL).
+</I>&gt;<i>
+</I>&gt;<i> On Sat, Mar 24, 2018 at 4:42 PM, Lucas Vogelsang via zapps-wg
+</I>&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've put some thoughts into possible use cases, here are some that we have
+</I>&gt;&gt;<i> been thinking about in the context of decentralized business applications.
+</I>&gt;&gt;<i> Some of these concepts are things we are actually working on, others just
+</I>&gt;&gt;<i> ideas
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> - blind auctions (including double dutch auctions)
+</I>&gt;&gt;<i> - page-rank style algorithms on top of anonymous credentials or
+</I>&gt;&gt;<i> reputations
+</I>&gt;&gt;<i> - build a password-based authentication out of any password hash
+</I>&gt;&gt;<i> - give out &quot;referral capabilities&quot; that automatically assign a commission
+</I>&gt;&gt;<i> to whoever introduced a subscriber who signs up (this would be part of a
+</I>&gt;&gt;<i> privacy-preserving subscription service, that could be built on top of a
+</I>&gt;&gt;<i> zcash-like (ZSL protocol) cryptocurrency)
+</I>&gt;&gt;<i> - consumer credit scores: create a registry of &quot;bad debtors&quot;. use zkproofs
+</I>&gt;&gt;<i> both to &quot;register&quot; a bad debt/bad action and allow individuals to provide a
+</I>&gt;&gt;<i> proof revealing your score without actual transaction details (not sure how
+</I>&gt;&gt;<i> exactly this could work)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Curious to hear what other people have thought of!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Fri, Mar 23, 2018 at 11:11 AM, Andrew Miller via zapps-wg
+</I>&gt;&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Dear Zapps, I just wanted to let you know that there will be a standards
+</I>&gt;&gt;&gt;<i> workshop organized by several academics / industry participants in May.
+</I>&gt;&gt;&gt;<i> <A HREF="https://zkproof.org">https://zkproof.org</A>
+</I>&gt;&gt;&gt;<i>  I want to make sure that the workshop includes input from all the groups
+</I>&gt;&gt;&gt;<i> involved in this open source community that are developing tools and
+</I>&gt;&gt;&gt;<i> applications and even making initial standardization efforts around
+</I>&gt;&gt;&gt;<i> portability between different libraries.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  I'm especially interested in collecting application ideas to include as
+</I>&gt;&gt;&gt;<i> case studies to help make the conversation more concrete. So far I don't
+</I>&gt;&gt;&gt;<i> have many ideas. So far I have:
+</I>&gt;&gt;&gt;<i> - anonymous credentials
+</I>&gt;&gt;&gt;<i> - zcash
+</I>&gt;&gt;&gt;<i> - voting
+</I>&gt;&gt;&gt;<i> - sudoku solutions / contingent payments
+</I>&gt;&gt;&gt;<i> - compressing blockchain verification
+</I>&gt;&gt;&gt;<i> - a log of photo edits
+</I>&gt;&gt;&gt;<i> - checking that a cloud compute task was done correctly (this is arguably
+</I>&gt;&gt;&gt;<i> not specific enough).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Suggestions of what I'm missing?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Andrew Miller
+</I>&gt;<i> University of Illinois at Urbana-Champaign
+</I>
+
+
+-- 
+Andrew Miller
+University of Illinois at Urbana-Champaign
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000343.html">[zapps-wg] Zkproofs.org standards workshop
+</A></li>
+	<LI>Next message (by thread): <A HREF="000351.html">[zapps-wg] Zkproofs.org standards workshop
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#344">[ date ]</a>
+              <a href="thread.html#344">[ thread ]</a>
+              <a href="subject.html#344">[ subject ]</a>
+              <a href="author.html#344">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

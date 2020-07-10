@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Round 38 Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Round%2038%20Attestation&In-Reply-To=%3CCAA_O2aNc1Q3BGVhYYNarj4px9qoxrb1Nbx%2Beci8w%2BFW8_ZqeCA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000197.html">
+   <LINK REL="Next"  HREF="000203.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Round 38 Attestation</H1>
+    <B>Ryan Close</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Round%2038%20Attestation&In-Reply-To=%3CCAA_O2aNc1Q3BGVhYYNarj4px9qoxrb1Nbx%2Beci8w%2BFW8_ZqeCA%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Round 38 Attestation">rclose at gmail.com
+       </A><BR>
+    <I>Wed Jan 17 21:47:21 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000197.html">[zapps-wg] Powers of Tau Ceremony
+</A></li>
+        <LI>Next message (by thread): <A HREF="000203.html">[zapps-wg] Powers of Tau Round 38 Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Powers of Tau Attestation
+=========================
+
+Round: 38
+Date: 2018-1-17
+Name: Ryan Close
+Location: Florida, US
+
+Challenge:
+a58bcc60b15a6cd3d69fa7ef87b4f9d2f9be6eb2d470f66e0dadc8058a14c8ca18efaa1ca69346865d3f83bbc9fe1320e5c16f3580567963a206d337377a82ea
+Response:
+c63d895327712427bb14295d7935af4cb79bbdf9b84411684b9cd3292750f63261f3a874ec160e070cdd98bcdd2b1dd21cf20f937fb486c0ac1cab12bb3a0046
+(tweeted: <A HREF="https://twitter.com/closerm/status/953816452997500929">https://twitter.com/closerm/status/953816452997500929</A> )
+
+Process
+=======
+
+UBUNTU 16.04.3 Desktop (x2)
+Rust v1.23.0 (766bd11c8 2018-01-01)
+powersoftau (github.com/ebfull/powersoftau commit
+d47a1d3d1f007063cbcc35f1ab902601a8b3bd91)
+
+I began by installing ubuntu-16.04.3-desktop-amd64.iso to a brand new
+formatted USB thumbdrive. The drive was encrypted (cryptsetup).
+I booted from this drive in VirtualBox, allowing me to update the OS,
+install the rust toolchain, and clone the needed git repository.
+The VM was shutdown, and the thumbdrive was removed to be used with an
+offline machine (no wifi, disconnected ethernet) that has no other physical
+drives.
+
+The above was performed twice, and moved to two seperate offline machines.
+
+Prior to attaching the Ubuntu OS thumbdrives to either stand-alone machine,
+each machines was booted with a live image and memtest was run.
+
+The provided challenge file was downloaded and placed on a second new and
+newly formatted thumbdrive and moved to the disconnected computer(s).
+
+For each compute node, extra entropy was introduced by letting my kids type
+at the keyboard until they felt good and satisfied, or until one of them
+accidently hit [enter].
+
+When complete, each node was verified (via verify_transform), results
+copied to the thumbdrive. Dice (and kids) were then used to choose which
+payload to report, and the result was uploaded.
+
+All 3 thumbdrives have since been securely erased, reformatted, and
+intermixed with a stash of several other similar and empty drives.
+
+Driveless stand-alone machines have since been booted and memtest run, and
+will eventually be brought back onto the network.
+
+
+
+Side Note
+========
+
+Attempts were made to use additional hardware, OS, and software
+configurations.
+
+Raspberry Pi3 nodes were tested to see if they could be used, but do not
+have enough RAM to complete the compute job.
+PINE64 nodes were tested to see if they could be used, and while they
+faired much better than the Raspberry Pi's, they ultimately failed to
+complete the compute job aswell.
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: <A HREF="https://keybase.io/crypto">https://keybase.io/crypto</A>
+
+wsFcBAABCgAGBQJaYAmKAAoJEIKOoktVTw1jxVkP/iKfNVYlHGzZLVzjzlRqwi+U
+pedJjROB5LhWRXq4cPB1CfWOkVyzvljOEdgDuzzwN8Ar+QFoQnd8YpanGx8ysWVR
+UHZrMMlfQq/V/pI76DEsxXYNhuh/hs95TSnf7DaZtGPizYXE2nJrWQBl7tiZ8FyQ
+RYcIiK4sPaHnFwKTpFqy9fzetPG5hdvNb/cTYpucyHyflZbiqchOW7o8WFGK7jr/
+3tTnPDL6L5ywknre4CJ8iWDL+nOYTfhSSjNTjWVvGE0VeM/RfxtBcBDbt9YpNLRj
+IZ9o0JJDEV/wDVI/BDCg3IMKzMrGTirN9edCv1Iyem6cj5lOlFZHqHby/kLTXqWH
+sdk6aowVxR2AyVJY85vWfD0bcAexb2hEWxXLrzxUGX7bSDzE4g6lLT3KtvIlRRIY
+gaSqVPwZ2puKZVXEz2op8573lhZ1LSBHw9UFWgXvZAE+3ob3+/vFXp425h4/Zvd2
+8cTkVWpKUo1GijIoJWysuOc4gouO6oav055ix7GfXCLQ6kYeKwLmS7iDvUK7yIm1
+kBnCiVvY8kGdfm1TQAYucH/HVmfVmuoMmI37G7yEKFFEB/XDwdK2ynoo+sbr+ZZL
+7Qd1FpAbBpl+YXFnOYXP3TDrXQ8X1kk5YoCQwzAsPS5a/TTaVJyk7e2nPDZverP2
+hDYsjfVq5oaE+tYLCeiR
+=2Par
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180117/e360546a/attachment.html">/pipermail/zapps-wg/attachments/20180117/e360546a/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000197.html">[zapps-wg] Powers of Tau Ceremony
+</A></li>
+	<LI>Next message (by thread): <A HREF="000203.html">[zapps-wg] Powers of Tau Round 38 Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Attestation No 12
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20No%2012&In-Reply-To=%3C5669379.ppJKhDISv5%40neumann%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000072.html">
+   <LINK REL="Next"  HREF="000074.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Attestation No 12</H1>
+    <B>Miguel Angel Marco Buzunariz</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20No%2012&In-Reply-To=%3C5669379.ppJKhDISv5%40neumann%3E"
+       TITLE="[zapps-wg] Attestation No 12">mmarco at unizar.es
+       </A><BR>
+    <I>Mon Nov 20 18:05:43 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000072.html">[zapps-wg] Attestation No 12
+</A></li>
+        <LI>Next message (by thread): <A HREF="000074.html">[zapps-wg] Attestation No 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Powers of Tau Operational Write-up
+=============================
+
+Round: 12
+
+Date: 2017-11-20
+
+Name: Miguel Angel Marco Buzunariz
+
+Location: Spain
+
+Response: BLAKE2b 
+22fd2b37f794b19dab85cfbb3dd018c8ab7a07e44b34394449ab1b28ed7ef133e8ca0fc77a497670a622dfb1e74e8af57cda01cc9b8614ba65a29a0d64dadadf
+
+Procedure
+=================
+
+* Followed the plan written in plancommit.txt (sha256hash 
+8829a8a45363c98ced7d6059e90b9095f875863c78ba8474ea9017e9e9820405), to which I 
+commited in the mailing list.
+
+* Preparation:
+    * Downloaded [Powers of Tau](<A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>) commit 
+d47a1d3d1f007063cbcc35f1ab902601a8b3bd91, and compiled it in a gentoo linux 
+box with rustc 1.21.0-dev (compiled in the same system). Obtained a `compute` 
+binary with sha256hash 
+2603d31c9394ac624a0a3bceb5c9d227f73447dac29c4e2a598dd69590c92cd3 
+    * Take the hard drive and wifi card out of an old core2duo laptop with 4GB 
+RAM to be used as airgapped node
+    * Download a Linux Mint 18.2 Kde .iso file from its website, and 
+(sha256hash 9173901fbead7d2ece2454f8f51dbb375e1dfdfc74cfaef450342a3144955fe1) 
+and burn it in six different usb drives.
+* Ceremony
+    * Downloaded the `challenge` file from <A HREF="https://s3-us-west-2.amazonaws.com/">https://s3-us-west-2.amazonaws.com/</A>
+powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html, checked its 
+sha256hash f767da9aa257a15869ead2e2c7b9019f5cbb3ae9454bf9cff2456b0cf73dd36e
+    * Copied the `challenge` file and the `compute` binary to six different usb 
+drives.
+    * Chose one of the 6 Linux Mint usb drives at random (rolling a dice) and 
+boot the airgapped node with it. Keep the other five untouched.
+    * Chose one of the 6 usb drives with the `challenge` and `compute` files at 
+random (dice roll) and insert it in the airgapped machine. Keep the other five 
+untouched.
+    * Checked the hash of the `compute` and `challenge`files in the airgapped 
+machine, and run `compute`
+    * Inserted the source of entropy: a bunch of random keys, plus the result 
+of 50 dice rolls.
+    * Copied the sha256hash of the `response` file ( 
+d7c3f0f75867bed812e056a7ddef6b7994d2d9b3c658c60cbdd18f1e6a06dacf )
+    * Burnt the `response` file to six different DVD-R
+    * Chose one of the DVD-R at random with a dice, insert it in the network 
+node, copied its content to the hard drive and verified the hash. The other five 
+were kept untouched.
+    * Uploaded the response file to the [Amazon S3 bucket](<A HREF="https://s3-us-west-2.amazonaws.com/powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html">https://s3-us-west-2.amazonaws.com/powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html</A>)
+
+Side channel defenses
+=================
+
+Entropy source: Many keys pressed at random, plus the result of 50 dice rolls.
+
+Computation took place on an airgapped machine, with no wifi card nor hard 
+drive. The media that was used to move information between the compute mode 
+was copied in 6 different devices, only one of each (chosen at random with a 
+dice) was inserted in the other machine, the other five will be kept untouched 
+for several months at least.
+
+The following material will be kept available for forensic audit in case 
+someone is interested in doing it:
+
+* airgapped machine (will be kept turned off, with no battery and no power 
+cable).
+* the six usb drives with the live linux system (the one actually used and the 
+other five that didn't gt in touch with the airgapped machine)
+* the six usb drives with the `compute` binary, and the `challenge` file (again 
+one was used, and the other five didn't get in contact with the airgapped 
+machine)
+* the six DVD-R with the `response` file  (again, one was actually inserted in 
+the network node, and the other five never touched it)
+
+I plan to keep this material for several months. If someone is interested in 
+auditing it, please get in touch with me. In case nobody shows interest, I 
+might decide to reuse all or part of it at some point.
+
+
+
+Miguel Angel Marco Buzunariz
+Universidad de Zaragoza
+<A HREF="/mailman/listinfo/zapps-wg">mmarco at unizar.es</A>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: This is a digitally signed message part.
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171121/a02ed644/attachment.sig">/pipermail/zapps-wg/attachments/20171121/a02ed644/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000072.html">[zapps-wg] Attestation No 12
+</A></li>
+	<LI>Next message (by thread): <A HREF="000074.html">[zapps-wg] Attestation No 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

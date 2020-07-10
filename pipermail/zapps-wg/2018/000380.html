@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Sapling MPC Random Beacon
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Sapling%20MPC%20Random%20Beacon&In-Reply-To=%3CCAKazn3mXnmNWtn4ZdqCAXC4rXp1QqZMh0r6DiELEGVMJWWruBQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000376.html">
+   <LINK REL="Next"  HREF="000382.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Sapling MPC Random Beacon</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Sapling%20MPC%20Random%20Beacon&In-Reply-To=%3CCAKazn3mXnmNWtn4ZdqCAXC4rXp1QqZMh0r6DiELEGVMJWWruBQ%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Sapling MPC Random Beacon">sean at z.cash
+       </A><BR>
+    <I>Thu Aug  2 04:51:27 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000376.html">[zapps-wg] Detecting Supply-Chain Attacks on the Sapling MPC
+</A></li>
+        <LI>Next message (by thread): <A HREF="000382.html">[zapps-wg] Sapling MPC Random Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#380">[ date ]</a>
+              <a href="thread.html#380">[ thread ]</a>
+              <a href="subject.html#380">[ subject ]</a>
+              <a href="author.html#380">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Please see the attached random beacon announcement.
+
+Sean
+-------------- next part --------------
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Hi all!
+
+I'm happy to announce that the Zcash &quot;Sapling&quot; MPC is nearly finished! I'd like to
+thank the roughly 94 participants that contributed their time and effort to making
+Zcash safer. I'd also like to thank Ian Munoz from the Zcash Company for
+coordinating the ceremony.
+
+Just as in the Powers of Tau, we must apply a random beacon to the result, like
+a simulated participant. We'll be performing 2^42 iterations of SHA256 over the
+block hash of Bitcoin block 534861, which is expected several hours from now.
+
+The resulting value will be applied with the `beacon` tool in the `sapling-mpc`
+repository to produce the final parameters. Here are the SHA256 hashes of the files
+currently located in my `sapling-mpc` repository:
+
+Cargo.toml:
+92e609de0ba615dd43e2866a2eb34505a19164bf48cca2250860093dfc37bcaa
+Cargo.lock:
+1317e82bdba7e7fe91195619803cbd12488ec589304198d8c20774f3b9ef0d1a
+src/bin/beacon.rs:
+cdfbf4bd833f2ba014ce41288fd7fa7f85ca49c7d8a47693044797a052ce9c61
+src/bin/compute.rs:
+2f6cdba8fcc4aa4b63bb02110552fac138254df55d2447a09e9a1a7a6eb94b30
+src/bin/new.rs:
+6363c65004733394f994a1c7feac32e5f1a1edd3d0da144cdf320d54bffb0e22
+src/bin/split_params.rs:
+ba80ae3ef719aad5cfb4b971af4f8276bbab7752f0516926dd72ba625f5ccc1c
+src/bin/verify.rs:
+7d61288c703098372038c30069dd8abb068ebfeded4f6935ff53c41fe01438af
+src/bin/verify_transform.rs:
+c8ce872e0d1212fcbcab92f84ba1c148601f7aa20e6b156de90dde94a95d4107
+
+Here's the SHA256 hash of the current `params` before applying the beacon:
+
+73baba221c0e0618a817f32ab6c224eb9f2621922829a65e281ccf0a99cdf74f
+
+Sean Bowe
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEA5XeClAnvgwfWvsDlWhCV9j4sDEFAltisb8ACgkQlWhCV9j4
+sDHvDA//fHdZTo6o4GM5Q7h+boiorz1qxGYHWGQ+CSRdn3YJ8MD5wb2mGZlIwHLR
+Avvp6hyQdTm/jLieVOpzFISXxDqNDzip4k8xwJZ1MYjzvS0t67hR1GU8mY6I/oN8
+gkk7Reti5EXq9zt4XTo6I1AI1Fb1ZIXSfL8X6u8lhURX2P1EdBcc7ZR28rzQq8uh
+1PGrHnm6G76WAXWZi4Bx0bNQvZ+4S6owgCJhB015OpVu7SSbuW2oz6wxkGJd2AuN
+QVCGG2QntzYIGsftw0+nE86QBaitIxSmCIJ/BJxlUTKhZOmVRQUCIoY4VBR4Z1I5
+Li0JYxLkXxv7BT2aQUY2ozWbc5tcvYsP5q1i+549C5wRkndVS945QlQ21n2cNrFs
+dKPAnURU9QA7CyVpx/yWjS5DOcykJWxM+MWpZFWSfxVrpYd8fOL8m4ufi6/qD9YZ
+SHsHx+jLugozMTDn56Exy0nfEdVJ0AawXxKfw3cWC9bMI08+eyZwWaF8wMb1a225
+E3Sasa/SaG0ifLSZS6aqWvQch2IbJo7BoDnYPoFOrbZ3b/Ljhty9G+PDjmdGpRQW
+Krx36Z3eip0X+tF3H+QgpJNY9CqbDFyOxqd8K4VPXPvw3Db9ju+3bkuDF8QJUBYR
+fDxVpDJPzzd8qR+dL2HN2oswHHKwRfA11JkMvd16Yjjsf5K7TXQ=
+=7rA+
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: beacon.txt.asc.ots
+Type: application/vnd.oasis.opendocument.spreadsheet-template
+Size: 1536 bytes
+Desc: not available
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180802/8cfd643a/attachment.ots">/pipermail/zapps-wg/attachments/20180802/8cfd643a/attachment.ots</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000376.html">[zapps-wg] Detecting Supply-Chain Attacks on the Sapling MPC
+</A></li>
+	<LI>Next message (by thread): <A HREF="000382.html">[zapps-wg] Sapling MPC Random Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#380">[ date ]</a>
+              <a href="thread.html#380">[ thread ]</a>
+              <a href="subject.html#380">[ subject ]</a>
+              <a href="author.html#380">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

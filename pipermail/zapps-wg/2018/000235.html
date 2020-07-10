@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation 48
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation%2048&In-Reply-To=%3CCAKazn3khHd5u-o7fqFRi2roqiGOzpT_ygWdRXc0GA6yoD3T9%2Bg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000234.html">
+   <LINK REL="Next"  HREF="000236.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation 48</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation%2048&In-Reply-To=%3CCAKazn3khHd5u-o7fqFRi2roqiGOzpT_ygWdRXc0GA6yoD3T9%2Bg%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation 48">sean at z.cash
+       </A><BR>
+    <I>Thu Feb  1 18:08:46 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000234.html">[zapps-wg] Powers of Tau Attestation 48
+</A></li>
+        <LI>Next message (by thread): <A HREF="000236.html">[zapps-wg] Powers of Tau Attestation 48
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#235">[ date ]</a>
+              <a href="thread.html#235">[ thread ]</a>
+              <a href="subject.html#235">[ subject ]</a>
+              <a href="author.html#235">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Awesome job, thank you so much. :)
+
+By the way, the challenge file that Gabe used is located here:
+<A HREF="https://powersoftau-transcript.s3-us-west-2.amazonaws.com/challenge.48">https://powersoftau-transcript.s3-us-west-2.amazonaws.com/challenge.48</A>
+
+I'd be curious to see why Filippo's Go code can't deserialize it.
+Maybe a platform specific bug?
+
+Sean
+
+On Thu, Feb 1, 2018 at 3:56 PM, Gabe Ortiz via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA512
+</I>&gt;<i>
+</I>&gt;<i> Powers of Tau Attestation by Gabe Ortiz (@signalnine)
+</I>&gt;<i> =================================
+</I>&gt;<i>
+</I>&gt;<i> Round: 48
+</I>&gt;<i> Date: 2018-02-01
+</I>&gt;<i> Location: Albuquerque, NM, USA
+</I>&gt;<i> Commit version: d47a1d3d1f007063cbcc35f1ab902601a8b3bd91
+</I>&gt;<i>
+</I>&gt;<i> SHA256 challenge file:
+</I>&gt;<i> 35b60456f4d4a17ceefb1acfd0371d7134789319649cfd6bf77aca35d2824950
+</I>&gt;<i>
+</I>&gt;<i> Blake2b response file:
+</I>&gt;<i> The BLAKE2b hash of `./response` is:
+</I>&gt;<i> 7c220a51 5804a837 d314eb18 f861198f
+</I>&gt;<i> e1bff8e0 f3e4018f 68a6b2c6 8a4bc89b
+</I>&gt;<i> 59a80446 52cc2602 4c3f72f9 32730700
+</I>&gt;<i> 1bff8df0 429da619 70d6f587 72629732
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Methodology
+</I>&gt;<i> =========
+</I>&gt;<i>
+</I>&gt;<i> The hardware used was a mid-2011 MacBook Air running OS X 10.11.6. WiFi and
+</I>&gt;<i> Bluetooth were disabled and the MAC address of the WiFi adapter was blocked
+</I>&gt;<i> at my router. I transferred the challenge file via USB drive. I first
+</I>&gt;<i> attempted to use Filippo Valsorda&#8217;s golang implementation but ran into an
+</I>&gt;<i> issue where it was throwing an error, &#8220;Failed to read the challenge: point
+</I>&gt;<i> is compressed.&#8221; So, I ran the standard Rust implementation instead.
+</I>&gt;<i> Additional entropy was produced via a USB-connected keyboard. I again
+</I>&gt;<i> transferred the response and response hash via a USB drive to my
+</I>&gt;<i> network-connected laptop for upload. The MacBook Air and the USB drive used
+</I>&gt;<i> to do the compute was then destroyed.
+</I>&gt;<i>
+</I>&gt;<i> Just for fun, here&#8217;s an imgur album of the laptop destruction (yes, we made
+</I>&gt;<i> sure to avoid damage to the battery cells):
+</I>&gt;<i> <A HREF="https://imgur.com/a/IkG3i">https://imgur.com/a/IkG3i</A>
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i>
+</I>&gt;<i> iQIzBAEBCgAdFiEE2eDG1CCBN16+WtTSC6+LqJ7Wy2QFAlpzmksACgkQC6+LqJ7W
+</I>&gt;<i> y2SkYQ/+OlYd79nl1EX6St7dgvbJvb2lZbP1qYG2dEdJsTY0yTILREPLwOfOlopJ
+</I>&gt;<i> DOm7hn2SGbi7FUe2XIMc07bi+shvH3h8mpKnSt9HYw/KtwAmgqt9o0DpbMNibOyw
+</I>&gt;<i> 8q9rDtmbgV8/Hg9GBDaR0V+ocy/uObdLehxb3zsm2gLToTOj4sEM75nje2zbhVSd
+</I>&gt;<i> +F/UN7qYNq5DwUIA/rqqPAA4EVaOa6zan8h803fIeokTNkw7bcIDiJkdbcZh8fko
+</I>&gt;<i> qcVEnRdhf4t0OS2ZIyGGQ8YU/EUhu8e1xvGj8aKZ+uzarMV6lgef7yOosMWbnjkh
+</I>&gt;<i> JHqEZnBXqqWGW4uslE8Flh68CmKAa7Z8gtnSOxfrIDCwN7IMM1bQzAI45yydLYCB
+</I>&gt;<i> 1rjJndasmmxkP+kzzAz0ixP6nEiMOnsNZibqTdi5kQjvytKQwm/viVeuAE5d24cM
+</I>&gt;<i> JBfBArbsug3ZvAKSgwuaboIC77/qhZYqYxxfGiM91g9KQsFrg7SXYpH3cf806JID
+</I>&gt;<i> RAHT/6z1M7RegjZL74BH74QB6tb2pVIDqDDnY9wp1Lj8PeiGx2u5+eiW71NYAX5h
+</I>&gt;<i> GtWThZrd5yk6+EBzsyIeRnPmf4oaw/Y0jMs8qePVHcaXDiWHAdwIg2lwmVfqZx80
+</I>&gt;<i> lR5mSBmiV0tDX14SDgbQuONAqFtop102QZkawvR4ZbYPNpf/Jjc=
+</I>&gt;<i> =EmVb
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000234.html">[zapps-wg] Powers of Tau Attestation 48
+</A></li>
+	<LI>Next message (by thread): <A HREF="000236.html">[zapps-wg] Powers of Tau Attestation 48
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#235">[ date ]</a>
+              <a href="thread.html#235">[ thread ]</a>
+              <a href="subject.html#235">[ subject ]</a>
+              <a href="author.html#235">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

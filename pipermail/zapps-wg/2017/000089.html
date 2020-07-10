@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CCAKazn3kX-hGFh1kfnaJ4QQ_F5C8ZAFMMLphCboYWo4LiXnva3g%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000088.html">
+   <LINK REL="Next"  HREF="000090.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CCAKazn3kX-hGFh1kfnaJ4QQ_F5C8ZAFMMLphCboYWo4LiXnva3g%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation">sean at z.cash
+       </A><BR>
+    <I>Thu Nov 23 19:13:13 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000088.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000090.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks! Excellent job.
+
+&gt;<i> In an effort to overwrite the RAM and run out the battery, I started two instances of `cargo test`.
+</I>
+Clever. :)
+
+Sean
+
+On Thu, Nov 23, 2017 at 4:54 PM, Adam Nagel via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA512
+</I>&gt;<i>
+</I>&gt;<i> Powers of Tau Participation Writeup
+</I>&gt;<i> ===================================
+</I>&gt;<i> Date: 2017-11-23
+</I>&gt;<i> Name: Adam Nagel
+</I>&gt;<i> Location: South Florida, USA
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Ceremony Software
+</I>&gt;<i> =================
+</I>&gt;<i> powersoftau repository commit
+</I>&gt;<i> 9e1553c437183540392a7231d0788318a19b18a3
+</I>&gt;<i>
+</I>&gt;<i> cargo 0.24.0-nightly (abd137ad1 2017-11-12)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> BLAKE2b hashes
+</I>&gt;<i> ==============
+</I>&gt;<i> Challenge file
+</I>&gt;<i> e15f7392ebe912c2f9419f4b4ed4242b6207bad916d22ffb10a0c9c08445ae6f0eebd35c7e52ecd5ff611bb8c8d6bedd9e711cd8485b88d6e2b0d276ee979bb7
+</I>&gt;<i>
+</I>&gt;<i> The BLAKE2b hash of `./response` is:
+</I>&gt;<i> cdb09d81 858da53b 5581c25d 805e442b
+</I>&gt;<i> 5a37bf75 ccb1e1b3 104d9886 742c2dae
+</I>&gt;<i> 220cc817 9902653e 1783ba13 f47d5367
+</I>&gt;<i> 8360ba3f 7f3d1557 e1472b07 1b796fc5
+</I>&gt;<i>
+</I>&gt;<i> /usr/local/bin/cargo
+</I>&gt;<i> a5adde35def05d778b9490ba8813f5085ec9a55e88f0fe7c42282508a43774625c2fd84f01383ff3478d345fe8dd1a455096380d37bcf51f4424924c2bf3c07d
+</I>&gt;<i>
+</I>&gt;<i> ./target/release/compute
+</I>&gt;<i> 88b2a3d5b8740ff699d6e9ba516d3dcebbcc36c5df64eeeb529ecda8f792de032fad915fbb23168bba8c65a02ff3695176fd1321413b1a6247082137f5f9334d
+</I>&gt;<i>
+</I>&gt;<i> ./target/release/compute (with --features=u128-support)
+</I>&gt;<i> dae100bbdbd9fd6c1280422906ae6fd0dc9c7115d75749c0df01ad8f106924ede534f5ffcdd61255e15d383dd0384d2efe90afc9f2fc27e745996714ec8b20b0
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Procedure
+</I>&gt;<i> =========
+</I>&gt;<i> I prepared a 2013 Macbook Pro with cargo, powersoftau, and FileVault on
+</I>&gt;<i> November 15 at my home in Nashville, disabled the radios, and left it
+</I>&gt;<i> powered off until today.
+</I>&gt;<i>
+</I>&gt;<i> My turn came up while vacationing in Florida and traveling in a rented car.
+</I>&gt;<i> This morning, I sat down in the first coffee shop I encountered and used a
+</I>&gt;<i> second laptop to download the challenge file to a USB stick. Then I copied
+</I>&gt;<i> the challenge file to my compute machine.
+</I>&gt;<i>
+</I>&gt;<i> Entropy was generated with about 30 seconds of key-mashing. I allowed it to
+</I>&gt;<i> run while driving around Homestead and Florida City, leaving the Bluetooth
+</I>&gt;<i> and Wifi radios disabled. When the process completed, I made a copy of the
+</I>&gt;<i> response file.
+</I>&gt;<i>
+</I>&gt;<i> I then performed another computation from Long Pine Key Campground in
+</I>&gt;<i> Everglades National Park, with entropy generated using the same process.
+</I>&gt;<i>
+</I>&gt;<i> A coin flip determined which response file to use. The winner was
+</I>&gt;<i> transferred to USB stick and uploaded to S3 over Verizon 4G LTE from the
+</I>&gt;<i> campground.
+</I>&gt;<i>
+</I>&gt;<i> In an effort to overwrite the RAM and run out the battery, I started two
+</I>&gt;<i> instances of `cargo test`. Add in the South Florida heat, and the fans have
+</I>&gt;<i> never worked so hard. I intend to leave this computer off for several weeks,
+</I>&gt;<i> re-format its hard drive, and use it for other purposes in the future.
+</I>&gt;<i>
+</I>&gt;<i> Thanks to Sean for coordinating everything, and thanks to the community for
+</I>&gt;<i> the chance to participate.
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i> Version: Keybase OpenPGP v2.0.76
+</I>&gt;<i> Comment: <A HREF="https://keybase.io/crypto">https://keybase.io/crypto</A>
+</I>&gt;<i>
+</I>&gt;<i> wsBcBAABCgAGBQJaF197AAoJEH9HRRD/y1TBjDEIANpIrKw9QFDJM2vyvpPEGVui
+</I>&gt;<i> 0mhEStbFX6DZlLcOTzwhGvaitiBlZWFLus3F4aQocXvLwdAtKenVpd5jDKrMHre0
+</I>&gt;<i> rcsHewVrgVigvvUeHqTmNMMDx5yvJdKG8MbeNeJSxLge6omHMBydQWot6ytQNnRk
+</I>&gt;<i> L9+Nq8h436GCu4ypFiNxgiAKsJF/RFTAe+W2rHECjGqsVpMIuczWwOupeYyncSOS
+</I>&gt;<i> JTQ4dLi1VFIsgOzDJI7GeGU8OKlfb4gxtW1YpZlgoFD4KyUQTah0qXyDcTn/eqw0
+</I>&gt;<i> iwB1Tg6pJSl/4CBLGshK9gKcw4+2FwnYmW/S3c3+DPUcKSiaSSfbBEiTw3N23zs=
+</I>&gt;<i> =qUCa
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000088.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000090.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

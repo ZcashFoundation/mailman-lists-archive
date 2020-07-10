@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Ceremony Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Ceremony%20Attestation&In-Reply-To=%3CCADGsX6QnGRqd_nYEFL-Ujex_fPVZYNHiy2O%2BPvHUUSZ-tku06w%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000068.html">
+   <LINK REL="Next"  HREF="000071.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Ceremony Attestation</H1>
+    <B>Adrian Brink</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Ceremony%20Attestation&In-Reply-To=%3CCADGsX6QnGRqd_nYEFL-Ujex_fPVZYNHiy2O%2BPvHUUSZ-tku06w%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Ceremony Attestation">adrian at brink-holdings.com
+       </A><BR>
+    <I>Mon Nov 20 13:47:52 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000068.html">[zapps-wg] Attestation no. 10 (Powers of Tau)
+</A></li>
+        <LI>Next message (by thread): <A HREF="000071.html">[zapps-wg] Attestation No 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#69">[ date ]</a>
+              <a href="thread.html#69">[ thread ]</a>
+              <a href="subject.html#69">[ subject ]</a>
+              <a href="author.html#69">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Powers of Tau Operational Write-up
+=============================
+
+Round: 11
+
+Date: 2017-11-20
+
+Name: Adrian Brink
+
+Location: Europe
+
+Response (blake2b):
+f2eadb8e4f9d97ecd2b2a2abf8a5623b2810214f5a5f354218d3f93cae567e86e0866143832dc43d83bf973a170ce091379645ea05b42aad0291d5e8a0c3fb4b
+
+Procedure
+=================
+
+* followed the instructions provided by Sean Bowe
+* downloaded [Powers of Tau](<A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>) with
+commit d47a1d3d1f007063cbcc35f1ab902601a8b3bd91
+* downloaded the challenge file from an [Amazon S3 bucket](
+<A HREF="https://s3-us-west-2.amazonaws.com/powersoftau/hysxgqp8Ca1JAMgRtolqKznDzzBrfdxW/index.html">https://s3-us-west-2.amazonaws.com/powersoftau/hysxgqp8Ca1JAMgRtolqKznDzzBrfdxW/index.html</A>
+)
+* used verion of rustc 1.23.0-nightly (5041b3bb3 2017-11-19)
+* computed the response locally by running `cargo run --release --bin
+compute` on macOS 10.13.1
+* uploaded the response file to the [Amazon S3 bucket](
+<A HREF="https://s3-us-west-2.amazonaws.com/powersoftau/hysxgqp8Ca1JAMgRtolqKznDzzBrfdxW/index.html">https://s3-us-west-2.amazonaws.com/powersoftau/hysxgqp8Ca1JAMgRtolqKznDzzBrfdxW/index.html</A>
+)
+
+Side channel defenses
+=================
+
+Entropy source: I smashed my keyboard to the beat of my current music in
+random places.
+
+I have no intention to destroy the compute node.
+
+I happily kept coding on [Tendermint Core](
+<A HREF="https://github.com/tendermint/tendermint">https://github.com/tendermint/tendermint</A>) during the computation.
+
+Adrian Brink
+Core Developer @ Cosmos Network
+[@adrian_brink](<A HREF="https://twitter.com/adrian_brink">https://twitter.com/adrian_brink</A>)
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: <A HREF="https://keybase.io/crypto">https://keybase.io/crypto</A>
+
+wsFcBAABCgAGBQJaEyKWAAoJEPYQU9P70GNTd9oP/R5RImTQICpQAqi5Wmb/LumC
+ra5mVCXn8gi13AGd71WAhbBGur8+GTkLv/LXO0AL/8NvWf6xcwEwacUZ5Eio6EkV
+L4Gxr3uxHZy8v+H9ZRW75OjQFreiO5yfbGTsl1d5xmoP7aspeTHn46XKjz3xXNh1
+UvVgmVPb5UHQfw/1p+dFHjYKQSUjl+HsCX5BVznedsJ5fhudnR15GHOIS7SMH3O5
+F/KY7QbbEB3lKVjQ6U8PYgPPQX5B91Wm+2NcvyI6Rkl5GgJ1DrIGdTaImY0M222s
+cxyahlJUpOPLdZJDSGLXERHELUW1g9pDbosGqwenXO97VPQW9jIGNsW3PTuU0zCm
+05fOaAbn7R72NJyT4bVJ5DYwqkSb+ngU+wkewtRsEZsADCXMJadfMpfUOvk1LUR0
+R0/QvSZH1ys0OQC8rTXTLSW1P9JUzu5ibsrYRkYa12+ejZQ9laWXfZM3mo9aKNbH
+fbskTEOyOHXZWLJox/kcumgVY0J4dePnZ4nmyEd9+yfoIt2NC3Ig8I7R/8bQa3eJ
+Oa0eKwesWAmkrXktHiKT8yHrZkZqvjHUMOVC070E9EMVgb5jfU9lscAsWrH23k0j
+5hLTov5oEE8/eGQ0n/F63WaAUj47n/P4CZWgUmJjoNoSrAkOLr9odnSNBmo/a8mx
+2InfEiaq+UsPc9HxB8SX
+=5z7Y
+-----END PGP SIGNATURE-----
+
+
+--
+*Adrian Brink*
+Core Developer &amp; Head of Community @ Cosmos Network &amp; Tendermint
+MSc. in Software Development @ ITU
+B
+Sc in Business Administration @ Cass Business School
+www.adrianbrink.com &lt;<A HREF="https://adrianbrink.com/">https://adrianbrink.com/</A>&gt;
+www.avogenie.com &lt;<A HREF="https://avogenie.com/">https://avogenie.com/</A>&gt;
+DK: +45 52 81 01 26
+DE: + 49 157 37308279
+Website &lt;<A HREF="https://adrianbrink.com/">https://adrianbrink.com/</A>&gt; | LinkedIn
+&lt;<A HREF="https://dk.linkedin.com/in/adrianbrink">https://dk.linkedin.com/in/adrianbrink</A>&gt; | Facebook
+&lt;<A HREF="https://www.facebook.com/adrian.brink.3">https://www.facebook.com/adrian.brink.3</A>&gt; | Twitter
+&lt;<A HREF="https://twitter.com/adrian_brink">https://twitter.com/adrian_brink</A>&gt;
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171120/627edff9/attachment.html">/pipermail/zapps-wg/attachments/20171120/627edff9/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000068.html">[zapps-wg] Attestation no. 10 (Powers of Tau)
+</A></li>
+	<LI>Next message (by thread): <A HREF="000071.html">[zapps-wg] Attestation No 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#69">[ date ]</a>
+              <a href="thread.html#69">[ thread ]</a>
+              <a href="subject.html#69">[ subject ]</a>
+              <a href="author.html#69">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

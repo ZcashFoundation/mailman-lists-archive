@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Trusted Rust build process is ready for evaluation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Trusted%20Rust%20build%20process%20is%20ready%20for%20evaluation&In-Reply-To=%3CCAKazn3kwVNu_GPrVKHm6C4Qar4j_VHR1p1C84t0EndGszRX8sw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000180.html">
+   <LINK REL="Next"  HREF="000182.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Trusted Rust build process is ready for evaluation</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Trusted%20Rust%20build%20process%20is%20ready%20for%20evaluation&In-Reply-To=%3CCAKazn3kwVNu_GPrVKHm6C4Qar4j_VHR1p1C84t0EndGszRX8sw%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Trusted Rust build process is ready for evaluation">sean at z.cash
+       </A><BR>
+    <I>Mon Jan  8 13:40:08 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000180.html">[zapps-wg] Trusted Rust build process is ready for evaluation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000182.html">[zapps-wg] Trusted Rust build process is ready for evaluation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#181">[ date ]</a>
+              <a href="thread.html#181">[ thread ]</a>
+              <a href="subject.html#181">[ subject ]</a>
+              <a href="author.html#181">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I've been quite busy with holidays, work and being sick. :( I'd like
+to get around to writing some instructions for the ceremony that
+encourage people to consider using your work, so reviewing it is one
+of my priorities. I'll find a time to do that soon.
+
+Sean
+
+On Mon, Jan 8, 2018 at 11:27 AM, Devrandom &lt;<A HREF="/mailman/listinfo/zapps-wg">c1.devrandom at niftybox.net</A>&gt; wrote:
+&gt;<i> Sean,
+</I>&gt;<i>
+</I>&gt;<i> How is it going with the evaluation?
+</I>&gt;<i>
+</I>&gt;<i> I'm concerned because rounds are continuing, yet participants are using
+</I>&gt;<i> versions of Rust of unknown provenance.  In fact, everybody might be using
+</I>&gt;<i> Rust with a common ancestor compiler, so that we have a single point of
+</I>&gt;<i> failure.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Thu, Dec 7, 2017 at 11:10 AM Devrandom &lt;<A HREF="/mailman/listinfo/zapps-wg">c1.devrandom at niftybox.net</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It looks like the result is pretty far from deterministic.  In fact, I see
+</I>&gt;&gt;<i> 20,000+ lines of difference in diffoscope.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So it looks like each participant will have to build their own toolchain.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Tue, Dec 5, 2017 at 4:44 PM Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> That would be nice!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> What other obstacles are there for fully deterministic builds? It
+</I>&gt;&gt;&gt;<i> seems like it would be a good idea to toss a few features in (like
+</I>&gt;&gt;&gt;<i> that one) and make some kind of &quot;release&quot; binaries for people to use
+</I>&gt;&gt;&gt;<i> which have been scrutinized and built in this reproducible way.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I hopefully will run into some time soon where I can audit the changes
+</I>&gt;&gt;&gt;<i> you made to the code and dependencies, play with the build, do
+</I>&gt;&gt;&gt;<i> comparisons and so forth. This is exciting!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Sean
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Tue, Dec 5, 2017 at 5:20 PM, Devrandom &lt;<A HREF="/mailman/listinfo/zapps-wg">c1.devrandom at niftybox.net</A>&gt;
+</I>&gt;&gt;&gt;<i> wrote:
+</I>&gt;&gt;&gt;<i> &gt; Verification passed (in fact, new_challenge was identical).
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i> &gt; BTW, would be nice if `compute` had a flag to only take entropy from
+</I>&gt;&gt;&gt;<i> &gt; STDIN,
+</I>&gt;&gt;&gt;<i> &gt; so that we can check for any differences in the response.
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i> &gt; On Tue, Dec 5, 2017 at 12:48 PM Devrandom &lt;<A HREF="/mailman/listinfo/zapps-wg">c1.devrandom at niftybox.net</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt; wrote:
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; Thank you.  Will do the verification shortly.
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; Also, I've updated the instructions in
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; <A HREF="https://github.com/devrandom/powersoftau/wiki/Trusted-build-instructions-via-mrustc">https://github.com/devrandom/powersoftau/wiki/Trusted-build-instructions-via-mrustc</A>
+</I>&gt;&gt;&gt;<i> &gt;&gt; to use the cargo built by mrustc.  This required vendoring of the
+</I>&gt;&gt;&gt;<i> &gt;&gt; dependencies.
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; On Tue, Dec 5, 2017 at 11:24 AM Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; Excellent work! :)
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; new, compute, verify_transform is a good demonstration. I would
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; verify_transform with a binary compiled with the normal Rust compiler
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; to double-check.
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; Sean
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; On Tue, Dec 5, 2017 at 11:59 AM, Devrandom
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">c1.devrandom at niftybox.net</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; wrote:
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; Hi all,
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; I was able to build rustc completely from sources.  This means no
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; network
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; access during the build and without any Rust distributed binaries.
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; The steps are here:
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; <A HREF="https://github.com/devrandom/powersoftau/wiki/Trusted-build-instructions-via-mrustc">https://github.com/devrandom/powersoftau/wiki/Trusted-build-instructions-via-mrustc</A>
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; I'm still looking into building a cargo binary that supports TLS,
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; to
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; eliminate the need to download it for building powersoftau itself.
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; Worst
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; case we can use a shell script.
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; Would like to merge <A HREF="https://github.com/ebfull/pairing/pull/72">https://github.com/ebfull/pairing/pull/72</A> so
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; that
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; we
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; don't have to maintain a separate patch for Rust 1.19
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; compatibility.
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; Sean, what is the best method of validating that the generated
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; binary
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; works
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; correctly?  Just use &quot;new&quot;, then &quot;compute&quot; and then
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; &quot;verify_transform&quot;?
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; Also, I found that the generated binary is *very* different from
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; the
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; one
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; generated by the downloadable Rust compiler.  This is somewhat
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; worrisome,
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; although it doesn't affect us if we use the mrustc path.  Will
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; spend a
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; bit
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt; more time to get to the bottom of it.
+</I>&gt;&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000180.html">[zapps-wg] Trusted Rust build process is ready for evaluation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000182.html">[zapps-wg] Trusted Rust build process is ready for evaluation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#181">[ date ]</a>
+              <a href="thread.html#181">[ thread ]</a>
+              <a href="subject.html#181">[ subject ]</a>
+              <a href="author.html#181">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

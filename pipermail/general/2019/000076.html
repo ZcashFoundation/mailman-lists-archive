@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] March &amp; April Update: implementing anonymous payment channels
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20March%20%26%20April%20Update%3A%20implementing%20anonymous%20payment%0A%20channels&In-Reply-To=%3CCAJVTvHuSLn-XH5Qd5crhn%2BkZ00gmqYY65U9CXrdcEYstYy1ZeQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000075.html">
+   <LINK REL="Next"  HREF="000077.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] March &amp; April Update: implementing anonymous payment channels</H1>
+    <B>J. Ayo Akinyele</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20March%20%26%20April%20Update%3A%20implementing%20anonymous%20payment%0A%20channels&In-Reply-To=%3CCAJVTvHuSLn-XH5Qd5crhn%2BkZ00gmqYY65U9CXrdcEYstYy1ZeQ%40mail.gmail.com%3E"
+       TITLE="[ZcF-general] March &amp; April Update: implementing anonymous payment channels">ayo at boltlabs.io
+       </A><BR>
+    <I>Fri Apr 26 16:24:02 EDT 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000075.html">[ZcF-general] March Update
+</A></li>
+        <LI>Next message (by thread): <A HREF="000077.html">[ZcF-general] Shielded Zcash at Retail - April Update [Zcash Foundation Grant]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Progress as of April 26, 2019
+
+We submitted an initial zip proposal for adding BOLT support
+&lt;<A HREF="https://github.com/boltlabs-inc/zips/blob/master/zip-bolt-support.rst">https://github.com/boltlabs-inc/zips/blob/master/zip-bolt-support.rst</A>&gt; to
+Zcash ZIP process at the end of March. The proposal describes the features
+we need for building channels using shielded addresses (and transparent for
+backward compatibility with Bitcoin). Our goal within the next few weeks is
+to complete the initial proposal with more details regarding the use of
+shielded addresses only as we work towards NU3 deployment.
+
+Therefore, the current reference implementation for testnet uses shielded
+inputs with multi-sig T-addr for funding the channel. Adding an OP_BOLT
+opcode to our Zcash fork for checking the correctness of channel opening
+and closing (but evaluating how much we can do off-chain and if we can rely
+only on standard signatures for on-chain transactions). We are also
+revising the abstract protocol and how its instantiated on a currency to
+simplify potential deployment.
+
+Lastly, still working on a bare-bones reference implementation in Python
+for creating and managing payment channels on top of Zcash. It is currently
+in a private repo that will be made public once v1 is complete (hopefully,
+soon) and it builds on a Python/C FFI libolt
+&lt;<A HREF="https://github.com/boltlabs-inc/libbolt">https://github.com/boltlabs-inc/libbolt</A>&gt; interface and riemann
+&lt;<A HREF="https://github.com/summa-tx/riemann">https://github.com/summa-tx/riemann</A>&gt; package (many thanks to James
+Prestwich). Rust or Go Bolt implementation will follow.
+
+Please reach out at <A HREF="/mailman/listinfo/general">info at boltlabs.io</A> if there are any questions.
+
+Thanks,
+Ayo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/general/attachments/20190426/21ba7332/attachment.html">/pipermail/general/attachments/20190426/21ba7332/attachment.html</A>&gt;
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000075.html">[ZcF-general] March Update
+</A></li>
+	<LI>Next message (by thread): <A HREF="000077.html">[ZcF-general] Shielded Zcash at Retail - April Update [Zcash Foundation Grant]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau participation + zk proof question
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20participation%20%2B%20zk%20proof%20question&In-Reply-To=%3CCAKazn3%3DFQGE15Udq6w1oPSBkJFi3t-Q%3D%2BU7xsCGhrf1AC45Fzw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000161.html">
+   <LINK REL="Next"  HREF="000163.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau participation + zk proof question</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20participation%20%2B%20zk%20proof%20question&In-Reply-To=%3CCAKazn3%3DFQGE15Udq6w1oPSBkJFi3t-Q%3D%2BU7xsCGhrf1AC45Fzw%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau participation + zk proof question">sean at z.cash
+       </A><BR>
+    <I>Wed Jan  3 16:33:44 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000161.html">[zapps-wg] Powers of Tau participation + zk proof question
+</A></li>
+        <LI>Next message (by thread): <A HREF="000163.html">[zapps-wg] Powers of Tau participation + zk proof question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#162">[ date ]</a>
+              <a href="thread.html#162">[ thread ]</a>
+              <a href="subject.html#162">[ subject ]</a>
+              <a href="author.html#162">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I believe those gadgets are specifically for curves where the scalar
+field is the base field of the curve you're working with, so they
+probably wouldn't be that useful for arbitrary fields. Most of the
+complexity here is the bignum arithmetic inside the circuit, though.
+
+&gt;<i> Is there any more clever way to do this than just providing splitting into bits to implement modular arithmetic in a different field?
+</I>
+Not that I know of. I explored the feasibility of this kind of stuff
+in the past and concluded each point addition would be around the cost
+of a SHA256 invocation. You can minimize the number of additions using
+window tables. The best approach seemed to be giant window tables
+queried with merkle tree lookups using something like MiMC. The
+additions are most efficient when working with affine formulas
+(inversions can be witnessed as efficiently as multiplications). You
+may be able to get this down to 2^20 constraints for ~256-bit scalars,
+which might be around 10-20 second proving time.
+
+Sean
+
+On Wed, Jan 3, 2018 at 1:36 PM, Andrew Miller &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt; wrote:
+&gt;<i> Suppose one did want to build a secp256k1 gadget. I notice that libsnark
+</I>&gt;<i> already provides a general gadget for  weierstrass form elliptic curves,
+</I>&gt;<i> parameterized by a field. So all we'd have to do is define the secp256k1
+</I>&gt;<i> operations in the alt_bn128 or in bls12 fields. Is there any more clever way
+</I>&gt;<i> to do this than just providing splitting into bits to implement modular
+</I>&gt;<i> arithmetic in a different field?
+</I>&gt;<i>
+</I>&gt;<i> On Jan 3, 2018 2:11 PM, &quot;Sean Bowe&quot; &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If any curve is acceptable, I would encourage Jubjub, which we'll be
+</I>&gt;&gt;<i> using for the next version of Zcash. In which case you will be able to
+</I>&gt;&gt;<i> leverage our Sapling crypto code once it is more mature over the next
+</I>&gt;&gt;<i> month or so. <A HREF="https://github.com/zcash-hackworks/sapling-crypto">https://github.com/zcash-hackworks/sapling-crypto</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Sean
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Wed, Jan 3, 2018 at 1:02 PM, James Prestwich via zapps-wg
+</I>&gt;&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt; I'd prefer sha256 or bitcoin-style hash160. I'm interested in a few
+</I>&gt;&gt;<i> &gt; different curves, including secp256k1. Eventually for EdDSA keys as
+</I>&gt;&gt;<i> &gt; well. Is
+</I>&gt;&gt;<i> &gt; there a list of supported curve operations?
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; On Wed, Jan 3, 2018 at 12:57 PM Andrew Miller &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt;
+</I>&gt;&gt;<i> &gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Thank you so much for expressing your question in Camenisch-Stadler
+</I>&gt;&gt;<i> &gt;&gt; notation! That makes it very clear what you're going for.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; What hash function H do you have in mind, would SHA2 work? Also what
+</I>&gt;&gt;<i> &gt;&gt; group
+</I>&gt;&gt;<i> &gt;&gt; G do you have in mind, secp256k1?
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; If so, I do not know of any existing implementation of secp256k1
+</I>&gt;&gt;<i> &gt;&gt; operations specifically in libsnark, so that would presumably be the
+</I>&gt;&gt;<i> &gt;&gt; biggest
+</I>&gt;&gt;<i> &gt;&gt; challenge.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; On Jan 3, 2018 1:47 PM, &quot;James Prestwich via zapps-wg&quot;
+</I>&gt;&gt;<i> &gt;&gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; I'd like to participate in the setup ceremony.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; I also have an app I'd like to build using a zk-proof of knowledge of
+</I>&gt;&gt;<i> &gt;&gt; an
+</I>&gt;&gt;<i> &gt;&gt; ECC private key. {(a) : A = a * G, B = H(a)}. Can anyone point me to
+</I>&gt;&gt;<i> &gt;&gt; good
+</I>&gt;&gt;<i> &gt;&gt; resources on getting started?
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000161.html">[zapps-wg] Powers of Tau participation + zk proof question
+</A></li>
+	<LI>Next message (by thread): <A HREF="000163.html">[zapps-wg] Powers of Tau participation + zk proof question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#162">[ date ]</a>
+              <a href="thread.html#162">[ thread ]</a>
+              <a href="subject.html#162">[ subject ]</a>
+              <a href="author.html#162">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

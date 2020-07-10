@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Version of Rust
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Version%20of%20Rust&In-Reply-To=%3CCAB0O3SVQjvBmFi9%2BVS7Qtzvgb8h7y4yOmtWeeD0Vf9CKSfneHg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000038.html">
+   <LINK REL="Next"  HREF="000050.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Version of Rust</H1>
+    <B>Devrandom</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Version%20of%20Rust&In-Reply-To=%3CCAB0O3SVQjvBmFi9%2BVS7Qtzvgb8h7y4yOmtWeeD0Vf9CKSfneHg%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Version of Rust">c1.devrandom at niftybox.net
+       </A><BR>
+    <I>Fri Nov 17 12:08:02 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000038.html">[zapps-wg] Version of Rust
+</A></li>
+        <LI>Next message (by thread): <A HREF="000050.html">[zapps-wg] Version of Rust
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm going to try to compile with older versions, will let you know how it
+goes.  Ideally we could get to versions before zcash was announced.
+
+This will be fun, have not done Rust before.  But here are some thoughts
+about the Rust compiler after trying to compile it from source:
+
+- the Rust compiler can only be built with itself, which means that you
+have to start from a binary, so you might as well trust the binary
+- if we start with a really old one, the chances of a targeted attack are
+pretty slim
+- a general trojan that detects access to /dev/random and reduces entropy
+could still be lurking
+- the mixing of entropy from the user should mitigate, unless the compiler
+can be smart enough to detect even that
+
+BTW, what does the timestamp on crates.io buy us? Looking at the repo, it
+looks like they just commit version numbers, but not git hashes of the
+source code.
+
+
+On Thu, Nov 16, 2017 at 4:45 PM Peter Todd &lt;<A HREF="/mailman/listinfo/zapps-wg">pete at petertodd.org</A>&gt; wrote:
+
+&gt;<i> On Thu, Nov 16, 2017 at 01:59:53PM -0700, Sean Bowe via zapps-wg wrote:
+</I>&gt;<i> &gt; I think it is the current version (1.21). I imagine it would be
+</I>&gt;<i> &gt; possible to modify the code (and many of the dependencies) so that it
+</I>&gt;<i> &gt; could compile on a really old version too.
+</I>&gt;<i>
+</I>&gt;<i> Also, if someone does manage to do this, I have a OpenTimestamps Git
+</I>&gt;<i> timestamp(1)
+</I>&gt;<i> on Rust crates.io crate registry:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://github.com/petertodd/crates.io-index/commit/763a730f2275d69eb13ee8b212fc9aa0d6fe92b5">https://github.com/petertodd/crates.io-index/commit/763a730f2275d69eb13ee8b212fc9aa0d6fe92b5</A>
+</I>&gt;<i>
+</I>&gt;<i> Secondly the Internet Archive contains quite a bit of uploaded software,
+</I>&gt;<i> such
+</I>&gt;<i> as Debian install images, and via my Internet Archive timestamp project we
+</I>&gt;<i> have
+</I>&gt;<i> timestamps from May this year for most of that:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://petertodd.org/2017/carbon-dating-the-internet-archive-with-opentimestamps">https://petertodd.org/2017/carbon-dating-the-internet-archive-with-opentimestamps</A>
+</I>&gt;<i>
+</I>&gt;<i> While these timestamps would be only one part of an argument as to why a
+</I>&gt;<i> given
+</I>&gt;<i> compile wasn't backdoored, I think it's worth using cryptographically
+</I>&gt;<i> timestamped dependencies over non-timestamped ones when possible.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 1) <A HREF="https://petertodd.org/2016/opentimestamps-git-integration">https://petertodd.org/2016/opentimestamps-git-integration</A>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> <A HREF="https://petertodd.org">https://petertodd.org</A> 'peter'[:-1]@petertodd.org
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171117/172c6b4d/attachment.html">/pipermail/zapps-wg/attachments/20171117/172c6b4d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000038.html">[zapps-wg] Version of Rust
+</A></li>
+	<LI>Next message (by thread): <A HREF="000050.html">[zapps-wg] Version of Rust
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

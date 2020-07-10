@@ -1,0 +1,770 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Ceremony Proposal
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Ceremony%20Proposal&In-Reply-To=%3CCAKazn3k51_DaV9qADpr2Lz-the9QJd6uQqs1vj6Cj0maB7R0LA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000018.html">
+   <LINK REL="Next"  HREF="000023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Ceremony Proposal</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Ceremony%20Proposal&In-Reply-To=%3CCAKazn3k51_DaV9qADpr2Lz-the9QJd6uQqs1vj6Cj0maB7R0LA%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Ceremony Proposal">sean at z.cash
+       </A><BR>
+    <I>Sun Nov 12 23:53:22 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000018.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+        <LI>Next message (by thread): <A HREF="000023.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Matt, that's really cool. I've verified your contribution and
+it's now in the transcript.
+
+I've put some minimal information here about your contribution:
+
+<A HREF="https://github.com/ZcashFoundation/powersoftau-attestations/tree/master/0004">https://github.com/ZcashFoundation/powersoftau-attestations/tree/master/0004</A>
+
+Would you mind submitting a PR (along with a signed attestation if you can)?
+
+Kobi wished to go next but won't be available for a little while. Then
+someone else (who hasn't posted &quot;i'm going next&quot; on the mailing list
+yet) indicated they would like to go.
+
+Sean
+
+On Sun, Nov 12, 2017 at 7:05 PM, Matt Drollette via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+&gt;<i> Powers of Tau Operational writeup
+</I>&gt;<i> =================================
+</I>&gt;<i>
+</I>&gt;<i> Round: 4
+</I>&gt;<i> Date: 2017-11-12
+</I>&gt;<i> Name: Matt Drollette
+</I>&gt;<i> Location: Dallas, Texas
+</I>&gt;<i>
+</I>&gt;<i> Challenge:
+</I>&gt;<i> 9b80a6140d42bd234fbe43eea542296df8bcb4c834ea5d0a16a194964b72fd11a6ee9efae9364eb74f99bb4471e7fb4ac9cb2bb3aa8e03fe22c6279a104f367b
+</I>&gt;<i>
+</I>&gt;<i> Response:
+</I>&gt;<i> 53b6dc5a91d04c3000037cbc4f6f4bc9e9daf9448a41f997746b156c643a84f481c49bf7dadce388b3c9e8c147f94c12c5dacb5350a54e112ee45f57ffd8f34c
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Preparation steps
+</I>&gt;<i> =================
+</I>&gt;<i>
+</I>&gt;<i> I noticed most participants were taking on a significant responsibility in
+</I>&gt;<i> securing their own hardware and infrastructure in order to participate in
+</I>&gt;<i> this
+</I>&gt;<i> process. I took a different approach in that I wanted to leverage the
+</I>&gt;<i> security
+</I>&gt;<i> work done by people much more qualified than myself. I therefore used Google
+</I>&gt;<i> Cloud Platform to generate my response (<A HREF="https://cloud.google.com/security/">https://cloud.google.com/security/</A>).
+</I>&gt;<i>
+</I>&gt;<i> First, I created a new GCP project under a gmail account not belonging to
+</I>&gt;<i> any
+</I>&gt;<i> other organizations and configured with Advanced Protection
+</I>&gt;<i> (<A HREF="https://landing.google.com/advancedprotection/">https://landing.google.com/advancedprotection/</A>).
+</I>&gt;<i>
+</I>&gt;<i> Next, I created a Compute Instance with an external IP to serve as the
+</I>&gt;<i> bastion
+</I>&gt;<i> for external network access and collecting the responses.
+</I>&gt;<i>
+</I>&gt;<i> I then created three compute instances in three different regions having
+</I>&gt;<i> three
+</I>&gt;<i> different instance types. Each instance was running Google's
+</I>&gt;<i> Container-Optimized
+</I>&gt;<i> OS (<A HREF="https://cloud.google.com/container-optimized-os/docs/concepts/security">https://cloud.google.com/container-optimized-os/docs/concepts/security</A>)
+</I>&gt;<i> and
+</I>&gt;<i> did not have an external IP address.
+</I>&gt;<i>
+</I>&gt;<i> Next, on the bastion I built a Docker image containing the compute binary
+</I>&gt;<i> built
+</I>&gt;<i> from <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A> at commit
+</I>&gt;<i> 9e1553c437183540392a7231d0788318a19b18a3
+</I>&gt;<i>
+</I>&gt;<i> I downloaded the challenge file to the bastion host and then transferred it
+</I>&gt;<i> to
+</I>&gt;<i> each compute instance along with the compute Docker image via scp over the
+</I>&gt;<i> internal network. I verified the sha256 hash of each challenge and compute
+</I>&gt;<i> binary on each instance and then began the computation using different
+</I>&gt;<i> random
+</I>&gt;<i> inputs for each process.
+</I>&gt;<i>
+</I>&gt;<i> ```
+</I>&gt;<i> bastion
+</I>&gt;<i> 480c27457c467362a1d3dd3d972844e1230abde236f4d153d80938ab7ec19f7d  challenge
+</I>&gt;<i> 4952c8b4e8d3e75ded8fafa28bffb4082e26732f17ec8176c7cd26591adaf93e
+</I>&gt;<i> powersoftau.docker
+</I>&gt;<i> 922b2e0a59841ecdaba7b4953d8c67e62b74b8f52f968624cff664dc086da93a
+</I>&gt;<i> /powersoftau/target/x86_64-unknown-linux-musl/release/compute
+</I>&gt;<i>
+</I>&gt;<i> instance-1
+</I>&gt;<i> 480c27457c467362a1d3dd3d972844e1230abde236f4d153d80938ab7ec19f7d  challenge
+</I>&gt;<i> 4952c8b4e8d3e75ded8fafa28bffb4082e26732f17ec8176c7cd26591adaf93e
+</I>&gt;<i> powersoftau.docker
+</I>&gt;<i> 922b2e0a59841ecdaba7b4953d8c67e62b74b8f52f968624cff664dc086da93a
+</I>&gt;<i> /powersoftau/target/x86_64-unknown-linux-musl/release/compute
+</I>&gt;<i>
+</I>&gt;<i> instance-2
+</I>&gt;<i> 480c27457c467362a1d3dd3d972844e1230abde236f4d153d80938ab7ec19f7d  challenge
+</I>&gt;<i> 4952c8b4e8d3e75ded8fafa28bffb4082e26732f17ec8176c7cd26591adaf93e
+</I>&gt;<i> powersoftau.docker
+</I>&gt;<i> 922b2e0a59841ecdaba7b4953d8c67e62b74b8f52f968624cff664dc086da93a
+</I>&gt;<i> /powersoftau/target/x86_64-unknown-linux-musl/release/compute
+</I>&gt;<i>
+</I>&gt;<i> instance-3
+</I>&gt;<i> 480c27457c467362a1d3dd3d972844e1230abde236f4d153d80938ab7ec19f7d  challenge
+</I>&gt;<i> 4952c8b4e8d3e75ded8fafa28bffb4082e26732f17ec8176c7cd26591adaf93e
+</I>&gt;<i> powersoftau.docker
+</I>&gt;<i> 922b2e0a59841ecdaba7b4953d8c67e62b74b8f52f968624cff664dc086da93a
+</I>&gt;<i> /powersoftau/target/x86_64-unknown-linux-musl/release/compute
+</I>&gt;<i> ```
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Sidechannel defenses
+</I>&gt;<i> ====================
+</I>&gt;<i>
+</I>&gt;<i> The scale of GCP and sheer number of compute instances makes a targeted
+</I>&gt;<i> sidechannel attack practically impossible. Also, Google takes great care in
+</I>&gt;<i> preventing known attack methods
+</I>&gt;<i> (<A HREF="https://cloudplatform.googleblog.com/2017/01/7-ways-we-harden-our-KVM-hypervisor-at-Google-Cloud-security-in-plaintext.html">https://cloudplatform.googleblog.com/2017/01/7-ways-we-harden-our-KVM-hypervisor-at-Google-Cloud-security-in-plaintext.html</A>).
+</I>&gt;<i>
+</I>&gt;<i> In addition to Google's security practices, I also ran multiple compute
+</I>&gt;<i> instances in multiple regions computing responses on the same challenge file
+</I>&gt;<i> at
+</I>&gt;<i> the same time. I then selected only one of these responses at random to
+</I>&gt;<i> submit
+</I>&gt;<i> and destroyed the others. I do not know which node computed the response
+</I>&gt;<i> that I
+</I>&gt;<i> submitted.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Postprocessing
+</I>&gt;<i> ==============
+</I>&gt;<i>
+</I>&gt;<i> Once the responses were computed on each instance, I recorded the hashes of
+</I>&gt;<i> each
+</I>&gt;<i> response file and transferred all 3 files back to the bastion host and
+</I>&gt;<i> deleted
+</I>&gt;<i> the 3 compute instances. I did not record which instance computed which
+</I>&gt;<i> response. I then selected one of the 3 response files by dice roll and
+</I>&gt;<i> submitted
+</I>&gt;<i> its hash to the mailing list and uploaded the file to S3. I then deleted the
+</I>&gt;<i> bastion compute instance and deleted the entire GCP project.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ---
+</I>&gt;<i> Matt Drollette
+</I>&gt;<i>
+</I>&gt;<i> On Sun, Nov 12, 2017 at 4:45 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Unfortunately, Cody had some problems and needs to reschedule. Also,
+</I>&gt;&gt;<i> Kobi doesn't have time right now, so it's Matt's turn!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Sean
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Sun, Nov 12, 2017 at 12:40 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt; Cody is going but I haven't heard back in a while. In let's say about
+</I>&gt;&gt;<i> &gt; five hours if we still don't hear back we'll move on to Kobi and
+</I>&gt;&gt;<i> &gt; reschedule with Cody later. Matt can go after that! :)
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Sean
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; On Sat, Nov 11, 2017 at 8:24 PM, Matt Drollette via zapps-wg
+</I>&gt;&gt;<i> &gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt; I'd like to be added to the queue. Happy to go after Cody unless there
+</I>&gt;&gt;<i> &gt;&gt; are
+</I>&gt;&gt;<i> &gt;&gt; others already lined up.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; ---
+</I>&gt;&gt;<i> &gt;&gt; Matt Drollette
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; On Sat, Nov 11, 2017 at 4:31 PM, Sean Bowe via zapps-wg
+</I>&gt;&gt;<i> &gt;&gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; Thanks Jared! Awesome! I've verified the contribution and put your
+</I>&gt;&gt;<i> &gt;&gt;&gt; response file up on the transcript repository.
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; Can you submit a PR here to fill in more information (including a
+</I>&gt;&gt;<i> &gt;&gt;&gt; signed attestation):
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; <A HREF="https://github.com/ZcashFoundation/powersoftau-attestations/tree/master/0003">https://github.com/ZcashFoundation/powersoftau-attestations/tree/master/0003</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; Cody Burns is going next.
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; Sean
+</I>&gt;&gt;<i> &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; On Sat, Nov 11, 2017 at 1:35 PM, Jared Tobin &lt;<A HREF="/mailman/listinfo/zapps-wg">jared at jtobin.io</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Hi all, here's my report:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Powers of Tau Operational Writeup
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; =================================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Round: 3
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Date: 2017-11-12
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Name: Jared Tobin
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Location: Auckland, NZ
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Challenge:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; e712fa22f1d027a0b4ce3ef698f26d5cab07c3380e4c24a479a914c85617fd1a2960b386cceb5c94718979010a1b7ed8b6145da872f0744e06503bd664fe7283
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Response:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; cb48afb82ab4c476ae741633c3eb6643e7700dc7b2b4701af91e3cc932270b96c375e5f3a5c20c96fac6c9b40a5bba6c956d66f223f090c545c277aa05427757
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Preparation Steps
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; =================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Being somewhat pressed for time and hardware, I recruited several
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; geographically-distributed volunteers that I know well and trust
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; completely to help me out.  In the end, the following volunteers
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; were
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; able to get back to me in time:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; * Shawn Tobin (RSA Canada)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; * Fredrik Harryson (Parity Technologies)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; * Jason Forbes (Kraken Sonar Systems)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; I set up a private Keybase team with the above volunteers,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; distributed
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; the challenge to them over KBFS, and gave them instructions over the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; team chat on how to proceed.  Each was to add entropy and compute
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; response locally using whatever mechanisms they preferred (report
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; not
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; required), then return their response/hash pairs to me over KBFS.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Each
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; member was to use the code in Sean's powersoftau repository as of
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; commit
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; 9e1553c437183540392a7231d0788318a19b18a3 to perform the computation.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Procedure
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; =========
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; I computed a response locally in rather mundane fashion using rustc
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; 1.21.0 on an early-2015 model Macbook Air running Sierra.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Eventually
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; the volunteers managed to upload their response/hash pairs to KBFS,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; I randomly selected one of the resulting four responses to submit
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; for my
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; piece of the MPC.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; I uploaded the resulting response via the handy app Sean provided me
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; with.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Side channel defences
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; =====================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; I used broad geographical distribution and randomness to mitigate
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; possibility of successful side channel attacks.  Shawn was located
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; in
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; Vancouver, Canada, Fredrik was located in Malm&#246;, Sweden, and Jason
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; was
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; located in St. John's, Canada.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; I selected the response to upload by pre-determining a
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; correspondence
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; between names and numbers, and then walking outside and asking the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; first
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; stranger I saw to pick a number between one and four.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; - jared
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; On Sat, Nov 11, 2017 at 12:25:33AM +0000, Jason Davies via zapps-wg
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Hi all,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Here is my report:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Powers of Tau Operational Writeup
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; =================================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Round: 2
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Date: 2017-11-10
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Name: Jason Davies
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Location: London, UK
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Challenge:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; 467bc84f6eb98ff956eaf12a1b7ef4dc0aff1093c7a0d5c1dfbdb85bbfffb20a43965d0daefee3fec6c1a47af69100e117b44b74371824ac8af1e33b6f91add5
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Response:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; 2f728af894524f55bda7a3e2c2e2db6a57a992811e90ed57456d62aead5106cdc5c97c86532d14b5185cc74d169f1b0c2c0ef1e582231ffa7936da55047c0cb2
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Preparation Steps
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; =================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Git repository: <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Commit hash: 9e1553c437183540392a7231d0788318a19b18a3
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Compiler: rustc 1.23.0-nightly (d6b06c63a 2017-11-09)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Build: cargo build --release --features=u128-support
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; b2sum(./target/release/compute):
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; be42f68b07c5c857bb6561a9ac2967d671ef412a71c87c2fb31776a6ab38c756736de66e554553021e129ecab45d922092873df8b71bd9a775ec05f189485198
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; I used a brand new 16GB USB stick and loaded
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; ubuntu-17.04-desktop-amd64.iso; b2sum:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; 6a1c975b25b4e7f2dbf4fda84fe8b5de3ed6f4532b8c4f17e533ed11a0a8b5b9ad9fb83e8e4b89447c3a427be73f77a5f7c71b7f733fcc4bebf346e9c5c0de43.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; I reformatted a second brand new 16GB USB stick to ext4, then
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; copied
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; `challenge` file and the `target/release/compute` binary.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Sidechannel Defences
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; ====================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; First of all, I lined a large cardboard box with aluminium foil in
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; order to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; make a rudimentary faraday cage.  Then, I assembled an airgap
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; compute
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; node
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; using some relatively cheap parts, putting them all inside the box:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; * Motherboard: Asus H81 Pro BTC (no radio, bluetooth or speakers
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; AFAIK)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; * CPU: Intel G1840
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; * Ram: 2x cheap 1GB sticks
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; * PSU: EVGA SuperNOVA 1300 G2
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; * Monitor: old Dell TFT display
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; * Keyboard: generic USB keyboard
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; No other peripherals or cables were connected.  I placed the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; compute
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; node in my
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; cellar (~6ft below ground level) and I remained with the node
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; during
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; the entire
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; time it was computing, without using any other devices in the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; vicinity
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; (no
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; mobile phone etc.)  The only cables coming out of the box were the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; two
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; power
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; cables, one for the PSU and one for the monitor.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Image: <A HREF="https://pbs.twimg.com/media/DOT55KUXUAEV44-.jpg:large">https://pbs.twimg.com/media/DOT55KUXUAEV44-.jpg:large</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Procedure
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; =========
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; I booted the node, with &quot;Try Ubuntu&quot; (Live CD mode).  Then, I
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; inserted
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; challenge USB stick and ran `./compute` in the USB media directory,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; entering
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; some additional entropy as requested by typing randomly on the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; keyboard.  The
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; box lid was only partially opened to allow use of the keyboard and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; view the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; monitor at this point.  After 60 minutes had passed, I looked
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; inside
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; the lid
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; and saw that the computation had completed, so I wrote down the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; BLAKE2b
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; hash,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; and unmounted and removed the USB stick, and then powered the node
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; down.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Postprocessing
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; ==============
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; I took the USB stick and transferred the response file to my
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; laptop,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; and then
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; uploaded it using the laptop to S3 via Sean Bowe's transcript site.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; I did not destroy the compute node but I'm unlikely to use it or
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; plug
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; it in for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; some time.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; --
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; Jason Davies, <A HREF="https://www.jasondavies.com">https://www.jasondavies.com</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; On 10 Nov 2017, at 22:11, Sean Bowe via zapps-wg
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; Thanks Andrew! That's a great start.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; Now it's Jason Davies' turn.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; The entire transcript will appear here throughout the process:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; <A HREF="https://powersoftau-transcript.s3-us-west-2.amazonaws.com/index.html">https://powersoftau-transcript.s3-us-west-2.amazonaws.com/index.html</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; We can make a more formal announcement once we're in the groove
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; everything looks good. We're getting a repo up with attestations
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; soon
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; also.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; Sean
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; On Fri, Nov 10, 2017 at 12:53 PM, Andrew Miller
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; OK, I'll go first. Below is my report:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Powers of Tau Operational writeup
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; =================================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Round: 1
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Date: 2011-11-10
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Name: Andrew Miller
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Location: Champaign, Illinois
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Challenge: (genesis)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ce00f2100dd876fdff8dd824f55307bcb72d724f29ff20b9e0760f3a65e5588a65eaed57cbc61697111ae1f4cc7da2e62a85311c2ae683a041fb872b891c68dc
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Response:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; 15729e0edc4201dc5ee6241437d926f614cb4214ff1b9c6fbd73daf401639f7a4238cf04bc94edac9f2ad037003daab9a4408ba7c62a4413dc2a0ddd683bd719
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ./response-2017-11-10-amiller
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Preparation steps
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; =================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I used Sean&#8217;s powersoftau rust repo, commit
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; 9e1553c437183540392a7231d0788318a19b18a3
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I followed instructions online for building portable rust
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; binaries,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; and so I ran
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ```
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; cargo build --target=x86_64-unknown-linux-musl --release
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; --features=u128-support --bin=compute
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ```
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Compiler: rustc 1.23.0-nightly (02004ef78 2017-11-08)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I copied the resulting binary to a freshly formatted USB stick I
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; had.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; b2sum:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; 9059a0a64f5021c36df630ca48ac40674862b2fea14f4843ff2150256b95162ac4d6d1621d2dd3f5d0d1c604ad8e581c0ff449d2449140380eab075a9b83c960
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ./target/x86_64-unknown-linux-musl/release/compute
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I also rummaged through my shelf of several USB sticks, and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; found
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; one
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; that happened to be a Linux Mint 18 USB bootable disk, so I used
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; that
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; for my operating system.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Sidechannel defenses
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ====================
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I used an airgap compute node, a Dell Inspiron that I&#8217;ve had for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; about
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; a year now (Actually this is a computer I bought last year for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; dress-rehearsals in the Zcash Sprout param generation ceremony).
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I unplugged all the computer&#8217;s hard drives, and detached its
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; wifi/bluetooth radios. I booted the computer from the Linux Mint
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; livecd usb stick, and then also copied the binaries into RAM.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; The
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; compute node was located in my bedroom, and I attended it for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ~1hr
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; duration of the compute process.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Image: <A HREF="https://pbs.twimg.com/media/DOSZz4FXkAEKC7N.jpg:large">https://pbs.twimg.com/media/DOSZz4FXkAEKC7N.jpg:large</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Postprocessing
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; ==============
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; After compute was finished, I took a cell phone picture of the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; blake2b
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; hash of the response. I then copied the response file to the USB
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; stick
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; containing the binaries, and then I unplugged the compute node.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Using
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; my personal laptop, I posted the blake2b hash to the #mpc chat
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; uploaded the response file to s3.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; The repsonse file is hosted here for now, though I expect we'll
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; mirror it elsewhere later:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; <A HREF="https://s3.amazonaws.com/socrates1024_a/response-2017-11-10-amiller">https://s3.amazonaws.com/socrates1024_a/response-2017-11-10-amiller</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; I did not destroy the compute node and do plan to use it again,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; although I'm going to leave it unplugged for several days.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; On Wed, Nov 8, 2017 at 10:19 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; Note that the `response` file contains a hash of the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; `challenge`
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; file
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; that was used as input for the compute tool. As a result, only
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; hashes of the `response` files need to be published; a hash
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; chain
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; is
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; formed through all participants. The initial challenge file is
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; deterministic. (You can use the `new` tool on the repository to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; construct it.)
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; The initial challenge file has BLAKE2b hash:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; ce00f2100dd876fdff8dd824f55307bcb72d724f29ff20b9e0760f3a65e5588a65eaed57cbc61697111ae1f4cc7da2e62a85311c2ae683a041fb872b891c68dc
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; It doesn't hurt to post hashes of everything though. Hash all
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; things.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; Sean
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; On Wed, Nov 8, 2017 at 4:51 PM, Andrew Miller
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; Thanks Sean!
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; My idea is to use an ad hoc and publicly visible process. &quot;Get
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; in
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; contact with [sean]&quot; could be as simple as posting in public
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; this
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; thread. Unless we're overrun by trolls, a public mailing list
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; can
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; be
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; an informal way to agree on who goes next. Whoever posts and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; says
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; &quot;Me,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; me! I'd like to go next&quot;, should, by convention, go next. Any
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; aberrations (parties taking too long or dropping out, posting
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; invalid
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; data, etc., can be dealt with as needed).
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; I believe it's also the case that
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; a) The &quot;response&quot; file from each person is roughly the same as
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; &quot;challenge&quot; file for the next participant, and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; b) The response/challenge files are safe to be published at
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; any
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; time,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; not private at all.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; So, by convention, we should post the hashes of those files
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; here
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; right
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; away, and make a best effort to mirror them publicly (each one
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; is
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; like
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; a gigabyte, I think).
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; What does the initial challenge file consist of? Could you
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; post
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; hash of it here?
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; Cheers,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; On Wed, Nov 8, 2017 at 3:04 PM, Sean Bowe via zapps-wg
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Ariel Gabizon, Ian Miers and I have just published a new
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; paper
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; detailing a
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; multi-party computation (MPC) protocol for constructing
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; zk-SNARK
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; public
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; parameters.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; <A HREF="https://eprint.iacr.org/2017/1050">https://eprint.iacr.org/2017/1050</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; The highlights are:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; * It allows for a single, gigantic ceremony to take place for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; all
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; possible
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; zk-SNARK circuits within a given size bound. The results of
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; this
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; ceremony
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; are partial zk-SNARK parameters for the entire community. We
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; call
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; this
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; communal ceremony the Powers of Tau.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; * If you want to use zk-SNARKs in your protocols, you still
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; have
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; to do an
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; MPC for your circuit. But because of the Powers of Tau
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; ceremony,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; your
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; ceremony is much cheaper to perform and the costs
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; per-participant
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; scale
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; linearly with respect to the circuit complexity.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; * The best part is that the Powers of Tau and these
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; circuit-specific MPCs
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; can scale to hundreds/thousands of participants. As the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; number of
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; participants grows, it becomes unrealistic that all of them
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; could
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; be
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; compromised.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; So, let's do the Powers of Tau ceremony! The Zcash Foundation
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; is
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; excited to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; participate in the process. The Zcash Company is particularly
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; excited in
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; starting soon because we want to leverage it for our next MPC
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Sapling upgrade of Zcash.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; The MPC protocol for this ceremony only requires that one
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; participant
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; successfully destroy the secret randomness they sample during
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; their part. We
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; intend to give participants total flexibility in deciding how
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; participate; we don't mind what software, hardware or OS you
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; use.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; I have written some Rust software for participants to run:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; In order to simplify auditing, I won't be making any more
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; changes
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; to the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; code unless absolutely necessary. You don't have to use this
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; software, but
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; there are no alternative implementations at this time. I
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; think it
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; should be
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; feasible to write a C version of the code using the RELIC
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; toolkit, which has
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; implemented BLS12-381. I am very confident in the Rust code,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; though, and I
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; believe in its stability/correctness.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; I have some opinions about the ceremony:
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; 1. I disagree with processes that don't improve security of
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; ceremony.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Having a small surface area of code and process increases the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; chance that
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; bugs will be discovered by auditors because there are fewer
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; things that can
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; go wrong. Remember that there is already quite a bit for the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; public to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; check: the transcript correctness, the code correctness, the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; randomness
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; beacon, the cryptographic proof, code dependencies, etc.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; 2. It needs to start soon so that it can be useful for the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Sapling MPC.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; 3. It needs to have lots of reputable participants by the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; time we
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; start the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Sapling MPC.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Given the above, I would like to suggest that we start the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; ceremony now
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; using my existing code, which supports circuits up to 2^21
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; gates.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; This means
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; people would just get in contact with me if they want to
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; participate and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; I'll schedule them in. I'll try to prioritize reputable
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; people,
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; but I'll
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; allow pretty much anyone I have time to. Everything that I do
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; is
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; publicly
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; verifiable (there is a transcript at the end of the ceremony
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; which people
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; can check).
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Andrew Miller has a few interesting ideas for a more
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; distributed
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; process for
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; scheduling &quot;who goes next&quot; but there are some disadvantages
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; and
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; risks
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; involved IMO. In any case, the process can be changed later
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; without
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; affecting anything, so I don't see a purpose in delaying the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; start of the
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; ceremony on such things.
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; I'd like to hear from others about this plan so we can begin
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; soon!
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Sean Bowe
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;&gt; Zcash Company
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; --
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; Andrew Miller
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;&gt;&gt; University of Illinois at Urbana-Champaign
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; --
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; Andrew Miller
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt; &gt;&gt; University of Illinois at Urbana-Champaign
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000018.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+	<LI>Next message (by thread): <A HREF="000023.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

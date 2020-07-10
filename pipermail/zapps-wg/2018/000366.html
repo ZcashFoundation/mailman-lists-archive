@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Hardware-accelerated verification of randomness beacon
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Hardware-accelerated%20verification%20of%20randomness%0A%20beacon&In-Reply-To=%3C0ACB2A2A-16E8-477E-85EE-939ACF09E8B7%40jasondavies.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000365.html">
+   <LINK REL="Next"  HREF="000372.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Hardware-accelerated verification of randomness beacon</H1>
+    <B>Jason Davies</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Hardware-accelerated%20verification%20of%20randomness%0A%20beacon&In-Reply-To=%3C0ACB2A2A-16E8-477E-85EE-939ACF09E8B7%40jasondavies.com%3E"
+       TITLE="[zapps-wg] Hardware-accelerated verification of randomness beacon">jason at jasondavies.com
+       </A><BR>
+    <I>Fri Apr 20 10:28:39 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000365.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+        <LI>Next message (by thread): <A HREF="000372.html">[zapps-wg] Sapling MPC
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#366">[ date ]</a>
+              <a href="thread.html#366">[ thread ]</a>
+              <a href="subject.html#366">[ subject ]</a>
+              <a href="author.html#366">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 20 Apr 2018, at 14:08, Kobi Gurkan &lt;<A HREF="/mailman/listinfo/zapps-wg">kobi at qed-it.com</A>&gt; wrote:
+
+&gt;<i> Out of interest - I'm not deeply familiar with Intel SHA extensions nor ARM
+</I>&gt;<i> NEON crypto - was wondering if you know of the top of your head if the
+</I>&gt;<i> abstraction is low level enough to compute only the compression function as
+</I>&gt;<i> well?
+</I>
+Yes; in fact, these intrinsics are lower-level than the compression function.
+The code is pretty short, e.g. these 20 lines form the compression function on
+ARM NEON:
+
+  <A HREF="https://github.com/plutomonkey/verify-beacon/blob/db03392c510e501babf38992eff21826dc3d45eb/src/sha256.rs#L139-L159">https://github.com/plutomonkey/verify-beacon/blob/db03392c510e501babf38992eff21826dc3d45eb/src/sha256.rs#L139-L159</A>
+
+In the case of iterated SHA-256, the input size is necessarily always smaller
+than the block size after the first iteration, and so each iteration ends up
+being just one call to the compression function after the first iteration.
+
+One additional trick is that conversion to and from big-endian is unnecessary
+between iterations.  A sufficiently smart compiler could of course figure this
+out.
+
+--
+Jason Davies, <A HREF="https://www.jasondavies.com/">https://www.jasondavies.com/</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000365.html">[zapps-wg] Hardware-accelerated verification of randomness beacon
+</A></li>
+	<LI>Next message (by thread): <A HREF="000372.html">[zapps-wg] Sapling MPC
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#366">[ date ]</a>
+              <a href="thread.html#366">[ thread ]</a>
+              <a href="subject.html#366">[ subject ]</a>
+              <a href="author.html#366">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

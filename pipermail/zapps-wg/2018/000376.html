@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Detecting Supply-Chain Attacks on the Sapling MPC
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Detecting%20Supply-Chain%20Attacks%20on%20the%20Sapling%20MPC&In-Reply-To=%3C7f4ac295-8725-11fe-7ed8-4bf8890d0495%40defuse.ca%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000379.html">
+   <LINK REL="Next"  HREF="000380.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Detecting Supply-Chain Attacks on the Sapling MPC</H1>
+    <B>Taylor Hornby</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Detecting%20Supply-Chain%20Attacks%20on%20the%20Sapling%20MPC&In-Reply-To=%3C7f4ac295-8725-11fe-7ed8-4bf8890d0495%40defuse.ca%3E"
+       TITLE="[zapps-wg] Detecting Supply-Chain Attacks on the Sapling MPC">taylor at defuse.ca
+       </A><BR>
+    <I>Thu Jun  7 02:20:00 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000379.html">[zapps-wg] Sapling MPC!
+</A></li>
+        <LI>Next message (by thread): <A HREF="000380.html">[zapps-wg] Sapling MPC Random Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#376">[ date ]</a>
+              <a href="thread.html#376">[ thread ]</a>
+              <a href="subject.html#376">[ subject ]</a>
+              <a href="author.html#376">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The weakest link in the Sapling MPC process probably comes from the fact
+that when cargo builds sapling-mpc, it will download and build a bunch
+of crates without doing any kind of signature checking on them. The risk
+is that crates.io could be compromised, or someone who hacked Sean
+Bowe's crates.io credentials could have published newer versions that
+contain backdoors and we might not notice.
+
+In order to make my MPC contribution a little more auditable, I've
+pre-prepared a &quot;vendorized&quot; version of sapling-mpc which contains all of
+the necessary crates:
+
+<A HREF="https://github.com/defuse/sapling-mpc-vendorized">https://github.com/defuse/sapling-mpc-vendorized</A>
+
+Before we continue, some WARNINGS:
+
+o  sapling-mpc-vendorized is unofficial and unmaintained. I won't be
+updating it with any changes from upstream sapling-mpc, even if there
+are security fixes made between now and the end of the MPC.
+
+o  I prepared and tested it on ubuntu-18.04-desktop-amd64, so the
+process below might not even work on other operating systems.
+
+o  I promise I didn't add any of my own backdoors to it, but you don't
+necessarily trust me. And, since I created it in a VM on my everyday
+computer, someone who's hacked me could have added a backdoor. I'm only
+trying to achieve the property... &quot;If there are crate backdoors that
+would compromise my part of the MPC, then they're permanently saved in
+files I'm about to upload for the world to see.&quot;
+
+Okay, here we go:
+
+To use it, install Rust however you want, then download the zip file of
+the repository from Github (sapling-mpc-vendorized-master.zip), which
+should have the SHA256 hash:
+
+1a4bbacc96055cfb3e47a3848b1e882ede887d4694955e39a9ef3c0153fe33ce
+
+Extract it, then run: cat cargo-homea* &gt; cargo-home.zip
+
+The SHA256 of the resulting cargo-home.zip should be:
+
+0e14bb30f5e4b424040901bcce51cc49c455b38aad9e05867883e0b0168706ca
+
+Extract cargo-home.zip to ~/cargo-home.
+
+For extra safety you should be able to delete the Rust binaries I
+included by accident (I haven't tested this):
+
+rm -rf ~/cargo-home/bin
+
+Now you can run tell rust to use the crates in ~/cargo-home:
+
+export CARGO_HOME=`realpath ~/cargo-home`
+
+Now you should be able to unplug your Internet connection, and, in the
+same terminal as you ran the previous command, run...
+
+cargo build --release --bin compute
+
+...to get a working copy of sapling-mpc without downloading anything
+more from the Internet. Assuming your system is secure and the way you
+installed Rust was secure, then you can be pretty confident that any
+backdoored crates that would affect your computation have been archived
+inside sapling-mpc-vendorized-master.zip whose SHA256 hash is given
+above. Here is a mirror of that file:
+
+<A HREF="https://defuse.ca/files/sapling-mpc-vendorized-master.zip">https://defuse.ca/files/sapling-mpc-vendorized-master.zip</A>
+
+I won't have time to audit that file for backdoors myself. It would be
+nice if someone else could do that. To help encourage that, I will send
+40 ZEC to the first person to publish proof that there is code inside
+sapling-mpc-vendorized-master.zip which would affect the security of the
+MPC, and which *doesn't* appear in the history of the crates'
+repositories on GitHub (i.e. proof I was attacked somehow when I created
+sapling-mpc-vendorized-master.zip; security bugs that are plainly
+visible on GitHub don't count).
+
+-- 
+Taylor Hornby
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: OpenPGP digital signature
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180607/68f682f3/attachment.sig">/pipermail/zapps-wg/attachments/20180607/68f682f3/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000379.html">[zapps-wg] Sapling MPC!
+</A></li>
+	<LI>Next message (by thread): <A HREF="000380.html">[zapps-wg] Sapling MPC Random Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#376">[ date ]</a>
+              <a href="thread.html#376">[ thread ]</a>
+              <a href="subject.html#376">[ subject ]</a>
+              <a href="author.html#376">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

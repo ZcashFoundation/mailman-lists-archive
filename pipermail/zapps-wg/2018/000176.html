@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3C1515294171.1414.5.camel%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000230.html">
+   <LINK REL="Next"  HREF="000177.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation</H1>
+    <B>Brian</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3C1515294171.1414.5.camel%40gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation">gomesbascoy at gmail.com
+       </A><BR>
+    <I>Sat Jan  6 22:02:51 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000230.html">[zapps-wg] Powers of Tau Participation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000177.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#176">[ date ]</a>
+              <a href="thread.html#176">[ thread ]</a>
+              <a href="subject.html#176">[ subject ]</a>
+              <a href="author.html#176">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Powers of Tau Operational Writeup
+=================================
+Date: 2018-01-06
+Name: Brian Gomes Bascoy
+Location: Seattle, WA, USA
+
+Challenge:
+bdfadf02e016d8fac9a77659ce4bf6e066d07c168c69d27f3132344c26dc3eb657b77ce
+2327f5a3483f5d33d5d391757a23a4a09a88f02868353aa65cdcfcb3a
+Response:
+02dc27a0df3d1a838bc1087774c20d7ce61a4a467ce1e0ac8cac03d2a7c91c8d6cd5485
+7873d4b7bc00500b1d6f85d917bd7aa2d92a659f4ac3a195aaa66cf36
+
+
+Preparation Steps
+=================
+Host system:
+Linux yuri 4.14.11-1-ARCH #1 SMP PREEMPT Wed Jan 3 07:02:42 UTC 2018
+x86_64 GNU/Linux
+
+Guest system:
+Linux debian 4.14.0.2-amd64 #1 SMP Debian 4.14.7-1 (2017-12-22) x86_64
+GNU/Linux
+
+On 2018-01-05 I installed Debian &quot;buster&quot; (I had to use testing for the
+cargo package) with encrypted LVM on a VirtualBox VM with a 8GB fixed
+size virtual HD. I kept the laptop (a ThinkPad T450s that I bought
+about two years ago) with me the whole time here in my apartment. The
+host OS is Arch Linux without swap space, which I had fully upgraded a
+few hours before. To the best of my knowledge I never had any kind of
+security incident with this computer, which I have used for instance to
+do valuable cryptocurrencies transactions and also to manage banks and
+investments accounts, so I'm relatively confident that it's somewhat
+trustworthy.
+
+Used apt-get to install unzip, rustc, cargo and all its dependencies.
+Downloaded the current Powers of Tau master branch with wget from
+GitHub (<A HREF="https://github.com/ebfull/powersoftau/archive/master.zip">https://github.com/ebfull/powersoftau/archive/master.zip</A>).
+
+
+Side Channel Defenses
+=====================
+It's not much but: I left my cell phone far away from the basement room
+where I had my laptop, disabled the wifi kernel modules, and unplugged
+the power adapter before starting the process. I didn't use any other
+electronic device (not even my lovely mechanical keyboard ^_^).
+
+
+Procedure
+=========
+Sean Bowe sent me a link to a page hosted on an Amazon S3 instance with
+a link to the challenge file. I downloaded it using the host system at
+11:20 AM (PST) and then I disconnect it from the Internet and unplugged
+the charger. I started the guest system VM and used scp to copy the
+challenge. I ran cargo, introduced more than a minute of random
+keyboard typing, then waited for almost 4 hours for the process to
+complete (unfortunately I had to charge the batteries after the 3rd
+hour for about 30 minutes). When it finished I took a picture of the
+hash with a Canon EOS, and copied the response file using scp to the
+host system.
+
+
+Postprocessing
+==============
+Deleted all the VM files with shred, rebooted and then ran Lenovo's
+Diagnostic tool on CPU, RAM, HDD and motherboard, to cleanup registers,
+memory, caches, buffers, etc.
+
+I verified the photograph of the response's BLAKE2 checksum, and after
+posting this report I will check it again from the mailing list archive
+using different devices.
+
+
+SHA256SUMS
+==========
+a3a5b581169394e68a0d566e72df3a6a4bd3c54e7e75c87b01c4c981401dcfd4  virtu
+albox-5.2.4-1-x86_64.pkg.tar.xz
+a8e8aff5c5709657ec40b1a8eb5c58c9f543386532261bdd4a30ca3ca462e3e4  virtu
+albox-host-modules-arch-5.2.4-6-x86_64.pkg.tar.xz
+
+41670305b5468693e4fb17f8a695ba1fe5385a088d7fc2b1efb81b956f68c5c1  debia
+n-testing-amd64-netinst.iso
+
+2f186a48f45c31844b8288d9ee403b97ff558735478a215c49bb13652fe2fdc5  cargo
+_0.23.0-1_amd64.deb
+88a2e940bd7573c62ee3a979f823c47c2e252ef54ec6a885fdcac56705cd1a8a  rustc
+_1.22.1+dfsg1-1_amd64.deb
+d0d8d9ab3e55b139a207c43b7a15faec17faf7b0da77f9b844ffd2d2c03b68e6  unzip
+_6.0-21_amd64.deb
+
+0902301defc0705d3d824d9ec17382f40785cb9ce84502ee13b774840752def7  maste
+r.zip
+
+
+Debian ISO's SHA256SUMS.SIGN
+============================
+iQIzBAABCAAdFiEE9B0wNC81RmlfZcZpQkaPQAnqisMFAlpJvagACgkQQkaPQAnq
+isMUsg//SsY1iF8ZoBPsD2hyHytKNBzZXBKRoMxy0DYfAvo62ARu1IfLAroMJIIq
+ZZl9OL+mppxbbx1PKFPAfVDhNeRHQBsR2bK3dfo7enhg53sr4CEu0HRI2Zgul+t9
+nWaT0qBW6hPn5XLAPSj4IzIcSCimh8v0CVHLUMNhCB9UMF2kSW+9Ye5vba5CeDfI
+YMcr2tacqeOQyWECiOudOQ9Ph01B3w9Hm6ikCK/JSj1lURjvOerILqLQYdliI4Nq
++KCIYqDdKeoFYFhkVOEJGEKL/q9J0Y2k22xZbtt304s+W4Rd9PPX2Dyn8cCrDeBy
+S6ZwQbNP3lJOXkQQKlboPL25tjnOsSAnWC51K9sYJnAB+/nJEBn38Z1sHld1K4IE
+QjTLoPbx7uNKNFvkUaDN+wcV0tIZye/ypQE97tb9BijPk8LFX+C7Zlj7lHBq0ouq
+Nqb+XXdJ/2qS2INsClrab0+s1nU2zs27V5ahOyL9PIxynBpVl/ma4hKUHQDC6nN/
+i179GWtejIwNxOlQ+uEjsweo5wxhZzxD8OYfPqQk6Dn65OdC/aqrbC4uDoMnO4JV
+UlhQJ2Lo5ad5njWib8wLN+8p1v4Op7BcRa63gDEdtNv2+xX2lmtbS3r93dtmMQIn
+qD4oiJgEfGNe/DChROy+Qvt2rszXbuF0KwDAhQg32QrHbu8gbmE=
+=Sqtk
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 516 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180106/60f114bd/attachment.sig">/pipermail/zapps-wg/attachments/20180106/60f114bd/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000230.html">[zapps-wg] Powers of Tau Participation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000177.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#176">[ date ]</a>
+              <a href="thread.html#176">[ thread ]</a>
+              <a href="subject.html#176">[ subject ]</a>
+              <a href="author.html#176">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

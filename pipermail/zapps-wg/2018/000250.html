@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation 54
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation%2054&In-Reply-To=%3CCAKazn3%3DYgP%2B4CXZ%3DnUE6-CSrKdxd7%2B71ot1bN39ePHV5izXqmw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000249.html">
+   <LINK REL="Next"  HREF="000251.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation 54</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation%2054&In-Reply-To=%3CCAKazn3%3DYgP%2B4CXZ%3DnUE6-CSrKdxd7%2B71ot1bN39ePHV5izXqmw%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation 54">sean at z.cash
+       </A><BR>
+    <I>Fri Feb  9 21:21:50 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000249.html">[zapps-wg] Powers of Tau Attestation 54
+</A></li>
+        <LI>Next message (by thread): <A HREF="000251.html">[zapps-wg] Request for Media Materials
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#250">[ date ]</a>
+              <a href="thread.html#250">[ thread ]</a>
+              <a href="subject.html#250">[ subject ]</a>
+              <a href="author.html#250">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I love this! Very detailed and I was happy that someone managed to
+leverage the next-challenge stuff locally during the ceremony.
+
+Thank you!
+
+Sean
+
+On Fri, Feb 9, 2018 at 6:30 PM, Jan Jancar via zapps-wg
+&lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA512
+</I>&gt;<i>
+</I>&gt;<i> Powers of Tau attestation
+</I>&gt;<i> =========================
+</I>&gt;<i>
+</I>&gt;<i> Round: 54
+</I>&gt;<i> Date: 2018-02-09
+</I>&gt;<i> Principals: Jan Jancar and Jakub Rafajdus
+</I>&gt;<i> Location: Zilina, Slovakia
+</I>&gt;<i>
+</I>&gt;<i> Go implementation commit:
+</I>&gt;<i> FiloSottile/powersoftau
+</I>&gt;<i> 7a08472c288cd7022c24ad01e1e181cfc47c3363
+</I>&gt;<i>
+</I>&gt;<i> Rust implementation commit:
+</I>&gt;<i> ebfull/powersoftau
+</I>&gt;<i> d47a1d3d1f007063cbcc35f1ab902601a8b3bd91
+</I>&gt;<i>
+</I>&gt;<i> sha256 challenge:
+</I>&gt;<i> bae01c605003b5c84b38436c7a0bc31c123a3fcf049ea95ff7967c9e0d5c8baa
+</I>&gt;<i>
+</I>&gt;<i> The BLAKE2b hash of `./response_j` is:
+</I>&gt;<i>         44d7dd87 08d40812 6bb1b661 ac08b58a
+</I>&gt;<i>         ee200eb9 42592c36 bfbcb3f1 e74f5b26
+</I>&gt;<i>         07ff54d5 3ec93f98 10f88414 7a097a9d
+</I>&gt;<i>         4596c281 42449128 2a284343 cc921b32
+</I>&gt;<i>
+</I>&gt;<i> The BLAKE2b hash of `./response_k2` is:
+</I>&gt;<i>         d0e254dc 319b760d 7e9f42aa fa87df46
+</I>&gt;<i>         95c2f7ab 8eebf17c 303e5a44 e7b3c41c
+</I>&gt;<i>         02a73eda d60c270b b6c643a7 753cb275
+</I>&gt;<i>         f72fd24f de8b01cf 6711d83a b89795a8
+</I>&gt;<i>
+</I>&gt;<i> sha256 ubuntu-16.04.3-desktop-amd64.iso:
+</I>&gt;<i> 1384ac8f2c2a6479ba2a9cbe90a585618834560c477a699a4a7ebe7b5345ddc1
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Log
+</I>&gt;<i> - ---
+</I>&gt;<i>
+</I>&gt;<i> I decided to participate by producing two consecutive responses,
+</I>&gt;<i> produced by different machines (named k and j) and implementations.
+</I>&gt;<i> The plan was to run the Go implementation in parallel on two machines,
+</I>&gt;<i> after they both finish, choose randomly which response and next
+</I>&gt;<i> challenge should be used, then use the other machine and the Rust
+</I>&gt;<i> implementation to produce the second response. See the below log and
+</I>&gt;<i> diagram for more details on how this actually went.
+</I>&gt;<i>
+</I>&gt;<i> All times in UTC+1. On 09.02.2018:
+</I>&gt;<i>
+</I>&gt;<i>  - 09:25 - Downloaded challenge file to an external drive.
+</I>&gt;<i>  - 11:50 - Moved to location of machine k.
+</I>&gt;<i>  - 12:00 - Started trying to cross-compile the Go implementation for
+</I>&gt;<i>            Windows, as machine k only had it installed.
+</I>&gt;<i>  - 12:50 - Gave up on trying to cross-compile, instead downloaded a
+</I>&gt;<i>            Ubuntu 16.04 live USB.
+</I>&gt;<i>  - 13:00 - Booted up the live USB on machine k, installed Go, compiled
+</I>&gt;<i>            FiloSottile/powersoftau.
+</I>&gt;<i>  - 13:05 - Copied the challenge file from the external drive to both
+</I>&gt;<i>            machines.
+</I>&gt;<i>  - 13:07 - Started computation on both machines with the Go
+</I>&gt;<i>            implementation.
+</I>&gt;<i>  - 14:19 - Machine j finished computing.
+</I>&gt;<i>  - 14:20 - Copied the response of machine j and the next challenge
+</I>&gt;<i>            produced to the external drive.
+</I>&gt;<i>  - 14:40 - Machine k finished computing.
+</I>&gt;<i>  - 14:45 - Copied the response of machine k and the next challenge
+</I>&gt;<i>            produced to the external drive.
+</I>&gt;<i>          - Flipped a coin to select which response of which machine to
+</I>&gt;<i>            use for further computation, machine j was selected.
+</I>&gt;<i>  - 14:50 - Installed Rust on machine k live USB.
+</I>&gt;<i>  - 14:55 - Started computation on machine k, with the Rust
+</I>&gt;<i>            implementation, using the challenge produced before by
+</I>&gt;<i>            machine j.
+</I>&gt;<i>  - 16:40 - Uploaded the first response (produced by machine j).
+</I>&gt;<i>  - 16:45 - Machine k finished computing.
+</I>&gt;<i>  - 17:45 - Uploaded the second response (produced by machine k, based on
+</I>&gt;<i>            the challenge produced by j first).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Diagram
+</I>&gt;<i> - -------
+</I>&gt;<i>
+</I>&gt;<i>                Go implementation          |     Rust implementation
+</I>&gt;<i>                -----------------                -------------------
+</I>&gt;<i>      ---&gt; [Machine k] -&gt; response_k       |
+</I>&gt;<i>      |                -&gt; challenge_next_k
+</I>&gt;<i>      |                                    |
+</I>&gt;<i>  challenge           Coinflip chose j.
+</I>&gt;<i>      |                       |            |
+</I>&gt;<i>      |                      \ /
+</I>&gt;<i>      ---&gt; [Machine j] -&gt; response_j       |
+</I>&gt;<i>                       -&gt; challenge_next_j --&gt; [Machine k] -&gt; response_k2
+</I>&gt;<i>
+</I>&gt;<i>  * response_j and response_k2 were uploaded.
+</I>&gt;<i>  * Machine j is mine, machine k is Jakub's.
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i>
+</I>&gt;<i> iQJJBAEBCgAzFiEENiBWrajy9OQhVl74f0pEj+aPMp0FAlp+Sz0VHGpvaG55QG5l
+</I>&gt;<i> dXJvbWFuY2VyLnNrAAoJEH9KRI/mjzKdF2gP/jf3GEEfM7poM+1+Xo9jN5yBVPyv
+</I>&gt;<i> pF2pTfO/yyFNFr3fmDRjGk29ygNWn4WR4FIA9aUUuFBUSwZIPFPzmSEtvzS/aDQp
+</I>&gt;<i> ES5gNBoj5xIt97Hmq4GJM53wwOxrgTDF2TOPvFBPKbF2BQxQCwDjW9UUNThbPfy3
+</I>&gt;<i> 4M29gK2SvR4vlytKzNHXm9mjhwAvh+/m31A+Ht7u//TC7PEzzKm6Xu+FDMaVNBpZ
+</I>&gt;<i> E8RIGCk+Z/ox5g7rz9t4qeaR9I7xpkl52WvxEqhlPT6D8iHwNBVPprfIEhbt4eUQ
+</I>&gt;<i> Oroz7gHGD3wDlDNDYUSIGGTrVAkE/JfOHIehW6rR4Va5iHk+on4VAatS8tRzjGRa
+</I>&gt;<i> hsV2sap9Rpe1XsgbsEgirG7qZ4vo6Uq6JnibuJYwrwIOUakJ+eV38TbZJd0q1Wuo
+</I>&gt;<i> U5TCrnec2XEoLiXzfPzk9KHRJTLnh4LCeBZxyC3icBo2JrHnPNpy+N5TYtzqkRdE
+</I>&gt;<i> UhruNl+R5GwGa2CcIiO1bNk2KPZKJYB59nYXHiCqJmgrf34WUXju9/Yio7K4qZqA
+</I>&gt;<i> 8uuMKvRfTnAa9OUXjEYBFROFz0qBXD5eFvPQMbpgsJ+PptEgft39pFVz+y9+KHPh
+</I>&gt;<i> ZEouIrxzhu85cZ+ZMJY7+mETJo5RtXwGRZSm5jLEAIJSirOYjQBtEkseqtOWABcP
+</I>&gt;<i> EGvhW8tzj7Igj5gt
+</I>&gt;<i> =u1fo
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000249.html">[zapps-wg] Powers of Tau Attestation 54
+</A></li>
+	<LI>Next message (by thread): <A HREF="000251.html">[zapps-wg] Request for Media Materials
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#250">[ date ]</a>
+              <a href="thread.html#250">[ thread ]</a>
+              <a href="subject.html#250">[ subject ]</a>
+              <a href="author.html#250">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

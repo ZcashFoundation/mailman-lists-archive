@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Attestation (Kevin Gallagher)
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20%28Kevin%20Gallagher%29&In-Reply-To=%3Cbb6c6a65-ec99-2c9f-3787-9991577b105f%40riseup.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000350.html">
+   <LINK REL="Next"  HREF="000356.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Attestation (Kevin Gallagher)</H1>
+    <B>Kevin M. Gallagher</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20%28Kevin%20Gallagher%29&In-Reply-To=%3Cbb6c6a65-ec99-2c9f-3787-9991577b105f%40riseup.net%3E"
+       TITLE="[zapps-wg] Attestation (Kevin Gallagher)">kevinmg at riseup.net
+       </A><BR>
+    <I>Mon Mar 26 19:53:25 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000350.html">[zapps-wg] Participate to the key generation ceremony
+</A></li>
+        <LI>Next message (by thread): <A HREF="000356.html">[zapps-wg] ANN: Hangouts presentation on DSL Snarky
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#352">[ date ]</a>
+              <a href="thread.html#352">[ thread ]</a>
+              <a href="subject.html#352">[ subject ]</a>
+              <a href="author.html#352">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I was pleased to be a participant in Powers of Tau, having served as the
+Zcash Company&#8217;s DevOps engineer during 2016-2017, and contributed some
+suggestions to the original ceremony.
+
+For the purposes of my report, the most important fact to disclose,
+which I must stress seems unconnected to my participation in the
+ceremony, is that I discovered I was hacked about a week beforehand. My
+router was popped and being tunneled/VPN&#8217;d into, and there was
+unprivileged access to my desktop computer complete with the hijacking
+of my DBUS user session enabling the attacker(s) to spy on my screen
+with XRDP. This was the case for a period of about two weeks in
+February, though it&#8217;s possible the targeting began earlier.
+
+Even as this is the first time any equipment of mine had been
+compromised in over a decade, and it&#8217;s somewhat embarrassing to admit
+since I make my living by securing systems and being trusted, I can
+reveal some of the methodology. At the time I was hacked, I was
+experimenting with Tor&#8217;s DNSPort as my primary means of domain name
+resolution, and I was running an open resolver which was exposed to the
+internet. I had also enabled UPnP and the media/streaming services of my
+router, and had set up SNMP to control the router. My best understanding
+is that a malicious DNS server was used to obtain the privileges of the
+loopback interface. Later, an unconfigured installation of FreeRADIUS on
+my system (which has a client grant for localhost in its default
+configuration) was exploited in order to give the attacker their own
+user on my machine. In addition to the hijacking of my DBUS user session
+and the remote viewing which occurred for days on end unbeknownst to me
+at the time, I discovered several levels of compromise and daemons which
+had been reconfigured, including MiniDLNA/minissdpd, PPD/pptpd, OpenVPN
+and snmpd.
+
+Needless to say, figuring this out prompted me to replace my router,
+re-install my operating system, revoke keys and shift passwords, and led
+to several sleepless nights spent investigating, yet ironically prepared
+or positioned me in a way for the ceremony. The strangest part of the
+whole episode is that I ended up having some conversation with one of
+the people who was hacking me via IRC, and to this day it seems they
+were just curious and nothing of value was taken. The lesson which I can
+impart to others is to please disable UPnP, and be wary of defaults and
+of keeping stuff installed which you don&#8217;t need!
+
+So&#8230; now for the computation, which occurred on March 9th. For a period
+of days before the ceremony, I essentially &#8220;went dark&#8221;, e.g. stopped
+posting on social media, and all traffic on my LAN was routed through
+the Tor network. Working out of my apartment, I used a computer which I
+have maintained for air-gap operations; which has never been connected
+to the internet. I transferred the challenge and the Rust
+code+dependencies via a USB stick. Both the compute node and my regular
+computer ran the &#8216;testing&#8217; distribution of Debian Linux, and were fully
+updated in all respects including firmware. In addition, those machines
+had hardening applied to make things more secure. To be specific, I ran
+the latest grsecurity kernel in the 4.14.x stable series. I firewalled
+the machine(s) so that both incoming and outgoing packets had a default
+'DROP' policy, and the few protocols which I wanted to use would be
+explicitly added. I leveraged the AppArmor LSM with all available
+profiles enforced and enabled, and I also kept auditd logs which
+indicated no unusual activity or syscalls.
+
+With that said, here&#8217;s the b2sum of my response:
+
+548c67a73e0e33cd8c8d00f23963870ba5bfb8637ebeacc6541ed607b5edc8e7db1593d22804688f3cc4c788a750f7f8ec57aa7f122f3fa6d86ff5bc11a26940
+
+Lastly I want to note in advance that the key I'm using to sign my
+attestation presently (which was on a smartcard, so I have no indication
+it was stolen), 0xB604C32AD5D7C6D8, will nonetheless be revoked at the
+end of March 2018.
+
+Regards,
+
+Kevin Gallagher
+
+@ageis
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: OpenPGP digital signature
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180326/7bde4aae/attachment.sig">/pipermail/zapps-wg/attachments/20180326/7bde4aae/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000350.html">[zapps-wg] Participate to the key generation ceremony
+</A></li>
+	<LI>Next message (by thread): <A HREF="000356.html">[zapps-wg] ANN: Hangouts presentation on DSL Snarky
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#352">[ date ]</a>
+              <a href="thread.html#352">[ thread ]</a>
+              <a href="subject.html#352">[ subject ]</a>
+              <a href="author.html#352">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

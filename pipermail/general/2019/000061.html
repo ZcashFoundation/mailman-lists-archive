@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Grant project update - new PoW scheme
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190306201511.GA17369%40openwall.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000047.html">
+   <LINK REL="Next"  HREF="000073.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Grant project update - new PoW scheme</H1>
+    <B>Solar Designer</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190306201511.GA17369%40openwall.com%3E"
+       TITLE="[ZcF-general] Grant project update - new PoW scheme">solar at openwall.com
+       </A><BR>
+    <I>Wed Mar  6 15:15:11 EST 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000047.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+        <LI>Next message (by thread): <A HREF="000073.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+This is my third status report on GrantProposals-2018Q2 #25 &quot;review,
+tweaks, and maybe design of a new PoW scheme for Zcash.&quot;
+
+<A HREF="https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25">https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25</A>
+
+New this time is the plain C implementation of ProgPoW that I put
+together based on upstream's README.md and more, and just pushed here:
+
+<A HREF="https://github.com/solardiz/c-progpow">https://github.com/solardiz/c-progpow</A>
+
+This includes a test program I wrote for Ethash DAG initialization and
+ProgPoW, which currently produces a test vector matching upstream
+ProgPoW's test-vectors.md.  I intend to do more testing and tweaking,
+and then use this tree for my experiments, such as on potential tweaks
+to ProgPoW itself.  This source tree is much smaller and much more
+focused on ProgPoW itself than the 3 other trees/implementation I listed
+under &quot;Related work&quot;, so it is a better fit for my further work.
+
+This also served as validation of correctness of the partial spec found
+in ProgPoW's README.md, where I found and fixed (via a PR) only 5 really
+minor issues.  I am impressed.
+
+On Wed, Feb 06, 2019 at 10:57:04PM +0100, Solar Designer wrote:
+&gt;<i> Benchmark results
+</I>&gt;<i> <A HREF="https://github.com/ifdefelse/ProgPOW/issues/26">https://github.com/ifdefelse/ProgPOW/issues/26</A>
+</I>&gt;<i> 
+</I>&gt;<i> The benchmark results show that the two new GPUs were actually required.
+</I>&gt;<i> The older GPUs also still present in the machine (Titan Kepler and Titan
+</I>&gt;<i> X Maxwell) achieve good speeds at 1 GB DAG size, but no longer achieve
+</I>&gt;<i> sane speeds at the 3 GB DAG size currently used by Ethereum (and
+</I>&gt;<i> presumably Zcash would use no smaller than that if it switches to
+</I>&gt;<i> ProgPOW).  Those older GPUs do have more than enough memory (6 GB and
+</I>&gt;<i> 12 GB, respectively), but somehow are several times slower than current
+</I>&gt;<i> ones at this test.  We might investigate this later.  Maybe some tuning
+</I>&gt;<i> will help.
+</I>
+The slowdown on older GPUs with larger DAG size turned out to be a
+well-known issue for both Ethash and ProgPoW, related to too small page
+or fragment size on those older GPUs/drivers (I guess a page table no
+longer fits in a cache).
+
+I suggested a potential way to workaround the issue at high level on the
+GitHub issue above, but haven't yet heard back on that idea.  I briefly
+tried to experiment with it myself, with no luck yet.
+
+Meanwhile, I successfully got roughly the same speeds as upstream was
+getting out of the Vega 64 card now in the HPC Village machine, by
+tweaking its performance settings via the sysfs interface.  This makes
+me more comfortable with trying out ProgPoW tweaks, having roughly the
+same baseline performance that upstream has.  This is also described on
+the GitHub issue referenced above.
+
+It's a pity that ProgPoW upstream dropped out of the grants program.
+They're responding to issues/PRs on their own GitHub, so I am puzzled as
+to why they'd keep &quot;radio silence&quot; with Zcash.  What worries me is that
+this probably taints ProgPoW for Zcash's consideration, and thus might
+make my own work useless as it relates to its possible use by Zcash
+itself.  However, I'll continue with the project, especially considering
+that in my understanding these grants are supposed to benefit an
+ecosystem larger than Zcash's alone.
+
+Alexander
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000047.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+	<LI>Next message (by thread): <A HREF="000073.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Randomness Beacon
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Randomness%20Beacon&In-Reply-To=%3CCAKazn3ms7%3D13xrEaR6LcOiu6MwTSM9wNOShTZCCfwP1r2oDXEA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000261.html">
+   <LINK REL="Next"  HREF="000265.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Randomness Beacon</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Randomness%20Beacon&In-Reply-To=%3CCAKazn3ms7%3D13xrEaR6LcOiu6MwTSM9wNOShTZCCfwP1r2oDXEA%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Randomness Beacon">sean at z.cash
+       </A><BR>
+    <I>Thu Feb 15 18:37:05 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000261.html">[zapps-wg] Powersoftau deterministic build
+</A></li>
+        <LI>Next message (by thread): <A HREF="000265.html">[zapps-wg] Randomness Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The Powers of Tau security proof (see
+<A HREF="https://eprint.iacr.org/2017/1050">https://eprint.iacr.org/2017/1050</A>) holds in the &quot;random beacon model,&quot;
+meaning that we must apply a random beacon at the end of the ceremony.
+It's not good enough to use (say) a hash of the transcript, because of
+adaptive attacks (the last participant could predict the beacon
+output). We must apply a beacon that is queried after the ceremony has
+completed.
+
+There is some good news on this front:
+
+1. We *can* query reasonably secure beacons. More on that later.
+2. Even if the beacon is partially controlled by an adversary, we only
+lose a bit of security for every bit of the beacon output that is
+influenced by the adversary. This means our beacon could be somewhat
+broken and we'll live in acceptable security bounds.
+3. Even if the beacon is _totally_ insecure, it may not even matter
+because we may be able to prove the MPC is secure using the same
+assumptions the proving system itself uses. We haven't had time to
+write a security proof of this yet.
+4. Even if we choose a _totally_ insecure beacon, you can just apply
+your own beacon instead (one that you're more confident in, or perhaps
+the result of a random coinflip protocol depending on what you're
+doing).
+
+But, let's choose a pretty good beacon anyway. Some notes on that:
+
+* There is a large space of possible choices for a beacon, so it's
+important that we choose the most obvious and reliable one we can
+think of.
+* It's important that we choose when we intend to query it, before we do so.
+* The result of the beacon (and how the beacon is applied to the
+parameters, such as what PRNG we use, and the code) needs to be
+determined before we query the beacon.
+* Since we could choose multiple beacons (and adaptively select from
+them) we need to publish our choice of a beacon widely, using
+signatures and social media, so that proof we had attempted to do so
+would be easy to find.
+* Anything else?
+
+So, what beacon should we use? I'm borrowing my recommendation from
+advice given by Joseph Bonneau.
+
+I think that we should select a Bitcoin block height (in advance) and
+iteratively SHA256 the eventual block (hash or header) n times to
+produce the seed of a ChaCha20 PRNG, which is then used to apply the
+beacon to the parameters. This iterative function is not intended to
+be a proof-of-work function but instead a &quot;delay function,&quot; so it is
+deliberately not parallelizable. As the time required for a powerful
+adversary to compute the delay function grows (with respect to the
+average time between blocks) we become more and more confident the
+result could not be significantly influenced.
+
+How large should n be? I think n=2^40 would be enough, since even if
+we're off by a couple orders of magnitude the adversary cannot
+influence enough bits of the result for it to really matter.
+
+Other questions include: How should we choose the block height? Should
+we hash the header or the block hash or even the whole block?
+
+Sean
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000261.html">[zapps-wg] Powersoftau deterministic build
+</A></li>
+	<LI>Next message (by thread): <A HREF="000265.html">[zapps-wg] Randomness Beacon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

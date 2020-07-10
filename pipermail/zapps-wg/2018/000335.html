@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CTRhtaHL6_fS1gPQzKDDIGN-B7kAZwsajLNmTw2iS4rKijg8UGH19t8qKtPjJQ4JKx03NrhXnU43vExSZPqSHMoV5eZ9IIq252bCbiGTZMRM%3D%40protonmail.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000334.html">
+   <LINK REL="Next"  HREF="000180.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation</H1>
+    <B>Sunny Aggarwal</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CTRhtaHL6_fS1gPQzKDDIGN-B7kAZwsajLNmTw2iS4rKijg8UGH19t8qKtPjJQ4JKx03NrhXnU43vExSZPqSHMoV5eZ9IIq252bCbiGTZMRM%3D%40protonmail.ch%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation">sunnya97 at protonmail.ch
+       </A><BR>
+    <I>Thu Mar 15 13:19:44 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000334.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000180.html">[zapps-wg] Trusted Rust build process is ready for evaluation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#335">[ date ]</a>
+              <a href="thread.html#335">[ thread ]</a>
+              <a href="subject.html#335">[ subject ]</a>
+              <a href="author.html#335">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all!
+
+I've completed my portion of the ceremony.
+The setup was:
+
+    - 15&quot; Macbook Pro 2016
+    - Fresh installation of MacOS 10.12.6
+    - Processor:  2.6 GHz Core i7 (I7-6700HQ)
+
+How it was made:
+
+Downloaded the challenge file and Rust source code on seperate computer.  
+Disconnected from internet and unplugged router.  All wireless devices were shut off.  Compiled Rust source code.  Used wiped USB flash drive to transfer binary and challenge file to Macbook Pro running a new MacOS install that hadn't been connected to internet since new OS install, where computation was done.  Flash drive was used to move response back to original computer from where it was uploaded.
+
+Randomness:
+    - Many dice rolls
+    - SHA256 of video recording of me making funny faces
+    - Keyboard smashing
+
+The file was transferred and upload from another machine.
+
+Had some trouble to uploading file to amazon instance, so uploaded to Jason directly, who will upload on my behalf.  My response file can be found at <A HREF="ipfs://QmXE4L7j2vtja9kNo3uhq3TPSExK8QkxtGhkSoLxPQ4rea">ipfs://QmXE4L7j2vtja9kNo3uhq3TPSExK8QkxtGhkSoLxPQ4rea</A> 
+
+The BLAKE2b hash of my response is:
+9b142f13 cc68e096 196fd137 f125bb0e
+64d3fcc5 c314935e 184975f2 72252e17
+4a2b9744 b62af318 21232c72 4b083452
+74218f7f 3f733c77 42df23fe 501da481
+
+I have publicly tweeted these:  <A HREF="https://twitter.com/sunnya97/status/974323886962683905">https://twitter.com/sunnya97/status/974323886962683905</A>
+
+Special thanks to Jason for all his help!
+
+Sunny Aggarwal
+
+&#8203;Sent with ProtonMail Secure Email.&#8203;
+
+&#8208;&#8208;&#8208;&#8208;&#8208;&#8208;&#8208; Original Message &#8208;&#8208;&#8208;&#8208;&#8208;&#8208;&#8208;
+
+On March 14, 2018 2:50 PM, Gabor Losonci via zapps-wg &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> Hello! I have uploaded the file.
+</I>&gt;<i> 
+</I>&gt;<i> I used a HP Elitebook 2560, and the Go implementation of Powers of Tau by Filosottile, run on a Centos 7 minimal. I mixed some own entropy to /dev/random.
+</I>&gt;<i> 
+</I>&gt;<i> The taucompute binary was compiled on different machine, a Kali Linux, where I also had to install Go 1.9 and Cmake 3.2 something.
+</I>&gt;<i> 
+</I>&gt;<i> Previously I have tried to compile on the Centos minimal but with latest Cmake the &quot;go install&quot; phase failed with std99 error
+</I>&gt;<i> 
+</I>&gt;<i> (loop initial declaration in the C files), which I could not desptie trying for hours.
+</I>&gt;<i> 
+</I>&gt;<i> I have used a separate network and compute node, the letter stripped from WiFi, Bluetooth, modem and internal hard drive, booted from SD card.
+</I>&gt;<i> 
+</I>&gt;<i> The computation and the entropy mixing happened in a remote agricultural building with electricity inside.
+</I>&gt;<i> 
+</I>&gt;<i> Files were transferred between nodes via USB with checking the files integrity. Download took 20 minutes and compute around 2.5 hours on the 2 core CPU.
+</I>&gt;<i> 
+</I>&gt;<i> Upload took nearly two hours, and was done with dropbox because the connection to aws broke several times, probably this has something to do with
+</I>&gt;<i> 
+</I>&gt;<i> the quality of the internet connection, an old ADSL.
+</I>&gt;<i> 
+</I>&gt;<i> The contribution happened from a small village : Ozm&#225;nb&#252;k, Hungary.
+</I>&gt;<i> 
+</I>&gt;<i> This was my second participation after November when I took part with running the Rust implementation.
+</I>&gt;<i> 
+</I>&gt;<i> Thanks everyone for organising and contributing, specially to Jason Davies for his patience :)
+</I>&gt;<i> 
+</I>&gt;<i> Blake2b HASH of response:
+</I>&gt;<i> 
+</I>&gt;<i> 8e929018636c1af3ac9ca50d1243efef984a04fa00eff8b6c3decfd0641b6c9a33d8d519d2e0d69a83104eb02294b7306231bbcb896beca71e41c7805fed0be5
+</I>&gt;<i> 
+</I>&gt;<i> SHA256 HASH of taucompute:
+</I>&gt;<i> 
+</I>&gt;<i> c67963299233b80314628b10f74182180049c3388eb1960d7e5adbe857613ba4
+</I>&gt;<i> 
+</I>&gt;<i> SHA-1 HASH of challange:
+</I>&gt;<i> 
+</I>&gt;<i> 53c239581a53536a649283e1bc49277b46ed9742
+</I>&gt;<i> 
+</I>&gt;<i> Best regards: Gabor
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000334.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000180.html">[zapps-wg] Trusted Rust build process is ready for evaluation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#335">[ date ]</a>
+              <a href="thread.html#335">[ thread ]</a>
+              <a href="subject.html#335">[ subject ]</a>
+              <a href="author.html#335">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

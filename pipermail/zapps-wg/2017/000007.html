@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Ceremony Proposal
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Ceremony%20Proposal&In-Reply-To=%3CCAF7tpEwshj64xOgkXrs7V9a%3DXHZ5k%3DPjma%3D820JNk3HOAGE7JQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000005.html">
+   <LINK REL="Next"  HREF="000008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Ceremony Proposal</H1>
+    <B>Andrew Miller</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Ceremony%20Proposal&In-Reply-To=%3CCAF7tpEwshj64xOgkXrs7V9a%3DXHZ5k%3DPjma%3D820JNk3HOAGE7JQ%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Ceremony Proposal">soc1024 at illinois.edu
+       </A><BR>
+    <I>Fri Nov 10 14:53:16 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000005.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+        <LI>Next message (by thread): <A HREF="000008.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>OK, I'll go first. Below is my report:
+
+Powers of Tau Operational writeup
+=================================
+Round: 1
+Date: 2011-11-10
+Name: Andrew Miller
+Location: Champaign, Illinois
+
+Challenge: (genesis)
+ce00f2100dd876fdff8dd824f55307bcb72d724f29ff20b9e0760f3a65e5588a65eaed57cbc61697111ae1f4cc7da2e62a85311c2ae683a041fb872b891c68dc
+Response:
+15729e0edc4201dc5ee6241437d926f614cb4214ff1b9c6fbd73daf401639f7a4238cf04bc94edac9f2ad037003daab9a4408ba7c62a4413dc2a0ddd683bd719
+./response-2017-11-10-amiller
+
+Preparation steps
+=================
+I used Sean&#8217;s powersoftau rust repo, commit
+9e1553c437183540392a7231d0788318a19b18a3
+
+I followed instructions online for building portable rust binaries,
+and so I ran
+```
+cargo build --target=x86_64-unknown-linux-musl --release
+--features=u128-support --bin=compute
+```
+
+Compiler: rustc 1.23.0-nightly (02004ef78 2017-11-08)
+
+I copied the resulting binary to a freshly formatted USB stick I had.
+
+b2sum:
+9059a0a64f5021c36df630ca48ac40674862b2fea14f4843ff2150256b95162ac4d6d1621d2dd3f5d0d1c604ad8e581c0ff449d2449140380eab075a9b83c960
+./target/x86_64-unknown-linux-musl/release/compute
+
+I also rummaged through my shelf of several USB sticks, and found one
+that happened to be a Linux Mint 18 USB bootable disk, so I used that
+for my operating system.
+
+Sidechannel defenses
+====================
+I used an airgap compute node, a Dell Inspiron that I&#8217;ve had for about
+a year now (Actually this is a computer I bought last year for
+dress-rehearsals in the Zcash Sprout param generation ceremony).
+
+I unplugged all the computer&#8217;s hard drives, and detached its
+wifi/bluetooth radios. I booted the computer from the Linux Mint
+livecd usb stick, and then also copied the binaries into RAM. The
+compute node was located in my bedroom, and I attended it for the ~1hr
+duration of the compute process.
+
+Image: <A HREF="https://pbs.twimg.com/media/DOSZz4FXkAEKC7N.jpg:large">https://pbs.twimg.com/media/DOSZz4FXkAEKC7N.jpg:large</A>
+
+Postprocessing
+==============
+After compute was finished, I took a cell phone picture of the blake2b
+hash of the response. I then copied the response file to the USB stick
+containing the binaries, and then I unplugged the compute node. Using
+my personal laptop, I posted the blake2b hash to the #mpc chat and
+uploaded the response file to s3.
+
+The repsonse file is hosted here for now, though I expect we'll
+mirror it elsewhere later:
+<A HREF="https://s3.amazonaws.com/socrates1024_a/response-2017-11-10-amiller">https://s3.amazonaws.com/socrates1024_a/response-2017-11-10-amiller</A>
+
+I did not destroy the compute node and do plan to use it again,
+although I'm going to leave it unplugged for several days.
+
+On Wed, Nov 8, 2017 at 10:19 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+&gt;<i> Note that the `response` file contains a hash of the `challenge` file
+</I>&gt;<i> that was used as input for the compute tool. As a result, only the
+</I>&gt;<i> hashes of the `response` files need to be published; a hash chain is
+</I>&gt;<i> formed through all participants. The initial challenge file is
+</I>&gt;<i> deterministic. (You can use the `new` tool on the repository to
+</I>&gt;<i> construct it.)
+</I>&gt;<i>
+</I>&gt;<i> The initial challenge file has BLAKE2b hash:
+</I>&gt;<i>
+</I>&gt;<i> ce00f2100dd876fdff8dd824f55307bcb72d724f29ff20b9e0760f3a65e5588a65eaed57cbc61697111ae1f4cc7da2e62a85311c2ae683a041fb872b891c68dc
+</I>&gt;<i>
+</I>&gt;<i> It doesn't hurt to post hashes of everything though. Hash all the things.
+</I>&gt;<i>
+</I>&gt;<i> Sean
+</I>&gt;<i>
+</I>&gt;<i> On Wed, Nov 8, 2017 at 4:51 PM, Andrew Miller &lt;<A HREF="/mailman/listinfo/zapps-wg">soc1024 at illinois.edu</A>&gt; wrote:
+</I>&gt;&gt;<i> Thanks Sean!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> My idea is to use an ad hoc and publicly visible process. &quot;Get in
+</I>&gt;&gt;<i> contact with [sean]&quot; could be as simple as posting in public to this
+</I>&gt;&gt;<i> thread. Unless we're overrun by trolls, a public mailing list can be
+</I>&gt;&gt;<i> an informal way to agree on who goes next. Whoever posts and says &quot;Me,
+</I>&gt;&gt;<i> me! I'd like to go next&quot;, should, by convention, go next. Any
+</I>&gt;&gt;<i> aberrations (parties taking too long or dropping out, posting invalid
+</I>&gt;&gt;<i> data, etc., can be dealt with as needed).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I believe it's also the case that
+</I>&gt;&gt;<i> a) The &quot;response&quot; file from each person is roughly the same as the
+</I>&gt;&gt;<i> &quot;challenge&quot; file for the next participant, and
+</I>&gt;&gt;<i> b) The response/challenge files are safe to be published at any time,
+</I>&gt;&gt;<i> not private at all.
+</I>&gt;&gt;<i> So, by convention, we should post the hashes of those files here right
+</I>&gt;&gt;<i> away, and make a best effort to mirror them publicly (each one is like
+</I>&gt;&gt;<i> a gigabyte, I think).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What does the initial challenge file consist of? Could you post the
+</I>&gt;&gt;<i> hash of it here?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cheers,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Wed, Nov 8, 2017 at 3:04 PM, Sean Bowe via zapps-wg
+</I>&gt;&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i> Ariel Gabizon, Ian Miers and I have just published a new paper detailing a
+</I>&gt;&gt;&gt;<i> multi-party computation (MPC) protocol for constructing zk-SNARK public
+</I>&gt;&gt;&gt;<i> parameters.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="https://eprint.iacr.org/2017/1050">https://eprint.iacr.org/2017/1050</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The highlights are:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> * It allows for a single, gigantic ceremony to take place for all possible
+</I>&gt;&gt;&gt;<i> zk-SNARK circuits within a given size bound. The results of this ceremony
+</I>&gt;&gt;&gt;<i> are partial zk-SNARK parameters for the entire community. We call this
+</I>&gt;&gt;&gt;<i> communal ceremony the Powers of Tau.
+</I>&gt;&gt;&gt;<i> * If you want to use zk-SNARKs in your protocols, you still have to do an
+</I>&gt;&gt;&gt;<i> MPC for your circuit. But because of the Powers of Tau ceremony, your
+</I>&gt;&gt;&gt;<i> ceremony is much cheaper to perform and the costs per-participant scale
+</I>&gt;&gt;&gt;<i> linearly with respect to the circuit complexity.
+</I>&gt;&gt;&gt;<i> * The best part is that the Powers of Tau and these circuit-specific MPCs
+</I>&gt;&gt;&gt;<i> can scale to hundreds/thousands of participants. As the number of
+</I>&gt;&gt;&gt;<i> participants grows, it becomes unrealistic that all of them could be
+</I>&gt;&gt;&gt;<i> compromised.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> So, let's do the Powers of Tau ceremony! The Zcash Foundation is excited to
+</I>&gt;&gt;&gt;<i> participate in the process. The Zcash Company is particularly excited in
+</I>&gt;&gt;&gt;<i> starting soon because we want to leverage it for our next MPC for the
+</I>&gt;&gt;&gt;<i> Sapling upgrade of Zcash.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The MPC protocol for this ceremony only requires that one participant
+</I>&gt;&gt;&gt;<i> successfully destroy the secret randomness they sample during their part. We
+</I>&gt;&gt;&gt;<i> intend to give participants total flexibility in deciding how to
+</I>&gt;&gt;&gt;<i> participate; we don't mind what software, hardware or OS you use.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have written some Rust software for participants to run:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> In order to simplify auditing, I won't be making any more changes to the
+</I>&gt;&gt;&gt;<i> code unless absolutely necessary. You don't have to use this software, but
+</I>&gt;&gt;&gt;<i> there are no alternative implementations at this time. I think it should be
+</I>&gt;&gt;&gt;<i> feasible to write a C version of the code using the RELIC toolkit, which has
+</I>&gt;&gt;&gt;<i> implemented BLS12-381. I am very confident in the Rust code, though, and I
+</I>&gt;&gt;&gt;<i> believe in its stability/correctness.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have some opinions about the ceremony:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 1. I disagree with processes that don't improve security of the ceremony.
+</I>&gt;&gt;&gt;<i> Having a small surface area of code and process increases the chance that
+</I>&gt;&gt;&gt;<i> bugs will be discovered by auditors because there are fewer things that can
+</I>&gt;&gt;&gt;<i> go wrong. Remember that there is already quite a bit for the public to
+</I>&gt;&gt;&gt;<i> check: the transcript correctness, the code correctness, the randomness
+</I>&gt;&gt;&gt;<i> beacon, the cryptographic proof, code dependencies, etc.
+</I>&gt;&gt;&gt;<i> 2. It needs to start soon so that it can be useful for the Sapling MPC.
+</I>&gt;&gt;&gt;<i> 3. It needs to have lots of reputable participants by the time we start the
+</I>&gt;&gt;&gt;<i> Sapling MPC.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Given the above, I would like to suggest that we start the ceremony now
+</I>&gt;&gt;&gt;<i> using my existing code, which supports circuits up to 2^21 gates. This means
+</I>&gt;&gt;&gt;<i> people would just get in contact with me if they want to participate and
+</I>&gt;&gt;&gt;<i> I'll schedule them in. I'll try to prioritize reputable people, but I'll
+</I>&gt;&gt;&gt;<i> allow pretty much anyone I have time to. Everything that I do is publicly
+</I>&gt;&gt;&gt;<i> verifiable (there is a transcript at the end of the ceremony which people
+</I>&gt;&gt;&gt;<i> can check).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Andrew Miller has a few interesting ideas for a more distributed process for
+</I>&gt;&gt;&gt;<i> scheduling &quot;who goes next&quot; but there are some disadvantages and risks
+</I>&gt;&gt;&gt;<i> involved IMO. In any case, the process can be changed later without
+</I>&gt;&gt;&gt;<i> affecting anything, so I don't see a purpose in delaying the start of the
+</I>&gt;&gt;&gt;<i> ceremony on such things.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I'd like to hear from others about this plan so we can begin soon!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Sean Bowe
+</I>&gt;&gt;&gt;<i> Zcash Company
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --
+</I>&gt;&gt;<i> Andrew Miller
+</I>&gt;&gt;<i> University of Illinois at Urbana-Champaign
+</I>
+
+
+-- 
+Andrew Miller
+University of Illinois at Urbana-Champaign
+-------------- next part --------------
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Powers of Tau Operational writeup
+=================================
+Round: 1
+Date: 2011-11-10
+Name: Andrew Miller
+Location: Champaign, Illinois
+
+Challenge: (genesis)
+ce00f2100dd876fdff8dd824f55307bcb72d724f29ff20b9e0760f3a65e5588a65eaed57cbc61697111ae1f4cc7da2e62a85311c2ae683a041fb872b891c68dc
+Response:
+15729e0edc4201dc5ee6241437d926f614cb4214ff1b9c6fbd73daf401639f7a4238cf04bc94edac9f2ad037003daab9a4408ba7c62a4413dc2a0ddd683bd719
+./response-2017-11-10-amiller
+
+Preparation steps
+=================
+I used Sean&#8217;s powersoftau rust repo, commit
+9e1553c437183540392a7231d0788318a19b18a3
+
+I followed instructions online for building portable rust binaries,
+and so I ran
+```
+cargo build --target=x86_64-unknown-linux-musl --release --features=u128-support --bin=compute
+```
+
+Compiler: rustc 1.23.0-nightly (02004ef78 2017-11-08)
+
+I copied the resulting binary to a freshly formatted USB stick I had.
+
+b2sum:
+9059a0a64f5021c36df630ca48ac40674862b2fea14f4843ff2150256b95162ac4d6d1621d2dd3f5d0d1c604ad8e581c0ff449d2449140380eab075a9b83c960
+./target/x86_64-unknown-linux-musl/release/compute
+
+I also rummaged through my shelf of several USB sticks, and found one
+that happened to be a Linux Mint 18 USB bootable disk, so I used that
+for my operating system.
+
+Sidechannel defenses
+====================
+I used an airgap compute node, a Dell Inspiron that I&#8217;ve had for about
+a year now (Actually this is a computer I bought last year for
+dress-rehearsals in the Zcash Sprout param generation ceremony).
+
+I unplugged all the computer&#8217;s hard drives, and detached its
+wifi/bluetooth radios. I booted the computer from the Linux Mint
+livecd usb stick, and then also copied the binaries into RAM. The
+compute node was located in my bedroom, and I attended it for the ~1hr
+duration of the compute process.
+
+Image: <A HREF="https://pbs.twimg.com/media/DOSZz4FXkAEKC7N.jpg:large">https://pbs.twimg.com/media/DOSZz4FXkAEKC7N.jpg:large</A>
+
+Postprocessing
+==============
+After compute was finished, I took a cell phone picture of the blake2b
+hash of the response. I then copied the response file to the USB stick
+containing the binaries, and then I unplugged the compute node. Using
+my personal laptop, I posted the blake2b hash to the #mpc chat and
+uploaded the response file to s3. 
+
+The repsonse file is hosted here for now, though I expect we'll
+mirror it elsewhere later:
+<A HREF="https://s3.amazonaws.com/socrates1024_a/response-2017-11-10-amiller">https://s3.amazonaws.com/socrates1024_a/response-2017-11-10-amiller</A>
+
+I did not destroy the compute node and do plan to use it again,
+although I'm going to leave it unplugged for several days.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBAgAGBQJaBgOBAAoJEFvUyhfk+7ICgbUQAICDCq1ZUiatehGzXtKXphEw
+OBQ48i0Fv7iWLdt6vjGYNffWuo4gWGtLsEtB4QdM39nO7P7PT+vNYq7RS8vbxU/a
+NwTdCGCW8Dc3hcriYOjEwGHi44cR9THJY8SGHlvlklIaSPRxCA1t7wwsA2WE0r8N
+u0MtqdvMlha5gX2uNVY8km28WAE0rzhTKQO/OAN5AkKf/oUuCsxVfxfJWptVL29T
+dyyIl96wrq/pz+czSUPJeXFX00VT8FzP+injkahT4Nv5tlNVzuDOMYovDZ1L2xwY
+otib68NPXL2aW3Xfo5W/qiAU+tSkv4J3rnE3A09rBH8thygSQFVZCEuFT9FdhmUm
+lfRi9ZoqB19OEo+Op6P8JaI5tnW+M2z12JZb+leiLFSZts33nSWcKO/VEIlJ0ntn
+LIycEOBUkO6LHgeho92Dj93+ujH0cvOcUWmqVdlPCD16rv/tduBC9opeAzTNpWTY
+nYn61pGYHwPNIseZuMT64R4dBfl706FE8cpm6Jt0Ew27crA/zQ7puO5afdSJfi9r
+EkoxO7FgjK9rObyY2ZCGF162IGLigT02WTjUawg9eHr4KofLd9fMajNO+NOsnRhi
+WtMfxQS9mRdK9MdWDDwFv70C+5MuIQjyOQzp6PzOcSyUYiu5lOqZf5/SQZUKSr94
+ZYCefaXJiFnSjCXRa/YB
+=Nj6D
+-----END PGP SIGNATURE-----
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000005.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+	<LI>Next message (by thread): <A HREF="000008.html">[zapps-wg] Powers of Tau Ceremony Proposal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

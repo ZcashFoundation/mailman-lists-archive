@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20ANN%3A%20Snarky%20%28OCaml%20DSL%20for%20writing%20SNARKs%29&In-Reply-To=%3C54344cd9-87f2-4de0-a31f-001496f209f7%40Spark%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000327.html">
+   <LINK REL="Next"  HREF="000325.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)</H1>
+    <B>Nicola Greco</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20ANN%3A%20Snarky%20%28OCaml%20DSL%20for%20writing%20SNARKs%29&In-Reply-To=%3C54344cd9-87f2-4de0-a31f-001496f209f7%40Spark%3E"
+       TITLE="[zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)">me at nicolagreco.com
+       </A><BR>
+    <I>Tue Mar 13 05:00:49 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000327.html">[zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)
+</A></li>
+        <LI>Next message (by thread): <A HREF="000325.html">[zapps-wg] My Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#328">[ date ]</a>
+              <a href="thread.html#328">[ thread ]</a>
+              <a href="subject.html#328">[ subject ]</a>
+              <a href="author.html#328">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Regarding sha: There is some work that I have triggered in the ZoKrates community that has made a format for r1cs and a little tool that exports r1cs from libsnark (and another one that imports them into ZoKrates),
+
+It would be worth taking a look (see here for updates: <A HREF="https://github.com/JacobEberhardt/ZoKrates/issues/19">https://github.com/JacobEberhardt/ZoKrates/issues/19</A> )
+
+Nicola Greco
+- Keep on rocking the free web
+
+On Mar 13, 2018, 8:14 AM +0100, Sean Bowe via zapps-wg &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt;, wrote:
+&gt;<i> This is _very_ cool, thanks for sharing it with us! It looks like the
+</I>&gt;<i> best DSL for R1CS that I've ever seen.
+</I>&gt;<i>
+</I>&gt;<i> I encourage you to also share this with the Bitcoin community
+</I>&gt;<i> (bitcoin-dev mailing list.) Bulletproofs support R1CS as well.
+</I>&gt;<i>
+</I>&gt;<i> Have you written a SHA256 gadget with this library?
+</I>&gt;<i>
+</I>&gt;<i> Sean
+</I>&gt;<i>
+</I>&gt;<i> On Mon, Mar 12, 2018 at 1:17 PM, Andrew Miller via zapps-wg
+</I>&gt;<i> &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i> &gt; This is really cool, thank you for posting here!! I love the overloading and
+</I>&gt;<i> &gt; monadic approach to EDSL in ocaml. It's very much in the style of Snarklib
+</I>&gt;<i> &gt; (and of Viff in the MPC world rather than zksnark world).
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; On Mon, Mar 12, 2018 at 1:31 PM, Izaak Meckler via zapps-wg
+</I>&gt;<i> &gt; &lt;<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; Hi all,
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; Wanted to announce the initial release of a new high-level language called
+</I>&gt;<i> &gt; &gt; Snarky for writing verifiable computations. Computations are compiled down
+</I>&gt;<i> &gt; &gt; into rank 1 constraint systems and then passed off to a SNARK construction.
+</I>&gt;<i> &gt; &gt; It&#8217;s implemented as an OCaml embedded DSL and is parametrized over the SNARK
+</I>&gt;<i> &gt; &gt; construction (right now only libsnark backends are provided with the library
+</I>&gt;<i> &gt; &gt; but users can add their own).
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; The code is on GitHub (example file here) and there is a blog post
+</I>&gt;<i> &gt; &gt; explaining the design at a high-level. Please don&#8217;t hesitate to get in touch
+</I>&gt;<i> &gt; &gt; if you have any comments!
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; Izaak
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; --
+</I>&gt;<i> &gt; Andrew Miller
+</I>&gt;<i> &gt; University of Illinois at Urbana-Champaign
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180313/90eeede7/attachment.html">/pipermail/zapps-wg/attachments/20180313/90eeede7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000327.html">[zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)
+</A></li>
+	<LI>Next message (by thread): <A HREF="000325.html">[zapps-wg] My Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#328">[ date ]</a>
+              <a href="thread.html#328">[ thread ]</a>
+              <a href="subject.html#328">[ subject ]</a>
+              <a href="author.html#328">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

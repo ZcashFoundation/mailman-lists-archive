@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Cut-off date for Powers of Tau Contributions
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Cut-off%20date%20for%20Powers%20of%20Tau%20Contributions&In-Reply-To=%3CCAF7tpEyAcGM2w7sv2Oa%3D0J7iv7_gaz8%3Dnh_NQcJx-sRfeg40Lw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000307.html">
+   <LINK REL="Next"  HREF="000309.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Cut-off date for Powers of Tau Contributions</H1>
+    <B>Andrew Miller</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Cut-off%20date%20for%20Powers%20of%20Tau%20Contributions&In-Reply-To=%3CCAF7tpEyAcGM2w7sv2Oa%3D0J7iv7_gaz8%3Dnh_NQcJx-sRfeg40Lw%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Cut-off date for Powers of Tau Contributions">soc1024 at illinois.edu
+       </A><BR>
+    <I>Fri Mar  9 14:22:42 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000307.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+        <LI>Next message (by thread): <A HREF="000309.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#308">[ date ]</a>
+              <a href="thread.html#308">[ thread ]</a>
+              <a href="subject.html#308">[ subject ]</a>
+              <a href="author.html#308">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It sounds like an efficient way to dispense with the suggestions Devrandom
+raised are to:
+1. Do a round with the deterministic Go build, explicitly saving the binary
+for posthoc analysis, and ideally running it on a non x86 architecture if
+anyone has one...
+2. Do a round with mrustc
+What would it take to get a concrete plan to include those?
+
+On Fri, Mar 9, 2018 at 2:17 PM, Sean Bowe &lt;<A HREF="/mailman/listinfo/zapps-wg">sean at z.cash</A>&gt; wrote:
+
+&gt;<i> As far as security goes, we've successfully guarded against all but
+</I>&gt;<i> the most elaborate and unrealistic attack scenarios. The remaining
+</I>&gt;<i> threats require some combinatorial explosion of individually
+</I>&gt;<i> sophisticated attacks or breakthroughs, like stealthy backdoors in the
+</I>&gt;<i> Rust compiler and still for many participants to be colluding in
+</I>&gt;<i> secret, somehow without leaving evidence behind.
+</I>&gt;<i>
+</I>&gt;<i> We don't need an absolutely perfect ceremony to get strong privacy
+</I>&gt;<i> guarantees, we get that already even with a totally compromised
+</I>&gt;<i> ceremony. We *could* continue to invest time and resources for many
+</I>&gt;<i> more months or years in order to make us marginally more resistant to
+</I>&gt;<i> these absurd attack scenarios, but by the time we'd be finished with
+</I>&gt;<i> the ceremony we'll probably have better proving systems available
+</I>&gt;<i> anyway. It's silly to let privacy languish in the meantime.
+</I>&gt;<i>
+</I>&gt;<i> I think we did the best with the time we had, but if you disagree,
+</I>&gt;<i> remember that all of this can be extended and improved by anyone, even
+</I>&gt;<i> after this ceremony is done!
+</I>&gt;<i>
+</I>&gt;<i> Sean
+</I>&gt;<i>
+</I>&gt;<i> On Fri, Mar 9, 2018 at 11:06 AM, Peter Todd &lt;<A HREF="/mailman/listinfo/zapps-wg">pete at petertodd.org</A>&gt; wrote:
+</I>&gt;<i> &gt; On Fri, Mar 09, 2018 at 04:49:37PM +0000, Devrandom wrote:
+</I>&gt;<i> &gt;&gt; Hi all,
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; I have some concerns about the lack of diversity of contributions:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; - most (all?) of the contributions used a distributed Rust toolchain,
+</I>&gt;<i> which
+</I>&gt;<i> &gt;&gt; suffers from the &quot;trusting-trust&quot; issue since they are self-compiled.  I
+</I>&gt;<i> &gt;&gt; don't think I've seen any contributions using the mrustc build path.
+</I>&gt;<i> &gt;&gt; - there were very few contributions (two?) using the golang
+</I>&gt;<i> implementation
+</I>&gt;<i> &gt;&gt; - no attempt has been made to replicate the deterministic golang build
+</I>&gt;<i> &gt;&gt; - people did not capture the binary they used, so we can't do forensics
+</I>&gt;<i> in
+</I>&gt;<i> &gt;&gt; case of future questions
+</I>&gt;<i> &gt;&gt; - there were no contributions using alternative processor architectures
+</I>&gt;<i> &gt;&gt; (e.g. ARM64).  I believe this is possible using the golang
+</I>&gt;<i> implementation.
+</I>&gt;<i> &gt;&gt; - there was a lot of focus on destroying toxic waste and not enough on
+</I>&gt;<i> the
+</I>&gt;<i> &gt;&gt; trustworthiness of the tools
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I agree with all these points, particularly the latter: we should be
+</I>&gt;<i> focused on
+</I>&gt;<i> &gt; genuine security, not flashy marketing stunts. (indeed, I regret the way
+</I>&gt;<i> my own
+</I>&gt;<i> &gt; participation was marketted the last time around)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; --
+</I>&gt;<i> &gt; <A HREF="https://petertodd.org">https://petertodd.org</A> 'peter'[:-1]@petertodd.org
+</I>&gt;<i>
+</I>
+
+
+-- 
+Andrew Miller
+University of Illinois at Urbana-Champaign
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180309/d11d4072/attachment.html">/pipermail/zapps-wg/attachments/20180309/d11d4072/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000307.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+	<LI>Next message (by thread): <A HREF="000309.html">[zapps-wg] Cut-off date for Powers of Tau Contributions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#308">[ date ]</a>
+              <a href="thread.html#308">[ thread ]</a>
+              <a href="subject.html#308">[ subject ]</a>
+              <a href="author.html#308">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

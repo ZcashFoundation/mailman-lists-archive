@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau&In-Reply-To=%3CCAF-ezXaBsXb_maO%2BxDWgjb2qicRRy1AauutfuZV1Aw8Z1V%3DSPw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000227.html">
+   <LINK REL="Next"  HREF="000242.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau</H1>
+    <B>Lucas Vogelsang</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau&In-Reply-To=%3CCAF-ezXaBsXb_maO%2BxDWgjb2qicRRy1AauutfuZV1Aw8Z1V%3DSPw%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau">l at lucasvo.com
+       </A><BR>
+    <I>Wed Jan 24 22:19:42 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000227.html">[zapps-wg] Powers of Tau
+</A></li>
+        <LI>Next message (by thread): <A HREF="000242.html">[zapps-wg] Powers of Tau
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#228">[ date ]</a>
+              <a href="thread.html#228">[ thread ]</a>
+              <a href="subject.html#228">[ subject ]</a>
+              <a href="author.html#228">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for publishing the go implementation. Awesome to have another
+implementation to choose from. I will take a look at your repository.
+
+@Sean, I'd love to participate anytime next week. I'm available every
+mon-fri 9am-2pm EST.
+
+On Wed, Jan 24, 2018 at 5:46 PM, Andrew Miller via zapps-wg &lt;
+<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> That's outstanding, thanks! The independent Go-language implementation of
+</I>&gt;<i> the compute node is an amazing bonus contribution. I'd love to learn more
+</I>&gt;<i> about this project. I'll ask questions in the github repo.
+</I>&gt;<i> Cheers,
+</I>&gt;<i>
+</I>&gt;<i> On Wed, Jan 24, 2018 at 6:54 PM, Filippo Valsorda via zapps-wg &lt;
+</I>&gt;<i> <A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> The BLAKE2b hash of `./response` is:
+</I>&gt;&gt;<i>         7b55c0f5 68a8b4df 2ca14085 2e816df2
+</I>&gt;&gt;<i>         b9a2dafe 50b2c5e2 5e6c9b6a df239de0
+</I>&gt;&gt;<i>         223a9866 aba481a8 436fbd42 04a2c48a
+</I>&gt;&gt;<i>         43725d94 2de47b23 c10c5e87 38fd6467
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The main feature of this contribution is that it was computed with an
+</I>&gt;&gt;<i> independent implementation of Powers of Tau.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> My implementation, which I am open sourcing now at [1], was not public at
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i> time of computation. It is written in Go, shares no code with the main
+</I>&gt;&gt;<i> Rust
+</I>&gt;&gt;<i> implementation, and uses the RELIC library for BLS12-381. The only detail
+</I>&gt;&gt;<i> that
+</I>&gt;&gt;<i> was copied verbatim from the Rust codebase is the value of the curve
+</I>&gt;&gt;<i> coefficient, but that's being resolved at [2]. The Zcash Company sponsored
+</I>&gt;&gt;<i> this effort, but it was proposed and conducted by me independently.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The computation was simply performed on my main MacBook Pro, where the
+</I>&gt;&gt;<i> code
+</I>&gt;&gt;<i> was developed. The laptop was rebooted after the computation and before
+</I>&gt;&gt;<i> re-enabling Wi-Fi and reopening the browser. The git hash of the codebase
+</I>&gt;&gt;<i> was
+</I>&gt;&gt;<i> 26a0231c674ec6043ef77997d33d94787c55634a, the Go version 1.9.2, extra
+</I>&gt;&gt;<i> entropy
+</I>&gt;&gt;<i> was fed to /dev/random before starting.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The full terminal transcript, and this attestation signed with a
+</I>&gt;&gt;<i> minisign/signify
+</I>&gt;&gt;<i> key published at [3] are attached, and available at [4].
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> [1] <A HREF="https://github.com/FiloSottile/powersoftau">https://github.com/FiloSottile/powersoftau</A>
+</I>&gt;&gt;<i> [2] <A HREF="https://github.com/relic-toolkit/relic/issues/64">https://github.com/relic-toolkit/relic/issues/64</A>
+</I>&gt;&gt;<i> [3] <A HREF="https://twitter.com/FiloSottile/status/956325095013863425">https://twitter.com/FiloSottile/status/956325095013863425</A>
+</I>&gt;&gt;<i> [4] <A HREF="https://gist.github.com/FiloSottile/cc142b683666ee1ce5ee77759bd0a367">https://gist.github.com/FiloSottile/cc142b683666ee1ce5ee77759bd0a367</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -- Filippo Valsorda
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 2018-01-22 22:17 GMT+0100 Filippo Valsorda &lt;<A HREF="/mailman/listinfo/zapps-wg">filippo at ml.filippo.io</A>&gt;:
+</I>&gt;&gt;<i> &gt; _o/
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; I'm ready to go whenever there's a slot.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; It will probably take me half a day, upload included.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Andrew Miller
+</I>&gt;<i> University of Illinois at Urbana-Champaign
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180124/a905a0bf/attachment.html">/pipermail/zapps-wg/attachments/20180124/a905a0bf/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000227.html">[zapps-wg] Powers of Tau
+</A></li>
+	<LI>Next message (by thread): <A HREF="000242.html">[zapps-wg] Powers of Tau
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#228">[ date ]</a>
+              <a href="thread.html#228">[ thread ]</a>
+              <a href="subject.html#228">[ subject ]</a>
+              <a href="author.html#228">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

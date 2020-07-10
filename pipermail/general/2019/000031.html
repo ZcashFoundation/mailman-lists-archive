@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] Grant project update - new PoW scheme
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190106141332.GA4658%40openwall.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000034.html">
+   <LINK REL="Next"  HREF="000047.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] Grant project update - new PoW scheme</H1>
+    <B>Solar Designer</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20Grant%20project%20update%20-%20new%20PoW%20scheme&In-Reply-To=%3C20190106141332.GA4658%40openwall.com%3E"
+       TITLE="[ZcF-general] Grant project update - new PoW scheme">solar at openwall.com
+       </A><BR>
+    <I>Sun Jan  6 09:13:32 EST 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000034.html">[ZcF-general] Zcash Foundation Update Benedikt B&#252;nz -- Scholarship Grant
+</A></li>
+        <LI>Next message (by thread): <A HREF="000047.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+This is the first status report on GrantProposals-2018Q2 #25 &quot;review,
+tweaks, and maybe design of a new PoW scheme for Zcash.&quot;
+
+<A HREF="https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25">https://github.com/ZcashFoundation/GrantProposals-2018Q2/issues/25</A>
+
+The tentative schedule starts with (quoting from the proposal):
+
+- Getting up to speed and research on original Dagger Hashimoto and the
+  codebase the current implementation of ProgPoW has been forked from
+
+This is actually what I've been working on - reading up on Dagger
+Hashimoto and on Ethash on Ethereum wiki and on related topics elsewhere
+(e.g., papers, Sergio Demian Lerner's blog, discussions on reddit) -
+learned a few things I had missed, found similarities and differences
+between my own independent thinking (as I was into CPU-focused
+algorithms lately, searching for the holy grail of sequential
+memory-hardness combined with DoS resistance and/or fast(er)
+verification) and Sergio's memohash paper's &quot;Gradual verification&quot; and
+what the Ethereum project arrived at with their Ethash.
+
+The next item in the tentative schedule is:
+
+- If no show-stoppers are identified up to that point, then further review of
+  ProgPoW and proposal/testing/tuning of its modifications (in particular, its
+  &quot;instruction set&quot; will almost certainly be revised, and probably more)
+
+I haven't approached this directly yet as I wanted to improve my own
+knowledge first and I intend to approach this in a systematic manner.
+However, I noticed others already bring up related issues and make
+related suggestions - in particular, on GitHub and on ProgPoW Discord
+(where I was invited to, and joined [my first Discord ever]) by
+@SChernykh and @chfast, whose work I appreciate:
+
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/16">https://github.com/ifdefelse/ProgPOW/issues/16</A>
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/19">https://github.com/ifdefelse/ProgPOW/issues/19</A>
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/20">https://github.com/ifdefelse/ProgPOW/issues/20</A>
+<A HREF="https://github.com/ifdefelse/ProgPOW/issues/21">https://github.com/ifdefelse/ProgPOW/issues/21</A>
+
+Another item in the tentative schedule is:
+
+- CPU-only implementation of the chosen PoW scheme (we're currently unaware of
+  one for ProgPoW) for research and testing (e.g., for randomness tests on its
+  memory dumps, and for tweaks to improve such randomness)
+
+I asked on the ProgPoW Discord and learned that there's already a
+CPU-only implementation in Go embedded in this tree:
+
+<A HREF="https://github.com/ifdefelse/go-ethereum">https://github.com/ifdefelse/go-ethereum</A>
+
+Later in the project, I'll need to decide on whether to extract and use
+the Go implementation from there or maybe make a new one in C, or maybe
+there will already be more options.
+
+Finally, the tentative project plan includes:
+
+- Optionally, purchase and installation of new GPUs and required software
+
+Since Zcash Foundation chose to fund this proposed upgrade of Openwall's
+HPC Village (&quot;a project of Openwall where we provide Open Source
+developers with remote access to a system with NVIDIA and AMD GPUs, and
+Intel Xeon Phi&quot;) - thanks! - we looked into the currently available and
+reasonable upgrade options and ended up ordering a GTX 1080 (a short
+enough card to use a slot that we didn't have other good use for, so we
+can leave more other GPUs in the machine) and a Vega 64 to be installed
+later in January.  Initially, I wanted to get the new RTX 2080 Ti, but
+was advised against that for now (so maybe later) in this tweet thread:
+
+<A HREF="https://twitter.com/solardiz/status/1077577386617700353">https://twitter.com/solardiz/status/1077577386617700353</A>
+
+(I omitted from this update parts of the proposal for which there's
+nothing to report yet.)
+
+Unexpectedly, I also ended up looking into Equihash parameters and
+making suggestions again, as it appears Zcash's temporary second PoW for
+Blossom will be merely another Equihash instantiation, and this needs to
+be decided on ASAP:
+
+[Blossom NU] Write spec for Harmony Mining
+<A HREF="https://github.com/zcash/zcash/issues/3672">https://github.com/zcash/zcash/issues/3672</A>
+
+whereas the work more obviously falling under this grant will probably
+fit under:
+
+choose new PoW for Zcash 4.0 (NU3)
+<A HREF="https://github.com/zcash/zcash/issues/3761">https://github.com/zcash/zcash/issues/3761</A>
+
+I am watching both of these issues.  In the current discussion on
+Equihash parameters, I especially appreciated comments by @tromp on
+BEAM's use of modified 150,5 and by @mineZcash on teardown of Z9's
+BM1740 chip - it's two important developments I had missed.
+
+We also spent (wasted?) _plenty_ of time on KYC procedures for
+&quot;institutional&quot; accounts with two reputable cryptocurrency/fiat
+exchanges, so that we could cash this grant money out to a business bank
+account.  As the cryptocurrency prices were rapidly declining, this felt
+like a priority, but in the end the KYC procedures took so much time
+(and there's still no decision on setup of the accounts - still waiting)
+that this didn't really matter (or maybe we should have given up and
+used a personal account, or some other option) - the market appears to
+have reached and bounced from a strong(er) support level in December.
+As a result, we still have no fiat from this grant (yet have already
+started spending fiat on the GPUs above), and its current dollar value
+is a lot less than what was awarded.  Anyway, that's our problem, and
+we're grateful to Zcash Foundation for running the program and awarding
+the grant.
+
+A silver lining of having the grant awarded in ZEC is that I ended up
+playing with real funds on Sapling addresses, and reported this bug:
+
+Partial balance temporarily shown after transaction on a fully synced node
+<A HREF="https://github.com/zcash/zcash/issues/3746">https://github.com/zcash/zcash/issues/3746</A>
+
+So I certainly can see how awarding grants in ZEC helps improve and
+promote Zcash.
+
+Thanks,
+
+Alexander
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000034.html">[ZcF-general] Zcash Foundation Update Benedikt B&#252;nz -- Scholarship Grant
+</A></li>
+	<LI>Next message (by thread): <A HREF="000047.html">[ZcF-general] Grant project update - new PoW scheme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

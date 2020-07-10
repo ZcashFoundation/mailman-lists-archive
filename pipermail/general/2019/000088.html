@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [ZcF-general] May update
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/general/2019/index.html" >
+   <LINK REL="made" HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20May%20update&In-Reply-To=%3C7079607f-1cc8-6c45-6a7a-c61fa8cd9b1d%40gmu.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000087.html">
+   <LINK REL="Next"  HREF="000090.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[ZcF-general] May update</H1>
+    <B>Samuel D Gordon</B> 
+    <A HREF="mailto:general%40lists.zfnd.org?Subject=Re%3A%20%5BZcF-general%5D%20May%20update&In-Reply-To=%3C7079607f-1cc8-6c45-6a7a-c61fa8cd9b1d%40gmu.edu%3E"
+       TITLE="[ZcF-general] May update">gordon at gmu.edu
+       </A><BR>
+    <I>Fri Jun 21 10:38:15 EDT 2019</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000087.html">[ZcF-general] Grant Progress Report (May 2019): Zcash Posters
+</A></li>
+        <LI>Next message (by thread): <A HREF="000090.html">[ZcF-general] Grant Progress Report (June 2019): Zcash Posters
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#88">[ date ]</a>
+              <a href="thread.html#88">[ thread ]</a>
+              <a href="subject.html#88">[ subject ]</a>
+              <a href="author.html#88">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>We have continued working on our paper.  While thinking about how to analyze our scheme, we realized that our framework doesn&#8217;t have to be applied on top of ring signatures / monero per se.  Any method for fully anonymous mixing among a small set can be composed to provide mixing for a much larger set, with differential privacy. The trade-off is security for efficiency: for n parties to fully mix their coins using ZKP (whether with SNARKS or ring signatures) require O(n) expensive operations per party.  Using our approach, we require polylog n operations per party, but leak some information.
+
+
+We have also improved on our construction, further reducing the computational cost by about a factor of 10 (depending on the choice of epsilon).  Currently, we believe we can claim improved computation cost for any n &gt; 1600 participants in the mixing.
+
+
+Issues to address:
+
+  *   We are still looking at ways to reduce the needed noise.
+
+  *   With the recent introduction of short ring signatures (log size), our construction will have worse communication complexity than existing schemes.  We don&#8217;t really see a way to address this, and will instead analyze the savings in computational cost, and the relative importance of this savings.
+
+  *   We still need to think about how much of our communication needs to be put on the blockchain, vs. what can be done off chain.  This was less of a concern prior to the introduction of log-sized ring signatures.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/general/attachments/20190621/9c81c5c8/attachment.html">/pipermail/general/attachments/20190621/9c81c5c8/attachment.html</A>&gt;
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000087.html">[ZcF-general] Grant Progress Report (May 2019): Zcash Posters
+</A></li>
+	<LI>Next message (by thread): <A HREF="000090.html">[ZcF-general] Grant Progress Report (June 2019): Zcash Posters
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#88">[ date ]</a>
+              <a href="thread.html#88">[ thread ]</a>
+              <a href="subject.html#88">[ subject ]</a>
+              <a href="author.html#88">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/general">More information about the general
+mailing list</a><br>
+</body></html>

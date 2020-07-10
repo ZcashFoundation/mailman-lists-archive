@@ -1,0 +1,314 @@
+From josh at zfnd.org  Fri Jan 18 16:31:35 2019
+From: josh at zfnd.org (Josh Cincinnati)
+Date: Fri, 18 Jan 2019 16:31:35 -0500
+Subject: [zcash-ecosystem-dev] Address change:
+ zcash-ecosystem-dev@lists.zfnd.org
+Message-ID: <CA+-Lzu8xHODp4xwB53yYvw0OE1XBchMHA86aC3u+-weGRiXDMg@mail.gmail.com>
+
+Hi all,
+
+In line with our domain switchover from z.cash.foundation to zfnd.org (more
+info here: https://www.zfnd.org/blog/website-refresh/ ) the mailing lists
+have been renamed. Our mailing lists are now served and archived via:
+
+/
+
+And you can email to the zcash-ecosystem-dev list via:
+
+zcash-ecosystem-dev at lists.zfnd.org
+
+We set up a 301 Redirect to old archives so old links should work; if you
+find a case that doesn't, please email me directly to let me know.
+
+Thanks,
+Josh
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/zcash-ecosystem-dev/attachments/20190118/b243caa3/attachment.html>
+
+From josh at zfnd.org  Sat Mar 30 11:10:48 2019
+From: josh at zfnd.org (Josh Cincinnati)
+Date: Sat, 30 Mar 2019 11:10:48 -0400
+Subject: [zcash-ecosystem-dev] Request for community comments on current
+ Draft ZIPs
+Message-ID: <CA+-Lzu-TTzuh9N9caxupWAB+JnAvMTf5Z-DHEoaJqTNWN_h=fg@mail.gmail.com>
+
+There are a few Draft ZIP that we (the ZIP Editors, myself and Daira) would
+like to see more discussion on before merging. You can find them here:
+
+Draft ZIP 210: https://github.com/zcash/zips/pull/212
+Draft ZIP 308: https://github.com/zcash/zips/pull/197 (note that this ZIP
+is nearly complete, but still has an open comment for implementation:
+https://github.com/zcash/zips/pull/197#issuecomment-475906130)
+
+Additionally, I expect we will have more ZIP PRs open for comment after
+this weekend with the NU3 deadline coming up on March 31st, but I will
+reach out to this list and the forum for more comments shortly.
+
+Thanks,
+Josh
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/zcash-ecosystem-dev/attachments/20190330/7392c6d1/attachment.html>
+
+From sean at z.cash  Sun Mar 31 22:50:16 2019
+From: sean at z.cash (Sean Bowe)
+Date: Sun, 31 Mar 2019 20:50:16 -0600
+Subject: [zcash-ecosystem-dev] Request for community comments on current
+ Draft ZIPs
+In-Reply-To: <CA+-Lzu-TTzuh9N9caxupWAB+JnAvMTf5Z-DHEoaJqTNWN_h=fg@mail.gmail.com>
+References: <CA+-Lzu-TTzuh9N9caxupWAB+JnAvMTf5Z-DHEoaJqTNWN_h=fg@mail.gmail.com>
+Message-ID: <CAKazn3m0yPNLbVQH6e27F6oRM_MMbQbPRBkzz3OMfZ-kKX9UTA@mail.gmail.com>
+
+I have also published a draft ZIP for NU3 for avoiding address
+linkability against an attacker that can break the zk-SNARK.
+
+https://github.com/zcash/zips/pull/222
+
+Sean
+
+
+On Sat, Mar 30, 2019 at 9:11 AM Josh Cincinnati <josh at zfnd.org> wrote:
+>
+> There are a few Draft ZIP that we (the ZIP Editors, myself and Daira) would like to see more discussion on before merging. You can find them here:
+>
+> Draft ZIP 210: https://github.com/zcash/zips/pull/212
+> Draft ZIP 308: https://github.com/zcash/zips/pull/197 (note that this ZIP is nearly complete, but still has an open comment for implementation: https://github.com/zcash/zips/pull/197#issuecomment-475906130)
+>
+> Additionally, I expect we will have more ZIP PRs open for comment after this weekend with the NU3 deadline coming up on March 31st, but I will reach out to this list and the forum for more comments shortly.
+>
+> Thanks,
+> Josh
+
+From jack at z.cash  Mon Apr  1 05:33:00 2019
+From: jack at z.cash (Jack Grigg)
+Date: Mon, 1 Apr 2019 10:33:00 +0100
+Subject: [zcash-ecosystem-dev] Request for community comments on current
+ Draft ZIPs
+In-Reply-To: <CAKazn3m0yPNLbVQH6e27F6oRM_MMbQbPRBkzz3OMfZ-kKX9UTA@mail.gmail.com>
+References: <CA+-Lzu-TTzuh9N9caxupWAB+JnAvMTf5Z-DHEoaJqTNWN_h=fg@mail.gmail.com>
+ <CAKazn3m0yPNLbVQH6e27F6oRM_MMbQbPRBkzz3OMfZ-kKX9UTA@mail.gmail.com>
+Message-ID: <CA+pmEP51nCJCijb+gW4dYPDyW2_VRkd5kK-hhk8dEYgHgwxR5g@mail.gmail.com>
+
+I published a draft ZIP last week for shielding coinbase:
+
+https://github.com/zcash/zips/pull/217
+
+Cheers,
+Jack
+
+On Mon, 1 Apr 2019, 3:50 AM Sean Bowe via zcash-ecosystem-dev, <
+zcash-ecosystem-dev at lists.zfnd.org> wrote:
+
+> I have also published a draft ZIP for NU3 for avoiding address
+> linkability against an attacker that can break the zk-SNARK.
+>
+> https://github.com/zcash/zips/pull/222
+>
+> Sean
+>
+>
+> On Sat, Mar 30, 2019 at 9:11 AM Josh Cincinnati <josh at zfnd.org> wrote:
+> >
+> > There are a few Draft ZIP that we (the ZIP Editors, myself and Daira)
+> would like to see more discussion on before merging. You can find them here:
+> >
+> > Draft ZIP 210: https://github.com/zcash/zips/pull/212
+> > Draft ZIP 308: https://github.com/zcash/zips/pull/197 (note that this
+> ZIP is nearly complete, but still has an open comment for implementation:
+> https://github.com/zcash/zips/pull/197#issuecomment-475906130)
+> >
+> > Additionally, I expect we will have more ZIP PRs open for comment after
+> this weekend with the NU3 deadline coming up on March 31st, but I will
+> reach out to this list and the forum for more comments shortly.
+> >
+> > Thanks,
+> > Josh
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/zcash-ecosystem-dev/attachments/20190401/97f356bd/attachment.html>
+
+From mary at z.cash  Tue Apr  2 14:51:48 2019
+From: mary at z.cash (Mary Moore-Simmons)
+Date: Tue, 2 Apr 2019 12:51:48 -0600
+Subject: [zcash-ecosystem-dev] NU3 Draft ZIPs for Feedback
+Message-ID: <CACthNeQVryqptHwfFTGeLyCHSb4gEvnNaUiJb3scaEjTwUV5=g@mail.gmail.com>
+
+Hi Everyone!
+
+On February 18th, Electric Coin Company called for Draft ZIPs
+<https://forum.zcashcommunity.com/t/call-for-nu3-zips-and-network-upgrade-pipeline-process-changes/32749>
+for Network Upgrade 3 (NU3), due by March 31st. Since we?re now at the
+beginning of April, we wanted to post a list of the ZIPs submitted in that
+timeframe for discussion. Please take a look at the below ZIPs that have
+been submitted and provide feedback about those ZIPs via either the GitHub
+tickets or this email list. Electric Coin Company and the Zcash Foundation
+will be providing feedback on these ZIPs as well.
+
+
+   -
+
+   [ZIP 210] Sapling Anchor Deduplication within Transactions
+   <https://github.com/zcash/zips/pull/212>
+   -
+
+   [ZIP 211] Disabling Sprout outputs
+   <https://github.com/zcash/zips/pull/214>
+   -
+
+   [ZIP XXX] Add Bolt support <https://github.com/zcash/zips/pull/216>
+   -
+
+   [ZIP 213] Shielded Coinbase <https://github.com/zcash/zips/pull/217>
+   -
+
+   [ZIP ???] Enable Staked Polling from the Sapling Pool
+   <https://github.com/zcash/zips/pull/219>
+   -
+
+   [ZIP 221] Adding MMR Proofs to Block Headers, and their use in the
+   FlyClient Protocol <https://github.com/zcash/zips/pull/220>
+   -
+
+   [ZIP ???] Multisig <https://github.com/zcash/zips/pull/221>
+   -
+
+   [ZIP 212] Transfer Sapling Ephemeral Secret to Recipient in Note
+   Plaintext <https://github.com/zcash/zips/pull/222>
+
+
+Did you submit a Draft ZIP that we somehow missed? Please email it out to
+this list! Otherwise, we all hope to hear your feedback via the GitHub
+tickets above or in this email list.
+
+Thanks!
+
+-- 
+Mary Moore-Simmons
+Operations Manager, Electric Coin Company
+mary at z.cash
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/zcash-ecosystem-dev/attachments/20190402/95375060/attachment.html>
+
+From mary at z.cash  Thu Apr  4 11:18:44 2019
+From: mary at z.cash (Mary Moore-Simmons)
+Date: Thu, 4 Apr 2019 09:18:44 -0600
+Subject: [zcash-ecosystem-dev] NU3 Draft ZIPs for Feedback
+In-Reply-To: <CACthNeQVryqptHwfFTGeLyCHSb4gEvnNaUiJb3scaEjTwUV5=g@mail.gmail.com>
+References: <CACthNeQVryqptHwfFTGeLyCHSb4gEvnNaUiJb3scaEjTwUV5=g@mail.gmail.com>
+Message-ID: <CACthNeQen0jqLZiM3W1fVsJooosGrsoZpdOJ2guik5gxGsi=mw@mail.gmail.com>
+
+Hi Everyone!
+
+I wanted to provide a point of clarification on how to find the text of the
+ZIP Drafts for the ZIPs listed above. When you click on the links listed in
+my previous email, it will take you to a PR in GitHub. If you move over to
+"Files Changed" near the top of the PR, you can read the text of the ZIPs.
+
+Thanks!
+
+-Mary
+
+On Tue, Apr 2, 2019 at 12:51 PM Mary Moore-Simmons <mary at z.cash> wrote:
+
+> Hi Everyone!
+>
+> On February 18th, Electric Coin Company called for Draft ZIPs
+> <https://forum.zcashcommunity.com/t/call-for-nu3-zips-and-network-upgrade-pipeline-process-changes/32749>
+> for Network Upgrade 3 (NU3), due by March 31st. Since we?re now at the
+> beginning of April, we wanted to post a list of the ZIPs submitted in that
+> timeframe for discussion. Please take a look at the below ZIPs that have
+> been submitted and provide feedback about those ZIPs via either the GitHub
+> tickets or this email list. Electric Coin Company and the Zcash
+> Foundation will be providing feedback on these ZIPs as well.
+>
+>
+>    -
+>
+>    [ZIP 210] Sapling Anchor Deduplication within Transactions
+>    <https://github.com/zcash/zips/pull/212>
+>    -
+>
+>    [ZIP 211] Disabling Sprout outputs
+>    <https://github.com/zcash/zips/pull/214>
+>    -
+>
+>    [ZIP XXX] Add Bolt support <https://github.com/zcash/zips/pull/216>
+>    -
+>
+>    [ZIP 213] Shielded Coinbase <https://github.com/zcash/zips/pull/217>
+>    -
+>
+>    [ZIP ???] Enable Staked Polling from the Sapling Pool
+>    <https://github.com/zcash/zips/pull/219>
+>    -
+>
+>    [ZIP 221] Adding MMR Proofs to Block Headers, and their use in the
+>    FlyClient Protocol <https://github.com/zcash/zips/pull/220>
+>    -
+>
+>    [ZIP ???] Multisig <https://github.com/zcash/zips/pull/221>
+>    -
+>
+>    [ZIP 212] Transfer Sapling Ephemeral Secret to Recipient in Note
+>    Plaintext <https://github.com/zcash/zips/pull/222>
+>
+>
+> Did you submit a Draft ZIP that we somehow missed? Please email it out to
+> this list! Otherwise, we all hope to hear your feedback via the GitHub
+> tickets above or in this email list.
+>
+> Thanks!
+>
+> --
+> Mary Moore-Simmons
+> Operations Manager, Electric Coin Company
+> mary at z.cash
+>
+
+
+-- 
+Mary Moore-Simmons
+Operations Manager, Electric Coin Company
+mary at z.cash
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/zcash-ecosystem-dev/attachments/20190404/658da8ec/attachment.html>
+
+From sonya at zfnd.org  Wed Apr 17 19:17:47 2019
+From: sonya at zfnd.org (Sonya Mann)
+Date: Wed, 17 Apr 2019 16:17:47 -0700
+Subject: [zcash-ecosystem-dev] =?utf-8?q?Open_Invitation_=E2=80=94_Zcash_?=
+ =?utf-8?q?Protocol_Discussion?=
+Message-ID: <CAOztXWgQLhJN7jKWzTjMFzsKP5SWBNo4gBTLcgCX6u+N0kw7Wg@mail.gmail.com>
+
+Hello friends! The Zcash Foundation is hosting an open discussion of the
+Zcash protocol, particularly with respect to upcoming changes and decisions.
+
+DATE: Tuesday, May 21
+
+TIME:
+? 10am ? 11:30am PT
+? 11am ? 12:30pm MT
+? 1pm ? 2:30pm ET
+? 6pm ? 7:30pm GMT
+
+DEADLINE: Tuesday, April 30
+
+Fill out this form to join: https://forms.gle/D963vJzCA4wCadcs8 (calendar
+invite forthcoming after you fill out the form ? I know, forms are
+annoying, but it's a quick one)
+
+Thanks all! I hope that you can make it!
+
+Sonya Mann
+Communications Manager
+Zcash Foundation
+sonya at zfnd.org
+@sonyaellenmann <https://twitter.com/sonyaellenmann/>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: </pipermail/zcash-ecosystem-dev/attachments/20190417/d77d62d9/attachment.html>
+

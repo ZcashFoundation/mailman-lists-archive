@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3C1307e9eb-389a-35ff-02e8-837ba7e849f5%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000103.html">
+   <LINK REL="Next"  HREF="000092.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation</H1>
+    <B>minezcash</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3C1307e9eb-389a-35ff-02e8-837ba7e849f5%40gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation">minezcash at gmail.com
+       </A><BR>
+    <I>Sun Dec 10 10:38:24 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000103.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000092.html">[zapps-wg] Powers of Tau Round 17
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#119">[ date ]</a>
+              <a href="thread.html#119">[ thread ]</a>
+              <a href="subject.html#119">[ subject ]</a>
+              <a href="author.html#119">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Powers of Tau Attestation
+
+Gibson Ashpool
+
+USA
+
+
+Purchased four core2duo PC's with cash from someone on Craigslist over a
+year ago for another project but they have been collecting dust for
+months now so figured they are good candidates for powers of tau.&#160;
+
+TAU machine specs:
+
+Dell Optiplex 330
+
+Intel Core2duo
+
+2GB ddr2 Kensington RAM
+
+80GB HDD
+
+
+To start preparing I wiped the HDD with DBAN eraser. Ran memtests via
+live CD and then installed Lubuntu 16.04.
+
+
+Ran following commands via terminal:
+
+&gt;<i> sudo curl -sSF <A HREF="https://static.rust-lang.org/rustup.sh">https://static.rust-lang.org/rustup.sh</A> | sh
+</I>
+&gt;<i> sudo apt-get install git
+</I>
+I downloaded the challenge file on a seperate PC, then transferred the
+challenge file to the compute PC via USB stick.
+
+&gt;<i> git clone <A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>
+</I>
+Plugged in USB stick and copied challenge file into powersoftau directory
+
+&gt;<i> cd powersoftau
+</I>
+&gt;<i> cargo run --release --bin compute
+</I>
+It ran for a short time then when prompted for entropy, added long
+random string of text. I then asked my daughter to enter
+random keys while I didnt look, to which she replied &quot;Really? Just press
+the keys?&quot; and I replied &quot;Press as many as you want, just
+dont press the enter key&quot; she then pressed random keys for about 15
+seconds and when she was done I instructed her to hit the enter
+key. I then turned back to the terminal to see &quot;reading challenge into
+memory, Computing, this could take awhile&quot; in the terminal.
+It was getting late so I put her to bed, grabbed a beer and watched TV,
+checking back every 15mins or so.
+
+Compute took almost 2hrs
+
+Blake 2b
+
+aa153027 a4ef067b 1a55af49 32cc3edc
+
+a13f30cf 21060a95 6da09cd7 05e23ff9
+
+68bb93fe 1022c5ab d45fb6ca 81796b22
+
+23a57454 8363a070 5e3c8b5b 82f9b443
+
+
+Copyed response file to USB stick and transferred to other PC, then
+uploaded response file to AWS server
+
+Powered down PC, removed two RAM sticks and HDD. Destroyed RAM and HDD
+with power tools.
+
+I then performed full format on USB stick.
+
+Uploaded images of process to imgur <A HREF="https://imgur.com/a/O7i0L">https://imgur.com/a/O7i0L</A> (bonus
+points if you can spot stealth cat)
+
+
+
+&#160;
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEcBAEBCAAGBQJaLVOmAAoJED9Aa1Fb7jDljWIH/jo2UaiVHbzJ4LwE1keY1gGt
+pcUeGoWBgCR/dHvgJJmOP/GQp563lMH59yrTOe3V1aU+winOep1+LhCwgh2RPfAK
+J3wq1VVM1yxvMXg9X2PmP7slUMyWPoY6np+MxR1s+AXv1V4yiay3c2BkvvXwNSxe
+2VSZQIkuyPKUuAUr00OqmNcWha2P0uxlAC7oyy3m4NMOrw6evNSAItTUM3ARHK10
+n3ABGLjF8QhiCev9z/ooyi90PiFATgzr1aI5tsUwmoFVAY9bWBu6iJSojOrukex6
+22Co7nr1gZDspOJclDmrTkSlNZf2iPI9ATfFwCLoS0riAI27blO+uN9KAztrfbs=
+=bSWH
+-----END PGP SIGNATURE-----
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000103.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000092.html">[zapps-wg] Powers of Tau Round 17
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#119">[ date ]</a>
+              <a href="thread.html#119">[ thread ]</a>
+              <a href="subject.html#119">[ subject ]</a>
+              <a href="author.html#119">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

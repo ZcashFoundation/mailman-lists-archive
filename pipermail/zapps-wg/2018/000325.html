@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] My Powers of Tau Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20My%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CCA%2B-Lzu90vFHCs9Qst-xc6EVM%2BniOOZyXyeoArHPkCHshfRH%2BYA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000328.html">
+   <LINK REL="Next"  HREF="000326.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] My Powers of Tau Attestation</H1>
+    <B>Josh Cincinnati</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20My%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CCA%2B-Lzu90vFHCs9Qst-xc6EVM%2BniOOZyXyeoArHPkCHshfRH%2BYA%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] My Powers of Tau Attestation">josh at z.cash.foundation
+       </A><BR>
+    <I>Mon Mar 12 23:40:19 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000328.html">[zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)
+</A></li>
+        <LI>Next message (by thread): <A HREF="000326.html">[zapps-wg] My Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#325">[ date ]</a>
+              <a href="thread.html#325">[ thread ]</a>
+              <a href="subject.html#325">[ subject ]</a>
+              <a href="author.html#325">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: March 12th, 2018
+Time: 6:00pm to 8:00pm PDT
+Location: San Francisco, CA
+
+For the compute node of my Powers of Tau contribution, I used a
+refurbished late-2011 15&quot; MacBook Pro, hardware which I've owned for
+2.5 years, running Tails 3.5 off a USB stick.
+
+I downloaded and compiled Filo Sottile's Golang implementation
+(<A HREF="https://github.com/FiloSottile/powersoftau">https://github.com/FiloSottile/powersoftau</A>) using Go 1.10 in Ubuntu
+17.10 on a separate desktop computer. I wiped another random USB stick
+in my possession and copied the 'taucompute' executable and the
+challenge file. Every time I copied the executable (on/off USB sticks,
+onto computers, etc.) I checked the SHA256 hash, which stayed the same
+throughout the process:
+
+79c56ad4f1422ec134adac02857dc168a98e663041ca65e88ee903712eaf489d
+
+This executable is available for inspection here:
+
+<A HREF="https://drive.google.com/file/d/1Dl_avSDNR1A1lcWH8oEmWp-VNsGvNQkp/view?usp=sharing">https://drive.google.com/file/d/1Dl_avSDNR1A1lcWH8oEmWp-VNsGvNQkp/view?usp=sharing</A>
+
+I always wanted to use the coolest Faraday Cage I could find, so I set
+up my compute node in the top shelf of my apartment's fridge. Prior to
+initiating computation, I disconnected and powered down my apartment's
+wireless access point and manually turned off every device within 10
+feet of the fridge that had a radio. (note that I used my phone in
+airplane mode to take pictures after Tails booted...but I turned it
+off before computation began)
+
+I added randomness in an undisclosed manner before beginning
+computation. Computation began around 6:20pm PDT and finished at
+7:10pm PDT--no doubt my cool Fridge-aday Cage sped things up a bit.
+The fridge door was closed most of the time, but I periodically opened
+it (every 15 minutes) to check on computation. I never left the fridge
+out of my sight--and yes, there's definitely a &quot;running fridge&quot; joke
+here somewhere.
+
+Afterwards, I copied the response file onto another USB stick (along
+with the 'taucompute' executable) and copied them both back onto my
+desktop. The BLAKE2b hash of my response is:
+
+822885fe 28daad52 2ff771fc 849eaa1c
+c0cd5004 8249640e bf17560c e50cbc4a
+13b7669d 6091b671 bec0c57e 3997b600
+62198990 e74ef5c0 d739d3b3 ba58d3ab
+
+I tweeted the BLAKE2b hash of my response file here as well:
+<A HREF="https://twitter.com/acityinohio/status/973386393069105152">https://twitter.com/acityinohio/status/973386393069105152</A>
+
+My PGP public key is available via Keybase:
+
+<A HREF="https://keybase.io/cin/pgp_keys.asc">https://keybase.io/cin/pgp_keys.asc</A>
+
+I plan on destroying the Macbook Pro in a manner that will be revealed
+in a future blog post. Until then it remains powered off in my fridge
+except when I transport it for destruction.
+
+Thanks to Sean Bowe and everyone at the Zcash Company for building
+this incredible MPC, Jason Davies for organizing, and all the other
+participants in Powers of Tau! Glad I could contribute and make my
+first full-time day at the Zcash Foundation memorable. :)
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: <A HREF="https://keybase.io/crypto">https://keybase.io/crypto</A>
+
+wsFcBAABCgAGBQJap0cYAAoJEIfQk7UmWk/TXzgP/1Ws/Rl9ZLuZwlT/PYiAXEmv
+u96RTilHDJk6xVpkOUFKeHDk531m3hc+baNtKgKZ9bR781g/dd1GnaKijgclWly+
+aVOyjvRyGD83KT7bmLeNsdF/7VH1SsQPn9YkOsg+ST+osP+mNKI5lVki71T2HQl7
+uP1sEgDBoOo6Rlhd3/K7ld4vC8f3teOgMmKG7ib6GkGFxdC3ZtaRlHbK6h998zjT
+Ab/6jHGjtV3CE0xiMmEPkeUiuVnqysISLRAuFXjrJzdLyS/JD1AK2n3Zs9kL0V95
+IUwShDz/hbMaYdfMJzMeKNsy25y2DASntBFfr4gPRFFL5Q56X8J+9WIFOeM/DH/9
+g00r7zN5CTUgH7C6CgvyPUiylCYvHm8W51WOLyeErGkMnU59Bl5nyNhC+e+axVbv
++LLMEQD0By7Sl65+qrhjjYFMetCrXLYBOMJcKbRqGpvsGqhRcq4kCjyoF2u4Ob2+
+eGzHaQTt67qUPrQXnbDmfT/yKYwA/LWGg0by3two32aOZG+tvviKqaN9YFn+6ntD
+GFGaHF38nnOsZf0GBusXLzyYuKlb28VU7O+iSFA34UhppGJWTljnMjUNfe9s59EL
+5Q4EHFENM5uFaS8mfOco4hzwGdYvn6xvanZka7Sjj1Vtm9X9k2m3GBxq7lwR7WHX
+NQYZSP16FgU51UKBao7b
+=YAAa
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000328.html">[zapps-wg] ANN: Snarky (OCaml DSL for writing SNARKs)
+</A></li>
+	<LI>Next message (by thread): <A HREF="000326.html">[zapps-wg] My Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#325">[ date ]</a>
+              <a href="thread.html#325">[ thread ]</a>
+              <a href="subject.html#325">[ subject ]</a>
+              <a href="author.html#325">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Eliminating the possibility of backdoors with high probability
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Eliminating%20the%20possibility%20of%20backdoors%20with%20high%0A%20probability&In-Reply-To=%3C20171117010535.GB13625%40savin.petertodd.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000022.html">
+   <LINK REL="Next"  HREF="000040.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Eliminating the possibility of backdoors with high probability</H1>
+    <B>Peter Todd</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Eliminating%20the%20possibility%20of%20backdoors%20with%20high%0A%20probability&In-Reply-To=%3C20171117010535.GB13625%40savin.petertodd.org%3E"
+       TITLE="[zapps-wg] Eliminating the possibility of backdoors with high probability">pete at petertodd.org
+       </A><BR>
+    <I>Thu Nov 16 20:05:35 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000022.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+        <LI>Next message (by thread): <A HREF="000040.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Nov 13, 2017 at 08:26:04PM -0700, Sean Bowe wrote:
+&gt;<i> &gt; Q: What exactly happens if one participant fails to destroy that secret and/or
+</I>&gt;<i> &gt; inputs a low-entropy secret? What about N participants?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The paper states that &quot;We show that security holds even if an adversary has
+</I>&gt;<i> &gt; limited influence on the beacon.&quot; but it's unclear what exactly &quot;limited
+</I>&gt;<i> &gt; influence&quot; means.
+</I>&gt;<i> 
+</I>&gt;<i> My understanding was that we lose N bits of security when an attacker
+</I>&gt;<i> can influence N bits of the randomness beacon.
+</I>
+Oh, I might have misunderstood the paper then: when it says &quot;Random beacon&quot; it
+really does mean an external random beacon such as the NIST Randomness Beacon,
+not something generated within the ceremony itself?
+
+&gt;<i> This MPC is of the &quot;only one has to be honest&quot; kind. It is irrelevant
+</I>&gt;<i> if N-1 of the participants have low entropy / known secrets, so long
+</I>&gt;<i> as just one has high entropy w.r.t. the security parameter.
+</I>
+Right
+
+&gt;<i> &gt; As N increases you open up a new exfiltration route: the unused N-1 responses
+</I>&gt;<i> &gt; could themselves be the exfiltration route, and thus need to be
+</I>&gt;<i> &gt; deterministically verified against the N-1 unused secrets. This isn't
+</I>&gt;<i> &gt; particularly user-friendly, and it's easy to imagine how this could be skipped.
+</I>&gt;<i> 
+</I>&gt;<i> Note that the compute process prints out a hash of the response file,
+</I>&gt;<i> and so we can &quot;cut-and-choose&quot; in the same way to guard against these
+</I>&gt;<i> exfiltration routes. As an example, if we use DVDs, we can burn N
+</I>&gt;<i> response files and note each's respective hash and entropy. Then,
+</I>&gt;<i> reveal N-1's hash/entropy, but destroy those N-1 DVDs.
+</I>
+But note here how there's more opportunities to leak data because the
+secrets(1) associated with each DVD are simultaneously available to the
+attacker. OTOH, by simply doing each round separately the code is both simpler,
+and the attacker has access to less information as only one secret should be
+available to them at a time.
+
+1) Entropy is an *implementation* of a secret; entropy itself isn't enough.
+
+&gt;<i> &gt; Finally, it's interesting how there's a whole class of &quot;sham&quot; participant
+</I>&gt;<i> &gt;strategies, where someone who runs the computation and uploads an audit
+</I>&gt;<i> &gt;response w/ revealed secret, but does not actually participate in that round,
+</I>&gt;<i> &gt;still frustrates attackers who can not tell in advance if that particular
+</I>&gt;<i> &gt;participant will or will not actually participate. This suggests that the
+</I>&gt;<i> &gt;current round's challenge should be made public.
+</I>&gt;<i> 
+</I>&gt;<i> That's very interesting. Right now the transcript is public and so the
+</I>&gt;<i> current challenge can be computed by anyone, but it would be a little
+</I>&gt;<i> better if I put the &quot;current&quot; challenge file up for download.
+</I>
+Publishing a link on this mailing list would work well. Secondly, as we'll have
+to archive all this stuff anyway, I'd suggest using the Internet Archive for
+distribution of the challenges.
+
+-- 
+<A HREF="https://petertodd.org">https://petertodd.org</A> 'peter'[:-1]@petertodd.org
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 455 bytes
+Desc: Digital signature
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20171116/90b15c55/attachment.sig">/pipermail/zapps-wg/attachments/20171116/90b15c55/attachment.sig</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000022.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+	<LI>Next message (by thread): <A HREF="000040.html">[zapps-wg] Eliminating the possibility of backdoors with high probability
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

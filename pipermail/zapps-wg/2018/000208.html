@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Powers of Tau Attestation
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CCAKazn3%3DzvzXn1autgNdr8XBP_3HOW--b6u_1LkzMkphxi6h44g%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000207.html">
+   <LINK REL="Next"  HREF="000210.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Powers of Tau Attestation</H1>
+    <B>Sean Bowe</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Powers%20of%20Tau%20Attestation&In-Reply-To=%3CCAKazn3%3DzvzXn1autgNdr8XBP_3HOW--b6u_1LkzMkphxi6h44g%40mail.gmail.com%3E"
+       TITLE="[zapps-wg] Powers of Tau Attestation">sean at z.cash
+       </A><BR>
+    <I>Thu Jan 18 14:23:58 EST 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000207.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000210.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#208">[ date ]</a>
+              <a href="thread.html#208">[ thread ]</a>
+              <a href="subject.html#208">[ subject ]</a>
+              <a href="author.html#208">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is great! I've entered it into the transcript. Thanks!
+
+Sean
+
+On Thu, Jan 18, 2018 at 6:46 AM, Bastien Teinturier via zapps-wg &lt;
+<A HREF="/mailman/listinfo/zapps-wg">zapps-wg at lists.z.cash.foundation</A>&gt; wrote:
+
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA256
+</I>&gt;<i>
+</I>&gt;<i> Powers of Tau Attestation
+</I>&gt;<i> ================================
+</I>&gt;<i>
+</I>&gt;<i> Date: 2018-1-18
+</I>&gt;<i> Name: Bastien Teinturier
+</I>&gt;<i> Location: Paris, France
+</I>&gt;<i>
+</I>&gt;<i> Response hash:
+</I>&gt;<i> e4dafd1b 0fa438a2 b313d66c c9566a0a
+</I>&gt;<i> be6d7abe 76252eeb 7d294028 770f830d
+</I>&gt;<i> e8670f14 5ed8c8af 4e5c3476 f591d0c7
+</I>&gt;<i> bfd58ddd 36dd7c4d 311d1358 420d551f
+</I>&gt;<i>
+</I>&gt;<i> Posted on Github:
+</I>&gt;<i> <A HREF="https://gist.github.com/t-bast/7cddb36d8f583e48f60c3cc76aa679ed">https://gist.github.com/t-bast/7cddb36d8f583e48f60c3cc76aa679ed</A>
+</I>&gt;<i>
+</I>&gt;<i> Process
+</I>&gt;<i> ================================
+</I>&gt;<i>
+</I>&gt;<i> Dell Precision Tower 3420
+</I>&gt;<i> UBUNTU 14.04.5 Desktop (Trusty)
+</I>&gt;<i> Rust v1.23.0 (766bd11c8 2018-01-01)
+</I>&gt;<i> powersoftau (github.com/ebfull/powersoftau commit
+</I>&gt;<i> d47a1d3d1f007063cbcc35f1ab902601a8b3bd91)
+</I>&gt;<i> VirtualBox 5.2.6
+</I>&gt;<i> Kali Linux 64-bit 2017.3 live run
+</I>&gt;<i>
+</I>&gt;<i> At first I wanted to make a Rump unikernel to run this directly on Xen,
+</I>&gt;<i> QEMU or KVM, but I didn't take enough time to prepare.
+</I>&gt;<i> But I think it could be a fun experiment for another participant if
+</I>&gt;<i> someone is interested.
+</I>&gt;<i>
+</I>&gt;<i> So instead I did this on an Ubuntu desktop.
+</I>&gt;<i> I created a Kali Linux VM in VirtualBox that I booted in &quot;live run&quot; mode.
+</I>&gt;<i> I didn't share volumes between the VM and the host.
+</I>&gt;<i> I installed the rust toolchain on it and built the github repository.
+</I>&gt;<i>
+</I>&gt;<i> Then I turned the network card off, wrapped the desktop tower in tin foil
+</I>&gt;<i> and ran the computation.
+</I>&gt;<i> I left a wireshark running on the host OS and saw only failing legit DNS
+</I>&gt;<i> and ICMP packets.
+</I>&gt;<i> At the end of the computation, I put the network back on to upload the
+</I>&gt;<i> response while monitoring wireshark traffic.
+</I>&gt;<i> I didn't notice anything unusual, so once the file was uploaded I turned
+</I>&gt;<i> the network card off again and deleted the VM.
+</I>&gt;<i> I turned off the PC, unplugged all cables to let it discharge and rebooted.
+</I>&gt;<i>
+</I>&gt;<i> I would have loved to destroy my PC Mr Robot style, but I really do need
+</I>&gt;<i> it :).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i>
+</I>&gt;<i> wsFcBAEBCAAQBQJaYKOjCRC+XTQq02jBOgAALykQAEXkra5nOARp93xRItriB0p/
+</I>&gt;<i> TdWa+n7CL48Azm/Gjd5Hg3xlxyVvCT6s6Bw5Jk2/1+OzgFDpntYeehZsgxgLf/ie
+</I>&gt;<i> 16gVSG58bLrd1hUUmdsRFp96HkjRL5zT4jQhJiYfNUTrRk4ni2XzIydU6HXC94JZ
+</I>&gt;<i> IKvkX7mXgYkQ5LO0ue3Omhtqo7H4zY8qRLsN48EqwR/FA7gcS/KxJJdVwxwokwHo
+</I>&gt;<i> xkjAeE0vIzaXbUmOkyGPIU1eVJQVbiQZI6kdIivf+r7cOuo3kmFGBVKYTSY9TQNA
+</I>&gt;<i> lBUu0CffoIJI4j6fen5ujIp5uH5vvm8NZ2Z5GI6odo9KQm3eghpFBXgv4pFgOmcl
+</I>&gt;<i> 4k9SzxarmnKSJC/BLRhcvUkFImDz1zgZ1T8QGkZkrwyVzC9nvR1wTqS05kuBD0f8
+</I>&gt;<i> 3M7u28gUdccxOiKDkWWhg94PynS0VuZ/mdn7cRFB1wYszcjUYuwooFZb1SRDssfQ
+</I>&gt;<i> t5I38D6f16r6x9jWMgbGEql2fVvRsVI3dDp1NIakZwpWjD5cinxG3pCrDoYwNPli
+</I>&gt;<i> PnmUzf1u4lj211DVA/LWhQkrrrnWHWzxojSLkqzNgQzzYj9uRtcCIb7ifIti3rdI
+</I>&gt;<i> hkwcu1FhmJpaiFZbSc2dnSym+edMINRif68d1IKomLcd2e4wfQtLUs7lgOQbu7Th
+</I>&gt;<i> OPGA4WGhAJsvfiUQn0Lb
+</I>&gt;<i> =j6c/
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>&gt;<i>
+</I>&gt;<i> [image: stratumn-logo.jpg]
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Bastien Teinturier
+</I>&gt;<i>
+</I>&gt;<i> Senior Software Engineer
+</I>&gt;<i>
+</I>&gt;<i> Stratumn SAS, 1 bis Cit&#233; Paradis, 75010 Paris, France
+</I>&gt;<i>
+</I>&gt;<i> +33 6 28 57 71 59 &lt;+33%206%2028%2057%2071%2059&gt; &#8226; <A HREF="/mailman/listinfo/zapps-wg">bastien at stratumn.com</A> &#8226;
+</I>&gt;<i> stratumn.com &lt;<A HREF="https://stratumn.com/careers">https://stratumn.com/careers</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> We are hiring &lt;<A HREF="https://stratumn.com/careers">https://stratumn.com/careers</A>&gt; &#8226; Read about us
+</I>&gt;<i> &lt;<A HREF="http://blog.stratumn.com">http://blog.stratumn.com</A>&gt; &#8226; Twitter &lt;<A HREF="https://twitter.com/stratumnhq">https://twitter.com/stratumnhq</A>&gt;
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180118/0e935320/attachment.html">/pipermail/zapps-wg/attachments/20180118/0e935320/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000207.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000210.html">[zapps-wg] Powers of Tau Attestation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#208">[ date ]</a>
+              <a href="thread.html#208">[ thread ]</a>
+              <a href="subject.html#208">[ subject ]</a>
+              <a href="author.html#208">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

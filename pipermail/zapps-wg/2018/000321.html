@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Attestation of Contribution to Powers of Tau
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2018/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20of%20Contribution%20to%20Powers%20of%20Tau&In-Reply-To=%3Cjencmel1.4bb00a7e-2250-48ed-9065-ccb2bbccb587%40we.are.superhuman.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000320.html">
+   <LINK REL="Next"  HREF="000322.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Attestation of Contribution to Powers of Tau</H1>
+    <B>Monica Quaintance</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20of%20Contribution%20to%20Powers%20of%20Tau&In-Reply-To=%3Cjencmel1.4bb00a7e-2250-48ed-9065-ccb2bbccb587%40we.are.superhuman.com%3E"
+       TITLE="[zapps-wg] Attestation of Contribution to Powers of Tau">monica at kadena.io
+       </A><BR>
+    <I>Sun Mar 11 18:27:01 EDT 2018</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000320.html">[zapps-wg] Powers of Tau Response
+</A></li>
+        <LI>Next message (by thread): <A HREF="000322.html">[zapps-wg] Attestation #77
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#321">[ date ]</a>
+              <a href="thread.html#321">[ thread ]</a>
+              <a href="subject.html#321">[ subject ]</a>
+              <a href="author.html#321">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Monica Quaintance
+Brooklyn, NY
+2018/03/11
+
+For my contribution to Powers of Tau I added additional randomness using audio input.
+
+I downloaded the challenge file at approximately 5pm New York time on 2018/03/10 (22:00 UTC) onto a machine with the following specifications:
+
+Model: MacBook Pro 2017
+OS: OSX 10.13.2
+Memory: 16Gb
+Processor: 3.5 GHz Intel Core i7
+Architecture: amd64
+
+Subsequently the machine was disconnected from the internet and remained so until after computation. The entire process occured within the confines of my apartment and my roof with one other trusted person. Using a high-sensitiity microphone, I made three separate audio recordings of:
+
+1) my rendition of a sung bluegrass piece &quot;Annabelle&quot; (Gillian Welch), accompanied on mandolin
+2) a reading of &quot;Ozymandias&quot; (Percy Bysshe Shelley) by this other trusted person
+3) two mintues of NYC street noise
+
+The binary representation of each audio file was hashed using a different function; BLAKE2, SHA256, and md5, respectively.
+
+The hash from each was added to /dev/random, contributing to the entropy pool of the CSPRNG.
+The code for this mixing can be found at <A HREF="https://github.com/quaintm/misc-projects/blob/c586ed2d4a39ecea7dff1dcd95a00ecc8eef2500/audio_mixer.py.">https://github.com/quaintm/misc-projects/blob/c586ed2d4a39ecea7dff1dcd95a00ecc8eef2500/audio_mixer.py.</A>
+
+Subsequently, I ran the golang implementation of powersoftau from this commit: <A HREF="https://github.com/FiloSottile/powersoftau/commit/e2af113817477d26e6155f1aae478d3cb58d62c5">https://github.com/FiloSottile/powersoftau/commit/e2af113817477d26e6155f1aae478d3cb58d62c5</A> and used the go compiler version go1.10. The computation took a shockingly long time to run; it began at 2018/03/11 01:16:30 UTC and completed at 2018/3/11 17:00:56. No hypotheses at this time for why it took so long; taucompute used up 2.18G of memory at peak while kernel_task used 1.4G of memory at peak. There should have been far more memory accessible (16Gb machine), yet the process used up to 1.15G of swap. Despite the lag, it did finally complete.
+
+The generated response was uploaded at 18:15 PM UTC and has been retained. The BLAKE2b hash of `./response` is:
+
+6f2bfecd 1a379246 1a0a4dec 936fccc8
+55f97200 d8797912 5eb561dd 1b98d4f0
+2e3ed576 27933295 a51d71e1 81863945
+cb70d2cf 83f3a3b9 646155fa 0e28d3ac
+
+Public copy of this hash was also posted on twitter: <A HREF="https://twitter.com/QuaintM/status/972961152593465344">https://twitter.com/QuaintM/status/972961152593465344</A>
+
+After the computation all audio files were saved over in place and the machine was restarted.
+
+Thank you to Jason Davies and Miron Cuperman for answering questions, Filippo Valsorda for your golang implementation, Zcash for this killer project, and Jay Graber for tipping me off in the first place.
+
+Monica Quaintance
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE7tdIUnoiCYMElknHfcsDG8N+hAgFAlqlrKYACgkQfcsDG8N+
+hAhObw//f5/sv+cbjorOwI63WU7S/qo1E+s2+hCS5Ok8vON0YOuoQKIv1LJZXD0Q
+ntNFmIwLA+jISEd+wdy0rQF8+jLnC1eU3FOXye9yQ9sXjs0bf/wIgM2+vZrSHTrq
+MJxoTuvIilKi5i6hOodUuYr/ozaD/wciWts6xjSuR6iNNOJW1bwZ/Qfxtz7vgGOc
+u49Si394QXvSVgrpFm34PLtmrSW9KlGMLYfChG/Ow71GjM20P4ejyRh+iMdOpJ1F
+w6oqc3lvpaosHNFnjalXACRvPuJT5eItjC184bRh7mb04YfyuhAbzjJNABAGz/cx
+TnBoO35/eWnC+zmlUPgE4VSvgsYPAXsG6sjIK0G/EPaZO7+i74EljnGZD5jPLBxR
+dnCVBGd4+/TVk4G89S9WB+bC/n7y3ScibBjWP+sCzvkK6tlPNhUNx19mYeg8srBE
+Pr8yhDsIRlHslhyAfKomqZf4x9KE/PFRqR8dfU5VjKXlC3D9sCGG06pDWXcRmM2m
+ymyd2WGEPusKofCiwAv6GcwPz2wAyFrlY7aA1dVsTHgAErc6H1w4Ei7q4VHHGcKW
+qA8iy9unqUEqFXcKI/Y63jo6fw2AhF14Tf0wvFy+ju3mJm2APS74btaUO5bGc7AC
+p/IIoLj8y2qGQ342ZL7w3ya0hpYCZ1r70L1dIyXwtfBFHp9F8x4=
+=fiVO
+-----END PGP SIGNATURE-----
+
+Monica Quaintance
+
+Lead, Engineering and Adoption
+Kadena
+t: 404-491-0441
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="/pipermail/zapps-wg/attachments/20180311/b3e017a6/attachment.html">/pipermail/zapps-wg/attachments/20180311/b3e017a6/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000320.html">[zapps-wg] Powers of Tau Response
+</A></li>
+	<LI>Next message (by thread): <A HREF="000322.html">[zapps-wg] Attestation #77
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#321">[ date ]</a>
+              <a href="thread.html#321">[ thread ]</a>
+              <a href="subject.html#321">[ subject ]</a>
+              <a href="author.html#321">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>

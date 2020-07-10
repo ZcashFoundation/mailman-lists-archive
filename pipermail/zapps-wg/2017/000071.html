@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [zapps-wg] Attestation No 12
+   </TITLE>
+   <LINK REL="Index" HREF="/pipermail/zapps-wg/2017/index.html" >
+   <LINK REL="made" HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20No%2012&In-Reply-To=%3C4541603.C1MUOBOXMz%40neumann%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000069.html">
+   <LINK REL="Next"  HREF="000072.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[zapps-wg] Attestation No 12</H1>
+    <B>Miguel Angel Marco Buzunariz</B> 
+    <A HREF="mailto:zapps-wg%40lists.zfnd.org?Subject=Re%3A%20%5Bzapps-wg%5D%20Attestation%20No%2012&In-Reply-To=%3C4541603.C1MUOBOXMz%40neumann%3E"
+       TITLE="[zapps-wg] Attestation No 12">mmarco at unizar.es
+       </A><BR>
+    <I>Mon Nov 20 18:00:40 EST 2017</I>
+    <P><UL>
+        <LI>Previous message (by thread): <A HREF="000069.html">[zapps-wg] Ceremony Attestation
+</A></li>
+        <LI>Next message (by thread): <A HREF="000072.html">[zapps-wg] Attestation No 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#71">[ date ]</a>
+              <a href="thread.html#71">[ thread ]</a>
+              <a href="subject.html#71">[ subject ]</a>
+              <a href="author.html#71">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Powers of Tau Operational Write-up
+=============================
+
+Round: 12
+
+Date: 2017-11-20
+
+Name: Miguel Angel Marco Buzunariz
+
+Location: Spain
+
+Response: BLAKE2b 
+22fd2b37f794b19dab85cfbb3dd018c8ab7a07e44b34394449ab1b28ed7ef133e8ca0fc77a497670a622dfb1e74e8af57cda01cc9b8614ba65a29a0d64dadadf
+
+Procedure
+=================
+
+* Followed the plan written in plancommit.txt (sha256hash 
+8829a8a45363c98ced7d6059e90b9095f875863c78ba8474ea9017e9e9820405), to which i 
+commited in the mailing list.
+
+* Preparation:
+    * Downloaded [Powers of Tau](<A HREF="https://github.com/ebfull/powersoftau">https://github.com/ebfull/powersoftau</A>) commit 
+d47a1d3d1f007063cbcc35f1ab902601a8b3bd91, and compiled it in a gentoo linux 
+box with rustc 1.21.0 dev (compiled in the same system). Obtained a `compute` 
+binary with sha256hash 
+2603d31c9394ac624a0a3bceb5c9d227f73447dac29c4e2a598dd69590c92cd3 
+    * Take the hard drive and wifi card out of an old core2duo laptop with 4GB 
+RAM to be used as airgapped node
+    * Download a Linux Mint 18.2 Kde .iso file from its website, and 
+(sha256hash 9173901fbead7d2ece2454f8f51dbb375e1dfdfc74cfaef450342a3144955fe1) 
+and burn it in six different usb drives.
+* Ceremony
+    * Downloaded the `challenge` file from <A HREF="https://s3-us-west-2.amazonaws.com/">https://s3-us-west-2.amazonaws.com/</A>
+powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html, checked its 
+sha256hash f767da9aa257a15869ead2e2c7b9019f5cbb3ae9454bf9cff2456b0cf73dd36e
+    * Copied the `challenge` file and the `compute` binary to six different usb 
+drives.
+    * Chose one of the 6 Linux Mint usb drives at random (rolling a dice) and 
+boot the airgapped node with it. Keep the other five untouched.
+    * Chose one of the 6 usb drives with the `challenge` and `compute` files at 
+random (dice roll) and insert it in the airgapped machine. Keep the other five 
+untouched.
+    * Checked the hash of the `compute` and `challenge`files in the airgapped 
+machine, and run `compute`
+    * Inserted the source of entropy: a bunch of random keys, plus the result 
+of 50 dice rolls.
+    * Copied the sha256hash of the `response` file ( 
+d7c3f0f75867bed812e056a7ddef6b7994d2d9b3c658c60cbdd18f1e6a06dacf )
+    * Burnt the `response` file to six different DVD-R
+    * Chose one of the DVD-R at random with a dice, insert it in the network 
+node, copied its content to the hard drive and verified the hash. The other five 
+were kept untouched.
+    * Uploaded the response file to the [Amazon S3 bucket](<A HREF="https://s3-us-west-2.amazonaws.com/powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html">https://s3-us-west-2.amazonaws.com/powersoftau/lOg9HOyt0u1cxR0djXfFX1gmwLnU0y56/index.html</A>)
+
+Side channel defenses
+=================
+
+Entropy source: Many keys pressed at random, plus the result of 50 dice rolls.
+
+Computation took place on an airgapped machine, with no wifi card nor hard 
+drive. The media that was used to move information between the compute mode 
+was copied in 6 different devices, only one of each (chosen at random with a 
+dice) was inserted in the other machine, the other five will be kept untouched 
+for several months at least.
+
+The following material will be kept available for forensic audit in case 
+someone is interested in doing it:
+
+* airgapped machine (will be kept turned off, with no battery and no power 
+cable).
+* the six usb drives with the live linux system (the one actually used and the 
+other five that didn't gt in touch with the airgapped machine)
+* the six usb drives with the `compute` binary, and the `challenge` file (again 
+one was used, and the other five didn't get in contact with the airgapped 
+machine)
+* the six DVD-R with the `response` file  (again, one was actually inserted in 
+the network node, and the other five never touched it)
+
+I plan to keep this material for several months. If someone is interested in 
+auditing it, please get in touch with me. In case nobody shows interest, I 
+might decide to reuse all or part of it at some point.
+
+
+
+Miguel Angel Marco Buzunariz
+Universidad de Zaragoza
+<A HREF="/mailman/listinfo/zapps-wg">mmarco at unizar.es</A>
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEZqJ2ok+i5RbOpE2l3QEU7bdBBZIFAloTXbEACgkQ3QEU7bdB
+BZKXWxAAnz0N0riodSAJmoDrwpc3kvH4mJh6NVulaLYa/RcgkEwm/OCNI26NoNb1
+84OwF/UWN3UlCCT8l5nEcRAiAlVsSUBzQwsmRjItqhfomMPMF/c76eQg12ZWYHs4
+Gq9igraC1Ueek/fq7gBugVb2OshwKtYIbh3nsdtdBadqc501v3hDka6kNSrLYrsq
+UXEk1uRfD7urtfF7WKcahgJcYTSKUTmkzuGBWXGPX9tCEywY08BApVJreMkLlJcc
++a80G6o4VrJofP9ViUnpI/df6yqLy9/M8GmFE0p7JWzDWG4aLLdiRYZpE9xW8YmA
+aqAZkBrNLjIfaNH2UkBOMOk9bOOJwwWDtI95Jq8vRvye31QjfLPHEAh7rpdQFRG4
+QKGOS+YsE6glGYIC2VHFrGKXj+17lHQVdjwun8sDOqmAcxUjKHulsB+LqoJy7S9Y
+pEt8wxkN76hs8bL263zmdPpednX9XbsDCB5g6dPXjTH3NPhPIeRxsCFwyBQQoLQZ
+za17op/IxPl4PFAN2icYfeM7cztr7goEaJKmIApiCcqkJRDnN7DKzJU4g/n62qJM
+N2Y51nQ7nt3EQFoROfoAW+/vC2stIuqRYsvOm8xigVbH/n8PcoR7qkwkymxvgaBC
+QrJyT6S/hIuW89ieW5Fu0Ch11N8Nb3YPgO2w9C2IRH4j8rIV0nA=
+=nDvP
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# Plan for running the powersoftau multiparty computation.
+
+## Setup:
+
+ - An air-gapped machine. It consists on a laptop with the following modifications:
+    - The hard drive has been phisically removed.
+    - The wireless card has been phisically removed.
+    - No network cable will be connected to it during or after the computation.
+ - Another machine, connected to the internet, running a gentoo linux system.
+    - compile the powersoftau binary on the gentoo machine.
+      - compiled from commit `d47a1d3d1f007063cbcc35f1ab902601a8b3bd91`
+      - the obtained `compute` binary has a sha256 hash `2603d31c9394ac624a0a3bceb5c9d227f73447dac29c4e2a598dd69590c92cd3`
+      - burn a  a Linux Mint 18.2 &quot;Sonya&quot; KDE .iso image on several usb(1) thumb drives
+
+## Steps to follow:
+    
+  - When my turn to go comes:
+    - Get the challenge file from the network in the gentoo box
+    - Copy it to a several usb drives(2), together with the `compute` binary
+    - Randomly choose one of the usb drives(1) to boot the airgapped. The rest will be kept untouched to allow future audits(*).
+    - Randomly choose one of the usb drives(2), plug it and mount in the airgapped machine. The rest will be kept untouched to allow future audits (*).
+    - run there the `compute` binary
+      - as a source of entropy, I will just press many keys at random, and then add the result of rolling a dice 50 times.
+    - burn the resulting `response` file in deveral different dvd's.
+    - choose one of those dvd's at random, keep the others for possible future audits(*).
+    - read the chosen dvd in the gentoo machine, and send the response file back.
+
+
+    
+(*) The rationale behind this is to prevent attacks based on tampering with the drives. If there is something malicious in the drives whose traces would be erased after pluging it in a second machine, the other copies would allow to detect it. I don't have the resources to perform the kind of audit necessary to detect this, but will keep the evidence in case someone volunteers to do the audit.
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEZqJ2ok+i5RbOpE2l3QEU7bdBBZIFAloPX5EACgkQ3QEU7bdB
+BZIntw/+I04gmgWGhgAIATI8nG0WR0rRlwaWEnCdgry3PUQ2e4BBro+oDvG9qe7h
+Xw4CGvoOQboQvUaKcUEOUls1Li+P3LCKP1P40z8q8KU9sGI44yqiNnq6JUfHvsXZ
+qWDlwUGyf+sW+qcfGoJLv2j1tlPQoJRoJwWTSnJYq1/yb2+qltvYCzmS85lhztkK
+Qea5ZWawl74i6xzE6lOlKN3Sceog34j7k5rL+GES4I80unJYEGqHifed7nz1bK8f
+wb6ksBDJ9hdJaw6ZIGdgZa7qzvojmtE7yE3y49rig6WjETEr16Wp/WuzRg0dKMfl
+LFlzNbXKHIcNwiQLLWXPwTwPrx9orz+8ckf4U8HJDy/3FsDmEEf9Lcrm5LO0+P3t
+oknxsLQF8yNJXTKILCugQGoVghbo0OgLlcw4IaQSmMilRabvOLd0/TYvsS3SfAu6
+6s/jGLcjr+VtQE/oIaAI7bRHkB8BC77OSeOGiGBRq0T+HCvtaZGwG/l0u17sY1Rs
+OILLUXdN/sg17ApnfnqLbo2hioLVrdTyK/amgDhlCrNHvniKxBkFhyvlfJRmRCpb
+W9MWj618fBflH2u+aF/56HmpeP4Yt/ngkqJvCkV+Sq+9EdZTlRbopltZQ3YSKdQI
+GaaqJHsVbFS2U13vth7klh1a6DhJXD2M9/iONsIhulma+NSX0g4=
+=6Vgh
+-----END PGP SIGNATURE-----
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message (by thread): <A HREF="000069.html">[zapps-wg] Ceremony Attestation
+</A></li>
+	<LI>Next message (by thread): <A HREF="000072.html">[zapps-wg] Attestation No 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#71">[ date ]</a>
+              <a href="thread.html#71">[ thread ]</a>
+              <a href="subject.html#71">[ subject ]</a>
+              <a href="author.html#71">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="/mailman/listinfo/zapps-wg">More information about the zapps-wg
+mailing list</a><br>
+</body></html>
